@@ -7,7 +7,7 @@ export default function FMCGPage() {
   return(
     <>
     <SEO
-        title={fmcgMeta.title}
+        
         description={fmcgMeta.description}
         keywords={fmcgMeta.keywords}
         canonical={fmcgMeta.canonical}

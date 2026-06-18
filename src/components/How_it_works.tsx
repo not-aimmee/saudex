@@ -32,7 +32,7 @@ export default function HowItWorks() {
   return (
     <>
     <SEO
-        title={howWeWorkMeta.title}
+        
         description={howWeWorkMeta.description}
         keywords={howWeWorkMeta.keywords}
         canonical={howWeWorkMeta.canonical}
@@ -97,7 +97,7 @@ export default function HowItWorks() {
               uppercase 
             text-[#228B5A]
             font-archivo
-            text-left
+            text-center
             text-xl
             font-medium
             tracking-[0.4em]
@@ -139,7 +139,7 @@ export default function HowItWorks() {
                 tracking-wide
               "
             >
-             Getting your goods moving is easy.<br/> Request a quote, confirm your shipment details, and we handle pickup, transit, customs, and final delivery <br/> keeping you informed at every stage.
+             Getting your goods moving is easy.<br/> Request a quote, confirm your shipment details, and we handle pickup, transit, customs, and final delivery <br/> While keeping you informed at every stage.
             </motion.p>
         </div>
 

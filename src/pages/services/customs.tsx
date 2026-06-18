@@ -65,7 +65,7 @@ export default function Customs() {
   return (
   <>
   <SEO
-        title={customsLogisticsMeta.title}
+       
         description={customsLogisticsMeta.description}
         keywords={customsLogisticsMeta.keywords}
         canonical={customsLogisticsMeta.canonical}

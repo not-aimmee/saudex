@@ -1,31 +1,18 @@
 import { useRef,useState, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
-import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import { TEXT } from '../constants';
 import logo from '/favicon2.png';
 import { AnimatePresence, motion } from 'framer-motion';
+import ContactModal from './ContactModal';
+
 interface HeaderProps {
   onContactClick: () => void;
 }
 
 export default function Header({ onContactClick }: HeaderProps) {
-  const navigate = useNavigate();
-
-  const handleClick = (section: string) => {
-    if (window.location.pathname !== "/") {
-      // Navigate to landing page first
-      navigate("/", { replace: false });
-      // Delay scroll until landing page is rendered
-      setTimeout(() => {
-        scrollToSection(section);
-      }, 100); // 100ms is usually enough, adjust if needed
-    } else {
-      // Already on landing page
-      scrollToSection(section);
-    }
-  };
-
+  
+  const [isOpen, setIsOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [navbarServicesOpen, setNavbarServicesOpen] = useState(false);
@@ -83,10 +70,10 @@ useEffect(() => {
       <div className="w-full px-8 lg:px-16">
         <div className="mx-auto flex items-center h-20">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center gap-3">
-            <img src={logo} alt="Saudex Global" className="w-20 h-20" draggable={false} />
-              <span className="font-clash text-[40px] font-bold text-[#F7FAF8] tracking-normal">SAUDEX GLOBAL</span>
-          </div>
+          <div className="flex-shrink-0 flex items-center gap-2">
+  <img src={logo} alt="Saudex Global" className="w-12 h-12 lg:w-20 lg:h-20" draggable={false} />
+  <span className="font-clash text-[22px] lg:text-[40px] font-bold text-[#F7FAF8] tracking-normal">SAUDEX GLOBAL</span>
+</div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6 ml-16">
@@ -251,14 +238,15 @@ useEffect(() => {
                   onMouseLeave={() => setNavbarAboutOpen(false)}
                   className="absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg py-2 border border-gray-100"
                 >
-                  <button
-                    onClick={() => handleClick("about")}
+                  <Link
+                    to="/aboutUs"
+                    onClick={() => setNavbarAboutOpen(false) }
                     className="block w-full text-left px-4 py-2.5 font-archivo font-regular text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0505F0F] transition-colors"
                   >
                     {TEXT.nav.aboutUs}
-                  </button>
+                  </Link>
                   <Link
-                    to="/careers#careers"
+                    to="/careers"
                     onClick={() => setNavbarAboutOpen(false) }
                     className="block w-full text-left px-4 py-2.5 font-archivo font-regular text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0505F0F] transition-colors"
                   >
@@ -268,15 +256,22 @@ useEffect(() => {
               )}
             </div>
               <button
-        onClick={onContactClick}
-        className="px-6 py-4 text-white font-archivo font-medium text-lg hover:text-[#F7FAF8] tracking-wider transition-colors"
+        onClick={() => setIsOpen(true)}
+        className="px-6 py-4 text-white font-archivo font-medium text-lg hover:text-[#58c28a] tracking-wider transition-colors"
       >
         {TEXT.nav.contact}
       </button>
           </nav>
+          <ContactModal
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        serviceId="service_nlnhzd2"       // from EmailJS dashboard
+        templateId="template_zjgqs1k"     // from EmailJS dashboard
+        publicKey="sXmLsr6PApabpnmxa"       // from EmailJS Account → Public Key
+      />
 
           {/* Mobile Menu Button */}
-          <div className="lg:flex items-center gap-4 ml-auto">
+          <div className="flex items-center gap-4 ml-auto">
             <button
   onClick={() => setIsMenuOpen(!isMenuOpen)}
   className="flex flex-col items-end gap-1.5 p-2 hover:text[#228B5A] transition-colors"
@@ -385,7 +380,7 @@ exit={{
 {drawerIndustriesOpen && (
   <div className="ml-4 flex flex-col space-y-2">
     <button onClick={() => scrollToSection('industries')} className="text-white/90 font-archivo text-left">
-      All Industries We Serve 
+     Industries We Serve 
     </button>
     <Link to="/industries/food_beverages" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
       {TEXT.industriesDropdown.foodnbeverages}
@@ -416,13 +411,11 @@ exit={{
 </button>
 {drawerAboutOpen && (
   <div className="ml-4 flex flex-col space-y-2">
-    <button onClick={() => handleClick("about")} className="text-white/90 font-archivo text-left">
+    <Link to="/aboutUs" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
       {TEXT.nav.aboutUs}
-    </button>
-    <Link to="/locations#locations" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
-      {TEXT.nav.locations}
     </Link>
-    <Link to="/careers#careers" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
+    
+    <Link to="/careers" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
       {TEXT.nav.careers}
     </Link>
   </div>

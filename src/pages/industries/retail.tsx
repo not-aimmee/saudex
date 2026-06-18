@@ -7,7 +7,7 @@ export default function RetailPage() {
   return (
     <>
     <SEO
-        title={retailWholesaleMeta.title}
+        
         description={retailWholesaleMeta.description}
         keywords={retailWholesaleMeta.keywords}
         canonical={retailWholesaleMeta.canonical}

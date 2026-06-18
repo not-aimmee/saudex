@@ -66,7 +66,7 @@ export default function Freight() {
   return (
   <>
   <SEO
-        title={freightForwardingMeta.title}
+       
         description={freightForwardingMeta.description}
         keywords={freightForwardingMeta.keywords}
         canonical={freightForwardingMeta.canonical}

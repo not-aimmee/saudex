@@ -7,7 +7,7 @@ export default function ColdChainPage() {
   return (
   <>
   <SEO
-        title={coldChainMeta.title}
+        
         description={coldChainMeta.description}
         keywords={coldChainMeta.keywords}
         canonical={coldChainMeta.canonical}

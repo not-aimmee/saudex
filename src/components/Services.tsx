@@ -7,11 +7,11 @@ import { SEO } from './SEO';
 import { servicesMeta } from '../pages/data/seoMeta';
 
 const services = [
-  { id: 1, name: 'Distribution', size: 100, link:'/services/distribution'  },
-  { id: 2, name: 'FMCG Distribution', size: 85, link:'/services/fmcg' },
-  { id: 3, name: 'Import & Export', size: 110, link:'/services/impo-expo' },
+  { id: 1, name: 'Import & Export', size: 100, link:'/services/distribution'  },
+  { id: 2, name: 'FMCG ', size: 85, link:'/services/fmcg' },
+  { id: 3, name: 'Distribution', size: 110, link:'/services/impo-expo' },
   { id: 4, name: 'Warehousing', size: 85, link:'/services/warehousing' },
-  { id: 5, name: 'Supply Chain', size: 100, link:'/services/Supply_chain' },
+  { id: 5, name: 'Customs', size: 100, link:'/services/Supply_chain' },
 ];
 
 // Fan out to the right: angles from roughly -60° to +60°
@@ -47,7 +47,7 @@ export default function Services() {
   return (
     <>
     <SEO
-        title={servicesMeta.title}
+        
         description={servicesMeta.description}
         keywords={servicesMeta.keywords}
         canonical={servicesMeta.canonical}
@@ -131,7 +131,7 @@ transition={{
                 tracking-wide
               "
             >
-              We deliver cutting-edge services tailored to your needs. Our expert team
+              We deliver cutting edge services tailored to your needs. Our expert team
               combines creativity, technology, and strategic thinking to help your
               business thrive in the digital age. 
               <br/>Discover how we can elevate your

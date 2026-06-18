@@ -4,10 +4,10 @@ import { statsMeta } from "../pages/data/seoMeta";
 
 const stats = [
   {
-    value: 3,
+    value: 10,
     label: "Years Of Experience",
     suffix: "+",
-    sub: "Since 2025",
+    sub: "",
     up: true,
   },
   {
@@ -76,12 +76,7 @@ function StatItem({
       className={`relative flex flex-col justify-between p-10 ${!last ? "border-r border-white/10" : ""}`}
     >
       {/* index marker */}
-      <span
-        className="mb-8 text-xs tracking-[0.2em] uppercase"
-        style={{ color: "#FF6200" }}
-      >
-        {String(index + 1).padStart(2, "0")}
-      </span>
+      
 
       {/* big number */}
       <div className="flex-1 font-clash flex flex-col justify-center">
@@ -131,7 +126,7 @@ export default function Stats() {
   return (
     <>
     <SEO
-        title={statsMeta.title}
+        
         description={statsMeta.description}
         keywords={statsMeta.keywords}
         canonical={statsMeta.canonical}

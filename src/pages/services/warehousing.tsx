@@ -66,7 +66,7 @@ export default function Warehousing() {
   return (
     <>
     <SEO
-        title={warehousingLogisticsMeta.title}
+        
         description={warehousingLogisticsMeta.description}
         keywords={warehousingLogisticsMeta.keywords}
         canonical={warehousingLogisticsMeta.canonical}

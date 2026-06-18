@@ -7,7 +7,7 @@ export default function ECommercePage() {
   return (
     <>
     <SEO
-        title={ecommerceMeta.title}
+       
         description={ecommerceMeta.description}
         keywords={ecommerceMeta.keywords}
         canonical={ecommerceMeta.canonical}

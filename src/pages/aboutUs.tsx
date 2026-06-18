@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
    COLOR PALETTE — edit hex values to retheme
    ───────────────────────────────────────────── */
 const C = {
-  deepGreen:   "#061510",  // Hero / closing section background
+  deepGreen:   "#050f0f",  // Hero / closing section background
   forestGreen: "#0d2e1e",  // Alternate dark sections
   midGreen:    "#164d32",  // Values section background
   accentGreen: "#2a7a4b",  // Borders, highlights, hover accents
@@ -17,35 +17,6 @@ const C = {
   darkInk:     "#0d1f15",  // Text on light backgrounds
   midInk:      "#274834",  // Secondary text on light backgrounds
 };
-
-/* ─────────────────────────────────────────────
-   GLOBAL CURSOR GLOW — follows mouse
-   ───────────────────────────────────────────── */
-function CursorGlow() {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const move = (e: MouseEvent) => {
-      if (!ref.current) return;
-      ref.current.style.transform = `translate(${e.clientX - 200}px, ${e.clientY - 200}px)`;
-    };
-    window.addEventListener("mousemove", move, { passive: true });
-    return () => window.removeEventListener("mousemove", move);
-  }, []);
-
-  return (
-    <div
-      ref={ref}
-      className="pointer-events-none fixed top-0 left-0 z-0 w-[400px] h-[400px] rounded-full"
-      style={{
-        background: `radial-gradient(circle, ${C.brightGreen}18 0%, transparent 70%)`, /* Cursor glow color */
-        transition: "transform 0.12s ease-out",
-        willChange: "transform",
-      }}
-      aria-hidden
-    />
-  );
-}
 
 /* ─────────────────────────────────────────────
    REUSABLE COMPONENTS
@@ -81,7 +52,7 @@ function Marquee({ text, bg, fg }: { text: string; bg: string; fg: string }) {
       <div
         className="inline-block"
         style={{
-          animation: "marquee 28s linear infinite", /* Adjust speed here */
+          animation: "marquee 50s linear infinite", /* Adjust speed here */
           fontFamily: "'Barlow Condensed', sans-serif",
           fontSize: "1.1rem",
           fontWeight: 700,
@@ -211,40 +182,6 @@ function ValueItem({ index, title, description }: { index: string; title: string
         </div>
       </div>
     </div>
-  );
-}
-
-/** Fixed nav */
-function Nav() {
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  return (
-    <nav
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-      style={{
-        backgroundColor: scrolled ? C.deepGreen + "f0" : "transparent",
-        borderBottom: scrolled ? `1px solid ${C.accentGreen}44` : "1px solid transparent",
-        backdropFilter: scrolled ? "blur(12px)" : "none",
-      }}
-    >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-5 flex items-center justify-between">
-        {/* Logo — Change this text */}
-        <div
-          className="text-xl font-black tracking-tight uppercase"
-          style={{ fontFamily: "'Barlow Condensed', sans-serif", color: C.white }}
-        >
-          Meridian Logistics
-        </div>
-        <div className="text-xs tracking-[0.2em] uppercase" style={{ fontFamily: "'DM Mono', monospace", color: C.paleGreen }}>
-          About
-        </div>
-      </div>
-    </nav>
   );
 }
 
@@ -696,110 +633,12 @@ function LeadershipSection() {
   );
 }
 
-function ClosingSection() {
-  const [hovered, setHovered] = useState(false);
-
-  return (
-    <>
-      {/* Final marquee before closing */}
-      <Marquee
-        text="Let's Move The World Together" /* Change marquee text */
-        bg={C.accentGreen}  /* Marquee background color */
-        fg={C.white}        /* Marquee text color */
-      />
-
-      <section
-        className="min-h-screen flex flex-col justify-between px-6 md:px-16 py-20 relative overflow-hidden"
-        style={{ backgroundColor: C.forestGreen }}
-      >
-        {/* Ghost text background decoration */}
-        <div
-          className="absolute bottom-0 right-0 pointer-events-none select-none"
-          aria-hidden
-          style={{
-            fontFamily: "'Barlow Condensed', sans-serif",
-            fontSize: "clamp(10rem, 28vw, 36rem)",
-            fontWeight: 900,
-            color: "transparent",
-            WebkitTextStroke: `1px ${C.brightGreen}15`, /* Ghost text stroke opacity */
-            lineHeight: 1,
-            userSelect: "none",
-            transform: "translate(5%, 15%)",
-          }}
-        >
-          GO {/* Ghost background word — Change this */}
-        </div>
-
-        <div className="max-w-7xl w-full mx-auto flex flex-col h-full flex-1 relative z-10">
-          <Eyebrow light>Get in touch</Eyebrow>
-
-          {/* Closing headline — Change this text */}
-          <div className="flex-1 flex items-center">
-            <h2
-              className="text-[10vw] md:text-[9vw] font-black uppercase leading-[0.88] tracking-tight"
-              style={{ fontFamily: "'Barlow Condensed', sans-serif", color: C.white }}
-            >
-              Ready to
-              <br />
-              move forward
-              <br />
-              <span style={{ color: C.brightGreen /* Accent word color */ }}>together?</span>
-            </h2>
-          </div>
-
-          <Rule color={C.accentGreen} opacity={0.25} />
-
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-10 mt-10">
-            {/* Contact info — Change these details */}
-            <div className="space-y-2">
-              <div className="text-sm tracking-widest uppercase mb-4" style={{ fontFamily: "'DM Mono', monospace", color: C.paleGreen }}>
-                Contact
-              </div>
-              {/* Email — Change this */}
-              <div className="text-xl md:text-2xl font-light" style={{ fontFamily: "'DM Sans', sans-serif", color: C.white }}>
-                hello@meridianlogistics.com
-              </div>
-              {/* Phone — Change this */}
-              <div className="text-base" style={{ fontFamily: "'DM Sans', sans-serif", color: C.paleGreen }}>
-                +1 (800) 555-0190
-              </div>
-            </div>
-
-            {/* CTA Button */}
-            <button
-              className="px-10 py-4 text-sm tracking-widest uppercase font-medium transition-all duration-300"
-              style={{
-                fontFamily: "'DM Mono', monospace",
-                backgroundColor: hovered ? C.white : C.brightGreen, /* Button bg — hover / default */
-                color: hovered ? C.deepGreen : C.white, /* Button text — hover / default */
-                transform: hovered ? "scale(1.03)" : "scale(1)",
-                border: "none",
-              }}
-              onMouseEnter={() => setHovered(true)}
-              onMouseLeave={() => setHovered(false)}
-            >
-              Start a conversation {/* Change button text */}
-            </button>
-          </div>
-
-          {/* Footer note */}
-          <div className="mt-16 text-xs tracking-widest uppercase" style={{ fontFamily: "'DM Mono', monospace", color: C.paleGreen + "55" }}>
-            © 2024 Meridian Logistics. All rights reserved. {/* Change copyright text */}
-          </div>
-        </div>
-      </section>
-    </>
-  );
-}
-
 /* ─────────────────────────────────────────────
    ROOT
    ───────────────────────────────────────────── */
-export default function App() {
+export default function AboutUs() {
   return (
     <div style={{ fontFamily: "'DM Sans', sans-serif" }}>
-      <CursorGlow />
-      <Nav />
       <HeroSection />
       <MissionSection />
       <StatsSection />
@@ -807,7 +646,6 @@ export default function App() {
       <PullQuote />
       <StorySection />
       <LeadershipSection />
-      <ClosingSection />
     </div>
   );
 }

@@ -7,7 +7,7 @@ export default function HorecaPage() {
   return (
     <>
     <SEO
-        title={horecaMeta.title}
+        
         description={horecaMeta.description}
         keywords={horecaMeta.keywords}
         canonical={horecaMeta.canonical}

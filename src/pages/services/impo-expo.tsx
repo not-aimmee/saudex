@@ -66,7 +66,7 @@ export default function ImpoExpo() {
   return (
   <>
   <SEO
-        title={importExportLogisticsMeta.title}
+        
         description={importExportLogisticsMeta.description}
         keywords={importExportLogisticsMeta.keywords}
         canonical={importExportLogisticsMeta.canonical}

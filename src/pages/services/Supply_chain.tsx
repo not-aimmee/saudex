@@ -66,7 +66,7 @@ export default function SCC() {
   return (
     <>
     <SEO
-        title={supplyChainLogisticsMeta.title}
+        
         description={supplyChainLogisticsMeta.description}
         keywords={supplyChainLogisticsMeta.keywords}
         canonical={supplyChainLogisticsMeta.canonical}

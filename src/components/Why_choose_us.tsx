@@ -42,7 +42,7 @@ export default function WhyChooseUs() {
   return (
     <>
     <SEO
-        title={whyChooseUsMeta.title}
+        
         description={whyChooseUsMeta.description}
         keywords={whyChooseUsMeta.keywords}
         canonical={whyChooseUsMeta.canonical}

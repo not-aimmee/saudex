@@ -7,7 +7,7 @@ export default function FoodBevPage() {
   return (
     <>
     <SEO
-        title={foodBeveragesMeta.title}
+        
         description={foodBeveragesMeta.description}
         keywords={foodBeveragesMeta.keywords}
         canonical={foodBeveragesMeta.canonical}

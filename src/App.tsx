@@ -22,8 +22,11 @@ import RetailPage from "./pages/industries/retail";
 import FoodBevPage from "./pages/industries/food_beverages";
 import PrivacyPolicy from "./pages/privacy_policy";
 import TermsOfService from "./pages/terms_of_service";
-import { Routes, Route } from "react-router-dom";
 import Freight from "./pages/services/freight";
+import Careers from "./pages/careers";
+import AboutUs from "./pages/aboutUs";
+import BeOurPartner from "./components/BeOurPartner";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -40,6 +43,7 @@ function App() {
               <WhyChooseUs/>
               <Industries/>
               <Stats/>
+              <BeOurPartner/>
             </>
           }
         />
@@ -65,6 +69,8 @@ function App() {
         <Route path="/industries/retail" element={<RetailPage/>} />
         <Route path="/industries/food_beverages" element={<FoodBevPage/>} />
        </Route>
+       <Route path="aboutUs" element={<AboutUs/>} />
+       <Route path="careers" element={<Careers/>} />
       </Route>
       <Route element={<SimpleLayout/>}>
        <Route path="privacy_policy" element ={<PrivacyPolicy/>} />

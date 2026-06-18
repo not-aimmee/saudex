@@ -9,14 +9,13 @@ export default function Hero() {
   return (
     <>
     <SEO
-        title={homeMeta.title}
         description={homeMeta.description}
         keywords={homeMeta.keywords}
         canonical={homeMeta.canonical}
         ogImage={homeMeta.ogImage}
       />
     <SEO
-        title={defaultSiteMeta.title}
+        
         description={defaultSiteMeta.description}
         keywords={defaultSiteMeta.keywords}
         canonical={defaultSiteMeta.canonical}

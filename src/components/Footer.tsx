@@ -195,10 +195,7 @@ useEffect(() => {
               <li>Saudi Arabia</li>
               <li>United Arab Emirates</li>
               <li>Singapore</li>
-              <li>Malaysia</li>
-              <li>Indonesia</li>
               <li>India</li>
-              <li>Dubai</li>
             </ul>
         </div>
 
@@ -262,9 +259,9 @@ useEffect(() => {
         <ContactModal
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
-        serviceId="YOUR_SERVICE_ID"       // from EmailJS dashboard
-        templateId="YOUR_TEMPLATE_ID"     // from EmailJS dashboard
-        publicKey="YOUR_PUBLIC_KEY"       // from EmailJS Account → Public Key
+        serviceId="service_nlnhzd2"       // from EmailJS dashboard
+        templateId="template_zjgqs1k"     // from EmailJS dashboard
+        publicKey="sXmLsr6PApabpnmxa"       // from EmailJS Account → Public Key
       />
       </div>
 

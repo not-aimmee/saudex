@@ -19,7 +19,7 @@ export default function Industries (){
     return (
       <>
       <SEO
-        title={industriesMeta.title}
+
         description={industriesMeta.description}
         keywords={industriesMeta.keywords}
         canonical={industriesMeta.canonical}

@@ -66,7 +66,7 @@ export default function TCL() {
   return (
     <>
     <SEO
-        title={temperatureControlledLogisticsMeta.title}
+       
         description={temperatureControlledLogisticsMeta.description}
         keywords={temperatureControlledLogisticsMeta.keywords}
         canonical={temperatureControlledLogisticsMeta.canonical}

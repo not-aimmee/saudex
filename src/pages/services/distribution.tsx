@@ -66,7 +66,7 @@ export default function Distribution() {
   return (
   <>
   <SEO
-        title={distributionLogisticsMeta.title}
+        
         description={distributionLogisticsMeta.description}
         keywords={distributionLogisticsMeta.keywords}
         canonical={distributionLogisticsMeta.canonical}
