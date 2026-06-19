@@ -5,7 +5,7 @@ export const coldChainData: IndustryPageData = {
   heroEyebrow: "Industry Solutions",
   heroHeading: "Temperature\nNever\nCompromises.",
   heroBody:
-    "From farm gate to final-mile, we engineer cold chain logistics that hold temperature, traceability, and timing to the tightest tolerances in the industry. Every degree matters. Every minute counts.",
+    "From farm gate to final mile, we engineer cold chain logistics that hold temperature, traceability, and timing to the tightest tolerances in the industry. Every degree matters. Every minute counts.",
   heroImage: "/images/in3.webp",
   heroImageAlt: "Refrigerated warehouse with pallets of temperature-sensitive cargo",
   heroStats: [
@@ -17,9 +17,9 @@ export const coldChainData: IndustryPageData = {
     {
       index: 1,
       tag: "Infrastructure",
-      heading: "Controlled\nEnvironments\nat Scale",
+      heading: "Controlled Environments at Scale",
       body:
-        "Our network of multi-zone cold rooms, blast freezers, and ambient buffer spaces is engineered for pharmaceutical, fresh produce, and frozen goods under one roof. HACCP-certified facilities with live IoT sensor grids across every zone.",
+        "Our network of multi zone cold rooms, blast freezers, and ambient buffer spaces is engineered for pharmaceutical, fresh produce, and frozen goods under one roof. HACCP certified facilities with live IoT sensor grids across every zone.",
       image: "/images/in1.webp",
       imageAlt: "Cold room with IoT temperature sensors mounted on ceiling",
       stats: [
@@ -32,9 +32,9 @@ export const coldChainData: IndustryPageData = {
     {
       index: 2,
       tag: "Traceability",
-      heading: "End-to-End\nVisibility,\nNo Gaps",
+      heading: "End-to-End Visibility,\nNo Gaps",
       body:
-        "Real-time temperature logging, batch-level traceability, and automated alerts keep every stakeholder informed the moment conditions drift. Blockchain-anchored records ready for regulatory audit at any point in the chain.",
+        "Real time temperature logging, batch level traceability, and automated alerts keep every stakeholder informed the moment conditions drift. Blockchain anchored records ready for regulatory audit at any point in the chain.",
       image: "/images/in15.webp",
       imageAlt: "Dashboard showing temperature logs and batch tracking for cold chain shipments",
       stats: [
@@ -47,9 +47,9 @@ export const coldChainData: IndustryPageData = {
     {
       index: 3,
       tag: "Last Mile",
-      heading: "Cold Delivery\nThat Arrives\nIntact",
+      heading: "Cold Delivery\nThat Arrives Intact",
       body:
-        "Insulated vehicles with active refrigeration units and in-cab temperature displays run our last-mile fleet. Proof-of-delivery includes a temperature certificate alongside the standard POD — because recipients deserve the full picture.",
+        "Insulated vehicles with active refrigeration units and in cab temperature displays run our last mile fleet. Proof of delivery includes a temperature certificate alongside the standard POD, because recipients deserve the full picture.",
       image: "/images/in18.webp",
       imageAlt: "Refrigerated delivery truck at a loading dock",
       stats: [
@@ -65,33 +65,33 @@ export const coldChainData: IndustryPageData = {
     },
     {
       title: "Regulatory Documentation Gaps",
-      body: "Auditors demand chain-of-custody temperature records. We generate batch-level certificates automatically, exportable in any format regulators require.",
+      body: "Auditors demand chain of custody temperature records. We generate batch level certificates automatically, exportable in any format regulators require.",
     },
     {
       title: "Seasonal Capacity Crunches",
-      body: "Peak harvest and holiday surges overwhelm static cold storage. Our elastic network gives you burst capacity without a long-term lease commitment.",
+      body: "Peak harvest and holiday surges overwhelm static cold storage. Our elastic network gives you burst capacity without a long term lease commitment.",
     },
     {
-      title: "Multi-Modal Handoff Risk",
-      body: "Every transfer — truck to dock to warehouse to truck — is a temperature risk. Our protocols treat each handoff as a controlled event with signed verification.",
+      title: "Multi Model Handoff Risk",
+      body: "Every transfer, truck to dock to warehouse to truck, is a temperature risk. Our protocols treat each handoff as a controlled event with signed verification.",
     },
     {
       title: "Pharma vs. Food Compliance",
-      body: "Different sectors, different rules. We operate separate GDP and HACCP-compliant zones so pharmaceutical and food cargo never share risk.",
+      body: "Different sectors, different rules. We operate separate GDP and HACCP compliant zones so pharmaceutical and food cargo never share risk.",
     },
     {
       title: "Carrier Accountability",
-      body: "Third-party carriers can't always be trusted to maintain your specs. Our performance dashboards track carrier compliance and flag repeat offenders automatically.",
+      body: "Third party carriers can't always be trusted to maintain your specs. Our performance dashboards track carrier compliance and flag repeat offenders automatically.",
     },
   ],
 faqs: [
     {
       q: " What temperature ranges do your cold chain vehicles support?",
-      a: "Our reefer fleet supports ambient (15–25°C), chilled (2–8°C), and frozen (–18°C and below) conditions. Each vehicle is equipped with calibrated data loggers and dual-zone capability, so mixed-temperature shipments can travel together without compromise.",
+      a: "Our reefer fleet supports ambient (15–25°C), chilled (2–8°C), and frozen (–18°C and below) conditions. Each vehicle is equipped with calibrated data loggers and dual-zone capability, so mixed temperature shipments can travel together without compromise.",
     },
     {
       q: "How do you ensure temperature compliance throughout transit?",
-      a: "Every cold chain shipment is monitored in real time via IoT sensors that feed into our TMS. If a temperature deviation is detected, our operations team is alerted immediately and corrective action is taken — whether that's rerouting, swapping vehicles, or notifying you proactively.",
+      a: "Every cold chain shipment is monitored in real time via IoT sensors that feed into our TMS. If a temperature deviation is detected, our operations team is alerted immediately and corrective action is taken, whether that's rerouting, swapping vehicles, or notifying you proactively.",
     },
     {
       q: "Can you provide temperature logs and compliance documentation for audits?",

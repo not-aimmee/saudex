@@ -13,7 +13,7 @@ const globalFreight: ServicePageData = {
       tag: "",
 layout: "image-left",
 heading: "Supply Chain Logistics",
-body: "We start with a full assessment of how your goods currently move — from sourcing and storage to transport and delivery. We identify where time and money are being lost, then give you a clear, practical improvement plan. We can advise only, or stay involved through implementation using our own logistics network to execute the changes.",
+body: "We start with a full assessment of how your goods currently move, from sourcing and storage to transport and delivery. We identify where time and money are being lost, then give you a clear, practical improvement plan. We can advise only, or stay involved through implementation using our own logistics network to execute the changes.",
 image: "/images/s3.webp",
 imageAlt: "Distribution warehouse with workers loading trucks",
 highlight: "Built for growing businesses",
@@ -53,7 +53,7 @@ highlight: "Built for growing businesses",
     },
     {
       q: "Is this service suitable for small businesses?",
-      a: "Absolutely. Supply chain optimization isn't just for large corporations. Small and mid-sized businesses often see the fastest improvements because there's more room to streamline.",
+      a: "Absolutely. Supply chain optimization isn't just for large corporations. Small and mid sized businesses often see the fastest improvements because there's more room to streamline.",
     },
     {
       q: "Do you implement the recommendations or just advise?",

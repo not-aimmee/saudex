@@ -3,9 +3,9 @@ import type { IndustryPageData } from "../IndustryPage";
 export const retailWholesaleData: IndustryPageData = {
   industry: "Retail & Wholesale",
   heroEyebrow: "Industry Solutions",
-  heroHeading: "From\nBulk Order\nto Shelf-Ready.",
+  heroHeading: "FromBulk Order to Shelf Ready.",
   heroBody:
-    "Retail and wholesale operations demand two very different supply chain muscles — the ability to move container loads efficiently and the ability to split them into shelf-ready units the same day. We do both, from the same network.",
+    "Retail and wholesale operations demand two very different supply chain muscles, the ability to move container loads efficiently and the ability to split them into shelf ready units the same day. We do both, from the same network.",
   heroImage: "/images/retail.webp",
   heroImageAlt: "Large retail distribution centre with pallets being sorted for store delivery",
   heroStats: [
@@ -17,9 +17,9 @@ export const retailWholesaleData: IndustryPageData = {
     {
       index: 1,
       tag: "Store Replenishment",
-      heading: "Shelf-Ready\nDelivery,\nZero Handling",
+      heading: "Shelf Ready Delivery,\nZero Handling",
       body:
-        "Our retail-ready packaging and pre-ticketing service means stock arrives at the store floor-ready. No back-room breakdown, no repricing, no damaged packaging from manual handling at the store level. Your retail staff do one thing: put it on the shelf.",
+        "Our retail ready packaging and pre ticketing service means stock arrives at the store floor ready. No back room breakdown, no repricing, no damaged packaging from manual handling at the store level. Your retail staff do one thing: put it on the shelf.",
       image: "/images/in32.webp",
       imageAlt: "Retail-ready cages being unloaded directly onto a supermarket shop floor",
       stats: [
@@ -34,7 +34,7 @@ export const retailWholesaleData: IndustryPageData = {
       tag: "Wholesale",
       heading: "Bulk In.\nBroken Out.\nSame Day.",
       body:
-        "Large wholesale orders arrive by container. We receive, devan, inspect, and either cross-dock to outbound or put-away to pick locations — and begin fulfilling split-case wholesale orders from the same facility on the same day.",
+        "Large wholesale orders arrive by container. We receive, devan, inspect, and either cross-dock to outbound or put away to pick locations, and begin fulfilling split case wholesale orders from the same facility on the same day.",
       image: "/images/s2.webp",
       imageAlt: "Wholesale break-bulk operation with pallets being split and repackaged",
       stats: [
@@ -47,9 +47,9 @@ export const retailWholesaleData: IndustryPageData = {
     {
       index: 3,
       tag: "Omnichannel",
-      heading: "One Stock\nPool. Every\nChannel.",
+      heading: "One Stock Pool. \n Every Channel.",
       body:
-        "Modern retail runs across physical stores, marketplaces, and direct-to-consumer channels simultaneously. Our single-inventory model allocates stock dynamically across all channels, eliminating the silo problem and the over-stock it creates.",
+        "Modern retail runs across physical stores, marketplaces, and direct to consumer channels simultaneously. Our single inventory model allocates stock dynamically across all channels, eliminating the silo problem and the over stock it creates.",
       image: "/images/s58.webp",
       imageAlt: "Retail dashboard showing omnichannel inventory allocation across stores and online",
       stats: [
@@ -61,27 +61,27 @@ export const retailWholesaleData: IndustryPageData = {
   challenges: [
     {
       title: "Planogram Compliance",
-      body: "Retailers have strict planogram requirements. Our retail-ready build process encodes planogram specs at packing level so displays arrive store-compliant without manual adjustment.",
+      body: "Retailers have strict planogram requirements. Our retail ready build process encodes planogram specs at packing level so displays arrive store compliant without manual adjustment.",
     },
     {
       title: "Promotional Stock Timing",
-      body: "A promotion that arrives a day late is a promotion that fails. Our promotional logistics team coordinates dispatch windows to hit the precise in-store activation date.",
+      body: "A promotion that arrives a day late is a promotion that fails. Our promotional logistics team coordinates dispatch windows to hit the precise in store activation date.",
     },
     {
       title: "Wholesale Credit Exposure",
-      body: "Wholesale trade extends significant credit. Our trade finance desk provides invoice discounting options that protect your working capital while the buyer's 60-day clock runs.",
+      body: "Wholesale trade extends significant credit. Our trade finance desk provides invoice discounting options that protect your working capital while the buyer's 60 day clock runs.",
     },
     {
       title: "Dead Stock and Markdowns",
-      body: "Overstock leads to markdown cycles that erode margin. Our demand-driven replenishment model keeps retail inventory lean and sells through before the markdown conversation starts.",
+      body: "Overstock leads to markdown cycles that erode margin. Our demand driven replenishment model keeps retail inventory lean and sells through before the markdown conversation starts.",
     },
     {
       title: "Import Duty Optimisation",
-      body: "Wholesale importers frequently over-pay on duties through incorrect HS code classification. Our customs desk audits classification at origin and has recovered 6-figure duty amounts for clients.",
+      body: "Wholesale importers frequently over pay on duties through incorrect HS code classification. Our customs desk audits classification at origin and has recovered 6 figure duty amounts for clients.",
     },
     {
       title: "Returns to Stock",
-      body: "Retail returns arrive mixed, damaged, and out of season. Our reverse logistics team grades, re-prices, and routes returned stock to secondary markets, outlet channels, or disposal — recovering value at every step.",
+      body: "Retail returns arrive mixed, damaged, and out of season. Our reverse logistics team grades, re-prices, and routes returned stock to secondary markets, outlet channels, or disposal, recovering value at every step.",
     },
   ],
 faqs: [
@@ -90,7 +90,7 @@ faqs: [
       a: "Yes. We specialize in full-truckload (FTL) and less-than-truckload (LTL) bulk deliveries to distribution centers, dark stores, and retail branches. Our scheduling system aligns with your receiving dock windows to avoid congestion and delays.",
     },
     {
-      q: "Do you offer vendor-managed inventory or replenishment support?",
+      q: "Do you offer vendor managed inventory or replenishment support?",
       a: "We can work within VMI models by syncing delivery triggers with your inventory system. When stock drops below a set threshold, replenishment orders are dispatched automatically, reducing manual reordering and preventing stockouts.",
     },
     {

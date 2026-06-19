@@ -7,16 +7,16 @@ import { SEO } from './SEO';
 import { servicesMeta } from '../pages/data/seoMeta';
 
 const services = [
-  { id: 1, name: 'Import & Export', size: 100, link:'/services/distribution'  },
-  { id: 2, name: 'FMCG ', size: 85, link:'/services/fmcg' },
-  { id: 3, name: 'Distribution', size: 110, link:'/services/impo-expo' },
-  { id: 4, name: 'Warehousing', size: 85, link:'/services/warehousing' },
-  { id: 5, name: 'Customs', size: 100, link:'/services/Supply_chain' },
+  { id: 1, name: 'Import & Export', size: 110, link:'/services/distribution'  },
+  { id: 2, name: 'FMCG ', size: 95, link:'/services/fmcg' },
+  { id: 3, name: 'Distribution', size: 120, link:'/services/impo-expo' },
+  { id: 4, name: 'Warehousing', size: 95, link:'/services/warehousing' },
+  { id: 5, name: 'Customs', size: 110, link:'/services/Supply_chain' },
 ];
 
 // Fan out to the right: angles from roughly -60° to +60°
 const getFanPosition = (index: number, total: number) => {
-  const angleRange = 110; // degrees
+  const angleRange = 120; // degrees
   const startAngle = -angleRange / 2;
   const step = angleRange / (total - 1);
   const angleDeg = startAngle + index * step;
@@ -80,14 +80,13 @@ transition={{
       <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Side */}
         <div className="space-y-6 pr-12 py-12">
-          <div >
+          <div className="flex justify-center" >
               <SplitText
               text="what we offer "
               className="
               uppercase 
             text-[#228B5A]
             font-archivo
-            text-center
             text-xl
             font-medium
             tracking-[0.4em]
@@ -123,7 +122,7 @@ transition={{
               className="
                 mt-12
                 max-w-2xl
-                text-left
+                text-center
                 text-xl
                 text-[#F7FAF8]/60
                 font-archivo
@@ -146,7 +145,7 @@ transition={{
           <div className=" absolute left-[71.5%] top-0 h-full border-l border-white/10 -translate-x-1/2 z-0 "/>
           <div
             className="relative flex items-center justify-center"
-            style={{ width: 400, height: 400 }}
+            style={{ width: 450, height: 450 }}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => {
               setIsHovered(false);

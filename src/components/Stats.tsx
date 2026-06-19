@@ -53,7 +53,6 @@ function useCountUp(target: number, duration = 1600, start = false) {
 function fmt(raw: number, target: number) {
   if (target >= 1_000_000) return (raw / 1_000_000).toFixed(1) + "M";
   if (target >= 1_000) return Math.round(raw).toLocaleString();
-  if (target < 100) return raw.toFixed(1);
   return Math.round(raw).toLocaleString();
 }
 
@@ -75,7 +74,6 @@ function StatItem({
     <div
       className={`relative flex flex-col justify-between p-10 ${!last ? "border-r border-white/10" : ""}`}
     >
-      {/* index marker */}
       
 
       {/* big number */}
@@ -86,7 +84,7 @@ function StatItem({
         >
           {display}
           {stat.suffix && (
-            <span style={{ fontSize: "0.45em", fontWeight: 400, color: "rgba(255,255,255,0.35)" }}>
+            <span style={{ fontSize: "0.85em", fontWeight: 400, color: "#f7faf8" }}>
               {stat.suffix}
             </span>
           )}

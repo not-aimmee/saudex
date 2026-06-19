@@ -64,7 +64,6 @@ export default function BeOurPartner() {
   return (
     <>
       <Helmet>
-        <title>Be Our Partner | Saudex</title>
         <meta
           name="description"
           content="Join Saudex's partner network. Explore reseller, technology, and referral partnership tracks built for mutual growth."

@@ -189,7 +189,7 @@ const ContactModal: React.FC<ContactModalProps> = ({
                 color: "rgba(163,189,184,0.7)",
                 lineHeight: 1.7,
               }}>
-                Our logistics team responds within 2 business hours.
+                Our logistics team responds to all inquiries during business hours.
               </p>
 
               {/* Contact details */}

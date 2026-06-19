@@ -4,7 +4,7 @@ import { importExportLogisticsMeta } from "../data/seoMeta"
 
 const globalFreight: ServicePageData = {
   heroTag: "Import-Export",
-  heading: "Cross-border, handled completely.",
+  heading: "Cross border, handled completely.",
   subheading: "Import and export services across the Middle East and Southeast Asia,  documentation, compliance, and coordination managed for you.",
   heroImage: "/images/s1.webp",
   heroImageAlt: "Cargo ship at port during night",

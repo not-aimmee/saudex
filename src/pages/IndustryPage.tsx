@@ -239,7 +239,7 @@ function HeroSection({ data }: { data: IndustryPageData }) {
       
 
       {/* Main split: left text / right image */}
-      <div className="pt-16 grid grid-cols-1 lg:grid-cols-2" style={{ minHeight: "clamp(480px, 70vh, 760px)" }}>
+      <div className="pt-24 grid grid-cols-1 lg:grid-cols-2" style={{ minHeight: "clamp(480px, 70vh, 760px)" }}>
 
         {/* LEFT — heading + body */}
         <div
@@ -547,7 +547,7 @@ function ChallengesBlock({ items, industry }: { items: IndustryChallenge[]; indu
             maxWidth: "34ch",
           }}
         >
-          We've mapped the friction points. Here's where most {industry.toLowerCase()} operations lose momentum — and where we step in.
+          We've mapped the friction points. Here's where most {industry.toLowerCase()} operations lose momentum and where we step in.
         </p>
       </div>
 

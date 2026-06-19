@@ -17,7 +17,7 @@ export const foodBeveragesData: IndustryPageData = {
     {
       index: 1,
       tag: "Food Safety",
-      heading: "HACCP from\nLine to\nLast Mile",
+      heading: "HACCP from Line to Last Mile",
       body:
         "Every facility in our network operates a full HACCP plan. Critical control points are monitored digitally, corrective actions are logged in real time, and audit trails are available to regulators within 4 hours of any inspection request.",
       image: "/images/in22.webp",
@@ -32,11 +32,11 @@ export const foodBeveragesData: IndustryPageData = {
     {
       index: 2,
       tag: "Cold & Ambient",
-      heading: "Multi-Temp\nLogistics\nUnder One\nRoof",
+      heading: "Multi Temp Logistics \n Under One Roof",
       body:
-        "Frozen goods, chilled produce, and ambient dry goods each require distinct environments — but your operation shouldn't need three separate suppliers to manage them. Our multi-temp facilities handle the full product range with clean separation and zero cross-contamination risk.",
+        "Frozen goods, chilled produce, and ambient dry goods each require distinct environments, but your operation shouldn't need three separate suppliers to manage them. Our multi temp facilities handle the full product range with clean separation and zero cross contamination risk.",
       image: "/images/s21.webp",
-      imageAlt: "Multi-temperature warehouse with clearly separated frozen, chilled, and ambient zones",
+      imageAlt: "Multi temperature warehouse with clearly separated frozen, chilled, and ambient zones",
       stats: [
         { value: "3", label: "Temperature zones per facility" },
         { value: "99.7%", label: "Temp compliance across all zones" },
@@ -47,9 +47,9 @@ export const foodBeveragesData: IndustryPageData = {
     {
       index: 3,
       tag: "Traceability",
-      heading: "Batch\nRecalls in\nHours, Not\nDays",
+      heading: "Batch Recalls in Hours, Not Days",
       body:
-        "When a food safety incident occurs, speed of recall is the difference between a manageable event and a brand crisis. Our batch traceability system identifies every affected unit in the supply chain within 2 hours of a recall trigger and initiates retrieval automatically.",
+        "When a food safety incident occurs, speed of recall is the difference between a manageable event and a brand crisis. Our batch traceability system identifies every affected unit in the supply chain within 3 hours of a recall trigger and initiates retrieval automatically.",
       image: "/images/s52.webp",
       imageAlt: "Traceability dashboard showing batch recall scope and retrieval status",
       stats: [
@@ -65,7 +65,7 @@ export const foodBeveragesData: IndustryPageData = {
     },
     {
       title: "Short Shelf Life Execution",
-      body: "FEFO enforcement at the pick face is the single biggest lever in reducing food waste. Our WMS enforces it automatically — no picker discretion, no expired product on the shelf.",
+      body: "FEFO enforcement at the pick face is the single biggest lever in reducing food waste. Our WMS enforces it automatically, no picker discretion, no expired product on the shelf.",
     },
     {
       title: "Allergen Cross-Contamination",

@@ -13,7 +13,7 @@ const globalFreight: ServicePageData = {
       tag: "Distribution & Transportation",
 layout: "image-left",
 heading: "From warehouse\nto\ndoorstep.",
-body: "We run fixed distribution routes and flexible delivery schedules for businesses that need consistent, high-frequency delivery. Whether you're supplying retail outlets, wholesale clients, or end customers, our network covers the region with real accountability at every stop — including electronic proof of delivery.",
+body: "We run fixed distribution routes and flexible delivery schedules for businesses that need consistent, high frequency delivery. Whether you're supplying retail outlets, wholesale clients, or end customers, our network covers the region with real accountability at every stop, including electronic proof of delivery.",
 image: "/images/in13.webp",
 imageAlt: "Distribution warehouse with workers loading trucks",
 highlight: "POD on every delivery",
@@ -57,7 +57,7 @@ highlight: "POD on every delivery",
     },
     {
       q: "What's the minimum order size for distribution?",
-      a: "There's no strict minimum. We work with businesses of different scales and will find a cost-effective solution regardless of volume.",
+      a: "There's no strict minimum. We work with businesses of different scales and will find a cost effective solution regardless of volume.",
     },
   ],
 };

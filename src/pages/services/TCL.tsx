@@ -5,7 +5,7 @@ import { temperatureControlledLogisticsMeta } from "../data/seoMeta"
 const globalFreight: ServicePageData = {
   heroTag: "Temperature Controlled Logistics",
   heading: "Temperature never compromised.",
-  subheading: "Temperature-controlled logistics for perishables, pharmaceuticals, and sensitive goods \n Maintaining integrity from pickup to delivery.",
+  subheading: "Temperature controlled logistics for perishables, pharmaceuticals, and sensitive goods \n Maintaining integrity from pickup to delivery.",
   heroImage: "/images/i3.webp",
   heroImageAlt: "Window of a retail shop displaying fmcg goods",
   sections: [
@@ -40,7 +40,7 @@ highlight: "Temp logged every trip",
       tag: "",
       layout: "image-bottom",
       heading: "Refrigerated Distribution",
-      body: "Seamless coordination between cold storage and temperature-controlled transportation networks.",
+      body: "Seamless coordination between cold storage and temperature controlled transportation networks.",
       image: "/images/s24.webp",
       imageAlt: "Truck on bridge at night, motion blur",
       highlight: "Felxible Management",
@@ -49,7 +49,7 @@ highlight: "Temp logged every trip",
   faqs: [
     {
       q: "What temperature ranges can you maintain?",
-      a: "We support a range of temperature-controlled environments from chilled (2–8°C) to frozen (below -18°C), depending on your product requirements.",
+      a: "We support a range of temperature controlled environments from chilled (2–8°C) to frozen (below -18°C), depending on your product requirements.",
     },
     {
       q: "What types of goods are suitable for cold chain logistics?",

@@ -193,9 +193,9 @@ useEffect(() => {
          <div>
             <h3 className="font-clash text-xl mb-6 text-white/70">Locations</h3>
             <ul className="space-y-3 text-white/70">
+            <li>Singapore</li>
               <li>Saudi Arabia</li>
               <li>United Arab Emirates</li>
-              <li>Singapore</li>
               <li>India</li>
             </ul>
         </div>

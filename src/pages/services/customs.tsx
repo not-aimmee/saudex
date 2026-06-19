@@ -30,7 +30,7 @@ highlight: "Avg. 1–3 day clearance",
       tag: "",
       layout: "image-left",
       heading: "Secure Handling & Risk Management",
-      body: "We implement strict protocols to safeguard shipments and reduce customs-related risks, ensuring your goods remain secure throughout the process.",
+      body: "We implement strict protocols to safeguard shipments and reduce customs related risks, ensuring your goods remain secure throughout the process.",
       image: "https://images.unsplash.com/photo-1606964212858-c215029db704?w=1200&h=1400&fit=crop&auto=format",
       imageAlt: "Red and blue cargo containers",
       highlight: "Multi Country Compliance",
@@ -48,7 +48,7 @@ highlight: "Avg. 1–3 day clearance",
   faqs: [
     {
       q: "How long does customs clearance take?",
-      a: "For standard shipments with complete documentation, clearance typically takes 1–3 business days. Delays usually occur due to missing paperwork or inspections, which we proactively help you avoid.",
+      a: "For standard shipments with complete documentation, clearance typically takes 1 to 3 business days. Delays usually occur due to missing paperwork or inspections, which we proactively help you avoid.",
     },
     {
       q: "What happens if my shipment is held at customs?",

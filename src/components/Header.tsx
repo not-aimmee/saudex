@@ -75,7 +75,7 @@ useEffect(() => {
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300
       ${isScrolled ? 'bg-black/90 backdrop-blur-md shadow-lg' : 'bg-transparent'}
     `}>
-      <div className="w-full px-8 lg:px-16 pt-4 pb-2">
+      <div className="w-full px-10 lg:px-16 pt-4 pb-2">
         <div className="mx-auto flex items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center gap-2">
@@ -85,7 +85,7 @@ useEffect(() => {
 </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-6 ml-16">
+          <nav className="hidden lg:flex items-center space-x-8 ml-16 ">
             <Link
               to="/#home"
               className="px-6 py-4 text-white font-archivo font-medium text-lg hover:text-[#58c28a] tracking-wider transition-colors flex items-center gap-1"
@@ -193,6 +193,20 @@ useEffect(() => {
                     {TEXT.industriesDropdown.foodnbeverages}
                   </Link>
                   <Link
+                    to="/industries/cold_chain"
+                    onClick={() => setNavbarIndustriesOpen(false) }
+                    className="block w-full text-left px-4 py-2.5 font-archivo font-regular text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0505F0F] transition-colors"
+                  >
+                    {TEXT.industriesDropdown.coldchain}
+                  </Link>
+                   <Link
+                    to="/industries/horeca"
+                    onClick={() => setNavbarIndustriesOpen(false) }
+                    className="block w-full text-left px-4 py-2.5 font-archivo font-regular text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0505F0F] transition-colors"
+                  >
+                    {TEXT.industriesDropdown.horeca}
+                  </Link>
+                  <Link
                     to="/industries/FMCG"
                     onClick={() => setNavbarIndustriesOpen(false)}
                     className="block w-full text-left px-4 py-2.5 font-archivo font-regular text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0505F0F] transition-colors"
@@ -200,25 +214,11 @@ useEffect(() => {
                     {TEXT.industriesDropdown.fmcg}
                   </Link>
                   <Link
-                    to="/industries/cold_chain"
-                    onClick={() => setNavbarIndustriesOpen(false) }
-                    className="block w-full text-left px-4 py-2.5 font-archivo font-regular text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0505F0F] transition-colors"
-                  >
-                    {TEXT.industriesDropdown.coldchain}
-                  </Link>
-                  <Link
                     to="/industries/retail"
                     onClick={() => setNavbarIndustriesOpen(false) }
                     className="block w-full text-left px-4 py-2.5 font-archivo font-regular text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0505F0F] transition-colors"
                   >
                     {TEXT.industriesDropdown.retail}
-                  </Link>
-                  <Link
-                    to="/industries/horeca"
-                    onClick={() => setNavbarIndustriesOpen(false) }
-                    className="block w-full text-left px-4 py-2.5 font-archivo font-regular text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0505F0F] transition-colors"
-                  >
-                    {TEXT.industriesDropdown.horeca}
                   </Link>
                   <Link
                     to="/industries/e_commerce"

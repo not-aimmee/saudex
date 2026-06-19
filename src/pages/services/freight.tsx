@@ -40,7 +40,7 @@ highlight: "98% on-time rate",
       tag: "Comprehensive Solutions",
       layout: "image-bottom",
       heading: "Warehouse Management Technology",
-      body: "Integrated WMS solutions offering real-time tracking, reporting, and control for smooth warehouse operations and accurate order fulfillment.",
+      body: "Integrated WMS solutions offering real time tracking, reporting, and control for smooth warehouse operations and accurate order fulfillment.",
       image: "/images/in31.webp",
       imageAlt: "Truck on bridge at night, motion blur",
       highlight: "",
@@ -57,7 +57,7 @@ highlight: "98% on-time rate",
     },
     {
       q: "What types of cargo do you forward?",
-      a: "We handle general cargo, perishables, hazardous materials (with proper certification), oversized goods, and high-value items.",
+      a: "We handle general cargo, perishables, hazardous materials (with proper certification), oversized goods, and high value items.",
     }
   ],
 };

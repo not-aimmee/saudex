@@ -22,7 +22,7 @@ highlight: "Real-Time Stock Reports",
       tag: "",
       layout: "image-top",
       heading: "Flexible Strorage Plans",
-      body: "Our secure warehousing facilities are equipped with 24/7 surveillance, controlled access, and a straightforward inventory management system so you always know what you have and where it is. We handle goods receiving, storage, pick-and-pack, and dispatch — giving you one less operation to manage yourself.",
+      body: "Our secure warehousing facilities are equipped with 24/7 surveillance, controlled access, and a straightforward inventory management system so you always know what you have and where it is. We handle goods receiving, storage, pick and pack, and dispatch, giving you one less operation to manage yourself.",
       image: "/images/in35.webp",
       imageAlt: "Cargo ship at dock under blue sky",
       highlight: "",
@@ -49,7 +49,7 @@ highlight: "Real-Time Stock Reports",
   faqs: [
     {
       q: "What does contract warehousing include?",
-      a: "It includes storage space, inventory management, goods receiving and dispatch, and regular stock reporting. We can also arrange pick-and-pack services.",
+      a: "It includes storage space, inventory management, goods receiving and dispatch, and regular stock reporting. We can also arrange pick and pack services.",
     },
     {
       q: "Is your warehouse secure?",
@@ -57,7 +57,7 @@ highlight: "Real-Time Stock Reports",
     },
     {
       q: "Can I scale my storage space up or down?",
-      a: "Yes. Our contract warehousing is flexible — you can increase or reduce your storage space based on seasonal demand or business growth.",
+      a: "Yes. Our contract warehousing is flexible, you can increase or reduce your storage space based on seasonal demand or business growth.",
     },
   ],
 };

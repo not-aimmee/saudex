@@ -29,12 +29,15 @@ export default function Hero() {
     muted
     loop
     playsInline
-    preload="metadata"
+    preload="auto"
     poster="/hero-poster.webp"
     className="absolute inset-0 w-full h-full object-cover"
   >
-    <source src="https://res.cloudinary.com/dvdcdj8ye/video/upload/v1781262356/14437597_1280_720_30fps_s1qysi.mp4" type="video/mp4" />
-  </video>
+<source
+    src="https://res.cloudinary.com/dvdcdj8ye/video/upload/f_auto,q_auto,w_1920,c_limit/v1781262356/14437597_1280_720_30fps_s1qysi.mp4"
+    type="video/mp4"
+  />
+    </video>
 
   <div className="absolute inset-0 bg-[#050F0F]/75" />
       </div>
