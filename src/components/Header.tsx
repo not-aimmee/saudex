@@ -6,6 +6,7 @@ import logo from '/favicon2.png';
 import { AnimatePresence, motion } from 'framer-motion';
 import ContactModal from './ContactModal';
 import { createPortal } from 'react-dom';
+import { useNavigate, useLocation } from "react-router-dom";
 
 
 export default function Header() {
@@ -19,6 +20,16 @@ export default function Header() {
   const [navbarAboutOpen, setNavbarAboutOpen] = useState(false);
   const [drawerAboutOpen, setDrawerAboutOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
+const location = useLocation();
+
+const goHome = () => {
+  if (location.pathname === "/") {
+    scrollToSection('home'); // already home, just scroll
+  } else {
+    navigate('/'); // go to homepage from any other route
+  }
+};
 
 useEffect(() => {
   const handleClickOutside = (event: MouseEvent) => {
@@ -69,8 +80,8 @@ useEffect(() => {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center gap-2">
             
-  <img src={logo} onClick={() => scrollToSection('home')} alt="Saudex Global" className="w-12 h-12 lg:w-20 lg:h-20" draggable={false} />
-  <span onClick={() => scrollToSection('home')} className="font-clash text-[22px] lg:text-[40px] font-bold text-[#F7FAF8] tracking-normal">SAUDEX GLOBAL</span>
+  <img src={logo}  onClick={goHome} alt="Saudex Global" className="w-12 h-12 lg:w-20 lg:h-20" draggable={false} />
+  <span  onClick={goHome} className="font-clash text-[22px] lg:text-[40px] font-bold text-[#F7FAF8] tracking-normal">SAUDEX GLOBAL</span>
 </div>
 
           {/* Desktop Navigation */}
@@ -250,6 +261,14 @@ useEffect(() => {
                   >
                     {TEXT.nav.careers}
                   </Link>
+                  <Link
+                    to="/BeOurPartner"
+                    onClick={() => setNavbarAboutOpen(false) }
+                    className="block w-full text-left px-4 py-2.5 font-archivo font-regular text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0505F0F] transition-colors"
+                  >
+                    Be Our Partner
+                  </Link>
+
                 </div>
               )}
             </div>

@@ -8,6 +8,7 @@ import ContactModal from "./ContactModal";
 import { Link } from "react-router-dom";
 import GlassIcons from '../../components/glassicons';
 import { createPortal } from 'react-dom';
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Footer() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,6 +20,16 @@ export default function Footer() {
   const [fillProgress, setFillProgress] = useState(0);
   const [isCursorInside, setIsCursorInside] = useState(false);
   const circleRef = useRef<HTMLButtonElement>(null);
+  const navigate = useNavigate();
+const location = useLocation();
+
+const goHome = () => {
+  if (location.pathname === "/") {
+    scrollToSection('home'); // already home, just scroll
+  } else {
+    navigate('/'); // go to homepage from any other route
+  }
+};
   const items = [
   { icon: Facebook, color: 'indigo', label: 'Facebook' },
   { icon: Instagram, color: 'red', label: 'Instagram' },
@@ -113,10 +124,10 @@ useEffect(() => {
           {/* Company Info */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img onClick={() => scrollToSection('home')} src={logo}  alt="Saudex Global" className="w-20 h-20" draggable={false} />
+              <img  onClick={goHome} src={logo}  alt="Saudex Global" className="w-20 h-20" draggable={false} />
               <div className="flex flex-col leading-tight">
                 <button
-                 onClick={() => scrollToSection('home')}
+                  onClick={goHome}
                  className="flex flex-col leading-tight hover:opacity-80 transition-opacity text-left"
                 >
                 <span className="text-2xl font-clash font-bold text-white tracking-tight">SAUDEX</span>
