@@ -234,7 +234,7 @@ function HeroSection() {
             className="text-xs tracking-[0.25em] uppercase"
             style={{ fontFamily: "'DM Mono', monospace", color: C.paleGreen }}
           >
-            Est. 2002 {/* Change founding year */}
+            Est. 2015 {/* Change founding year */}
           </span>
         </div>
 
@@ -347,15 +347,11 @@ function MissionSection() {
               <div className="mt-8 space-y-6">
                 {/* Mission paragraph 1 — Change this text */}
                 <p className="text-lg leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", color: C.midInk }}>
-                  For over two decade, we've been the backbone of global commerce.
-                  Our commitment to reliability, speed, and innovation has made us
-                  the trusted partner for businesses that demand nothing less than
-                  perfection in their logistics operations.
+                  For over 20 years, we have been moving businesses forward through world class logistics solutions. Driven by reliability, speed, and innovation, we help companies connect with markets, customers, and opportunities across the globe.
                 </p>
                 {/* Mission paragraph 2 — Change this text */}
                 <p className="text-lg leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", color: C.midInk + "cc" }}>
-                  Every shipment is a promise. We've built an entire organization
-                  around keeping it.
+                  Every shipment is a commitment. Every delivery is a reflection of our promise. We've built our business around providing seamless, dependable logistics services that keep supply chains moving and businesses growing: on time, every time.
                 </p>
               </div>
 
@@ -427,8 +423,8 @@ function ValuesSection() {
               <Eyebrow light>What drives us</Eyebrow>
               {/* Values heading — Change this text */}
               <h2
-                className="text-5xl md:text-6xl font-black uppercase leading-tight"
-                style={{ fontFamily: "'Barlow Condensed', sans-serif", color: C.white }}
+                className="text-5xl md:text-6xl font-black font-clash uppercase leading-tight"
+                style={{ color: C.white }}
               >
                 Our
                 <br />
@@ -438,9 +434,9 @@ function ValuesSection() {
           </div>
 
           {/* Values list — Change index, title, and description */}
-          <ValueItem index="01" title="Reliability" description="We deliver on our promises, every single time. Your cargo arrives when and where it should — no exceptions, no excuses." />
+          <ValueItem index="01" title="Reliability" description="We deliver on our promises, every single time. Your cargo arrives when and where it should, no exceptions, no excuses." />
           <ValueItem index="02" title="Precision" description="Logistics is a science. We apply rigorous systems thinking to every route, every handoff, and every delivery window." />
-          <ValueItem index="03" title="Innovation" description="Cutting-edge technology meets deep operational expertise. We evolve continuously so you never have to worry about falling behind." />
+          <ValueItem index="03" title="Innovation" description="Cutting edge technology meets deep operational expertise. We evolve continuously so you never have to worry about falling behind." />
           <ValueItem index="04" title="Sustainability" description="Moving the world forward means protecting it. Our carbon reduction targets and eco-fleet initiatives make green logistics possible at scale." />
 
           <div className="border-t mt-0" style={{ borderColor: C.accentGreen + "66" }} />
@@ -453,13 +449,6 @@ function ValuesSection() {
 
 function StorySection() {
   // Timeline entries — Change year, title, body for each milestone
-  const milestones = [
-    { year: "2002", title: "Founded", body: "A single truck, a family business, and an unwavering belief that logistics could be done better." },
-    { year: "2008", title: "First International Route", body: "Expanded into Europe with direct freight connections across 12 countries." },
-    { year: "2014", title: "Asia Pacific Hub", body: "Opened our Singapore operations center, anchoring our Asia Pacific network." },
-    { year: "2019", title: "50M Deliveries", body: "Crossed the milestone of 50 million completed deliveries with a 99.8% on-time rate." },
-    { year: "2024", title: "Carbon Neutral Fleet", body: "Committed to full carbon neutrality across our entire fleet by 2030." },
-  ];
 
   return (
     <section className="min-h-screen px-6 md:px-16 py-32" style={{ backgroundColor: C.lightSand }}>
@@ -485,37 +474,12 @@ function StorySection() {
             {/* Story description — Change this text */}
             <p className="mt-8 text-lg leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", color: C.midInk }}>
               What began as a modest family operation has grown into one of the
-              world's most trusted logistics networks — present on six continents,
+              world's most trusted logistics networks, present on six continents,
               employing thousands of dedicated professionals who share our
-              founding values: treat every package like it's your own and never
+              founding values, treat every package like it's your own and never
               compromise on quality.
             </p>
           </div>
-        </div>
-
-        {/* Timeline */}
-        <div className="border-t" style={{ borderColor: C.accentGreen + "44" }}>
-          {milestones.map((m, i) => (
-            <div
-              key={i}
-              className="grid grid-cols-12 gap-6 border-b py-8 group transition-colors duration-200 cursor-default"
-              style={{ borderColor: C.accentGreen + "33" }}
-            >
-              <div className="col-span-2 md:col-span-1">
-                <span className="text-sm" style={{ fontFamily: "'DM Mono', monospace", color: C.accentGreen }}>{m.year}</span>
-              </div>
-              <div className="col-span-10 md:col-span-3">
-                <span className="text-xl font-black uppercase tracking-tight" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: C.darkInk }}>
-                  {m.title}
-                </span>
-              </div>
-              <div className="col-span-12 md:col-span-6 md:col-start-6">
-                <p className="text-base leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", color: C.midInk }}>
-                  {m.body}
-                </p>
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>

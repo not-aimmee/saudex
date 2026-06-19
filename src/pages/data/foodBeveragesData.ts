@@ -5,7 +5,7 @@ export const foodBeveragesData: IndustryPageData = {
   heroEyebrow: "Industry Solutions",
   heroHeading: "Safe. Fresh.\nOn Time,\nEvery Time.",
   heroBody:
-    "Food and beverage logistics carry a weight no other category does — they carry public health. We operate to the strictest food safety standards, linking production lines to consumption points with unbroken quality control at every node.",
+    "Food and beverage logistics carry a weight no other category does, they carry public health. We operate to the strictest food safety standards, linking production lines to consumption points with unbroken quality control at every node.",
   heroImage: "/images/i1.webp",
   heroImageAlt: "Modern food production facility with workers in hygiene suits on a conveyor line",
   heroStats: [

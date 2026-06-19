@@ -71,11 +71,11 @@ function App() {
        </Route>
        <Route path="aboutUs" element={<AboutUs/>} />
        <Route path="careers" element={<Careers/>} />
-       <Route path="BeOurPartner" element={<BeOurPartner/>}/>
       </Route>
       <Route element={<SimpleLayout/>}>
        <Route path="privacy_policy" element ={<PrivacyPolicy/>} />
        <Route path="terms_of_service" element ={<TermsOfService/>} />
+       <Route path="BeOurPartner" element={<BeOurPartner/>}/>
       </Route>
     </Routes>
   

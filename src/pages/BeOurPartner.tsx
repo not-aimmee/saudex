@@ -3,42 +3,7 @@ import { Helmet } from "react-helmet-async";
 import ContactModal from "../components/ContactModal";
 import BlurText from "../../components/blurtext";
 
-const TRACKS = [
-  {
-    label: "Agency Prtner",
-    description:
-      "Deliver our platform as part of your client services.",
-  },
-  {
-    label: "OEM Partner",
-    description:
-      " Embed our technology directly into your hardware or software.",
-  },
-  {
-    label: "Consulting Partner",
-    description:
-      "Help clients implement and scale with our platform.",
-  },
-];
 
-const BENEFITS = [
-  {
-    title: "Revenue share",
-    description: "Transparent margins on every deal, paid out monthly with no hidden tiers.",
-  },
-  {
-    title: "Dedicated support",
-    description: "A named point of contact who knows your account, not a rotating queue.",
-  },
-  {
-    title: "Co-marketing",
-    description: "Joint case studies, launch announcements, and event placement when it fits.",
-  },
-  {
-    title: "Early access",
-    description: "New features and roadmap visibility before they reach the public.",
-  },
-];
 
 const STEPS = [
   {
@@ -56,6 +21,14 @@ const STEPS = [
     title: "Launch",
     description: "Onboarding, training, and your first joint opportunity.",
   },
+];
+const WHY_CHOOSE_US = [
+  "Reliable and long-term business opportunities",
+  "Competitive commercial terms",
+  "Dedicated partnership support",
+  "Strong operational and logistics expertise",
+  "Scalable solutions for growing businesses",
+  "Transparent communication and mutual growth",
 ];
 
 export default function BeOurPartner() {
@@ -80,9 +53,6 @@ export default function BeOurPartner() {
           }}
         />
         <div className="relative z-10 max-w-5xl mx-auto px-10 pt-32 pb-24 text-center">
-          <p className="uppercase text-[#228B5A] font-archivo text-xl font-medium tracking-[0.4em] mb-6">
-            partnerships
-          </p>
           <div className="flex justify-center">
           <BlurText
             text="Be Our Partner."
@@ -93,60 +63,31 @@ export default function BeOurPartner() {
           />
           </div>
           <p className="text-[#A3BDB8] text-lg mt-8 max-w-xl mx-auto">
-            Join our growing network of partners and unlock new opportunities.
-            We offer competitive terms, dedicated support, and a clear path to
-            mutual growth.
+            Join our growing network of partners and unlock new opportunities. Together, we create smarter logistics solutions, expand market reach, and deliver greater value to customers. We offer competitive terms, dedicated support, and a clear path to mutual growth.
           </p>
         </div>
       </section>
 
       {/* Partnership tracks */}
       <section className="relative bg-[#050f0f] border-t border-white/[0.08] px-10 py-24">
-        <div className="max-w-5xl mx-auto">
-          <p className="uppercase text-[#228B5A] font-archivo text-lg font-medium tracking-[0.3em] mb-4">
-            choose your track
+  <div className="max-w-5xl mx-auto">
+    <h2 className="text-white font-clash text-6xl font-bold mb-12 max-w-2xl">
+      Why Choose Us?
+    </h2>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.08]">
+      {WHY_CHOOSE_US.map((point, i) => (
+        <div key={i} className="bg-[#050f0f] p-8 flex gap-4">
+          <span className="flex-shrink-0 w-8 h-8 rounded-full bg-white/[0.08] text-white font-clash font-bold flex items-center justify-center text-sm">
+            {String(i + 1).padStart(2, "0")}
+          </span>
+          <p className="text-[#A3BDB8] text-lg leading-relaxed">
+            {point}
           </p>
-          <h2 className="text-white font-clash text-6xl font-bold mb-12 max-w-2xl">
-            Three ways to partner with us.
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.08]">
-            {TRACKS.map((track) => (
-              <div key={track.label} className="bg-[#050f0f] p-8">
-                <h3 className="text-white font-clash text-3xl font-bold mb-3">
-                  {track.label}
-                </h3>
-                <p className="text-[#A3BDB8] text-lg leading-relaxed">
-                  {track.description}
-                </p>
-              </div>
-            ))}
-          </div>
         </div>
-      </section>
-
-      {/* Benefits */}
-      <section className="relative bg-[#050f0f] border-t border-white/[0.08] px-10 py-24">
-        <div className="max-w-5xl mx-auto">
-          <p className="uppercase text-[#228B5A] font-archivo text-lg font-medium tracking-[0.3em] mb-4">
-            what you get
-          </p>
-          <h2 className="text-white font-clash text-7xl font-bold mb-12 max-w-2xl">
-            Built for partners who stay.
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {BENEFITS.map((benefit) => (
-              <div key={benefit.title} className="border-l border-[#228B5A]/40 pl-6">
-                <h3 className="text-white font-archivo text-3xl font-medium mb-2">
-                  {benefit.title}
-                </h3>
-                <p className="text-[#A3BDB8] text-lg leading-relaxed">
-                  {benefit.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* How it works */}
       <section className="relative bg-[#050f0f] border-t border-white/[0.08] px-10 py-24">

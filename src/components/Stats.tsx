@@ -7,7 +7,7 @@ const stats = [
     value: 10,
     label: "Years Of Experience",
     suffix: "+",
-    sub: "",
+    sub: "Experience Gained",
     up: true,
   },
   {
@@ -77,22 +77,22 @@ function StatItem({
       
 
       {/* big number */}
-      <div className="flex-1 font-clash flex flex-col justify-center">
+      <div className="flex-1 font-clash flex flex-col justify-center ">
         <div
-          className="leading-none text-white"
+          className="leading-none text-white hover:text-[#ff6200]"
           style={{ fontSize: "clamp(3rem, 5.5vw, 6rem)", fontWeight: 600, letterSpacing: "-0.03em" }}
         >
           {display}
           {stat.suffix && (
-            <span style={{ fontSize: "0.85em", fontWeight: 400, color: "#f7faf8" }}>
+            <span className="hover:text-[#ff6200]" style={{ fontSize: "0.85em", fontWeight: 400, color: "#f7faf8" }}>
               {stat.suffix}
             </span>
           )}
         </div>
 
         <p
-          className="mt-4 text-sm tracking-widest uppercase"
-          style={{ color: "rgba(255,255,255,0.45)" }}
+          className="mt-4 text-md tracking-widest uppercase"
+          style={{ color: "rgba(255,255,255,0.75)" }}
         >
           {stat.label}
         </p>
@@ -100,7 +100,7 @@ function StatItem({
 
       {/* bottom meta */}
       <div className="mt-8 flex items-center justify-between">
-        <span className="text-xs" style={{ color: "rgba(255,255,255,0.3)" }}>
+        <span className="text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>
           {stat.sub}
         </span>
       </div>

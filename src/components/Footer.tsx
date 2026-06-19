@@ -133,7 +133,7 @@ useEffect(() => {
                  </button>
               </div>
             </div>
-            <p className="text-gray-300 mb-6">
+            <p className="text-gray-300 mb-6 text-center">
               {TEXT.footer.tagline}
             </p>
             {/*icons */}

@@ -106,8 +106,7 @@ function HeroSection() {
             className="text-base md:text-lg font-regular font-archivo leading-relaxed max-w-xs"
             style={{ color: C.mintGreen, animation: "fadeIn 1s ease 0.6s both" }}
           >
-            We're hiring operators, engineers, analysts, and leaders who believe
-            global logistics can be smarter, faster, and cleaner.
+            We're looking for talented individuals who believe global logistics can be smarter, faster and cleaner.
           </p>
 
           {/* Scroll-to-jobs CTA */}
@@ -141,21 +140,7 @@ function HeroSection() {
           className="absolute inset-0"
           style={{ background: `linear-gradient(to right, ${C.deepGreen} 0%, transparent 40%)` /* Gradient blending left edge */ }}
         />
-        {/* Team size badge — positioned inside image */}
-        <div
-          className="absolute bottom-8 right-8 text-right"
-          style={{ animation: "fadeIn 1s ease 0.8s both" }}
-        >
-          <div
-            className="text-5xl font-black font-archivo leading-none"
-            style={{  color: C.white /* Team size number color */ }}
-          >
-            4,200+
-          </div>
-          <div className="text-xs tracking-widest font-archivo uppercase mt-1" style={{  color: C.paleGreen /* Team size label color */ }}>
-            People worldwide {/* Change label */}
-          </div>
-        </div>
+        
       </div>
 
       <style>{`
