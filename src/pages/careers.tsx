@@ -1,5 +1,7 @@
 import { useState, useRef } from "react";
+import ContactModal from "../components/ContactModal";
 
+ 
 /* ─────────────────────────────────────────────
    COLOR PALETTE — same brand, edit to retheme
    ───────────────────────────────────────────── */
@@ -19,36 +21,18 @@ const C = {
 };
 
 /* ─────────────────────────────────────────────
-   IMAGE URLS — replace with your own photos
-   ───────────────────────────────────────────── */
-const IMAGES = {
-  hero:   "https://images.unsplash.com/photo-1781559818983-4180d744416a?w=900&h=1100&fit=crop&auto=format",   /* Hero right-panel image */
-  grid1:  "https://images.unsplash.com/photo-1622675363311-3e1904dc1885?w=700&h=500&fit=crop&auto=format",    /* Life grid image 1 */
-  grid2:  "https://images.unsplash.com/photo-1645736315000-6f788915923b?w=700&h=900&fit=crop&auto=format",    /* Life grid image 2 */
-  grid3:  "https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=700&h=500&fit=crop&auto=format",    /* Life grid image 3 */
-  grid4:  "https://images.unsplash.com/photo-1740914994162-0b2a49280aeb?w=700&h=700&fit=crop&auto=format",    /* Life grid image 4 */
-};
-
-/* ─────────────────────────────────────────────
    DATA — edit all text, roles, perks here
    ───────────────────────────────────────────── */
 
 // Job listings — Change title, dept, location, type for each role
 const JOBS = [
-  { id: 1, title: "Senior Route Optimization Engineer",   dept: "Engineering",  location: "Singapore",     type: "Full-time" },
-  { id: 2, title: "Global Freight Analyst",               dept: "Operations",   location: "Rotterdam",     type: "Full-time" },
-  { id: 3, title: "Fleet Sustainability Manager",         dept: "Operations",   location: "London",        type: "Full-time" },
-  { id: 4, title: "Product Manager, Tracking Platform",   dept: "Engineering",  location: "Remote",        type: "Full-time" },
-  { id: 5, title: "Regional Sales Director — APAC",       dept: "Commercial",   location: "Hong Kong",     type: "Full-time" },
-  { id: 6, title: "UX Researcher",                        dept: "Engineering",  location: "Remote",        type: "Contract" },
-  { id: 7, title: "Customs Compliance Specialist",        dept: "Legal",        location: "New York",      type: "Full-time" },
-  { id: 8, title: "Head of People & Culture",             dept: "People",       location: "Amsterdam",     type: "Full-time" },
-  { id: 9, title: "Supply Chain Data Scientist",          dept: "Engineering",  location: "Remote",        type: "Full-time" },
-  { id: 10, title: "Business Development Manager — MEA",  dept: "Commercial",   location: "Dubai",         type: "Full-time" },
-];
+  { id: 4, title: "Product Manager, Tracking Platform",   dept: "Engineering",  location: "UAE",        type: "Full-time" },
+  { id: 5, title: "Regional Sales Director — APAC",       dept: "Commercial",   location: "Saudi Arab",     type: "Full-time" },
+  { id: 7, title: "Customs Compliance Specialist",        dept: "Legal",        location: "UAE",      type: "Full-time" },
+  ];
 
 // Departments for filter tabs — Change these labels
-const DEPTS = ["All", "Engineering", "Operations", "Commercial", "Legal", "People"];
+const DEPTS = ["All", "Engineering", "Commercial", "Legal"];
 
 // Culture cards — Change emoji, title, description for each card
 const CULTURE_CARDS = [
@@ -58,16 +42,6 @@ const CULTURE_CARDS = [
   { icon: "🤝", label: "Ownership mentality", body: "You own your work from brief to launch. No unnecessary layers, no permission to ask for." },
   { icon: "♻️", label: "Built to last", body: "We're building infrastructure for the next century, with sustainability baked into every choice." },
   { icon: "📍", label: "Flexible by design", body: "Hybrid and remote roles across 28 countries. Work where you do your best thinking." },
-];
-
-// Benefits — Change icon, title, description for each perk
-const BENEFITS = [
-  { num: "01", title: "Equity for everyone",          body: "Not just executives. Every hire at every level gets a stake in the company's future." },
-  { num: "02", title: "$4k learning budget",          body: "Annual stipend for courses, conferences, books, and certifications — yours to spend." },
-  { num: "03", title: "6 months parental leave",      body: "Full pay for any parent, primary or secondary caregiver, anywhere in the world." },
-  { num: "04", title: "Sabbatical at 5 years",        body: "Four weeks of fully paid sabbatical to recharge, travel, or pursue a personal project." },
-  { num: "05", title: "Global relocation support",    body: "Want to move to another hub city? We cover visa, flights, and first month's rent." },
-  { num: "06", title: "Carbon-offset commute",        body: "We offset 100% of your commuting footprint and subsidize public transit passes worldwide." },
 ];
 
 /* ─────────────────────────────────────────────
@@ -98,10 +72,9 @@ function HeroSection() {
 
         {/* Ghost background number */}
         <div
-          className="absolute top-1/2 -translate-y-1/2 left-0 pointer-events-none select-none"
+          className="absolute top-1/2 -translate-y-1/2 left-0 font-archivo pointer-events-none select-none"
           aria-hidden
           style={{
-            fontFamily: "'Barlow Condensed', sans-serif",
             fontSize: "clamp(14rem, 35vw, 48rem)",
             fontWeight: 900,
             color: "transparent",
@@ -119,15 +92,15 @@ function HeroSection() {
           <div className="flex items-center gap-4 mb-10">
             <div className="h-px w-16" style={{ backgroundColor: C.brightGreen }} />
             {/* Open roles badge — updates automatically from JOBS array */}
-            <span className="text-xs tracking-[0.25em] uppercase px-3 py-1" style={{ fontFamily: "'DM Mono', monospace", color: C.brightGreen, border: `1px solid ${C.brightGreen}66` }}>
+            <span className="text-xs tracking-[0.25em] font-archivo uppercase px-3 py-1" style={{  color: C.brightGreen, border: `1px solid ${C.brightGreen}66` }}>
               {JOBS.length} Open Roles {/* Updates with JOBS array length */}
             </span>
           </div>
 
           {/* Hero headline — Change this text */}
           <h1
-            className="text-[11vw] md:text-[8vw] font-black uppercase leading-[0.88] tracking-tight mb-10"
-            style={{ fontFamily: "'Barlow Condensed', sans-serif", color: C.white, animation: "slideUp 0.9s cubic-bezier(0.16,1,0.3,1) both" }}
+            className="text-[7vw] md:text-[7.5vw] font-black font-clash uppercase leading-[0.88] tracking-tight mb-10"
+            style={{  color: C.white, animation: "slideUp 0.9s cubic-bezier(0.16,1,0.3,1) both" }}
           >
             Build
             <br />
@@ -140,8 +113,8 @@ function HeroSection() {
 
           {/* Hero description — Change this text */}
           <p
-            className="text-base md:text-lg font-light leading-relaxed max-w-xs"
-            style={{ fontFamily: "'DM Sans', sans-serif", color: C.mintGreen, animation: "fadeIn 1s ease 0.6s both" }}
+            className="text-base md:text-lg font-regular font-archivo leading-relaxed max-w-xs"
+            style={{ color: C.mintGreen, animation: "fadeIn 1s ease 0.6s both" }}
           >
             We're hiring operators, engineers, analysts, and leaders who believe
             global logistics can be smarter, faster, and cleaner.
@@ -149,8 +122,8 @@ function HeroSection() {
 
           {/* Scroll-to-jobs CTA */}
           <button
-            className="mt-10 flex items-center gap-3 text-sm tracking-widest uppercase transition-all duration-200 group"
-            style={{ fontFamily: "'DM Mono', monospace", color: C.paleGreen, background: "none", border: "none", cursor: "pointer" }}
+            className="mt-10 flex items-center gap-3 text-sm font-archivo tracking-widest uppercase transition-all duration-200 group"
+            style={{  color: C.paleGreen, background: "none", border: "none", cursor: "pointer" }}
             onClick={() => document.getElementById("open-roles")?.scrollIntoView({ behavior: "smooth" })}
           >
             <span>See open roles</span>
@@ -168,8 +141,8 @@ function HeroSection() {
       {/* RIGHT — image panel */}
       <div className="relative min-h-[50vh] md:min-h-0" style={{ backgroundColor: C.midGreen /* Image panel fallback bg */ }}>
         <img
-          src={IMAGES.hero}
-          alt="Meridian team member at work in warehouse" /* Change alt text */
+          src="/images/c.webp"
+          alt="saudex team member at work in warehouse" /* Change alt text */
           className="w-full h-full object-cover"
           style={{ filter: "brightness(0.75) saturate(0.9)" /* Image brightness/saturation — adjust these */ }}
         />
@@ -184,12 +157,12 @@ function HeroSection() {
           style={{ animation: "fadeIn 1s ease 0.8s both" }}
         >
           <div
-            className="text-5xl font-black leading-none"
-            style={{ fontFamily: "'Barlow Condensed', sans-serif", color: C.white /* Team size number color */ }}
+            className="text-5xl font-black font-archivo leading-none"
+            style={{  color: C.white /* Team size number color */ }}
           >
             4,200+
           </div>
-          <div className="text-xs tracking-widest uppercase mt-1" style={{ fontFamily: "'DM Mono', monospace", color: C.paleGreen /* Team size label color */ }}>
+          <div className="text-xs tracking-widest font-archivo uppercase mt-1" style={{  color: C.paleGreen /* Team size label color */ }}>
             People worldwide {/* Change label */}
           </div>
         </div>
@@ -214,11 +187,10 @@ function CultureSection() {
       <div className="px-6 md:px-16 mb-10 max-w-7xl mx-auto">
         <div className="flex items-end justify-between">
           <div>
-            <Eyebrow light>Life at Meridian</Eyebrow>
             {/* Culture heading — Change this text */}
             <h2
-              className="text-4xl md:text-5xl font-black uppercase leading-tight"
-              style={{ fontFamily: "'Barlow Condensed', sans-serif", color: C.white }}
+              className="text-4xl md:text-5xl font-black font-archivo uppercase leading-tight"
+              style={{  color: C.white }}
             >
               A culture built
               <br />
@@ -226,7 +198,7 @@ function CultureSection() {
             </h2>
           </div>
           {/* Scroll hint */}
-          <div className="hidden md:flex items-center gap-2 pb-1" style={{ fontFamily: "'DM Mono', monospace", color: C.paleGreen + "88", fontSize: "0.7rem", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+          <div className="hidden md:flex items-center gap-2 pb-1 font-archivo" style={{ color: C.paleGreen + "88", fontSize: "0.7rem", letterSpacing: "0.15em", textTransform: "uppercase" }}>
             Drag to explore
             <span style={{ fontSize: "1rem" }}>→</span>
           </div>
@@ -242,7 +214,7 @@ function CultureSection() {
         {CULTURE_CARDS.map((card, i) => (
           <div
             key={i}
-            className="snap-start shrink-0 flex flex-col justify-between p-8 border transition-colors duration-200 group cursor-default"
+            className="snap-start shrink-0 flex flex-col justify-between p-8 border transition-colors font-archivo duration-200 group cursor-default"
             style={{
               width: "clamp(260px, 34vw, 380px)",
               minHeight: "260px",
@@ -255,13 +227,13 @@ function CultureSection() {
             <div>
               {/* Card label */}
               <div
-                className="text-xl font-black uppercase tracking-tight mb-3"
-                style={{ fontFamily: "'Barlow Condensed', sans-serif", color: C.white /* Card title color */ }}
+                className="text-xl font-black font-archivo uppercase tracking-tight mb-3"
+                style={{  color: C.white /* Card title color */ }}
               >
                 {card.label}
               </div>
               {/* Card body */}
-              <p className="text-sm leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", color: C.mintGreen /* Card body color */ }}>
+              <p className="text-sm leading-relaxed font-archivo" style={{  color: C.mintGreen /* Card body color */ }}>
                 {card.body}
               </p>
             </div>
@@ -274,6 +246,7 @@ function CultureSection() {
 
 /** OPEN ROLES — filterable job board */
 function OpenRolesSection() {
+  const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("All");
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
@@ -301,12 +274,12 @@ function OpenRolesSection() {
           {/* Role count */}
           <div className="md:col-span-3 md:col-start-8 text-right">
             <div
-              className="text-6xl font-black leading-none tabular-nums"
-              style={{ fontFamily: "'Barlow Condensed', sans-serif", color: C.brightGreen /* Role count color */ }}
+              className="text-6xl font-black font-clash leading-none tabular-nums"
+              style={{  color: C.brightGreen /* Role count color */ }}
             >
               {filtered.length}
             </div>
-            <div className="text-xs tracking-widest uppercase mt-1" style={{ fontFamily: "'DM Mono', monospace", color: C.midInk + "99" }}>
+            <div className="text-xs tracking-widest font-archivo uppercase mt-1" style={{ color: C.midInk + "99" }}>
               {activeTab === "All" ? "Total" : activeTab} {filtered.length === 1 ? "role" : "roles"} {/* Auto-updates */}
             </div>
           </div>
@@ -318,9 +291,9 @@ function OpenRolesSection() {
             <button
               key={d}
               onClick={() => setActiveTab(d)}
-              className="px-4 py-2 text-xs tracking-widest uppercase transition-all duration-200"
+              className="px-4 py-2 text-xs font-archivo tracking-widest uppercase transition-all duration-200"
               style={{
-                fontFamily: "'DM Mono', monospace",
+                
                 backgroundColor: activeTab === d ? C.deepGreen : "transparent", /* Active tab bg */
                 color: activeTab === d ? C.white : C.midInk, /* Active tab text */
                 border: `1px solid ${activeTab === d ? C.deepGreen : C.accentGreen + "44"}`,
@@ -349,7 +322,7 @@ function OpenRolesSection() {
             >
               {/* Row index */}
               <div className="col-span-1 hidden md:block">
-                <span className="text-xs tabular-nums" style={{ fontFamily: "'DM Mono', monospace", color: C.accentGreen + "66" }}>
+                <span className="text-xs tabular-nums font-archivo" style={{ color: C.accentGreen + "66" }}>
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </div>
@@ -357,8 +330,8 @@ function OpenRolesSection() {
               {/* Job title */}
               <div className="col-span-12 md:col-span-5">
                 <span
-                  className="text-lg md:text-xl font-black uppercase tracking-tight"
-                  style={{ fontFamily: "'Barlow Condensed', sans-serif", color: C.darkInk /* Job title color */ }}
+                  className="text-lg md:text-xl font-black font-archivo uppercase tracking-tight"
+                  style={{  color: C.darkInk /* Job title color */ }}
                 >
                   {job.title}
                 </span>
@@ -367,8 +340,8 @@ function OpenRolesSection() {
               {/* Dept tag */}
               <div className="col-span-5 md:col-span-2">
                 <span
-                  className="text-xs tracking-widest uppercase px-2 py-1"
-                  style={{ fontFamily: "'DM Mono', monospace", color: C.accentGreen, border: `1px solid ${C.accentGreen}44` }}
+                  className="text-xs tracking-widest font-archivo uppercase px-2 py-1"
+                  style={{  color: C.accentGreen, border: `1px solid ${C.accentGreen}44` }}
                 >
                   {job.dept}
                 </span>
@@ -376,14 +349,14 @@ function OpenRolesSection() {
 
               {/* Location */}
               <div className="col-span-4 md:col-span-2">
-                <span className="text-sm" style={{ fontFamily: "'DM Sans', sans-serif", color: C.midInk /* Location color */ }}>
+                <span className="text-sm font-archivo" style={{  color: C.midInk /* Location color */ }}>
                   {job.location}
                 </span>
               </div>
 
               {/* Type + Arrow */}
-              <div className="col-span-3 md:col-span-2 flex items-center justify-end gap-3">
-                <span className="text-xs hidden md:block" style={{ fontFamily: "'DM Mono', monospace", color: C.midInk + "88" }}>
+              <div  className="col-span-3 md:col-span-2 flex items-center justify-end gap-3">
+                <span onClick={() => setIsOpen(true)} className="text-xs hidden md:block font-archivo" style={{ color: C.midInk + "88" }}>
                   {job.type}
                 </span>
                 <span
@@ -395,15 +368,22 @@ function OpenRolesSection() {
               </div>
             </div>
           ))}
+          <ContactModal
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        serviceId="service_nlnhzd2"       // from EmailJS dashboard
+        templateId="template_zjgqs1k"     // from EmailJS dashboard
+        publicKey="sXmLsr6PApabpnmxa"       // from EmailJS Account → Public Key
+      />
         </div>
 
         {/* No results state */}
         {filtered.length === 0 && (
           <div className="text-center py-20">
-            <div className="text-5xl font-black uppercase" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: C.accentGreen + "55" }}>
+            <div className="text-5xl font-black font-archivo uppercase" style={{  color: C.accentGreen + "55" }}>
               Nothing yet
             </div>
-            <p className="mt-3 text-sm" style={{ fontFamily: "'DM Sans', sans-serif", color: C.midInk + "88" }}>
+            <p className="mt-3 text-sm font-archivo" style={{  color: C.midInk + "88" }}>
               Check back soon — we're always growing.
             </p>
           </div>
@@ -413,151 +393,6 @@ function OpenRolesSection() {
   );
 }
 
-/** BENEFITS — staggered asymmetric grid */
-function BenefitsSection() {
-  return (
-    <section className="py-24 px-6 md:px-16" style={{ backgroundColor: C.lightSand }}>
-      <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-12 gap-16 mb-20 items-end">
-          <div className="md:col-span-6">
-            <Eyebrow>What you get</Eyebrow>
-            {/* Benefits heading — Change this text */}
-            <h2
-              className="text-4xl md:text-6xl font-black uppercase leading-tight"
-              style={{ fontFamily: "'Barlow Condensed', sans-serif", color: C.darkInk }}
-            >
-              Built for
-              <br />
-              <span style={{ color: C.accentGreen /* Accent word */ }}>real life</span>
-            </h2>
-          </div>
-          {/* Benefits tagline — Change this text */}
-          <div className="md:col-span-5 md:col-start-8">
-            <p className="text-base leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", color: C.midInk }}>
-              Great logistics requires people at their best. Our benefits are
-              designed to keep you healthy, sharp, and growing — wherever you are in the world.
-            </p>
-          </div>
-        </div>
-
-        {/* Benefits grid — 3 col on desktop, staggered offsets */}
-        <div className="grid md:grid-cols-3 gap-0 border-t border-l" style={{ borderColor: C.accentGreen + "33" }}>
-          {BENEFITS.map((b, i) => (
-            <div
-              key={i}
-              className="p-8 border-b border-r transition-colors duration-200 group cursor-default"
-              style={{
-                borderColor: C.accentGreen + "33",
-                backgroundColor: "transparent",
-                marginTop: i % 3 === 1 ? "3rem" : i % 3 === 2 ? "1.5rem" : 0, /* Stagger offset per column */
-              }}
-              onMouseEnter={e => (e.currentTarget.style.backgroundColor = C.accentGreen + "0e")}
-              onMouseLeave={e => (e.currentTarget.style.backgroundColor = "transparent")}
-            >
-              {/* Benefit number */}
-              <div
-                className="text-4xl font-black mb-6 tabular-nums"
-                style={{ fontFamily: "'Barlow Condensed', sans-serif", color: C.brightGreen /* Benefit number color */ }}
-              >
-                {b.num}
-              </div>
-              {/* Benefit title */}
-              <div
-                className="text-xl font-black uppercase tracking-tight mb-3"
-                style={{ fontFamily: "'Barlow Condensed', sans-serif", color: C.darkInk /* Benefit title color */ }}
-              >
-                {b.title}
-              </div>
-              {/* Benefit description */}
-              <p className="text-sm leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", color: C.midInk /* Benefit body color */ }}>
-                {b.body}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/** LIFE IN PHOTOS — editorial masonry-style photo grid */
-function PhotoGridSection() {
-  return (
-    <section className="py-24 px-6 md:px-16" style={{ backgroundColor: C.deepGreen }}>
-      <div className="max-w-7xl mx-auto">
-        <Eyebrow light>The day to day</Eyebrow>
-
-        {/* Photo grid — asymmetric 2-col layout */}
-        <div className="grid md:grid-cols-12 gap-4 mt-10">
-
-          {/* Tall image left */}
-          <div className="md:col-span-5 relative overflow-hidden" style={{ backgroundColor: C.midGreen, minHeight: "400px" }}>
-            <img src={IMAGES.grid2} alt="Forklift moving pallets in Meridian warehouse" className="w-full h-full object-cover" style={{ filter: "brightness(0.8) saturate(0.85)" }} />
-            {/* Caption overlay */}
-            <div className="absolute bottom-0 left-0 right-0 p-5" style={{ background: `linear-gradient(to top, ${C.deepGreen}cc, transparent)` }}>
-              <p className="text-xs tracking-widest uppercase" style={{ fontFamily: "'DM Mono', monospace", color: C.paleGreen }}>
-                Rotterdam Hub, Netherlands {/* Change caption */}
-              </p>
-            </div>
-          </div>
-
-          {/* Right column: two stacked images */}
-          <div className="md:col-span-7 grid grid-rows-2 gap-4">
-            <div className="relative overflow-hidden" style={{ backgroundColor: C.midGreen, minHeight: "220px" }}>
-              <img src={IMAGES.grid1} alt="Team meeting at Meridian headquarters" className="w-full h-full object-cover" style={{ filter: "brightness(0.8) saturate(0.85)" }} />
-              <div className="absolute bottom-0 left-0 right-0 p-4" style={{ background: `linear-gradient(to top, ${C.deepGreen}cc, transparent)` }}>
-                <p className="text-xs tracking-widest uppercase" style={{ fontFamily: "'DM Mono', monospace", color: C.paleGreen }}>
-                  Singapore HQ {/* Change caption */}
-                </p>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="relative overflow-hidden" style={{ backgroundColor: C.midGreen }}>
-                <img src={IMAGES.grid3} alt="Meridian team collaborating on logistics planning" className="w-full h-full object-cover" style={{ filter: "brightness(0.75) saturate(0.8)" }} />
-              </div>
-              {/* Pull stat card */}
-              <div
-                className="flex flex-col justify-between p-6"
-                style={{ backgroundColor: C.brightGreen /* Stat card bg — Change color */ }}
-              >
-                <div
-                  className="text-5xl font-black leading-none tabular-nums"
-                  style={{ fontFamily: "'Barlow Condensed', sans-serif", color: C.deepGreen /* Stat card number color */ }}
-                >
-                  94%
-                </div>
-                {/* Stat card description — Change this text */}
-                <p
-                  className="text-sm font-medium leading-snug"
-                  style={{ fontFamily: "'DM Sans', sans-serif", color: C.deepGreen + "cc" /* Stat card text color */ }}
-                >
-                  of employees would recommend Meridian to a friend
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Employee quote — centered below grid */}
-        <div className="mt-16 border-t pt-12" style={{ borderColor: C.accentGreen + "33" }}>
-          <div className="max-w-2xl mx-auto text-center">
-            {/* Quote — Change this text */}
-            <blockquote
-              className="text-2xl md:text-3xl font-black uppercase leading-tight mb-6"
-              style={{ fontFamily: "'Barlow Condensed', sans-serif", color: C.white }}
-            >
-              "I've worked at Meridian for nine years. I stay because the problems never get boring."
-            </blockquote>
-            {/* Attribution — Change this */}
-            <cite className="text-xs tracking-widest not-italic" style={{ fontFamily: "'DM Mono', monospace", color: C.paleGreen }}>
-              — Marcus O., Chief Operations Officer, Amsterdam {/* Change attribution */}
-            </cite>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* ─────────────────────────────────────────────
    ROOT
@@ -568,8 +403,6 @@ export default function Careers() {
       <HeroSection />
       <CultureSection />
       <OpenRolesSection />
-      <BenefitsSection />
-      <PhotoGridSection />
     </div>
   );
 }

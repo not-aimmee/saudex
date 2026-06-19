@@ -240,8 +240,8 @@ function HeroSection() {
 
         {/* Hero headline with stagger animation */}
         <h1
-          className="text-[13vw] md:text-[11vw] font-black uppercase leading-[0.88] tracking-tight mb-16"
-          style={{ fontFamily: "'Barlow Condensed', sans-serif", color: C.white }}
+          className="text-[9vw] md:text-[10vw] font-black font-clash font-semibold uppercase leading-[0.88] tracking-tight mb-16"
+          style={{  color: "#f7faf8" }}
         >
           <StaggeredWords text="We move" style={{ display: "block" }} />
           {/* Accent line — color the word "world" */}
@@ -286,18 +286,6 @@ function HeroSection() {
             Connecting businesses across every continent with the precision,
             speed, and integrity global commerce demands.
           </p>
-          {/* Scroll indicator */}
-          <div
-            className="flex items-center gap-3 shrink-0"
-            style={{ fontFamily: "'DM Mono', monospace", color: C.paleGreen + "99", animation: "fadeIn 1s ease 1s both" }}
-          >
-            <span className="text-xs tracking-widest uppercase">Scroll</span>
-            <div className="flex flex-col gap-1">
-              {[...Array(3)].map((_, i) => (
-                <div key={i} className="h-px" style={{ width: `${12 + i * 8}px`, backgroundColor: C.paleGreen, opacity: 0.3 + i * 0.25 }} />
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -359,7 +347,7 @@ function MissionSection() {
               <div className="mt-8 space-y-6">
                 {/* Mission paragraph 1 — Change this text */}
                 <p className="text-lg leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", color: C.midInk }}>
-                  For over two decades, we've been the backbone of global commerce.
+                  For over two decade, we've been the backbone of global commerce.
                   Our commitment to reliability, speed, and innovation has made us
                   the trusted partner for businesses that demand nothing less than
                   perfection in their logistics operations.
@@ -411,10 +399,10 @@ function StatsSection() {
 
           {/* Stats — Change values, suffixes, and labels */}
           <div className="md:col-span-8 border-t" style={{ borderColor: C.accentGreen + "55" }}>
-            <AnimatedStat value={150} suffix="+" label="Countries served" />
-            <AnimatedStat value={50000000} suffix="+" label="Deliveries completed" />
-            <AnimatedStat value={99} suffix=".8%" label="On-time delivery rate" />
-            <AnimatedStat value={28} suffix="" label="Years in operation" />
+            <AnimatedStat value={15} suffix="+" label="Countries served" />
+            <AnimatedStat value={8450} suffix="+" label="Deliveries completed" />
+            <AnimatedStat value={98} suffix=".8%" label="On-time delivery rate" />
+            <AnimatedStat value={10} suffix="" label="Years in operation" />
           </div>
         </div>
       </div>
@@ -462,48 +450,6 @@ function ValuesSection() {
   );
 }
 
-/** Pull quote — full-bleed accent moment */
-function PullQuote() {
-  return (
-    <section
-      className="px-6 md:px-16 py-24 relative overflow-hidden"
-      style={{ backgroundColor: C.brightGreen /* Pull quote background color */ }}
-    >
-      {/* Ghost quotation mark */}
-      <div
-        className="absolute -top-8 left-4 pointer-events-none select-none"
-        aria-hidden
-        style={{
-          fontFamily: "Georgia, serif",
-          fontSize: "clamp(16rem, 40vw, 52rem)",
-          fontWeight: 900,
-          color: C.deepGreen + "18", /* Ghost quote mark opacity — Change */
-          lineHeight: 1,
-          userSelect: "none",
-        }}
-      >
-        "
-      </div>
-
-      <div className="max-w-5xl mx-auto relative z-10">
-        {/* Pull quote text — Change this */}
-        <blockquote
-          className="text-4xl md:text-6xl font-black uppercase leading-[0.95] tracking-tight"
-          style={{ fontFamily: "'Barlow Condensed', sans-serif", color: C.deepGreen /* Quote text color */ }}
-        >
-          "Every package is a promise. We've never missed one."
-        </blockquote>
-        {/* Attribution — Change this */}
-        <cite
-          className="block mt-8 text-sm tracking-widest not-italic"
-          style={{ fontFamily: "'DM Mono', monospace", color: C.deepGreen + "99" /* Attribution color */ }}
-        >
-          — Elena Vasquez, CEO {/* Change attribution */}
-        </cite>
-      </div>
-    </section>
-  );
-}
 
 function StorySection() {
   // Timeline entries — Change year, title, body for each milestone
@@ -576,63 +522,6 @@ function StorySection() {
   );
 }
 
-function LeadershipSection() {
-  // Team members — Change name, title, years
-  const team = [
-    { name: "Elena Vasquez", title: "Chief Executive Officer", years: "Since 2008" },
-    { name: "Marcus Okafor", title: "Chief Operations Officer", years: "Since 2011" },
-    { name: "Priya Sundaram", title: "Chief Technology Officer", years: "Since 2016" },
-    { name: "James Hoffmann", title: "Head of Global Freight", years: "Since 2013" },
-  ];
-
-  return (
-    <section className="px-6 md:px-16 py-32" style={{ backgroundColor: C.deepGreen }}>
-      <div className="max-w-7xl mx-auto">
-        <Eyebrow light>Leadership</Eyebrow>
-        {/* Leadership heading — Change this text */}
-        <h2
-          className="text-5xl md:text-6xl font-black uppercase leading-tight mb-20"
-          style={{ fontFamily: "'Barlow Condensed', sans-serif", color: C.white }}
-        >
-          The team
-          <br />
-          at the helm
-        </h2>
-
-        <div className="grid md:grid-cols-2 gap-0 border-t" style={{ borderColor: C.accentGreen + "44" }}>
-          {team.map((person, i) => (
-            <div
-              key={i}
-              className="border-b py-8 flex items-center justify-between group transition-all duration-200 cursor-default"
-              style={{
-                borderColor: C.accentGreen + "33",
-                borderRight: i % 2 === 0 ? `1px solid ${C.accentGreen}33` : "none",
-                paddingLeft: i % 2 === 1 ? "2rem" : 0,
-                paddingRight: i % 2 === 0 ? "2rem" : 0,
-              }}
-            >
-              <div>
-                {/* Person name */}
-                <div className="text-2xl md:text-3xl font-bold uppercase tracking-tight mb-1" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: C.white }}>
-                  {person.name}
-                </div>
-                {/* Person title */}
-                <div className="text-sm" style={{ fontFamily: "'DM Sans', sans-serif", color: C.paleGreen }}>
-                  {person.title}
-                </div>
-              </div>
-              {/* Years */}
-              <div className="text-xs tracking-widest text-right" style={{ fontFamily: "'DM Mono', monospace", color: C.accentGreen + "88" }}>
-                {person.years}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ─────────────────────────────────────────────
    ROOT
    ───────────────────────────────────────────── */
@@ -643,9 +532,7 @@ export default function AboutUs() {
       <MissionSection />
       <StatsSection />
       <ValuesSection />
-      <PullQuote />
       <StorySection />
-      <LeadershipSection />
     </div>
   );
 }

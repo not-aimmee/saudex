@@ -5,12 +5,12 @@ import { motion } from 'framer-motion';
 import { TEXT } from '../constants';
 import logo from '/favicon2.png';
 import ContactModal from "./ContactModal";
-import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import GlassIcons from '../../components/glassicons';
+import { createPortal } from 'react-dom';
+
 export default function Footer() {
   const [isOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate();
   const footerRef = useRef<HTMLElement>(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -32,16 +32,6 @@ export default function Footer() {
     }
   };
   
-
-  const handleHomeClick = () => {
-    navigate('/');
-    setTimeout(() => {
-      const element = document.getElementById('home');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }, 100);
-  };
 
 useEffect(() => {
   if (!circleRef.current) return;
@@ -123,10 +113,10 @@ useEffect(() => {
           {/* Company Info */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="Saudex Global" className="w-20 h-20" draggable={false} />
+              <img onClick={() => scrollToSection('home')} src={logo}  alt="Saudex Global" className="w-20 h-20" draggable={false} />
               <div className="flex flex-col leading-tight">
                 <button
-                 onClick={handleHomeClick}
+                 onClick={() => scrollToSection('home')}
                  className="flex flex-col leading-tight hover:opacity-80 transition-opacity text-left"
                 >
                 <span className="text-2xl font-clash font-bold text-white tracking-tight">SAUDEX</span>
@@ -254,15 +244,17 @@ useEffect(() => {
               CONTACT US  
             </span>
           </motion.button>
-          
-        </div>
+          {createPortal(
         <ContactModal
-        isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
-        serviceId="service_nlnhzd2"       // from EmailJS dashboard
-        templateId="template_zjgqs1k"     // from EmailJS dashboard
-        publicKey="sXmLsr6PApabpnmxa"       // from EmailJS Account → Public Key
-      />
+          isOpen={isOpen}
+          onClose={() => setIsOpen(false)}
+          serviceId="service_nlnhzd2"
+          templateId="template_zjgqs1k"
+          publicKey="sXmLsr6PApabpnmxa"
+        />,
+        document.body
+      )}
+        </div>
       </div>
 
         {/* Bottom Bar */}

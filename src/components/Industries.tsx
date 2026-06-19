@@ -60,7 +60,7 @@ export default function Industries (){
     text-xl
     font-medium
     mb-6">
-                        From retail and E-Commerce to Cold Chain and Food & Beverage, we understand the unique shipping needs of different industries and tailor our services accordingly.
+          Every industry has different shipping challenges. Whether you're in retail, e-commerce, cold chain, or food & beverage, we provide customized logistics solutions designed around your needs.
                       </p>
 
               </motion.div>

@@ -28,6 +28,7 @@ import AboutUs from "./pages/aboutUs";
 import BeOurPartner from "./components/BeOurPartner";
 import { Routes, Route } from "react-router-dom";
 
+
 function App() {
   return (
     <>
@@ -43,7 +44,6 @@ function App() {
               <WhyChooseUs/>
               <Industries/>
               <Stats/>
-              <BeOurPartner/>
             </>
           }
         />
@@ -71,6 +71,7 @@ function App() {
        </Route>
        <Route path="aboutUs" element={<AboutUs/>} />
        <Route path="careers" element={<Careers/>} />
+       <Route path="/" element={<BeOurPartner/>}/>
       </Route>
       <Route element={<SimpleLayout/>}>
        <Route path="privacy_policy" element ={<PrivacyPolicy/>} />

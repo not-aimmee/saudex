@@ -6,6 +6,8 @@ import BlurText from "../../components/blurtext";
 import { ArrowUpRight } from 'lucide-react';
 import { ctaMeta } from '../pages/data/seoMeta';
 import ContactModal from './ContactModal';
+import { createPortal } from 'react-dom';
+
 
 export default function CTA() {
   const [hovered, setHovered] = useState(false);
@@ -287,13 +289,16 @@ useEffect(() => {
 </div>
  
             </motion.button>
-<ContactModal
-        isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
-        serviceId="service_nlnhzd2"       // from EmailJS dashboard
-        templateId="template_zjgqs1k"     // from EmailJS dashboard
-        publicKey="sXmLsr6PApabpnmxa"       // from EmailJS Account → Public Key
-      />
+{createPortal(
+        <ContactModal
+          isOpen={isOpen}
+          onClose={() => setIsOpen(false)}
+          serviceId="service_nlnhzd2"
+          templateId="template_zjgqs1k"
+          publicKey="sXmLsr6PApabpnmxa"
+        />,
+        document.body
+      )}
           </div>
 
         </div>

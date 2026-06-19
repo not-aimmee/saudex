@@ -5,13 +5,10 @@ import { TEXT } from '../constants';
 import logo from '/favicon2.png';
 import { AnimatePresence, motion } from 'framer-motion';
 import ContactModal from './ContactModal';
+import { createPortal } from 'react-dom';
 
-interface HeaderProps {
-  onContactClick: () => void;
-}
 
-export default function Header({ onContactClick }: HeaderProps) {
-  
+export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -67,19 +64,20 @@ useEffect(() => {
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300
       ${isScrolled ? 'bg-black/90 backdrop-blur-md shadow-lg' : 'bg-transparent'}
     `}>
-      <div className="w-full px-8 lg:px-16">
+      <div className="w-full px-8 lg:px-16 pt-4 pb-2">
         <div className="mx-auto flex items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center gap-2">
-  <img src={logo} alt="Saudex Global" className="w-12 h-12 lg:w-20 lg:h-20" draggable={false} />
-  <span className="font-clash text-[22px] lg:text-[40px] font-bold text-[#F7FAF8] tracking-normal">SAUDEX GLOBAL</span>
+            
+  <img src={logo} onClick={() => scrollToSection('home')} alt="Saudex Global" className="w-12 h-12 lg:w-20 lg:h-20" draggable={false} />
+  <span onClick={() => scrollToSection('home')} className="font-clash text-[22px] lg:text-[40px] font-bold text-[#F7FAF8] tracking-normal">SAUDEX GLOBAL</span>
 </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6 ml-16">
             <Link
               to="/#home"
-              className="px-6 py-4 text-white font-archivo font-medium text-lg hover:text-[#F7FAF8] tracking-wider transition-colors flex items-center gap-1"
+              className="px-6 py-4 text-white font-archivo font-medium text-lg hover:text-[#58c28a] tracking-wider transition-colors flex items-center gap-1"
             >
               {TEXT.nav.home}
             </Link>
@@ -90,7 +88,7 @@ useEffect(() => {
                 onMouseEnter={() => setNavbarServicesOpen(true)}
                 onMouseLeave={() => setNavbarServicesOpen(false)}
                 onClick={() => scrollToSection('services')}
-                className="px-6 py-4 text-white font-archivo font-medium text-lg hover:text-[#F7FAF8] tracking-wider transition-colors flex items-center gap-1"
+                className="px-6 py-4 text-white font-archivo font-medium text-lg hover:text-[#58c28a] tracking-wider transition-colors flex items-center gap-1"
               >
                 {TEXT.nav.services}
               </button>
@@ -166,7 +164,7 @@ useEffect(() => {
                 onMouseEnter={() => setNavbarIndustriesOpen(true)}
                 onMouseLeave={() => setNavbarIndustriesOpen(false)}
                 onClick={() => scrollToSection('industries')}
-                className="px-6 py-4 text-white font-archivo font-medium text-lg hover:text-[#F7FAF8] tracking-wider transition-colors flex items-center gap-1"
+                className="px-6 py-4 text-white font-archivo font-medium text-lg hover:text-[##58c28a] tracking-wider transition-colors flex items-center gap-1"
               >
                 {TEXT.nav.industries}
                 </button>
@@ -228,7 +226,7 @@ useEffect(() => {
                 onMouseEnter={() => setNavbarAboutOpen(true)}
                 onMouseLeave={() => setNavbarAboutOpen(false)}
                 onClick={() => scrollToSection('about')}
-                className="px-6 py-4 text-white font-archivo font-medium text-lg hover:text-[#F7FAF8] tracking-wider transition-colors flex items-center gap-1"
+                className="px-6 py-4 text-white font-archivo font-medium text-lg hover:text-[#58c28a] tracking-wider transition-colors flex items-center gap-1"
               >
                 {TEXT.nav.about}
               </button>
@@ -261,14 +259,17 @@ useEffect(() => {
       >
         {TEXT.nav.contact}
       </button>
+      {createPortal(
+        <ContactModal
+          isOpen={isOpen}
+          onClose={() => setIsOpen(false)}
+          serviceId="service_nlnhzd2"
+          templateId="template_zjgqs1k"
+          publicKey="sXmLsr6PApabpnmxa"
+        />,
+        document.body
+      )}
           </nav>
-          <ContactModal
-        isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
-        serviceId="service_nlnhzd2"       // from EmailJS dashboard
-        templateId="template_zjgqs1k"     // from EmailJS dashboard
-        publicKey="sXmLsr6PApabpnmxa"       // from EmailJS Account → Public Key
-      />
 
           {/* Mobile Menu Button */}
           <div className="flex items-center gap-4 ml-auto">
@@ -339,7 +340,7 @@ exit={{
 {drawerServicesOpen && (
   <div className="ml-4 flex flex-col space-y-2">
     <button onClick={() => scrollToSection('services')} className="text-white/90 font-archivo text-left">
-      All Services
+      Services
     </button>
 
     <Link to="./services/impo-expo" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
@@ -380,7 +381,7 @@ exit={{
 {drawerIndustriesOpen && (
   <div className="ml-4 flex flex-col space-y-2">
     <button onClick={() => scrollToSection('industries')} className="text-white/90 font-archivo text-left">
-     Industries We Serve 
+     Industries 
     </button>
     <Link to="/industries/food_beverages" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
       {TEXT.industriesDropdown.foodnbeverages}
@@ -418,14 +419,28 @@ exit={{
     <Link to="/careers" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
       {TEXT.nav.careers}
     </Link>
+
+    <Link to="/BeOurPartner" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
+      Be our Partner
+    </Link>
   </div>
 )}
               <button
-        onClick={onContactClick}
+        onClick={() => setIsOpen(true)}
         className=" text-white hover:text-[#F7FAF8] font-clash transition-colors text-left"
       >
         {TEXT.nav.contact}
       </button>
+      {createPortal(
+        <ContactModal
+          isOpen={isOpen}
+          onClose={() => setIsOpen(false)}
+          serviceId="service_nlnhzd2"
+          templateId="template_zjgqs1k"
+          publicKey="sXmLsr6PApabpnmxa"
+        />,
+        document.body
+      )}
             </div>
           </div>
           </motion.div>

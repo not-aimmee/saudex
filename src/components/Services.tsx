@@ -87,7 +87,7 @@ transition={{
               uppercase 
             text-[#228B5A]
             font-archivo
-            text-left
+            text-center
             text-xl
             font-medium
             tracking-[0.4em]

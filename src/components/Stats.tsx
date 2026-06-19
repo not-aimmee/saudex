@@ -28,7 +28,7 @@ const stats = [
     value: 98,
     label: "On-Time Delivery",
     suffix: "%",
-    sub: "Air · Sea · Road",
+    sub: "Air · Sea · Land",
     up: true,
   },
 ];
@@ -161,7 +161,7 @@ export default function Stats() {
 
           <p
             className=" max-w-sm text-sm leading-relaxed md:text-right"
-            style={{ color: "rgba(255,255,255,0.4)" }}
+            style={{ color: "#f7faf8" }}
           >
             Every shipment tracked. Every metric earned. Here's how our
             global network performs.
