@@ -11,7 +11,7 @@ const globalFreight: ServicePageData = {
     {
       tag: "Customs Clearance",
 layout: "image-left",
-heading: "Nothing waits\nat the\nborder.",
+heading: "Nothing waits at the border.",
 body: "Our team handles tariff classification, duty calculation, restricted goods licensing, and full customs documentation for both import and export shipments. We file paperwork proactively, liaise directly with customs authorities, and resolve issues before they cause delays. If a shipment is ever held, we step in immediately and handle it end-to-end.",
 image: "/images/in11.webp",
 imageAlt: "Customs officer inspecting cargo at border checkpoint",

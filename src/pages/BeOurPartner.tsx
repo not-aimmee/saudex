@@ -5,19 +5,19 @@ import BlurText from "../../components/blurtext";
 
 const TRACKS = [
   {
-    label: "Reseller",
+    label: "Agency Prtner",
     description:
-      "Sell our platform under your own brand. You own the client relationship, we handle the engine underneath.",
+      "Deliver our platform as part of your client services.",
   },
   {
-    label: "Technology",
+    label: "OEM Partner",
     description:
-      "Integrate our tools into your product through API access and joint engineering support.",
+      " Embed our technology directly into your hardware or software.",
   },
   {
-    label: "Referral",
+    label: "Consulting Partner",
     description:
-      "Send us qualified leads and earn commission on every partner who signs and stays.",
+      "Help clients implement and scale with our platform.",
   },
 ];
 
@@ -103,19 +103,19 @@ export default function BeOurPartner() {
       {/* Partnership tracks */}
       <section className="relative bg-[#050f0f] border-t border-white/[0.08] px-10 py-24">
         <div className="max-w-5xl mx-auto">
-          <p className="uppercase text-[#228B5A] font-archivo text-sm font-medium tracking-[0.3em] mb-4">
+          <p className="uppercase text-[#228B5A] font-archivo text-lg font-medium tracking-[0.3em] mb-4">
             choose your track
           </p>
-          <h2 className="text-white font-clash text-4xl font-bold mb-12 max-w-2xl">
+          <h2 className="text-white font-clash text-6xl font-bold mb-12 max-w-2xl">
             Three ways to partner with us.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.08]">
             {TRACKS.map((track) => (
               <div key={track.label} className="bg-[#050f0f] p-8">
-                <h3 className="text-white font-clash text-2xl font-bold mb-3">
+                <h3 className="text-white font-clash text-3xl font-bold mb-3">
                   {track.label}
                 </h3>
-                <p className="text-[#A3BDB8] text-base leading-relaxed">
+                <p className="text-[#A3BDB8] text-lg leading-relaxed">
                   {track.description}
                 </p>
               </div>
@@ -127,19 +127,19 @@ export default function BeOurPartner() {
       {/* Benefits */}
       <section className="relative bg-[#050f0f] border-t border-white/[0.08] px-10 py-24">
         <div className="max-w-5xl mx-auto">
-          <p className="uppercase text-[#228B5A] font-archivo text-sm font-medium tracking-[0.3em] mb-4">
+          <p className="uppercase text-[#228B5A] font-archivo text-lg font-medium tracking-[0.3em] mb-4">
             what you get
           </p>
-          <h2 className="text-white font-clash text-4xl font-bold mb-12 max-w-2xl">
+          <h2 className="text-white font-clash text-7xl font-bold mb-12 max-w-2xl">
             Built for partners who stay.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {BENEFITS.map((benefit) => (
               <div key={benefit.title} className="border-l border-[#228B5A]/40 pl-6">
-                <h3 className="text-white font-archivo text-lg font-medium mb-2">
+                <h3 className="text-white font-archivo text-3xl font-medium mb-2">
                   {benefit.title}
                 </h3>
-                <p className="text-[#A3BDB8] text-base leading-relaxed">
+                <p className="text-[#A3BDB8] text-lg leading-relaxed">
                   {benefit.description}
                 </p>
               </div>
@@ -151,22 +151,22 @@ export default function BeOurPartner() {
       {/* How it works */}
       <section className="relative bg-[#050f0f] border-t border-white/[0.08] px-10 py-24">
         <div className="max-w-5xl mx-auto">
-          <p className="uppercase text-[#228B5A] font-archivo text-sm font-medium tracking-[0.3em] mb-4">
+          <p className="uppercase text-[#228B5A] font-archivo text-lg font-medium tracking-[0.3em] mb-4">
             how it works
           </p>
-          <h2 className="text-white font-clash text-4xl font-bold mb-12 max-w-2xl">
+          <h2 className="text-white font-clash text-7xl font-bold mb-12 max-w-2xl">
             From application to launch.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {STEPS.map((step) => (
               <div key={step.number}>
-                <span className="text-[#228B5A] font-clash text-3xl font-bold">
+                <span className="text-[#228B5A] font-clash text-6xl font-bold">
                   {step.number}
                 </span>
-                <h3 className="text-white font-archivo text-lg font-medium mt-3 mb-2">
+                <h3 className="text-white font-archivo text-2xl font-medium mt-3 mb-2">
                   {step.title}
                 </h3>
-                <p className="text-[#A3BDB8] text-base leading-relaxed">
+                <p className="text-[#A3BDB8] text-lg leading-relaxed">
                   {step.description}
                 </p>
               </div>
@@ -191,7 +191,7 @@ export default function BeOurPartner() {
             onClick={() => setIsOpen(true)}
             className="w-48 h-48 rounded-full border border-white/20 flex flex-col items-center justify-center gap-1 transition-all duration-300 hover:border-emerald-500/60 hover:bg-emerald-500/5 cursor-pointer"
           >
-            <span className="text-[11px] font-archivo font-medium tracking-[0.15em] text-white uppercase text-center leading-snug">
+            <span className="text-[16px] font-archivo font-medium tracking-[0.15em] text-white uppercase text-center leading-snug">
               Talk With
               <br />
               US
@@ -214,10 +214,10 @@ export default function BeOurPartner() {
           <p className="uppercase text-[#228B5A] font-archivo text-left text-xl font-medium tracking-[0.4em] mb-6">
             your next step
           </p>
-          <p className="uppercase text-[#A3BDB8] font-archivo text-left text-lg font-medium mb-6">
+          <p className="uppercase text-[#A3BDB8] font-archivo text-left text-2xl font-medium mb-6">
             ready to apply?
           </p>
-          <p className="text-white font-clash text-4xl font-bold mb-6">
+          <p className="text-white font-clash text-6xl font-bold mb-6">
             Let's talk partnership.
           </p>
           <p className="text-[#A3BDB8] text-lg max-w-xl">

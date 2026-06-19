@@ -1,4 +1,4 @@
-import { ArrowUp,Facebook, Linkedin, Instagram } from 'lucide-react';
+import { ArrowUp, Linkedin } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { useRef,useState,useEffect } from 'react';
 import { motion } from 'framer-motion';
@@ -31,8 +31,6 @@ const goHome = () => {
   }
 };
   const items = [
-  { icon: Facebook, color: 'indigo', label: 'Facebook' },
-  { icon: Instagram, color: 'red', label: 'Instagram' },
   { icon: Linkedin, color: 'blue', label: 'LinkedIn', link: 'https://www.linkedin.com/company/saudexglobal/' },
   { icon: FaWhatsapp, color: 'green', label: 'Whatsapp', link:'https://wa.me/6585351308' },
 ];
@@ -149,24 +147,24 @@ useEffect(() => {
             <h3 className="font-clash text-xl text-white/70 font-semibold mb-6">{TEXT.footer.services}</h3>
             <ul className="space-y-3">
               <li>
-               <button onClick={() => scrollToSection('services')} className="text-left text-white/70 hover:text-white transition-colors">
-                  {TEXT.services.warehousing.title}
-                </button>
+               <Link to ="/services/impo-expo" className="text-left text-white/70 hover:text-white transition-colors">
+    Import - Export
+  </Link>
               </li>
               <li>
-                <button onClick={() => scrollToSection('services')} className="text-left text-white/70 hover:text-white transition-colors">
-                  {TEXT.services.freight.title}
-                </button>
+                <Link to ="/services/fmcg" className="text-left text-white/70 hover:text-white transition-colors">
+    FMCG Distribution
+  </Link>
               </li>
               <li>
-                <button onClick={() => scrollToSection('services')} className="text-left text-white/70 hover:text-white transition-colors">
-                  {TEXT.services.contract.title}
-                </button>
+                <Link to ="/services/freight" className="text-left text-white/70 hover:text-white transition-colors">
+    Freight Forwarding
+  </Link>
               </li>
               <li>
-                <button onClick={() => scrollToSection('services')} className="text-left text-white/70 hover:text-white transition-colors">
-                  {TEXT.services.scm.title}
-                </button>
+                <Link to="/services/customs" className="text-left text-white/70 hover:text-white transition-colors">
+    Customs Clearance & Compliance
+  </Link>
               </li>
             </ul>
           </div>
@@ -176,16 +174,20 @@ useEffect(() => {
             <h3 className="font-clash text-xl text-white/70 font-semibold mb-6">{TEXT.footer.company}</h3>
             <ul className="space-y-3">
               <li>
-                <button onClick={() => scrollToSection('about')} className="text-white/70 hover:text-white transition-colors">
-                  {TEXT.nav.about}
-                </button>
+                <Link to ="/aboutUs" className="text-left text-white/70 hover:text-white transition-colors">
+    About Us
+  </Link>
               </li>
               <li>
-                <button onClick={() => scrollToSection('why-us')} className="text-white/70 hover:text-white transition-colors">
-                  {TEXT.nav.whyUs}
-                </button>
+                <Link to ="/careers" className="text-left text-white/70 hover:text-white transition-colors">
+    Careers
+  </Link>
               </li>
-              
+              <li>
+                <Link to ="/BeOurpartner" className="text-left text-white/70 hover:text-white transition-colors">
+    Be Our Partner
+  </Link>
+              </li>
             </ul>
           </div>
         

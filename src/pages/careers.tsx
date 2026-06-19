@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import ContactModal from "../components/ContactModal";
 
  
@@ -26,23 +26,13 @@ const C = {
 
 // Job listings — Change title, dept, location, type for each role
 const JOBS = [
-  { id: 4, title: "Product Manager, Tracking Platform",   dept: "Engineering",  location: "UAE",        type: "Full-time" },
-  { id: 5, title: "Regional Sales Director — APAC",       dept: "Commercial",   location: "Saudi Arab",     type: "Full-time" },
-  { id: 7, title: "Customs Compliance Specialist",        dept: "Legal",        location: "UAE",      type: "Full-time" },
+  { id: 4, title: "Product Manager, Tracking Platform",   dept: "Engineering",  location: "United Arab Emirates",        type: "Full-time" },
+  { id: 5, title: "Regional Sales Director — APAC",       dept: "Commercial",   location: "Saudi Arabia",     type: "Full-time" },
+  { id: 7, title: "Customs Compliance Specialist",        dept: "Legal",        location: "United Arab Emirates",      type: "Full-time" },
   ];
 
 // Departments for filter tabs — Change these labels
 const DEPTS = ["All", "Engineering", "Commercial", "Legal"];
-
-// Culture cards — Change emoji, title, description for each card
-const CULTURE_CARDS = [
-  { icon: "🌍", label: "Global by default", body: "Every decision we make ripples across six continents. You'll think internationally from day one." },
-  { icon: "⚡", label: "Move fast, carefully", body: "We ship weekly and still maintain 99.8% reliability. Speed and precision aren't opposites here." },
-  { icon: "🌱", label: "Grow with us", body: "Every employee gets a dedicated learning budget and a clear path forward — not just a job." },
-  { icon: "🤝", label: "Ownership mentality", body: "You own your work from brief to launch. No unnecessary layers, no permission to ask for." },
-  { icon: "♻️", label: "Built to last", body: "We're building infrastructure for the next century, with sustainability baked into every choice." },
-  { icon: "📍", label: "Flexible by design", body: "Hybrid and remote roles across 28 countries. Work where you do your best thinking." },
-];
 
 /* ─────────────────────────────────────────────
    SHARED COMPONENTS
@@ -174,72 +164,6 @@ function HeroSection() {
         @keyframes marquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
         @keyframes scrollX { from { transform:translateX(0); } to { transform:translateX(-50%); } }
       `}</style>
-    </section>
-  );
-}
-
-/** CULTURE — horizontal scroll snap cards */
-function CultureSection() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  return (
-    <section className="py-24 overflow-hidden" style={{ backgroundColor: C.forestGreen }}>
-      <div className="px-6 md:px-16 mb-10 max-w-7xl mx-auto">
-        <div className="flex items-end justify-between">
-          <div>
-            {/* Culture heading — Change this text */}
-            <h2
-              className="text-4xl md:text-5xl font-black font-archivo uppercase leading-tight"
-              style={{  color: C.white }}
-            >
-              A culture built
-              <br />
-              to last
-            </h2>
-          </div>
-          {/* Scroll hint */}
-          <div className="hidden md:flex items-center gap-2 pb-1 font-archivo" style={{ color: C.paleGreen + "88", fontSize: "0.7rem", letterSpacing: "0.15em", textTransform: "uppercase" }}>
-            Drag to explore
-            <span style={{ fontSize: "1rem" }}>→</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Horizontally scrollable card row */}
-      <div
-        ref={scrollRef}
-        className="flex gap-4 overflow-x-auto pb-4 px-6 md:px-16 snap-x snap-mandatory"
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}
-      >
-        {CULTURE_CARDS.map((card, i) => (
-          <div
-            key={i}
-            className="snap-start shrink-0 flex flex-col justify-between p-8 border transition-colors font-archivo duration-200 group cursor-default"
-            style={{
-              width: "clamp(260px, 34vw, 380px)",
-              minHeight: "260px",
-              backgroundColor: i % 2 === 0 ? C.midGreen : "transparent", /* Alternating card bg */
-              borderColor: C.accentGreen + "44",
-            }}
-          >
-            {/* Card icon — Change in CULTURE_CARDS data above */}
-            <div style={{ fontSize: "2rem", lineHeight: 1 }}>{card.icon}</div>
-            <div>
-              {/* Card label */}
-              <div
-                className="text-xl font-black font-archivo uppercase tracking-tight mb-3"
-                style={{  color: C.white /* Card title color */ }}
-              >
-                {card.label}
-              </div>
-              {/* Card body */}
-              <p className="text-sm leading-relaxed font-archivo" style={{  color: C.mintGreen /* Card body color */ }}>
-                {card.body}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
     </section>
   );
 }
@@ -401,7 +325,6 @@ export default function Careers() {
   return (
     <div style={{ fontFamily: "'DM Sans', sans-serif" }}>
       <HeroSection />
-      <CultureSection />
       <OpenRolesSection />
     </div>
   );

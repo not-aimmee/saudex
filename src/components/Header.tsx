@@ -175,7 +175,7 @@ useEffect(() => {
                 onMouseEnter={() => setNavbarIndustriesOpen(true)}
                 onMouseLeave={() => setNavbarIndustriesOpen(false)}
                 onClick={() => scrollToSection('industries')}
-                className="px-6 py-4 text-white font-archivo font-medium text-lg hover:text-[##58c28a] tracking-wider transition-colors flex items-center gap-1"
+                className="px-6 py-4 text-white font-archivo font-medium text-lg hover:text-[#58c28a] tracking-wider transition-colors flex items-center gap-1"
               >
                 {TEXT.nav.industries}
                 </button>
