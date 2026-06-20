@@ -121,13 +121,12 @@ export default function TermsOfService() {
         {/* Main content */}
         <main>
           <p className="font-archivo" style={{ fontSize: 13, color: "rgba(5,15,15,0.5)", margin: "0 0 8px" }}>
-            <Highlight>SAUDEX GLOBAL PTE LTD</Highlight> &nbsp;·&nbsp; Registered in Singapore (UEN: [Insert UEN])
+            <Highlight>SAUDEX GLOBAL PTE LTD</Highlight> &nbsp;·&nbsp; Registered in Singapore 
           </p>
-
+{/*(UEN: [Insert UEN])*/}
           <SectionBlock id="acceptance" title="1. Acceptance of Terms">
             <p>
-              By accessing, registering for, or using any service offered by Saudex Global Pte Ltd (UEN: [Insert
-              UEN]) ("Saudex", "we", "us", or "our"), you ("Client", "you", or "your") agree to be bound by these
+              By accessing, registering for, or using any service offered by Saudex Global Pte Ltd ("Saudex", "we", "us", or "our"), you ("Client", "you", or "your") agree to be bound by these
               Terms of Service ("Terms"), our Privacy Policy, and any service-specific agreements or quotations
               issued to you. These Terms constitute a legally binding agreement.
             </p>
@@ -161,7 +160,7 @@ export default function TermsOfService() {
               Gulf Cooperation Council (GCC) markets, including but not limited to:
             </p>
             <BulletList items={[
-              "Freight forwarding (air, sea, road)",
+              "Freight forwarding (air, sea, land)",
               "Customs brokerage and documentation",
               "Warehousing and fulfilment",
               "Last-mile delivery coordination",
