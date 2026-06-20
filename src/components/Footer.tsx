@@ -1,4 +1,4 @@
-import { ArrowUp, Linkedin } from 'lucide-react';
+import { ArrowUp, Linkedin, Mail } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { useRef,useState,useEffect } from 'react';
 import { motion } from 'framer-motion';
@@ -33,6 +33,7 @@ const goHome = () => {
   const items = [
   { icon: Linkedin, color: 'blue', label: 'LinkedIn', link: 'https://www.linkedin.com/company/saudexglobal/' },
   { icon: FaWhatsapp, color: 'green', label: 'Whatsapp', link:'https://wa.me/6585351308' },
+  { icon: Mail, color: 'red', label: 'Email', link: 'mailto:info@saudexglobal.com' },
 ];
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);

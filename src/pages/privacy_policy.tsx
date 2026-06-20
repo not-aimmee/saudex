@@ -88,14 +88,20 @@ export default function PrivacyPolicy() {
             </p>
             <p>
               Please read this policy carefully. If you disagree with its terms, please discontinue use of
-              our services. This document is binding and constitutes part of our Terms of Service.
+              our services. This Privacy Policy describes how we collect, use, disclose, and protect personal data in connection with our services and website.
+That avoids creating unintended contractual obligations.
             </p>
             <p>
-              We operate under multiple privacy frameworks including GDPR, CCPA, PIPEDA, and LGPD. Where
-              applicable law provides greater protections than those described here, that law governs.
+              Saudex Global Logistics complies with the Singapore Personal Data Protection Act 2012 (PDPA) and other applicable data protection laws that may apply to our operations, customers, or business activities.
             </p>
           </SectionBlock>
           <Divider />
+          <SectionBlock id="security" title="Disclaimer">
+            <p>
+While we take reasonable steps to protect personal data, we do not warrant or guarantee the absolute security of information transmitted to us electronically. Users transmit information at their own risk.            </p>
+          </SectionBlock>
+          <Divider />
+
 
           <SectionBlock id="data-collected" title="Data We Collect">
             <p>We collect information in three primary ways:</p>
@@ -186,22 +192,28 @@ export default function PrivacyPolicy() {
             </table>
           </SectionBlock>
           <Divider />
-
           <SectionBlock id="your-rights" title="Your Rights">
             <p>
+              Subject to applicable law, you may request access to personal data that we hold about you, request correction of inaccurate or incomplete personal data, withdraw consent for certain processing activities, or make inquiries regarding our handling of personal information.
+We may require reasonable verification of identity before processing a request and may decline requests where permitted by applicable law.
+            </p>
+          </SectionBlock>
+          <Divider />
+
+          <SectionBlock id="your-rights" title="Singapore Contact Section ">
+            <p>
               Depending on your jurisdiction, you hold specific rights with respect to your personal data.
-              We honor all requests without requiring justification, and fulfill them within 30 days.
+              Under PDPA, companies should provide a point of contact for privacy matters.
             </p>
             <p>
-              Your rights may include: access, rectification, erasure, data portability, objection to
-              processing, restriction of processing, withdrawal of consent, and the right to lodge a
-              complaint with a supervisory authority.
+              Data Protection Contact
             </p>
             <p>
-              To exercise any right, submit a verified request to{" "}
+              Questions, requests, or complaints relating to personal data may be directed to:
+Data Protection Officer (DPO){" "}
               <a href="mailto:privacy@saudexglobal.com" style={{ color: "#050f0f", textDecoration: "none", borderBottom: "1px solid rgba(5,15,15,0.2)" }}>privacy@saudexglobal.com</a>.
-              We will never discriminate against you for exercising your privacy rights.
-            </p>
+Saudex Global Logistics Pte. Ltd.
+Singapore            </p>
           </SectionBlock>
           <Divider />
 
@@ -218,33 +230,45 @@ export default function PrivacyPolicy() {
             </p>
           </SectionBlock>
           <Divider />
+          <SectionBlock id="retention" title="International Data Transfers">
+            <p>
+             In connection with our operations, your personal data may be transferred to, stored, or processed in countries outside Singapore. Where such transfers occur, we take reasonable steps to ensure that comparable standards of data protection are maintained in accordance with applicable law.
+            </p>
+          </SectionBlock>
+          <Divider />
+<SectionBlock id="security" title="Trade Compliance and Regulatory Requirements">
+            <p>
+We may collect, verify, process, and disclose personal and business information as necessary to comply with customs requirements, import and export controls, sanctions screening, anti-money laundering obligations, cargo security requirements, and other applicable trade regulations.
+           </p>
+          </SectionBlock>
+          <Divider />
 
           <SectionBlock id="security" title="Security">
             <p>
-              We implement administrative, technical, and physical safeguards to protect your personal data
-              against unauthorized access, alteration, disclosure, or destruction.
-            </p>
-            <p>
-              All data in transit is encrypted using TLS 1.3. Data at rest is encrypted using AES-256.
-              Passwords are hashed using bcrypt. We conduct annual penetration tests through independent
-              security firms and maintain SOC 2 Type II compliance.
-            </p>
-            <p>
-              No transmission over the Internet is 100% secure. We will notify affected users and relevant
-              authorities of any breach within 72 hours of discovery, as required by GDPR.
+              We implement reasonable administrative, technical, and physical safeguards designed to protect personal data against unauthorized access, disclosure, alteration, misuse, or loss. However, no method of transmission over the Internet or electronic storage system can be guaranteed to be completely secure.
             </p>
           </SectionBlock>
           <Divider />
 
-          <SectionBlock id="children" title="Children">
+          <SectionBlock id="security" title="Governing Law">
             <p>
-              Our services are directed at businesses and adult individuals engaged in commercial logistics.
-              We do not knowingly collect personal data from individuals under the age of 16. If you believe
-              we have inadvertently collected information from a minor, contact us immediately and we will
-              delete that data without delay.
-            </p>
+This Privacy Policy shall be governed by and construed in accordance with the laws of Singapore, without regard to conflict of law principles.
+Additional Protection for a Logistics Company            </p>
+<p>
+  Business-to-Business Communications</p>
+  <p>
+We may process business contact information for customer relationship management, service delivery, business development, contract administration, and related commercial purposes.
+</p>
+<p>
+  Third-Party Service Providers</p>
+  <p>
+We may engage third-party service providers located in Singapore or other jurisdictions to assist with hosting, payments, communications, analytics, logistics operations, compliance screening, and other business functions.
+Website Links
+Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of those external sites.
+</p>
           </SectionBlock>
           <Divider />
+
 
           <SectionBlock id="changes" title="Policy Changes">
             <p>
