@@ -207,6 +207,10 @@ const ContactModal: React.FC<ContactModalProps> = ({
                     icon: <><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></>,
                     label: "Hours", value: "Mon-Fri \n 9:00 AM - 4:00 PM",
                   },
+                  {
+                    icon: <><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></>,
+                    label: "Location", value: "10 Anson Rooad, #33-03, International Plaza, Singapore 079903",
+                  },
                 ].map((item, i) => (
                   <div key={i} className="cm-info-item">
                     <div style={{
