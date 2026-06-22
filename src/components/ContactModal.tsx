@@ -209,7 +209,7 @@ const ContactModal: React.FC<ContactModalProps> = ({
                   },
                   {
                     icon: <><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></>,
-                    label: "Location", value: "10 Anson Rooad, #33-03, International Plaza, Singapore 079903",
+                    label: "Location", value: "10 Anson Road, #33-03, International Plaza, Singapore 079903",
                   },
                 ].map((item, i) => (
                   <div key={i} className="cm-info-item">
@@ -234,7 +234,7 @@ const ContactModal: React.FC<ContactModalProps> = ({
             </div>
 
             {/* Footer note */}
-            <p className="font-archivo" style={{ margin: 0, fontSize: 12, color: "rgba(163,189,184,0.38)", lineHeight: 1.7, fontWeight: 400 }}>
+            <p className="font-archivo pt-5" style={{ margin: 0, fontSize: 12, color: "rgba(163,189,184,0.38)", lineHeight: 1.7, fontWeight: 400 }}>
               By submitting you agree to our privacy policy and terms of service.
             </p>
           </div>
