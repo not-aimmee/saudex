@@ -130,7 +130,7 @@ transition={{
                 tracking-wide
               "
             >
-              We deliver cutting edge services tailored to your needs. Our expert team
+              We deliver cutting edge global logistics solutions tailored to your needs. Our expert team
               combines creativity, technology, and strategic thinking to help your
               business thrive in the digital age. 
               <br/>Discover how we can elevate your

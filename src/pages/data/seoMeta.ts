@@ -3,6 +3,7 @@
 // Import the specific object you need into each page.
 
 export interface PageMeta {
+  title?: string;
   description: string;
   keywords: string;
   canonical: string;
@@ -15,9 +16,9 @@ const OG       = `${BASE_URL}/og`;             // folder where your OG images li
 /* Home Page */
 export const homeMeta: PageMeta = {
   description:
-    "Saudex Global delivers integrated logistics, cold chain, freight forwarding,customs clearance, and warehousing solutions across global trade lanes.Your supply chain, simplified.",
+    "Discover global logistics solutions from SAUDEX GLOBAL, combining reliable freight, supply chain expertise and international operations.",
   keywords:
-    "Saudex Global, logistics company, supply chain solutions, freight forwarding,cold chain logistics, customs clearance, global logistics provider",
+    "global logistics solutions, SAUDEX GLOBAL, freight forwarding, supply chain solutions, import export logistics, international logistics",
   canonical: `${BASE_URL}/`,
   ogImage:   `${OG}/home.jpg`,
 };
@@ -168,11 +169,12 @@ export const retailWholesaleMeta: PageMeta = {
    ════════════════════════════════════════════ */
 
 export const distributionLogisticsMeta: PageMeta = {
+  title: "Transportation Services & Last Mile Delivery | SAUDEX GLOBAL",
   description:
-    "End-to-end distribution network management — multi-node dispatch, cross-docking, and regional hub coordination with real-time visibility and 99.3% on-time delivery across retail and B2B channels.",
+    "Transportation services by SAUDEX GLOBAL for reliable distribution, last mile delivery, scheduled routes and regional logistics support.",
   keywords:
-    "distribution logistics, multi-node distribution, cross-docking, hub and spoke logistics, B2B distribution, retail distribution network",
-  canonical: `${BASE_URL}/services/distribution`,
+    "transportation services, last mile delivery, distribution services, distribution management, regional distribution, integrated transportation",
+  canonical: "https://saudexglobal.com/services/distribution",
   ogImage:   `${OG}/distribution.jpg`,
 };
 
@@ -204,38 +206,42 @@ export const fmcgLogisticsMeta: PageMeta = {
 };
 
 export const freightForwardingMeta: PageMeta = {
+  title: "Freight Forwarding & Global Shipping Services | SAUDEX GLOBAL",
   description:
-    "Sea, air, and road freight forwarding across global trade lanes.Full-container, LCL, and air cargo options with consolidated booking, documentation support, and real-time shipment tracking.",
+    "Freight forwarding solutions from SAUDEX GLOBAL covering air, sea and land cargo with reliable coordination, tracking and compliance.",
   keywords:
-    "freight forwarding, international freight, FCL shipping, LCL freight,air cargo forwarding, sea freight, cargo consolidation",
-  canonical: `${BASE_URL}/services/freight-forwarding`,
+    "freight forwarding, freight forwarding services, international freight forwarding, freight forwarder, air freight, sea freight, land freight, cargo forwarding",
+  canonical: "https://saudexglobal.com/services/freight",
   ogImage:   `${OG}/freight-forwarding.jpg`,
 };
 
 export const importExportLogisticsMeta: PageMeta = {
+  title: "Import and Export Services & Logistics Experts | SAUDEX GLOBAL",
   description:
-    "Seamless import and export logistics — coordinating freight, customs, documentation, and last-mile delivery across 40+ countries.Reduce lead times and ensure regulatory compliance on every shipment.",
+    "Import and export services by SAUDEX GLOBAL, covering documentation, customs compliance, cargo preparation and shipment coordination.",
   keywords:
-    "import export logistics, international trade logistics, export freight,import services, cross-border logistics, trade documentation",
-  canonical: `${BASE_URL}/services/import-export`,
+    "import and export, import and export services, international import export services, import export logistics, customs clearance, trade documentation",
+  canonical: "https://saudexglobal.com/services/impo-expo",
   ogImage:   `${OG}/import-export.jpg`,
 };
 
 export const supplyChainLogisticsMeta: PageMeta = {
+  title: "Supply Chain Logistics & Consulting Services | SAUDEX GLOBAL",
   description:
-    "End-to-end supply chain management: procurement coordination, inventory positioning, multi-echelon distribution, and supplier integration.AI-assisted visibility tools reduce lead times and cut carrying costs by up to 18%.",
+    "Supply chain logistics by SAUDEX GLOBAL to reduce costs, remove bottlenecks and improve operations through strategic consulting.",
   keywords:
-    "supply chain logistics, supply chain management, end-to-end logistics,inventory optimisation, procurement logistics, supply chain visibility",
-  canonical: `${BASE_URL}/services/supply-chain`,
+    "supply chain logistics, supply chain consulting, supply chain optimization, supply chain management, inventory planning, logistics consulting",
+  canonical: "https://saudexglobal.com/services/Supply_chain",
   ogImage:   `${OG}/supply-chain.jpg`,
 };
 
 export const warehousingLogisticsMeta: PageMeta = {
+  title: "Warehousing Services & Inventory Solutions | SAUDEX GLOBAL",
   description:
-    "Flexible warehousing across multi-temp zones — frozen, chilled, and ambient.HACCP-certified, IoT-monitored, and scalable from pallet to full-facility.",
+    "Warehousing services by SAUDEX GLOBAL with flexible storage, inventory management, real-time stock reporting and secure facilities.",
   keywords:
-    "warehousing solutions, 3PL warehousing, cold storage facility, ambient warehouse,temperature-controlled storage, shared warehousing",
-  canonical: `${BASE_URL}/services/warehousing`,
+    "warehousing services, contract warehousing, inventory management services, warehouse storage services, secure warehousing, dedicated warehousing, flexible storage",
+  canonical: "https://saudexglobal.com/services/warehousing",
   ogImage:   `${OG}/warehousing.jpg`,
 };
 

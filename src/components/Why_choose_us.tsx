@@ -61,9 +61,9 @@ export default function WhyChooseUs() {
           className="text-center mb-16"
         >
             
-          <h2 className="text-4xl md:text-5xl font-clash font-semibold text-[#F7FAF8] mb-4">
+          <h1 className="text-4xl md:text-5xl font-clash font-semibold text-[#F7FAF8] mb-4">
             {TEXT.whyUs.title}
-          </h2>
+          </h1>
           <p className="text-xl text-gray-300 font-archivo font-regular max-w-3xl mx-auto">
             {TEXT.whyUs.subtitle}
           </p>
@@ -97,9 +97,15 @@ export default function WhyChooseUs() {
             <reason.icon className="w-7 h-7 text-[#F7FAF8]" />
           </div>
         </div>
-        <h3 className="text-2xl text-[#F7FAF8] font-archivo font-medium mb-3">
-          {reason.title}
-        </h3>
+        {index === 0 ? (
+          <h2 className="text-2xl text-[#F7FAF8] font-archivo font-medium mb-3">
+            {reason.title}
+          </h2>
+        ) : (
+          <h3 className="text-2xl text-[#F7FAF8] font-archivo font-medium mb-3">
+            {reason.title}
+          </h3>
+        )}
         <p className="text-gray-300 tex-xl font-archivo font-regular leading-relaxed">
           {reason.description}
         </p>

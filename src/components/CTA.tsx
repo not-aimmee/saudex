@@ -1,10 +1,8 @@
 'use client';
-import { SEO } from './SEO';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import BlurText from "../../components/blurtext";
 import { ArrowUpRight } from 'lucide-react';
-import { ctaMeta } from '../pages/data/seoMeta';
 import ContactModal from './ContactModal';
 import { createPortal } from 'react-dom';
 
@@ -83,14 +81,7 @@ useEffect(() => {
 
   return (
     <>
-    <SEO
-       
-        description={ctaMeta.description}
-        keywords={ctaMeta.keywords}
-        canonical={ctaMeta.canonical}
-        ogImage={ctaMeta.ogImage}
-      />
-    <section className="relative bg-[#050F0F] overflow-hidden py-32">
+<section className="relative bg-[#050F0F] overflow-hidden py-32">
 
       {/* Orb */}
       <div

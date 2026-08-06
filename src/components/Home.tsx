@@ -2,25 +2,70 @@ import { motion } from 'motion/react';
 import { TEXT } from '../constants';
 import { SEO } from './SEO';
 import { homeMeta } from '../pages/data/seoMeta';
-import { defaultSiteMeta } from '../pages/data/seoMeta';
 import SplitText from "../../components/splittext";
+import { Helmet } from "react-helmet-async";
 
 export default function Hero() {
   return (
     <>
+    <Helmet>
+      <title>Global Logistics Solutions for Businesses | SAUDEX GLOBAL</title>
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://www.saudexglobal.com/#organization",
+              "name": "SAUDEX GLOBAL",
+              "url": "https://www.saudexglobal.com/",
+              "logo": "https://www.saudexglobal.com/favicon2.png",
+              "description": "SAUDEX GLOBAL provides global logistics solutions including freight forwarding, supply chain, warehousing, customs, cold chain, distribution and import-export services across international markets.",
+              "areaServed": [
+                { "@type": "Place", "name": "Middle East" },
+                { "@type": "Place", "name": "Asia" }
+              ]
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://www.saudexglobal.com/#website",
+              "url": "https://www.saudexglobal.com/",
+              "name": "SAUDEX GLOBAL",
+              "publisher": { "@id": "https://www.saudexglobal.com/#organization" }
+            },
+            {
+              "@type": "WebPage",
+              "@id": "https://www.saudexglobal.com/#webpage",
+              "url": "https://www.saudexglobal.com/",
+              "name": "Global Logistics Solutions for Businesses | SAUDEX GLOBAL",
+              "description": "Discover global logistics solutions from SAUDEX GLOBAL, combining reliable freight, supply chain expertise and international operations.",
+              "isPartOf": { "@id": "https://www.saudexglobal.com/#website" },
+              "about": { "@id": "https://www.saudexglobal.com/#organization" }
+            },
+            {
+              "@type": "Service",
+              "@id": "https://www.saudexglobal.com/#global-logistics-solutions",
+              "name": "Global Logistics Solutions",
+              "serviceType": "Global logistics solutions",
+              "provider": { "@id": "https://www.saudexglobal.com/#organization" },
+              "url": "https://www.saudexglobal.com/",
+              "areaServed": [
+                { "@type": "Place", "name": "Middle East" },
+                { "@type": "Place", "name": "Asia" }
+              ],
+              "description": "Reliable global logistics solutions for freight forwarding, supply chain management, warehousing, customs, cold chain, distribution and import-export operations."
+            }
+          ]
+        })}
+      </script>
+    </Helmet>
     <SEO
-        description={homeMeta.description}
-        keywords={homeMeta.keywords}
-        canonical={homeMeta.canonical}
-        ogImage={homeMeta.ogImage}
-      />
-    <SEO
-        
-        description={defaultSiteMeta.description}
-        keywords={defaultSiteMeta.keywords}
-        canonical={defaultSiteMeta.canonical}
-        ogImage={defaultSiteMeta.ogImage}
-      />
+      title="Global Logistics Solutions for Businesses | SAUDEX GLOBAL"
+      description={homeMeta.description}
+      keywords={homeMeta.keywords}
+      canonical={homeMeta.canonical}
+      ogImage={homeMeta.ogImage}
+    />
     <section id="home" className="relative min-h-screen flex items-center">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
