@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "npm run build && gh-pages -d dist",
-      "postbuild": "cp dist/index.html dist/404.html"
+    "postbuild": "cpy dist/index.html dist --rename=404.html"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -86,6 +86,7 @@
     "@types/react-router-dom": "^5.3.3",
     "@vitejs/plugin-react": "4.7.0",
     "autoprefixer": "^10.4.23",
+    "cpy-cli": "^7.0.0",
     "gh-pages": "^6.3.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.3.0",
