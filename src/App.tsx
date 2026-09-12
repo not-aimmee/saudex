@@ -26,6 +26,8 @@ import Freight from "./pages/services/freight";
 import Careers from "./pages/careers";
 import AboutUs from "./pages/aboutUs";
 import BeOurPartner from "./pages/BeOurPartner";
+import NfcCard from "./pages/cards/nfcCard";
+import Contact from "./components/Contact";
 import { Routes, Route } from "react-router-dom";
 
 
@@ -71,12 +73,15 @@ function App() {
        </Route>
        <Route path="aboutUs" element={<AboutUs/>} />
        <Route path="careers" element={<Careers/>} />
+       
       </Route>
       <Route element={<SimpleLayout/>}>
        <Route path="privacy_policy" element ={<PrivacyPolicy/>} />
        <Route path="terms_of_service" element ={<TermsOfService/>} />
        <Route path="BeOurPartner" element={<BeOurPartner/>}/>
+       <Route path="Contact" element={<Contact/>} />
       </Route>
+       <Route path="/nfcCard" element={<NfcCard/>} />
     </Routes>
   
 </>

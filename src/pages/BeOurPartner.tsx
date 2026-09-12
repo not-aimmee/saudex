@@ -1,7 +1,7 @@
-import { useState } from "react";
+
 import { Helmet } from "react-helmet-async";
-import ContactModal from "../components/ContactModal";
 import BlurText from "../../components/blurtext";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -32,7 +32,7 @@ const WHY_CHOOSE_US = [
 ];
 
 export default function BeOurPartner() {
-  const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -129,7 +129,7 @@ export default function BeOurPartner() {
         {/* Left — Contact circle */}
         <div className="flex items-center justify-center px-10 py-12">
           <button
-            onClick={() => setIsOpen(true)}
+            onClick={() => navigate("/contact")}
             className="w-48 h-48 rounded-full border border-white/20 flex flex-col items-center justify-center gap-1 transition-all duration-300 hover:border-emerald-500/60 hover:bg-emerald-500/5 cursor-pointer"
           >
             <span className="text-[16px] font-archivo font-medium tracking-[0.15em] text-white uppercase text-center leading-snug">
@@ -139,13 +139,6 @@ export default function BeOurPartner() {
             </span>
           </button>
         </div>
-        <ContactModal
-          isOpen={isOpen}
-          onClose={() => setIsOpen(false)}
-          serviceId="service_nlnhzd2" // from EmailJS dashboard
-          templateId="template_zjgqs1k" // from EmailJS dashboard
-          publicKey="sXmLsr6PApabpnmxa" // from EmailJS Account → Public Key
-        />
 
         {/* Divider */}
         <div className="bg-white/[0.08]" />

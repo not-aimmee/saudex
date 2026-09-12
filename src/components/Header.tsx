@@ -4,13 +4,10 @@ import { Link } from 'react-router-dom';
 import { TEXT } from '../constants';
 import logo from '/favicon2.png';
 import { AnimatePresence, motion } from 'framer-motion';
-import ContactModal from './ContactModal';
-import { createPortal } from 'react-dom';
 import { useNavigate, useLocation } from "react-router-dom";
 
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [navbarServicesOpen, setNavbarServicesOpen] = useState(false);
@@ -75,23 +72,65 @@ useEffect(() => {
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300
       ${isScrolled ? 'bg-black/90 backdrop-blur-md shadow-lg' : 'bg-transparent'}
     `}>
-      <div className="w-full px-10 lg:px-16 pt-4 pb-2">
-        <div className="mx-auto flex items-center h-20">
+      <div className="w-full px-10 sm:px-6 md:px-10 lg:px-16 ">
+        <div className="mx-auto flex items-center h-16 md:h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center gap-2">
             
   <img src={logo}  onClick={goHome} alt="Saudex Global" className="w-12 h-12 lg:w-20 lg:h-20" draggable={false} />
-  <span  onClick={goHome} className="font-clash text-[22px] lg:text-[40px] font-bold text-[#F7FAF8] tracking-normal">SAUDEX GLOBAL</span>
+  <span  onClick={goHome} className="font-clash text-[22px] lg:text-[40px] font-semi-bold text-[#F7FAF8] tracking-normal">SAUDEX GLOBAL</span>
 </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8 ml-16 ">
             <Link
               to="/#home"
-              className="px-6 py-4 text-white font-archivo font-medium text-lg hover:text-[#58c28a] tracking-wider transition-colors flex items-center gap-1"
+              className="px-6 py-4 text-white font-archivo font-regular text-lg hover:text-[#58c28a] tracking-wider transition-colors flex items-center gap-1"
             >
               {TEXT.nav.home}
             </Link>
+            
+            {/* About Dropdown */}
+            <div className="relative">
+              <button
+                onMouseEnter={() => setNavbarAboutOpen(true)}
+                onMouseLeave={() => setNavbarAboutOpen(false)}
+                onClick={() => scrollToSection('about')}
+                className="px-6 py-4 text-white font-archivo font-regular text-lg hover:text-[#58c28a] tracking-wider transition-colors flex items-center gap-1"
+              >
+                {TEXT.nav.about}
+              </button>
+              {navbarAboutOpen && (
+                <div
+                  onMouseEnter={() => setNavbarAboutOpen(true)}
+                  onMouseLeave={() => setNavbarAboutOpen(false)}
+                  className="absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg py-2 border border-gray-100"
+                >
+                  <Link
+                    to="/aboutUs"
+                    onClick={() => setNavbarAboutOpen(false) }
+                    className="block w-full text-left px-4 py-2.5 font-archivo font-regular text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0505F0F] transition-colors"
+                  >
+                    {TEXT.nav.aboutUs}
+                  </Link>
+                  <Link
+                    to="/careers"
+                    onClick={() => setNavbarAboutOpen(false) }
+                    className="block w-full text-left px-4 py-2.5 font-archivo font-regular text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0505F0F] transition-colors"
+                  >
+                    {TEXT.nav.careers}
+                  </Link>
+                  <Link
+                    to="/BeOurPartner"
+                    onClick={() => setNavbarAboutOpen(false) }
+                    className="block w-full text-left px-4 py-2.5 font-archivo font-regular text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0505F0F] transition-colors"
+                  >
+                    Be Our Partner
+                  </Link>
+
+                </div>
+              )}
+            </div>
 
             {/* Solutions Dropdown */}
             <div className="relative">
@@ -99,7 +138,7 @@ useEffect(() => {
                 onMouseEnter={() => setNavbarServicesOpen(true)}
                 onMouseLeave={() => setNavbarServicesOpen(false)}
                 onClick={() => scrollToSection('services')}
-                className="px-6 py-4 text-white font-archivo font-medium text-lg hover:text-[#58c28a] tracking-wider transition-colors flex items-center gap-1"
+                className="px-6 py-4 text-white font-archivo font-regular text-lg hover:text-[#58c28a] tracking-wider transition-colors flex items-center gap-1"
               >
                 {TEXT.nav.services}
               </button>
@@ -175,7 +214,7 @@ useEffect(() => {
                 onMouseEnter={() => setNavbarIndustriesOpen(true)}
                 onMouseLeave={() => setNavbarIndustriesOpen(false)}
                 onClick={() => scrollToSection('industries')}
-                className="px-6 py-4 text-white font-archivo font-medium text-lg hover:text-[#58c28a] tracking-wider transition-colors flex items-center gap-1"
+                className="px-6 py-4 text-white font-archivo font-regular text-lg hover:text-[#58c28a] tracking-wider transition-colors flex items-center gap-1"
               >
                 {TEXT.nav.industries}
                 </button>
@@ -230,64 +269,12 @@ useEffect(() => {
                 </div>
               )}
             </div>
-
-            {/* About Dropdown */}
-            <div className="relative">
               <button
-                onMouseEnter={() => setNavbarAboutOpen(true)}
-                onMouseLeave={() => setNavbarAboutOpen(false)}
-                onClick={() => scrollToSection('about')}
-                className="px-6 py-4 text-white font-archivo font-medium text-lg hover:text-[#58c28a] tracking-wider transition-colors flex items-center gap-1"
-              >
-                {TEXT.nav.about}
-              </button>
-              {navbarAboutOpen && (
-                <div
-                  onMouseEnter={() => setNavbarAboutOpen(true)}
-                  onMouseLeave={() => setNavbarAboutOpen(false)}
-                  className="absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg py-2 border border-gray-100"
-                >
-                  <Link
-                    to="/aboutUs"
-                    onClick={() => setNavbarAboutOpen(false) }
-                    className="block w-full text-left px-4 py-2.5 font-archivo font-regular text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0505F0F] transition-colors"
-                  >
-                    {TEXT.nav.aboutUs}
-                  </Link>
-                  <Link
-                    to="/careers"
-                    onClick={() => setNavbarAboutOpen(false) }
-                    className="block w-full text-left px-4 py-2.5 font-archivo font-regular text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0505F0F] transition-colors"
-                  >
-                    {TEXT.nav.careers}
-                  </Link>
-                  <Link
-                    to="/BeOurPartner"
-                    onClick={() => setNavbarAboutOpen(false) }
-                    className="block w-full text-left px-4 py-2.5 font-archivo font-regular text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0505F0F] transition-colors"
-                  >
-                    Be Our Partner
-                  </Link>
-
-                </div>
-              )}
-            </div>
-              <button
-        onClick={() => setIsOpen(true)}
-        className="px-6 py-4 text-white font-archivo font-medium text-lg hover:text-[#58c28a] tracking-wider transition-colors"
+        onClick={() => navigate("/contact")}
+        className="px-6 py-4 text-white font-archivo font-regular text-lg hover:text-[#58c28a] tracking-wider transition-colors"
       >
         {TEXT.nav.contact}
       </button>
-      {createPortal(
-        <ContactModal
-          isOpen={isOpen}
-          onClose={() => setIsOpen(false)}
-          serviceId="service_nlnhzd2"
-          templateId="template_zjgqs1k"
-          publicKey="sXmLsr6PApabpnmxa"
-        />,
-        document.body
-      )}
           </nav>
 
           {/* Mobile Menu Button */}
@@ -445,21 +432,11 @@ exit={{
   </div>
 )}
               <button
-        onClick={() => setIsOpen(true)}
+        onClick={() => navigate("/contact")}
         className=" text-white hover:text-[#F7FAF8] font-clash transition-colors text-left"
       >
         {TEXT.nav.contact}
       </button>
-      {createPortal(
-        <ContactModal
-          isOpen={isOpen}
-          onClose={() => setIsOpen(false)}
-          serviceId="service_nlnhzd2"
-          templateId="template_zjgqs1k"
-          publicKey="sXmLsr6PApabpnmxa"
-        />,
-        document.body
-      )}
             </div>
           </div>
           </motion.div>

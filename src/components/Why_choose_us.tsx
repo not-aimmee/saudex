@@ -61,10 +61,10 @@ export default function WhyChooseUs() {
           className="text-center mb-16"
         >
             
-          <h1 className="text-4xl md:text-5xl font-clash font-semibold text-[#F7FAF8] mb-4">
+          <h1 className="text-3xl md:text-5xl font-clash font-semibold text-[#F7FAF8]  mb-8 lg:mb-4 ">
             {TEXT.whyUs.title}
           </h1>
-          <p className="text-xl text-gray-300 font-archivo font-regular max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 font-archivo font-regular max-w-3xl sm:mt-4 mx-auto">
             {TEXT.whyUs.subtitle}
           </p>
         </motion.div>
@@ -92,9 +92,9 @@ export default function WhyChooseUs() {
       className="h-full"  // important — fills the motion.div
     >
       <div className="backdrop-blur-sm p-8 rounded-full transition-all group h-full">
-        <div className="mb-4">
-          <div className="w-14 h-14 bg-transparent rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-            <reason.icon className="w-7 h-7 text-[#F7FAF8]" />
+        <div className="md:mb-4">
+          <div className="md:w-14 md:h-14 w-5 h-5  bg-transparent rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+            <reason.icon className="w-7 h-7  text-[#F7FAF8]" />
           </div>
         </div>
         {index === 0 ? (

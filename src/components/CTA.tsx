@@ -3,9 +3,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import BlurText from "../../components/blurtext";
 import { ArrowUpRight } from 'lucide-react';
-import ContactModal from './ContactModal';
-import { createPortal } from 'react-dom';
-
+import { useNavigate } from "react-router-dom";
 
 export default function CTA() {
   const [hovered, setHovered] = useState(false);
@@ -14,7 +12,7 @@ export default function CTA() {
   const [circleEntryPoint, setCircleEntryPoint] = useState({ x: 50, y: 50 });
   const [fillProgress, setFillProgress] = useState(0);
   const [isCursorInsideCTA, setIsCursorInsideCTA] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleMove = (e: MouseEvent) => {
@@ -146,7 +144,8 @@ useEffect(() => {
     text-[#228B5A]
     font-archivo
     text-center
-    text-xl
+    text-lg
+    md:text-xl
     font-medium
     tracking-[0.4em]
     mb-6
@@ -179,7 +178,8 @@ useEffect(() => {
     text-white
     font-clash
     text-center
-    text-8xl
+    text-6xl
+    md:text-8xl
     font-bold
   "
 />
@@ -190,7 +190,8 @@ useEffect(() => {
               transition={{ delay: 0.2 }}
               className="
                 text-[#A3BDB8]
-                text-lg
+                text-md
+                md:text-lg
                 mt-8
                 max-w-xl
               "
@@ -205,7 +206,7 @@ useEffect(() => {
           <div className="flex justify-center">
 
             <motion.button
-             onClick={() => setIsOpen(true)}
+             onClick={() => navigate("/contact")}
               whileHover={{
                 scale: 1.05,
               }}
@@ -280,16 +281,6 @@ useEffect(() => {
 </div>
  
             </motion.button>
-{createPortal(
-        <ContactModal
-          isOpen={isOpen}
-          onClose={() => setIsOpen(false)}
-          serviceId="service_nlnhzd2"
-          templateId="template_zjgqs1k"
-          publicKey="sXmLsr6PApabpnmxa"
-        />,
-        document.body
-      )}
           </div>
 
         </div>

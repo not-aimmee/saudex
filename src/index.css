@@ -427,3 +427,8 @@ html {
   background-size: cover;
   background-position: 50% 50%;
 }
+
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(40px, 30px); }
+}

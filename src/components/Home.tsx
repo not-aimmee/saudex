@@ -66,7 +66,7 @@ export default function Hero() {
       canonical={homeMeta.canonical}
       ogImage={homeMeta.ogImage}
     />
-    <section id="home" className="relative min-h-screen flex items-center">
+    <section id="home" className="relative min-h-screen flex lg:items-center ">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <video
@@ -88,7 +88,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full px-8 lg:px-20 pt-20">
+      <div className="relative z-10 w-full px-8 lg:px-20 pt-44 md:pt-20">
         <div className="max-w-4xl ">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -100,7 +100,7 @@ export default function Hero() {
   className="
      text-[#F7FAF8]
   font-clash
-  font-bold
+  font-regular
   text-left
   leading-[1.2]
   pb-2
@@ -112,17 +112,19 @@ export default function Hero() {
 />
           </motion.div>
 </div>
-          <div className="flex justify-end mr-18">
+          <div className="flex justify-end sm:items-centerlg:mr-18">
   <motion.p
     className="
-      mt-10
+      lg:mt-10
+      mt-14
       max-w-2xl
-      text-right 
+      lg:text-right 
+      text-center
       text-xl
       md:text-2xl
       text-[#F7FAF8]/80
       font-archivo
-      font-medium
+      font-regular
       tracking-wide
     "
   >

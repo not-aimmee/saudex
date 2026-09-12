@@ -1,5 +1,6 @@
 import { useState } from "react";
-import ContactModal from "../components/ContactModal";
+import { useNavigate } from "react-router-dom";
+
 
  
 /* ─────────────────────────────────────────────
@@ -155,7 +156,7 @@ function HeroSection() {
 
 /** OPEN ROLES — filterable job board */
 function OpenRolesSection() {
-  const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("All");
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
@@ -265,7 +266,7 @@ function OpenRolesSection() {
 
               {/* Type + Arrow */}
               <div  className="col-span-3 md:col-span-2 flex items-center justify-end gap-3">
-                <span onClick={() => setIsOpen(true)} className="text-xs hidden md:block font-archivo" style={{ color: C.midInk + "88" }}>
+                <span onClick={() => navigate("/contact")} className="text-xs hidden md:block font-archivo" style={{ color: C.midInk + "88" }}>
                   {job.type}
                 </span>
                 <span
@@ -277,13 +278,6 @@ function OpenRolesSection() {
               </div>
             </div>
           ))}
-          <ContactModal
-        isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
-        serviceId="service_nlnhzd2"       // from EmailJS dashboard
-        templateId="template_zjgqs1k"     // from EmailJS dashboard
-        publicKey="sXmLsr6PApabpnmxa"       // from EmailJS Account → Public Key
-      />
         </div>
 
         {/* No results state */}
@@ -307,6 +301,7 @@ function OpenRolesSection() {
    ROOT
    ───────────────────────────────────────────── */
 export default function Careers() {
+  
   return (
     <div style={{ fontFamily: "'DM Sans', sans-serif" }}>
       <HeroSection />

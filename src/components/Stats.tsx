@@ -158,7 +158,7 @@ export default function Stats() {
           </div>
 
           <p
-            className=" max-w-sm text-sm leading-relaxed md:text-right"
+            className=" max-w-sm md:text-lg leading-relaxed md:text-right"
             style={{ color: "#f7faf8" }}
           >
             Every shipment tracked. Every metric earned. Here's how our

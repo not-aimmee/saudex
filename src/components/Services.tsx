@@ -77,7 +77,7 @@ transition={{
   }}
 />
 
-      <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl w-full  grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Side */}
         <div className="space-y-6 pr-12 py-12">
           <div className="flex justify-center" >
@@ -87,7 +87,8 @@ transition={{
               uppercase 
             text-[#228B5A]
             font-archivo
-            text-xl
+            text-lg
+            lg:text-xl
             font-medium
             tracking-[0.4em]
             "
@@ -100,16 +101,16 @@ transition={{
 </div>
 <div>
   <SplitText
-    text="Comprehensive logistics solutions tailored to your business needs"
+    text="Comprehensive Logistics Solutions tailored to your business needs"
     className="
     mt-6
-      uppercase
       text-[#F7FAF8]
-      font-archivo
+      font-clash
       text-left
-      text-4xl
+      lg:text-4xl
+      text-3xl
       tracking-[0.1em]
-      font-medium"
+      font-semi-bold"
     delay={50}
     duration={0.8}
   />
@@ -122,7 +123,8 @@ transition={{
               className="
                 mt-12
                 max-w-2xl
-                text-center
+                lg:text-center
+                text-left
                 text-xl
                 text-[#F7FAF8]/60
                 font-archivo
@@ -141,11 +143,10 @@ transition={{
         
         {/* Right Side */}
         
-        <div className="flex items-center justify-center h-[720px] overflow-hidden">
+        <div className="flex items-center justify-center md:h-[720px] h-auto overflow-hidden">
           <div className=" absolute left-[71.5%] top-0 h-full border-l border-white/10 -translate-x-1/2 z-0 "/>
           <div
-            className="relative flex items-center justify-center"
-            style={{ width: 450, height: 450 }}
+            className="relative flex items-center justify-center w-[280px] h-[280px] md:w-[450px] md:h-[450px]"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => {
               setIsHovered(false);

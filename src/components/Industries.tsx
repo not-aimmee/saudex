@@ -39,17 +39,21 @@ export default function Industries (){
     text-[#228B5A]
     font-archivo
     text-center
-    text-xl
+    text-lg
+    md:text-xl
     font-medium
-    tracking-[0.4em]
+    tracking-[0.1em]
+    md:tracking-[0.4em]
     mb-6">
                         Industries We Serve 
                       </p>
                       <h2 className="text-white
     font-clash
     text-center
-    text-4xl
-    font-bold">
+    text-3xl
+    md:text-4xl
+    font-regular
+    ">
                        Logistics solutions across diverse sectors
                       </h2>
                       <p className="
@@ -57,8 +61,9 @@ export default function Industries (){
     text-[#F7FAF8]/60
     font-archivo
     text-center
-    text-xl
-    font-medium
+    text-lg
+    md:text-xl
+    font-regular
     mb-6">
           Every industry has different shipping challenges. Whether you're in retail, e-commerce, cold chain, or food & beverage, we provide customized logistics solutions designed around your needs.
                       </p>

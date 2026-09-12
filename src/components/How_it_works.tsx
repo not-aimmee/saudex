@@ -42,51 +42,52 @@ export default function HowItWorks() {
       
     <div className="w-full overflow-x-hidden">
         <div className=" absolute left-[25%] top-0 h-full border-l border-white/10 -translate-x-1/2 z-0 "/>
-      <main className="grid grid-cols-2 h-screen overflow-hidden">
+      <main className="grid grid-cols-1 md:grid-cols-2 h-auto md:h-screen overflow-visible md:overflow-hidden">
 
-        {/* LEFT — tall column, image pans inside the rectangle as you scroll */}
-        <div ref={leftColRef} className="relative h-[180vh] overflow-hidden">
-            
-          {/* Sticky rectangle that stays visible; image inside shifts on scroll */}
-          <div className="sticky top-0 h-screen overflow-hidden">
-            <div
-              className="absolute inset-8 overflow-hidden"
-              style={{ border: "1px solid rgba(26,22,18,0.15)" }}
-            >
-              <div
-                style={{
-                  transform: `translateY(${translateY}px)`,
-                  height: "200%",
-                  width: "100%",
-                  willChange: "transform",
-                }}
-              >
-                <img
-                  src='/images/s60.webp'
-                  alt="Cargo plane loading at the airport"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    objectPosition: "center top",
-                    display: "block",
-                  }}
-                />
-              </div>
-
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  background:
-                    "linear-gradient(to bottom, rgba(245,240,234,0.06) 0%, transparent 20%, transparent 80%, rgba(245,240,234,0.1) 100%)",
-                }}
-              />
-            </div>
-          </div>
+  {/* LEFT — image */}
+  <div
+    ref={leftColRef}
+    className="relative h-[70vh] md:h-[180vh] overflow-hidden"
+  >
+    <div className="sticky top-0 h-[70vh] md:h-screen overflow-hidden">
+      <div
+        className="absolute inset-4 md:inset-8 overflow-hidden"
+        style={{ border: "1px solid rgba(26,22,18,0.15)" }}
+      >
+        <div
+          style={{
+            transform: `translateY(${translateY}px)`,
+            height: "200%",
+            width: "100%",
+            willChange: "transform",
+          }}
+        >
+          <img
+            src='/images/s60.webp'
+            alt="Cargo plane loading at the airport"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "center top",
+              display: "block",
+            }}
+          />
         </div>
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(245,240,234,0.06) 0%, transparent 20%, transparent 80%, rgba(245,240,234,0.1) 100%)",
+          }}
+        />
+      </div>
+    </div>
+  </div>
+
 
         {/* RIGHT — sticky text that stays in place while image scrolls */}
-        <div className="sticky top-0 h-screen flex flex-col justify-center px-16 py-16 overflow-hidden">
+        <div className="sticky top-0 h-screen flex flex-col justify-center px-6 py-6 lg:px-16 lg:py-16 overflow-hidden">
              <motion.div
              animate={{ opacity: 1, y: 0 }}
              initial={{ opacity: 0 }}
@@ -115,11 +116,13 @@ export default function HowItWorks() {
              mt-12
               uppercase 
             text-[#F7FAF8]
-            font-archivo
+            font-clash
             text-center
-            text-4xl
-            font-medium
-            tracking- normal
+            text-3xl
+            lg:text-4xl
+            font-regular
+            tracking-[0.1em]
+            lg:tracking- normal
             ">
             A simple, transparent process from start to finish.
 
@@ -136,10 +139,11 @@ export default function HowItWorks() {
                 text-[#F7FAF8]/60
                 font-archivo
                 font-regular
-                tracking-wide
+                tracking-normal 
+                lg:tracking-wide
               "
             >
-             Getting your goods moving is easy.<br/> Request a quote, confirm your shipment details, and we handle pickup, transit, customs, and final delivery <br/> While keeping you informed at every stage.
+             Getting your goods moving is easy.<br className="hidden sm:block"/> Request a quote, confirm your shipment details, and we handle pickup, transit, customs, and final delivery <br/> While keeping you informed at every stage.
             </motion.p>
         </div>
 
