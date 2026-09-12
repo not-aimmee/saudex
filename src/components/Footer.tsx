@@ -1,4 +1,4 @@
-import { ArrowUp, Linkedin, Mail, X, Facebook } from 'lucide-react';
+import { ArrowUp, Linkedin, Mail , Facebook } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { useRef, useState, useEffect } from 'react';
 import { TEXT } from '../constants';
@@ -23,7 +23,7 @@ export default function Footer() {
 
   const socialItems = [
     { icon: Linkedin, color: 'blue', label: 'LinkedIn', link: 'https://www.linkedin.com/company/saudexglobal/' },
-    { icon: X, color: 'white', label: 'X', link: '' },
+    { icon: FaWhatsapp, color: 'green', label: 'WhatsApp', link: 'https://wa.me/6585351308' },
     { icon: Facebook, color: 'blue', label: 'Facebook', link: 'https://www.facebook.com/saudexglobal' },
   ];
 
@@ -77,7 +77,7 @@ export default function Footer() {
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 grid grid-cols-1 gap-12 md:grid-cols-4">
         {/* Logo / Follow Us */}
         <div>
-          <div className="flex items-center gap-3 mb-4">
+          <div className="flex items-center gap-3 mb-4 md:mt-12">
             <img onClick={goHome} src={logo} alt="Saudex Global" className="w-16 h-16 cursor-pointer" draggable={false} />
             <button
               onClick={goHome}
@@ -128,16 +128,6 @@ export default function Footer() {
             Get in Touch
           </h4>
           <ul className="flex flex-col gap-3">
-            <li>
-              <a
-              href="mailto:info@saudexglobal.com"
-      className="flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors duration-200"
-    >
-<Mail className="w-4 h-4 shrink-0" />
-      info@saudexglobal.com
-
-              </a>
-            </li>
             <li className="text-sm text-white/50"></li>
             <div className="translate-x-1">
             <GlassIcons items={socialItems} className="custom-class" />
@@ -147,10 +137,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Hairline divider */}
-      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="border-t border-white/10" />
-      </div>
+      
 
       {/* 2nd grid*/}
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 gap-12 md:grid-cols-4">
@@ -202,16 +189,6 @@ export default function Footer() {
             Contact Us
           </h4>
           <ul className="flex flex-col gap-3">
-            <li>
-              <a
-              href="mailto:info@saudexglobal.com"
-      className="flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors duration-200"
-    >
-<Mail className="w-4 h-4 shrink-0" />
-      info@saudexglobal.com
-
-              </a>
-            </li>
             <li className="text-sm text-white/50">
     For Sales Inquiries
   </li>
@@ -226,10 +203,10 @@ export default function Footer() {
               </a>
             </li>
 
-            <li className="text-sm text-white/50">
+            <li className="text-sm text-white/50" >
     Singapore
-  </li>
-  <li>
+</li>
+<li>
               <a
               href="https://wa.me/6585351308"
       target="_blank"

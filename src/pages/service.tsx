@@ -531,15 +531,15 @@ export default function service() {
     text-white
     font-clash
     text-center
-    text-7xl
+    text-5xl
+    md:text-7xl
     font-bold
   "
 />
 
               <p
-              className="font-archivo font-medium tracking-wide"
+              className="md:text-xl text-lg font-archivo font-medium tracking-wide"
                 style={{
-                  fontSize: "1rem",
                   lineHeight: 2,
                   color: "rgba(232,237,232,0.4)",
                   maxWidth: "22rem",
@@ -569,7 +569,6 @@ export default function service() {
                     textTransform: "uppercase",
                     color: "#e8ede8",
                     borderBottom: "1px solid #e8ede8",
-                    paddingBottom: "2px",
                     transition: "color 0.25s, border-color 0.25s",
                   }}
                 >

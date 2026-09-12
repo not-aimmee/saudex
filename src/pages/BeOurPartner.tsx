@@ -1,4 +1,3 @@
-
 import { Helmet } from "react-helmet-async";
 import BlurText from "../../components/blurtext";
 import { useNavigate } from "react-router-dom";
@@ -52,35 +51,35 @@ export default function BeOurPartner() {
             backgroundSize: "28px 28px",
           }}
         />
-        <div className="relative z-10 max-w-5xl mx-auto px-10 pt-32 pb-24 text-center">
+        <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-10 pt-20 pb-16 sm:pt-32 sm:pb-24 text-center">
           <div className="flex justify-center">
           <BlurText
             text="Be Our Partner."
             delay={120}
             animateBy="words"
             direction="top"
-            className="text-white font-clash  text-8xl font-bold"
+            className="text-white font-clash text-4xl sm:text-6xl md:text-8xl font-bold"
           />
           </div>
-          <p className="text-[#A3BDB8] text-lg mt-8 max-w-xl mx-auto">
+          <p className="text-[#A3BDB8] text-base sm:text-lg mt-6 sm:mt-8 max-w-xl mx-auto px-2">
             Join our growing network of partners and unlock new opportunities. Together, we create smarter logistics solutions, expand market reach, and deliver greater value to customers. We offer competitive terms, dedicated support, and a clear path to mutual growth.
           </p>
         </div>
       </section>
 
       {/* Partnership tracks */}
-      <section className="relative bg-[#050f0f] border-t border-white/[0.08] px-10 py-24">
+      <section className="relative bg-[#050f0f] border-t border-white/[0.08] px-6 sm:px-10 py-16 sm:py-24">
   <div className="max-w-5xl mx-auto">
-    <h2 className="text-white font-clash text-6xl font-bold mb-12 max-w-2xl">
+    <h2 className="text-white font-clash text-4xl sm:text-5xl md:text-6xl font-bold mb-8 sm:mb-12 max-w-2xl">
       Why Choose Us?
     </h2>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.08]">
       {WHY_CHOOSE_US.map((point, i) => (
-        <div key={i} className="bg-[#050f0f] p-8 flex gap-4">
+        <div key={i} className="bg-[#050f0f] p-6 sm:p-8 flex gap-4">
           <span className="flex-shrink-0 w-8 h-8 rounded-full bg-white/[0.08] text-white font-clash font-bold flex items-center justify-center text-sm">
             {String(i + 1).padStart(2, "0")}
           </span>
-          <p className="text-[#A3BDB8] text-lg leading-relaxed">
+          <p className="text-[#A3BDB8] text-base sm:text-lg leading-relaxed">
             {point}
           </p>
         </div>
@@ -90,24 +89,24 @@ export default function BeOurPartner() {
 </section>
 
       {/* How it works */}
-      <section className="relative bg-[#050f0f] border-t border-white/[0.08] px-10 py-24">
+      <section className="relative bg-[#050f0f] border-t border-white/[0.08] px-6 sm:px-10 py-16 sm:py-24">
         <div className="max-w-5xl mx-auto">
-          <p className="uppercase text-[#228B5A] font-archivo text-lg font-medium tracking-[0.3em] mb-4">
+          <p className="uppercase text-[#228B5A] font-archivo text-base sm:text-lg font-medium tracking-[0.3em] mb-4">
             how it works
           </p>
-          <h2 className="text-white font-clash text-7xl font-bold mb-12 max-w-2xl">
+          <h2 className="text-white font-clash text-4xl sm:text-5xl md:text-7xl font-bold mb-8 sm:mb-12 max-w-2xl">
             From application to launch.
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
             {STEPS.map((step) => (
               <div key={step.number}>
-                <span className="text-[#228B5A] font-clash text-6xl font-bold">
+                <span className="text-[#228B5A] font-clash text-5xl sm:text-6xl font-bold">
                   {step.number}
                 </span>
-                <h3 className="text-white font-archivo text-2xl font-medium mt-3 mb-2">
+                <h3 className="text-white font-archivo text-xl sm:text-2xl font-medium mt-3 mb-2">
                   {step.title}
                 </h3>
-                <p className="text-[#A3BDB8] text-lg leading-relaxed">
+                <p className="text-[#A3BDB8] text-base sm:text-lg leading-relaxed">
                   {step.description}
                 </p>
               </div>
@@ -117,7 +116,7 @@ export default function BeOurPartner() {
       </section>
 
       {/* CTA */}
-      <section className="relative bg-[#050f0f] border-t border-white/[0.08] min-h-[340px] grid grid-cols-[1fr_1px_1fr] overflow-hidden">
+      <section className="relative bg-[#050f0f] border-t border-white/[0.08] min-h-[340px] grid grid-cols-1 md:grid-cols-[1fr_1px_1fr] overflow-hidden">
         <div
           className="pointer-events-none absolute right-0 top-0 bottom-0 w-1/2 opacity-[0.07]"
           style={{
@@ -127,12 +126,12 @@ export default function BeOurPartner() {
         />
 
         {/* Left — Contact circle */}
-        <div className="flex items-center justify-center px-10 py-12">
+        <div className="order-2 md:order-1 flex items-center justify-center px-6 sm:px-10 py-10 sm:py-12">
           <button
             onClick={() => navigate("/contact")}
-            className="w-48 h-48 rounded-full border border-white/20 flex flex-col items-center justify-center gap-1 transition-all duration-300 hover:border-emerald-500/60 hover:bg-emerald-500/5 cursor-pointer"
+            className="w-36 h-36 sm:w-48 sm:h-48 rounded-full border border-white/20 flex flex-col items-center justify-center gap-1 transition-all duration-300 hover:border-emerald-500/60 hover:bg-emerald-500/5 cursor-pointer"
           >
-            <span className="text-[16px] font-archivo font-medium tracking-[0.15em] text-white uppercase text-center leading-snug">
+            <span className="text-sm sm:text-[16px] font-archivo font-medium tracking-[0.15em] text-white uppercase text-center leading-snug">
               Talk With
               <br />
               US
@@ -141,20 +140,20 @@ export default function BeOurPartner() {
         </div>
 
         {/* Divider */}
-        <div className="bg-white/[0.08]" />
+        <div className="order-1 md:order-2 h-px w-full md:h-auto md:w-px bg-white/[0.08]" />
 
         {/* Right — Text */}
-        <div className="relative z-10 flex flex-col justify-center px-10 py-12">
-          <p className="uppercase text-[#228B5A] font-archivo text-left text-xl font-medium tracking-[0.4em] mb-6">
+        <div className="order-1 md:order-3 relative z-10 flex flex-col justify-center px-6 sm:px-10 py-10 sm:py-12 text-center md:text-left items-center md:items-start">
+          <p className="uppercase text-[#228B5A] font-archivo text-lg sm:text-xl font-medium tracking-[0.4em] mb-4 sm:mb-6">
             your next step
           </p>
-          <p className="uppercase text-[#A3BDB8] font-archivo text-left text-2xl font-medium mb-6">
+          <p className="uppercase text-[#A3BDB8] font-archivo text-xl sm:text-2xl font-medium mb-4 sm:mb-6">
             ready to apply?
           </p>
-          <p className="text-white font-clash text-6xl font-bold mb-6">
+          <p className="text-white font-clash text-3xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6">
             Let's talk partnership.
           </p>
-          <p className="text-[#A3BDB8] text-lg max-w-xl">
+          <p className="text-[#A3BDB8] text-base sm:text-lg max-w-xl">
             Reach out and we'll walk you through the right track for your
             business.
           </p>

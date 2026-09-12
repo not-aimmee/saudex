@@ -78,12 +78,13 @@ function FaqBlock({ items }: { items: ServiceFaq[] }) {
     text-white
     font-clash
     text-center
-    text-7xl
+    text-5xl
+    md:text-7xl
     font-bold
   "
 />
           </div>
-          <p style={{ fontSize: "1.5rem", lineHeight: 1.8, color: D(0.38), maxWidth: "24rem", marginTop: "2rem" }}>
+          <p className="md:text-xl text-lg" style={{ lineHeight: 1.8, color: D(0.38), maxWidth: "24rem", marginTop: "2rem" }}>
             Everything you need to know about working with us
           </p>
         </div>
@@ -109,8 +110,8 @@ function FaqBlock({ items }: { items: ServiceFaq[] }) {
                   }}
                 >
                   <span
+                  className="md:text-xl text-lg "
                     style={{
-                      fontSize: "clamp(0.88rem, 1.3vw, 1rem)",
                       fontWeight: 600,
                       letterSpacing: "-0.01em",
                       lineHeight: 1.4,

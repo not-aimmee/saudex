@@ -66,7 +66,7 @@ export default function Contact() {
   };
 
   return (
-    <div style={{ fontFamily: "'Outfit', sans-serif" }} className="min-h-screen bg-[#f0faf0] text-[#0d1f0d]">
+    <div style={{ fontFamily: "'Outfit', sans-serif" }} className="min-h-screen bg-[#f0faf0] text-black">
       <section className="relative overflow-hidden bg-[#050F0F] text-white min-h-[60vh] md:min-h-[70vh] flex items-end pb-12 md:pb-16 px-6 md:px-16">
         {/* base photo + directional overlay */}
         <div className="absolute inset-0 bg-[#050F0F]/85">
@@ -135,12 +135,12 @@ export default function Contact() {
 
       <div className="relative bg-white font-archivo">
         <section className="relative max-w-5xl mx-auto px-8 py-16">
-          <h2 className="text-4xl font-extrabold text-[#3aab68] uppercase tracking-wide mb-3">
+          <h2 className="text-4xl font-extrabold text-black uppercase tracking-wide mb-3">
             Got a Question?
           </h2>
           <p className="text-gray-700 mb-10">
             Submit the form below or{" "}
-            <a href="https://wa.me/6596471335" target="_blank" rel="noreferrer" className="text-[#3aab68] hover:underline">
+            <a  target="_blank" rel="noreferrer" className="text-black hover:underline">
               whatsapp
             </a>{" "}
             us and we will get back to you soonest.
@@ -149,7 +149,7 @@ export default function Contact() {
           <form ref={formRef} onSubmit={onSubmit} onReset={onReset} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-xs font-bold text-[#3aab68] uppercase tracking-wider mb-1">
+                <label className="block text-xs font-bold text-black uppercase tracking-wider mb-1">
                   Full Name
                 </label>
                 <input
@@ -164,7 +164,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-[#3aab68] uppercase tracking-wider mb-1">
+                <label className="block text-xs font-bold text-black uppercase tracking-wider mb-1">
                   Email Address
                 </label>
                 <input
@@ -181,7 +181,7 @@ export default function Contact() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-xs font-bold text-[#3aab68] uppercase tracking-wider mb-1">
+                <label className="block text-xs font-bold text-black uppercase tracking-wider mb-1">
                   Phone
                 </label>
                 <input
@@ -195,7 +195,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-[#3aab68] uppercase tracking-wider mb-1">
+                <label className="block text-xs font-bold text-black uppercase tracking-wider mb-1">
                   Service
                 </label>
                 <select
@@ -217,7 +217,7 @@ export default function Contact() {
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-[#3aab68] uppercase tracking-wider mb-1">
+              <label className="block text-xs font-bold text-black uppercase tracking-wider mb-1">
                 Your Message
               </label>
               <textarea
@@ -232,7 +232,7 @@ export default function Contact() {
             </div>
 
             {state === "success" && (
-              <div className="flex items-center gap-2 rounded border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700">
+              <div className="flex items-center gap-2 rounded border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-black">
                 <Check size={18} className="shrink-0" />
                 Your enquiry has been sent successfully. We will contact you soon.
               </div>
@@ -264,34 +264,34 @@ export default function Contact() {
 
         <section className="max-w-5xl mx-auto px-8 py-16">
          
-          <h2 className="text-3xl font-extrabold text-[#3aab68] uppercase tracking-wide mb-2">
+          <h2 className="text-3xl font-extrabold text-black uppercase tracking-wide mb-2">
             Customer Service
           </h2>
           <div className="w-10 h-0.5  mb-8" />
 
           <ul className="space-y-4 text-gray-800 text-base">
             <li className="flex items-center gap-4">
-              <Clock3 size={20} className="text-[#3aab68] shrink-0" />
+              <Clock3 size={20} className="text-black shrink-0" />
               <span>9:00 AM – 5:00 PM</span>
             </li>
             <li className="flex items-center gap-4">
-              <CalendarDays size={20} className="text-[#3aab68] shrink-0" />
-              <span>Mondays – Fridays (excluding Weekends &amp; PH)</span>
+              <CalendarDays size={20} className="text-black shrink-0" />
+              <span>Monday – Friday</span>
             </li>
             <li className="flex items-center gap-4">
-              <MapPin size={20} className="text-[#3aab68] shrink-0" />
+              <MapPin size={20} className="text-black shrink-0" />
               <span>10 Anson Rd, #33-03 International Plaza, Singapore 079903</span>
             </li>
             <li className="flex items-center gap-4">
-              <Mail size={20} className="text-[#3aab68] shrink-0" />
+              <Mail size={20} className="text-black shrink-0" />
               <span>sales@saudexglobal.com</span>
             </li>
             <li className="flex items-center gap-4">
-              <Phone size={20} className="text-[#3aab68] shrink-0" />
+              <Phone size={20} className="text-black shrink-0" />
               <span>(+65) 8535 1308</span>            
             </li>
             <li className="flex items-center gap-4">
-              <Phone size={20} className="text-[#3aab68] shrink-0" />
+              <Phone size={20} className="text-black shrink-0" />
               <span>(+60) 11511 68040 (Malaysia)</span>
               </li>
           </ul>

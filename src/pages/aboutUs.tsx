@@ -40,39 +40,6 @@ function Eyebrow({ children, light = false }: { children: React.ReactNode; light
   );
 }
 
-/** Horizontal marquee ticker band */
-function Marquee({ text, bg, fg }: { text: string; bg: string; fg: string }) {
-  // Repeat text enough times to fill the band
-  const repeated = Array(12).fill(text).join("   ·   ");
-  return (
-    <div
-      className="py-3 overflow-hidden whitespace-nowrap relative"
-      style={{ backgroundColor: bg /* Marquee background color */ }}
-    >
-      <div
-        className="inline-block"
-        style={{
-          animation: "marquee 50s linear infinite", /* Adjust speed here */
-          fontFamily: "'Barlow Condensed', sans-serif",
-          fontSize: "1.1rem",
-          fontWeight: 700,
-          letterSpacing: "0.15em",
-          textTransform: "uppercase",
-          color: fg, /* Marquee text color */
-        }}
-      >
-        {repeated}&nbsp;&nbsp;&nbsp;{repeated}
-      </div>
-      <style>{`
-        @keyframes marquee {
-          from { transform: translateX(0); }
-          to   { transform: translateX(-50%); }
-        }
-      `}</style>
-    </div>
-  );
-}
-
 /** Staggered word entrance animation */
 function StaggeredWords({ text, className, style }: { text: string; className?: string; style?: React.CSSProperties }) {
   const words = text.split(" ");
@@ -295,12 +262,7 @@ function HeroSection() {
 function MissionSection() {
   return (
     <>
-      {/* Marquee ticker — separates Hero from Mission */}
-      <Marquee
-        text="Precision · Speed · Trust · Global Reach · On Time Every Time" /* Change marquee text */
-        bg={C.brightGreen} /* Marquee background color */
-        fg={C.deepGreen}   /* Marquee text color */
-      />
+      
 
       <section
         className="min-h-screen flex items-center px-6 md:px-16 py-32 relative overflow-hidden"
@@ -409,12 +371,7 @@ function StatsSection() {
 function ValuesSection() {
   return (
     <>
-      {/* Second marquee — reversed direction */}
-      <Marquee
-        text="Reliability · Precision · Innovation · Sustainability · Integrity" /* Change marquee text */
-        bg={C.darkInk}  /* Marquee background color */
-        fg={C.brightGreen} /* Marquee text color */
-      />
+     
 
       <section className="px-6 md:px-16 py-32" style={{ backgroundColor: C.midGreen }}>
         <div className="max-w-7xl w-full mx-auto">

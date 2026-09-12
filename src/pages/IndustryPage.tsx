@@ -163,12 +163,13 @@ function FaqBlock({ items }: { items: IndustryFaq[] }) {
     text-white
     font-clash
     text-center
-    text-7xl
+    text-5xl
+    md:text-7xl
     font-bold
   "
 />
           </div>
-          <p style={{ fontSize: "1.2rem", lineHeight: 1.8, color: "#A3BDB8", maxWidth: "24rem", marginTop: "2rem" }}>
+          <p className="md:text-xl text-lg " style={{  lineHeight: 1.8, color: "#A3BDB8", maxWidth: "24rem", marginTop: "2rem" }}>
             Find answers to the most common queries about how we serve your industry.
           </p>
         </div>
@@ -194,8 +195,8 @@ function FaqBlock({ items }: { items: IndustryFaq[] }) {
                   }}
                 >
                   <span
+                    className="text-lg md:text-xl "
                     style={{
-                      fontSize: "clamp(1.3rem, 1.3vw, 1.3rem)",
                       fontWeight: 600,
                       letterSpacing: "-0.01em",
                       lineHeight: 1.4,
