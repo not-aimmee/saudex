@@ -261,7 +261,7 @@ export const privacyPolicyMeta: PageMeta = {
     "Read Saudex Global's privacy policy — how we collect, use, and protect your personal data in line with applicable data protection regulations.",
   keywords:
     "Saudex Global privacy policy, data protection, GDPR, personal data",
-  canonical: `${BASE_URL}/privacy-policy`,
+  canonical: `${BASE_URL}/privacy_policy`,
   ogImage:   `${OG}/og-default.jpg`,
 };
 

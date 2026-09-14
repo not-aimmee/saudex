@@ -16,9 +16,6 @@ const routes = [
   "/services/fmcg",
   "/services/customs",
   "/services/Supply_chain",
-  "/How_it_works",
-  "/Home",
-  "/CTA",
   "/contact",
   "/careers",
   "/Industries",
@@ -29,8 +26,8 @@ const routes = [
   "/industries/horeca",
   "/industries/retail",
   "/BeOurPartner",
-  "/careers",
-  "/Stats"
+  "/privacy_policy",
+  "/terms_of_service"
 ];
 
 // https://vite.dev/config/
@@ -51,5 +48,11 @@ export default defineConfig({
       // Alias @ to the src directory
       '@': path.resolve(__dirname, './src'),
     },
+  },
+  build: {
+    // react-snap's bundled Puppeteer runs an old Chromium that can't parse
+    // optional chaining (?.) or nullish coalescing (??). Targeting es2015
+    // makes esbuild transpile those away in both app code and node_modules deps.
+    target: 'es2015',
   },
 })

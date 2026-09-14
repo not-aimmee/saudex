@@ -56,6 +56,7 @@ function App() {
 
       <Route element={<MainLayout/>}>
        <Route path="services">
+        <Route index element={<Services />} />
         <Route path="service" element={<ServicePage/>}/>
         <Route path="/services/customs" element={<Customs />} />
         <Route path="/services/distribution" element={<Distribution/>} />
@@ -67,6 +68,7 @@ function App() {
         <Route path="/services/warehousing" element={<Warehousing/>} />
        </Route>
        <Route path="industries">
+        <Route index element={<Industries />} />
         <Route path="/industries/cold_chain" element={<ColdChainPage/>} />
         <Route path="/industries/e_commerce" element={<ECommercePage/>} />
         <Route path="/industries/horeca" element={<HorecaPage/>} />
