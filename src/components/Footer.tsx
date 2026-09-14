@@ -45,8 +45,7 @@ export default function Footer() {
   const company = [
     { label: 'About Us', to: '/aboutUs' },
     { label: 'Careers', to: '/careers' },
-    { label: 'Be Our Partner', to: '/BeOurpartner' },
-    { label: 'nfc testing card', to: '/nfcCard'}
+    { label: 'Be Our Partner', to: '/BeOurpartner' }
   ];
 
   const locations = ['Singapore','Malaysia', 'Saudi Arabia', 'United Arab Emirates', 'India'];
