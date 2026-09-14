@@ -38,8 +38,8 @@ export default function PrivacyPolicy() {
           </h1>
           <p className="font-archivo" style={{ fontSize: 14, color: "rgba(163,189,184,0.7)", margin: 0 }}>
             Last updated: June 2025 &nbsp;·&nbsp; Questions? &nbsp;
-            <a href="mailto:info@saudexglobal.com" style={{ color: "#A3BDB8", textDecoration: "none", borderBottom: "1px solid rgba(163,189,184,0.3)" }}>
-              info@saudexglobal.com
+            <a href="mailto:privacy@saudexglobal.com" style={{ color: "#A3BDB8", textDecoration: "none", borderBottom: "1px solid rgba(163,189,184,0.3)" }}>
+              privacy@saudexglobal.com
             </a>
           </p>
         </div>

@@ -69,8 +69,8 @@ export default function TermsOfService() {
           </h1>
           <p className="font-archivo" style={{ fontSize: 14, color: "rgba(163,189,184,0.7)", margin: 0 }}>
             Effective June 20, 2026 &nbsp;·&nbsp; Version 1.0 &nbsp;·&nbsp;
-            <a href="mailto:info@saudexglobal.com" style={{ color: "#A3BDB8", textDecoration: "none", borderBottom: "1px solid rgba(163,189,184,0.3)" }}>
-              info@saudexglobal.com
+            <a href="mailto:privacy@saudexglobal.com" style={{ color: "#A3BDB8", textDecoration: "none", borderBottom: "1px solid rgba(163,189,184,0.3)" }}>
+              privacy@saudexglobal.com
             </a>
           </p>
         </div>
