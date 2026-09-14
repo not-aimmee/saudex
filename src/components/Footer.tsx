@@ -24,7 +24,7 @@ export default function Footer() {
   const socialItems = [
     { icon: Linkedin, color: 'blue', label: 'LinkedIn', link: 'https://www.linkedin.com/company/saudexglobal/' },
     { icon: FaWhatsapp, color: 'green', label: 'WhatsApp', link: 'https://wa.me/6585351308' },
-    { icon: Facebook, color: 'blue', label: 'Facebook', link: 'https://www.facebook.com/saudexglobal' },
+    { icon: Facebook, color: 'blue', label: 'Facebook', link: 'https://www.facebook.com/share/19d9u8W9PA/' },
   ];
 
   const services = [
@@ -45,7 +45,8 @@ export default function Footer() {
   const company = [
     { label: 'About Us', to: '/aboutUs' },
     { label: 'Careers', to: '/careers' },
-    { label: 'Be Our Partner', to: '/BeOurpartner' }
+    { label: 'Be Our Partner', to: '/BeOurpartner' },
+    { label: 'nfc testing card', to: '/nfcCard'}
   ];
 
   const locations = ['Singapore','Malaysia', 'Saudi Arabia', 'United Arab Emirates', 'India'];
@@ -77,7 +78,7 @@ export default function Footer() {
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 grid grid-cols-1 gap-12 md:grid-cols-4">
         {/* Logo / Follow Us */}
         <div>
-          <div className="flex items-center gap-3 mb-4 md:mt-12">
+          <div className="flex items-center gap-3 mb-4 md:ml-8 md:mt-12">
             <img onClick={goHome} src={logo} alt="Saudex Global" className="w-16 h-16 cursor-pointer" draggable={false} />
             <button
               onClick={goHome}

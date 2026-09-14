@@ -1,5 +1,5 @@
 import { useRef,useState, useEffect } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { TEXT } from '../constants';
 import logo from '/favicon2.png';
@@ -280,13 +280,12 @@ useEffect(() => {
           {/* Mobile Menu Button */}
           <div className="flex items-center gap-4 ml-auto">
             <button
+            aria-label="open menu"
   onClick={() => setIsMenuOpen(!isMenuOpen)}
-  className="flex flex-col items-end gap-1.5 p-2 hover:text[#228B5A] transition-colors"
+  className="p-2 text-white hover:text-[#228B5A] transition-colors"
 >
-  <span className="pointer-events-none w-8 h-[2px] bg-white rounded-full hover:text[#228B5A] transition-colors"></span>
-  <span className="pointer-events-none w-5 h-[2px] bg-white rounded-full hover:text[#228B5A] transition-colors"></span>
-  <span className="pointer-events-none w-8 h-[2px] bg-white rounded-full hover:text[#228B5A] transition-colors"></span>
-</button>
+  {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+ </button>
           </div>
         </div>
 

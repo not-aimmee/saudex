@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { CalendarDays, Check, Clock3, Mail, MapPin, Phone, Send } from "lucide-react";
+import { useWebMCP } from "usewebmcp";
 
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_nlnhzd2";
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_zjgqs1k";
@@ -64,6 +65,81 @@ export default function Contact() {
     setState("idle");
     setErrorMsg("");
   };
+
+  // --- WebMCP: let AI agents submit an enquiry on the user's behalf ---
+  // This does not touch the visible form — it fills the same EmailJS
+  // template directly, then updates the same state the form uses so
+  // the success/error banner still shows on screen.
+  useWebMCP({
+    name: "submit_contact_enquiry",
+    description:
+      "Submit a freight, warehousing, or logistics enquiry to SAUDEX GLOBAL's sales team. " +
+      "Use this when someone wants a quote, wants to ask about a service, or wants to get in touch.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        fullName: { type: "string", description: "Full name of the person making the enquiry" },
+        email: { type: "string", description: "Contact email address" },
+        phone: { type: "string", description: "Contact phone number (optional)" },
+        service: {
+          type: "string",
+          enum: ["air", "sea", "land", "customs", "warehouse", "other"],
+          description:
+            "Which service the enquiry relates to: air freight, sea freight, land freight, customs clearance, warehousing, or other",
+        },
+        message: {
+          type: "string",
+          description: "Details of the enquiry, e.g. cargo type, origin/destination, volume, timing",
+        },
+      },
+      required: ["fullName", "email", "service", "message"],
+    } as const,
+    execute: async (args) => {
+      setState("submitting");
+      setErrorMsg("");
+      try {
+        await emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          {
+            fullName: args.fullName,
+            email: args.email,
+            phone: args.phone ?? "",
+            service: args.service,
+            message: args.message,
+          },
+          { publicKey: EMAILJS_PUBLIC_KEY }
+        );
+        setForm(initialForm);
+        setState("success");
+        return {
+          success: true,
+          message:
+            "Enquiry sent to SAUDEX GLOBAL. Customer service hours are 9:00 AM–5:00 PM, Monday–Friday.",
+        };
+      } catch (err) {
+        console.error("EmailJS error (WebMCP tool):", err);
+        setErrorMsg("Something went wrong sending your enquiry. Please try again.");
+        setState("error");
+        return { success: false, message: "Failed to send the enquiry. Please try again." };
+      }
+    },
+  });
+
+  // --- WebMCP: read-only tool so agents can answer "how do I contact them" ---
+  useWebMCP({
+    name: "get_saudex_contact_info",
+    description:
+      "Get SAUDEX GLOBAL's customer service hours, email, phone numbers, and office address.",
+    inputSchema: { type: "object", properties: {} } as const,
+    execute: async () => ({
+      hours: "9:00 AM – 5:00 PM, Monday – Friday",
+      email: "sales@saudexglobal.com",
+      phoneSingapore: "+65 8535 1308",
+      phoneMalaysia: "+60 11511 68040",
+      address: "10 Anson Rd, #33-03 International Plaza, Singapore 079903",
+    }),
+  });
 
   return (
     <div style={{ fontFamily: "'Outfit', sans-serif" }} className="min-h-screen bg-[#f0faf0] text-black">
@@ -279,10 +355,6 @@ export default function Contact() {
               <span>Monday – Friday</span>
             </li>
             <li className="flex items-center gap-4">
-              <MapPin size={20} className="text-black shrink-0" />
-              <span>10 Anson Rd, #33-03 International Plaza, Singapore 079903</span>
-            </li>
-            <li className="flex items-center gap-4">
               <Mail size={20} className="text-black shrink-0" />
               <span>sales@saudexglobal.com</span>
             </li>
@@ -294,6 +366,10 @@ export default function Contact() {
               <Phone size={20} className="text-black shrink-0" />
               <span>(+60) 11511 68040 (Malaysia)</span>
               </li>
+            <li className="flex items-center gap-4">
+              <MapPin size={20} className="text-black shrink-0" />
+              <span>10 Anson Rd, #33-03 International Plaza, Singapore 079903</span>
+            </li>
           </ul>
         </section>
 

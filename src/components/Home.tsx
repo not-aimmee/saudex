@@ -96,6 +96,7 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
           >
             <SplitText
+            aria-label="Logistics Made simple"
   text={TEXT.hero.headline}
   className="
      text-[#F7FAF8]

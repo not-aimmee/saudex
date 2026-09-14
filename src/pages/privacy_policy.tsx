@@ -214,6 +214,13 @@ Data Protection Officer (DPO){" "}
               <a href="mailto:privacy@saudexglobal.com" style={{ color: "#050f0f", textDecoration: "none", borderBottom: "1px solid rgba(5,15,15,0.2)" }}>privacy@saudexglobal.com</a>.
 Saudex Global Logistics Pte. Ltd.
 Singapore            </p>
+            <ul style={{ paddingLeft: 20, margin: 0, display: "flex", flexDirection: "column", gap: 6 }}>
+              <li><Highlight>Data Protection Officer (DPO):</Highlight> Director, Saudex Global Pte. Ltd.</li>
+              <li><Highlight>DPO Email:</Highlight>{" "}
+                <a href="mailto:privacy@saudexglobal.com" style={{ color: "#050f0f", textDecoration: "none", borderBottom: "1px solid rgba(5,15,15,0.2)" }}>privacy@saudexglobal.com</a>
+              </li>
+              <li><Highlight>Responsibility:</Highlight> Responsible for overseeing Saudex Global's compliance with the Singapore Personal Data Protection Act 2012 (PDPA), including personal-data policies, enquiries, access/correction requests, complaints and data-breach response.</li>
+            </ul>
           </SectionBlock>
           <Divider />
 

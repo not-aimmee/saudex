@@ -137,6 +137,40 @@ function ContactRow({
   );
 }
 
+/* ─── Helpers ─────────────────────────────────────────────────────────── */
+function buildVCard() {
+  // Escape commas/semicolons/newlines per vCard spec
+  const esc = (s: string) => s.replace(/([,;])/g, "\\$1");
+
+  return [
+    "BEGIN:VCARD",
+    "VERSION:3.0",
+    `FN:${esc(WORKER.name)}`,
+    `N:${esc(WORKER.name)};;;;`,
+    `ORG:${esc(WORKER.company)};${esc(WORKER.department)}`,
+    `TITLE:${esc(WORKER.role)}`,
+    `TEL;TYPE=CELL,VOICE:${WORKER.phone}`,
+    `EMAIL;TYPE=INTERNET,WORK:${WORKER.email}`,
+    "END:VCARD",
+    "",
+  ].join("\r\n"); // vCard spec requires CRLF line endings
+}
+
+function downloadVCard() {
+  const blob = new Blob([buildVCard()], { type: "text/vcard;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `${WORKER.name.replace(/\s+/g, "_")}.vcf`;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+
+  // Give the browser a tick to start the download before revoking
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
 /* ─── Main component ─────────────────────────────────────────────────── */
 export default function NfcCard() {
   const [saved, setSaved] = useState(false);
@@ -176,7 +210,11 @@ export default function NfcCard() {
             {/* Save button */}
             <button
               className="btn-save"
-              onClick={() => { setSaved(true); setTimeout(() => setSaved(false), 2500); }}
+              onClick={() => {
+                downloadVCard();
+                setSaved(true);
+                setTimeout(() => setSaved(false), 2500);
+              }}
               style={{
                 display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
                 width: "100%", maxWidth: 320, borderRadius: 16, padding: "14px 24px",
@@ -213,7 +251,7 @@ export default function NfcCard() {
                 </div>
                 <div style={{ flex: 1 }}>
                   <div style={{ fontWeight: 600, fontSize: 14, color: "#0d1f15" }}>{s.label}</div>
-                  <div style={{ fontSize: 12, color: "#6b7280", fontFamily: "JetBrains Mono, monospace" }}>{s.handle}</div>
+                  <div style={{ fontSize: 12, color: "#6b7280" }}>{s.handle}</div>
                 </div>
                 <ArrowUpRight size={15} color="#c4e8d1" />
               </a>
@@ -246,7 +284,7 @@ Singapore-based international trading & supply chain enterprise connecting globa
               <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "flex-end", padding: 20, background: "linear-gradient(to top, #061510cc 0%, transparent 60%)" }}>
                 <p style={{ fontFamily: "Fraunces, serif", fontWeight: 700, fontSize: 16, color: "#ffffff", lineHeight: 1.3, margin: 0 }}>
                   Every pallet. Every port.{" "}
-                  <span style={{ color: "#8fc9a4" }}>Always visible.</span>
+                  <span style={{ color: "#ffffff" }}>Always visible.</span>
                 </p>
               </div>
             </div>

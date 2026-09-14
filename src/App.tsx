@@ -28,18 +28,21 @@ import AboutUs from "./pages/aboutUs";
 import BeOurPartner from "./pages/BeOurPartner";
 import NfcCard from "./pages/cards/nfcCard";
 import Contact from "./components/Contact";
+import Cookies from "./components/cookies";
 import { Routes, Route } from "react-router-dom";
 
 
 function App() {
   return (
     <>
+    <Cookies />
     <Routes>
       <Route element={<MainLayout />}>
         <Route
           path="/"
           element={
             <>
+            <Cookies />
               <Hero />
               <Services />
               <HowItWorks/>
