@@ -27,9 +27,7 @@ const C = {
 
 // Job listings — Change title, dept, location, type for each role
 const JOBS = [
-  { id: 4, title: "Product Manager, Tracking Platform",   dept: "Engineering",  location: "United Arab Emirates",        type: "Full-time" },
-  { id: 5, title: "Regional Sales Director — APAC",       dept: "Commercial",   location: "Saudi Arabia",     type: "Full-time" },
-  { id: 7, title: "Customs Compliance Specialist",        dept: "Legal",        location: "United Arab Emirates",      type: "Full-time" },
+  { id: 5, title: "Sales and Marketing Manager",dept: "Commercial",   location: "Singapore",     type: "Full-time" }
   ];
 
 // Departments for filter tabs — Change these labels

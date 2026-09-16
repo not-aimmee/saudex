@@ -309,7 +309,7 @@ function MissionSection() {
               <div className="mt-8 space-y-6">
                 {/* Mission paragraph 1 — Change this text */}
                 <p className="text-lg leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", color: C.midInk }}>
-                  For over 20 years, we have been moving businesses forward through world class logistics solutions. Driven by reliability, speed, and innovation, we help companies connect with markets, customers, and opportunities across the globe.
+                  For over 10 years, we have been moving businesses forward through world class logistics solutions. Driven by reliability, speed, and innovation, we help companies connect with markets, customers, and opportunities across the globe.
                 </p>
                 {/* Mission paragraph 2 — Change this text */}
                 <p className="text-lg leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", color: C.midInk + "cc" }}>

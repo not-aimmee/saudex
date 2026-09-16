@@ -412,7 +412,7 @@ export default function TermsOfService() {
               <p>
                 We collect personal data necessary to provide our Services, including but not limited to:
                 contact information, company details, shipment information, payment details, and communications
-                records. Full details are set out in our Privacy Policy available at saudexglobal.com/privacy.
+                records. Full details are set out in our Privacy Policy <ul>saudexglobal.com/privacy_policy</ul>
               </p>
             </SubBlock>
             <SubBlock title="11.3 Use of Personal Data">
@@ -432,7 +432,7 @@ export default function TermsOfService() {
             <SubBlock title="11.5 Your Rights">
               <p>
                 Subject to Applicable Law, you have rights to access, correct, and withdraw consent for the use
-                of your personal data. Requests may be directed to <MailLink address="dpo@saudexglobal.com" />.
+                of your personal data. Requests may be directed to <MailLink address="privacy@saudexglobal.com" />.
                 We will respond within 30 days.
               </p>
             </SubBlock>
@@ -555,7 +555,7 @@ export default function TermsOfService() {
             <p>
               Saudex reserves the right to update or modify these Terms at any time. Material changes will be
               communicated to registered users by email to the address on file at least thirty (30) days before
-              taking effect. The updated Terms will also be published at saudexglobal.com/terms with the
+              taking effect. The updated Terms will also be published at <ul>saudexglobal.com/terms_of_service</ul> with the
               effective date.
             </p>
             <p>
