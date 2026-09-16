@@ -48,7 +48,7 @@ export default function Footer() {
     { label: 'Be Our Partner', to: '/BeOurPartner' }
   ];
 
-  const locations = ['Singapore','Malaysia', 'Saudi Arabia', 'United Arab Emirates', 'India'];
+  const locations = ['Singapore','Malaysia', 'Saudi Arabia', 'United Arab Emirates' ];
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
