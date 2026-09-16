@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { CalendarDays, Check, Clock3, Mail, MapPin, Phone, Send } from "lucide-react";
 import { useWebMCP } from "usewebmcp";
+const isPrerender = typeof navigator !== "undefined" && navigator.webdriver;
 
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_nlnhzd2";
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_zjgqs1k";
@@ -70,6 +71,7 @@ export default function Contact() {
   // This does not touch the visible form — it fills the same EmailJS
   // template directly, then updates the same state the form uses so
   // the success/error banner still shows on screen.
+  if (!isPrerender) {
   useWebMCP({
     name: "submit_contact_enquiry",
     description:
@@ -140,6 +142,7 @@ export default function Contact() {
       address: "10 Anson Rd, #33-03 International Plaza, Singapore 079903",
     }),
   });
+}
 
   return (
     <div style={{ fontFamily: "'Outfit', sans-serif" }} className="min-h-screen bg-[#f0faf0] text-black">

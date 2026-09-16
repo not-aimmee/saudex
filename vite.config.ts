@@ -7,8 +7,6 @@ import sitemap from "vite-plugin-sitemap";
 const routes = [
   "/",
   "/Contact",
-  "/How_it_works",
-  "/Why_choose_us",
   "/industries/cold_chain",
   "/industries/e_commerce",
   "/industries/FMCG",

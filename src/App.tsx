@@ -27,9 +27,10 @@ import Careers from "./pages/careers";
 import AboutUs from "./pages/aboutUs";
 import BeOurPartner from "./pages/BeOurPartner";
 import NfcCard from "./pages/cards/nfcCard";
-import Contact from "./components/Contact";
 import Cookies from "./components/cookies";
 import { Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
+const Contact = lazy(() => import("./components/Contact"));
 
 
 function App() {
@@ -84,7 +85,7 @@ function App() {
        <Route path="privacy_policy" element ={<PrivacyPolicy/>} />
        <Route path="terms_of_service" element ={<TermsOfService/>} />
        <Route path="BeOurPartner" element={<BeOurPartner/>}/>
-       <Route path="Contact" element={<Contact/>} />
+       <Route path="Contact" element={ <Suspense fallback={null}> <Contact /></Suspense>  }/>
       </Route>
        <Route path="/nfcCard" element={<NfcCard/>} />
     </Routes>
