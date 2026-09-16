@@ -3,38 +3,65 @@ import { useState } from "react";
 type CategoryId = "functional" | "analytics" | "marketing";
 type ConsentState = Record<CategoryId, boolean>;
 
+const STORAGE_KEY = "cookie-consent";
+
 const CATEGORIES: { id: CategoryId; label: string; desc: string }[] = [
   { id: "functional", label: "Functional", desc: "Remembers preferences like default origin port and display settings." },
   { id: "analytics", label: "Analytics", desc: "Aggregate usage data to improve platform performance and UX." },
   { id: "marketing", label: "Marketing", desc: "Interest-based outreach. You can opt out at any time." },
 ];
 
+const DEFAULT_PREFS: ConsentState = { functional: false, analytics: false, marketing: false };
+
+// Reads any previously saved consent from localStorage. Returns null if
+// nothing has been saved yet, or if the stored value is malformed.
+function readStoredConsent(): ConsentState | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = window.localStorage.getItem(STORAGE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (
+      typeof parsed?.functional === "boolean" &&
+      typeof parsed?.analytics === "boolean" &&
+      typeof parsed?.marketing === "boolean"
+    ) {
+      return parsed;
+    }
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+function writeStoredConsent(prefs: ConsentState) {
+  try {
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs));
+  } catch {
+    // localStorage unavailable (private mode, quota, etc.) — banner will
+    // just show again next time, which is an acceptable fallback.
+  }
+}
+
 export default function CookieConsentBanner() {
-  // Always starts undecided: banner shows on first load and on every refresh,
-  // then disappears for the rest of that page session once a choice is made.
-  const [decided, setDecided] = useState(false);
+  // On mount, check localStorage for a prior choice. If one exists, we start
+  // "decided" so the banner doesn't flash/reappear on every navigation.
+  const stored = readStoredConsent();
+  const [decided, setDecided] = useState(stored !== null);
   const [showPrefs, setShowPrefs] = useState(false);
-  const [prefs, setPrefs] = useState<ConsentState>({
-    functional: false,
-    analytics: false,
-    marketing: false,
-  });
+  const [prefs, setPrefs] = useState<ConsentState>(stored ?? DEFAULT_PREFS);
 
-  const acceptAll = () => {
-    setPrefs({ functional: true, analytics: true, marketing: true });
+  const commit = (next: ConsentState) => {
+    setPrefs(next);
     setDecided(true);
+    writeStoredConsent(next);
   };
 
-  const rejectAll = () => {
-    setPrefs({ functional: false, analytics: false, marketing: false });
-    setDecided(true);
-  };
+  const acceptAll = () => commit({ functional: true, analytics: true, marketing: true });
+  const rejectAll = () => commit({ functional: false, analytics: false, marketing: false });
+  const saveChoices = () => commit(prefs);
 
-  const saveChoices = () => {
-    setDecided(true);
-  };
-
-  // Once a choice has been made, render nothing at all.
+  // Once a choice has been made (this load or a previous one), render nothing.
   if (decided) {
     return null;
   }

@@ -12,7 +12,7 @@ interface SEOProps {
 }
 
 const SITE_NAME = "Saudex Global";           // ← change this
-const BASE_URL  = "https://www.saudexglobal.com";    // ← change this
+const BASE_URL  = "https://saudexglobal.com";    // ← change this
 const DEFAULT_OG_IMAGE = `${BASE_URL}/og-default.jpg`; // ← change this
 
 export function SEO({

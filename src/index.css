@@ -1,28 +1,13 @@
-/* Custom styles */
-@font-face {
-  font-family: "ClashDisplay";
-  src: url("./assets/fonts/ClashDisplay-Semibold.otf") format("opentype");
-  font-weight: 600;
-}
-@font-face {
-  font-family: "ClashDisplay";
-  src: url("./assets/fonts/ClashDisplay-Bold.otf") format("opentype");
-  font-weight: 700;
-}
-@font-face {
-  font-family: "Archivo";
-  src: url("./assets/fonts/Archivo-Regular.ttf") format("truetype");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Archivo";
-  src: url("./assets/fonts/Archivo-Medium.ttf") format("truetype");
-  font-weight: 500;
-}
-
 /* Tailwind entry (v4) */
 @import "tailwindcss";
+
+.font-clash {
+  font-family: "Chivo", sans-serif;
+}
+
+.font-archivo {
+  font-family: "News Cycle", sans-serif;
+}
 
 
 /* Global reset */

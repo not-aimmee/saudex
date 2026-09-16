@@ -7,8 +7,8 @@ export default {
   theme: {
      extend: {
       fontFamily: {
-        clash: ["ClashDisplay", "sans-serif"],
-        archivo: ["Archivo", "sans-serif"],
+        clash: ["Chivo", "sans-serif"],
+        archivo: ["News Cycle", "sans-serif"],
       },
     },
   },
