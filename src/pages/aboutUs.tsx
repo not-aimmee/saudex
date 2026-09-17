@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from "react";
+import { SEO } from "../components/SEO";
+import { aboutUsMeta } from "./data/seoMeta";
 
 /* ─────────────────────────────────────────────
    COLOR PALETTE — edit hex values to retheme
@@ -448,12 +450,21 @@ function StorySection() {
    ───────────────────────────────────────────── */
 export default function AboutUs() {
   return (
-    <div style={{ fontFamily: "'DM Sans', sans-serif" }}>
+    <>
+      <SEO
+        title={aboutUsMeta.title}
+        description={aboutUsMeta.description}
+        keywords={aboutUsMeta.keywords}
+        canonical={aboutUsMeta.canonical}
+        ogImage={aboutUsMeta.ogImage}
+      />
+      <div style={{ fontFamily: "'DM Sans', sans-serif" }}>
       <HeroSection />
       <MissionSection />
       <StatsSection />
       <ValuesSection />
       <StorySection />
-    </div>
+      </div>
+    </>
   );
 }

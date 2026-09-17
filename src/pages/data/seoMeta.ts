@@ -10,7 +10,7 @@ export interface PageMeta {
   ogImage: string;
 }
 
-const BASE_URL = "https://www.saudexglobal.com";   // ← change this
+const BASE_URL = "https://saudexglobal.com";
 const OG       = `${BASE_URL}/og`;             // folder where your OG images live
 
 /* Home Page */
@@ -97,8 +97,35 @@ export const industriesMeta: PageMeta = {
     "Saudex Global delivers specialist logistics across retail, FMCG, pharma, food & beverage, e-commerce, and HORECA. Tailored supply chain solutions built around the demands of your industry.",
   keywords:
     "logistics by industry, retail logistics, pharma supply chain,FMCG logistics, food logistics, ecommerce fulfilment, HORECA logistics",
-  canonical: `${BASE_URL}/industries`,
+  canonical: `${BASE_URL}/industries/`,
   ogImage:   `${OG}/industries.jpg`,
+};
+
+export const aboutUsMeta: PageMeta = {
+  title: "About Us | SAUDEX GLOBAL",
+  description:
+    "Learn about Saudex Global and our approach to reliable, connected logistics and supply chain solutions across global markets.",
+  keywords: "about Saudex Global, logistics company, supply chain partner",
+  canonical: `${BASE_URL}/aboutUs/`,
+  ogImage: `${OG}/og-default.jpg`,
+};
+
+export const careersMeta: PageMeta = {
+  title: "Careers | SAUDEX GLOBAL",
+  description:
+    "Explore career opportunities at Saudex Global and help build smarter, more reliable logistics and supply chain solutions.",
+  keywords: "Saudex Global careers, logistics jobs, supply chain careers",
+  canonical: `${BASE_URL}/careers/`,
+  ogImage: `${OG}/og-default.jpg`,
+};
+
+export const beOurPartnerMeta: PageMeta = {
+  title: "Be Our Partner | SAUDEX GLOBAL",
+  description:
+    "Join Saudex Global's partner network through reseller, technology, and referral opportunities built for mutual growth.",
+  keywords: "Saudex Global partner, logistics partnership, supply chain partner",
+  canonical: `${BASE_URL}/BeOurPartner/`,
+  ogImage: `${OG}/og-default.jpg`,
 };
 
 /* ════════════════════════════════════════════

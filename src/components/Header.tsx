@@ -107,21 +107,21 @@ useEffect(() => {
                   className="absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg py-2 border border-gray-100"
                 >
                   <Link
-                    to="/aboutUs"
+                    to="/aboutUs/"
                     onClick={() => setNavbarAboutOpen(false) }
                     className="block w-full text-left px-4 py-2.5 font-archivo font-regular text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0505F0F] transition-colors"
                   >
                     {TEXT.nav.aboutUs}
                   </Link>
                   <Link
-                    to="/careers"
+                    to="/careers/"
                     onClick={() => setNavbarAboutOpen(false) }
                     className="block w-full text-left px-4 py-2.5 font-archivo font-regular text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0505F0F] transition-colors"
                   >
                     {TEXT.nav.careers}
                   </Link>
                   <Link
-                    to="/BeOurPartner"
+                    to="/BeOurPartner/"
                     onClick={() => setNavbarAboutOpen(false) }
                     className="block w-full text-left px-4 py-2.5 font-archivo font-regular text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0505F0F] transition-colors"
                   >
@@ -417,15 +417,15 @@ exit={{
 </button>
 {drawerAboutOpen && (
   <div className="ml-4 flex flex-col space-y-2">
-    <Link to="/aboutUs" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
+    <Link to="/aboutUs/" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
       {TEXT.nav.aboutUs}
     </Link>
     
-    <Link to="/careers" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
+    <Link to="/careers/" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
       {TEXT.nav.careers}
     </Link>
 
-    <Link to="/BeOurPartner" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
+    <Link to="/BeOurPartner/" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
       Be our Partner
     </Link>
   </div>

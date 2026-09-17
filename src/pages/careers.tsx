@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { SEO } from "../components/SEO";
+import { careersMeta } from "./data/seoMeta";
 
 
  
@@ -301,9 +303,18 @@ function OpenRolesSection() {
 export default function Careers() {
   
   return (
-    <div style={{ fontFamily: "'DM Sans', sans-serif" }}>
-      <HeroSection />
-      <OpenRolesSection />
-    </div>
+    <>
+      <SEO
+        title={careersMeta.title}
+        description={careersMeta.description}
+        keywords={careersMeta.keywords}
+        canonical={careersMeta.canonical}
+        ogImage={careersMeta.ogImage}
+      />
+      <div style={{ fontFamily: "'DM Sans', sans-serif" }}>
+        <HeroSection />
+        <OpenRolesSection />
+      </div>
+    </>
   );
 }

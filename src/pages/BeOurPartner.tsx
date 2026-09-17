@@ -1,6 +1,7 @@
-import { Helmet } from "react-helmet-async";
 import BlurText from "../../components/blurtext";
 import { useNavigate } from "react-router-dom";
+import { SEO } from "../components/SEO";
+import { beOurPartnerMeta } from "./data/seoMeta";
 
 
 
@@ -35,12 +36,13 @@ export default function BeOurPartner() {
 
   return (
     <>
-      <Helmet>
-        <meta
-          name="description"
-          content="Join Saudex's partner network. Explore reseller, technology, and referral partnership tracks built for mutual growth."
-        />
-      </Helmet>
+      <SEO
+        title={beOurPartnerMeta.title}
+        description={beOurPartnerMeta.description}
+        keywords={beOurPartnerMeta.keywords}
+        canonical={beOurPartnerMeta.canonical}
+        ogImage={beOurPartnerMeta.ogImage}
+      />
 
       {/* Hero */}
       <section className="relative bg-[#050f0f] overflow-hidden">
