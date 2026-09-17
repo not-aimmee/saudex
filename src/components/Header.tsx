@@ -82,7 +82,7 @@ useEffect(() => {
 </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8 ml-16 ">
+          <nav className="hidden lg:flex items-center space-x-8 ml-34 ">
             <Link
               to="/#home"
               className="px-6 py-4 text-white font-archivo font-regular text-lg hover:text-[#58c28a] tracking-wider transition-colors flex items-center gap-1"
@@ -357,17 +357,18 @@ exit={{
     <Link to="/services/freight" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
       {TEXT.servicesDropdown.frieghtforwarding}
     </Link>
-    <Link to="/services/distribution" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
-      {TEXT.servicesDropdown.distribution}
-    </Link>
     <Link to="/services/warehousing" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
       {TEXT.servicesDropdown.contractWarehousing}
     </Link>
-    <Link to="/services/TCL" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
-      {TEXT.servicesDropdown.tcl}
-    </Link>
     <Link to="/services/Supply_chain" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
       {TEXT.servicesDropdown.scc}
+    </Link>
+    
+    <Link to="/services/distribution" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
+      {TEXT.servicesDropdown.distribution}
+    </Link>
+     <Link to="/services/TCL" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
+      {TEXT.servicesDropdown.tcl}
     </Link>
     <Link to="/services/customs" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
       {TEXT.servicesDropdown.customs}
@@ -388,8 +389,8 @@ exit={{
     <button onClick={() => scrollToSection('industries')} className="text-white/90 font-archivo text-left">
      Industries 
     </button>
-    <Link to="/industries/food_beverages" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
-      {TEXT.industriesDropdown.foodnbeverages}
+     <Link to="/industries/horeca" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
+      {TEXT.industriesDropdown.horeca}
     </Link>
     <Link to="/industries/fmcg" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
       {TEXT.industriesDropdown.fmcg}
@@ -397,14 +398,14 @@ exit={{
     <Link to="/industries/cold_chain" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
       {TEXT.industriesDropdown.coldchain}
     </Link>
-    <Link to="/industries/retail" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
-      {TEXT.industriesDropdown.retail}
-    </Link>
-    <Link to="/industries/horeca" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
-      {TEXT.industriesDropdown.horeca}
-    </Link>
-    <Link to="/industries/ecommerce" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
+     <Link to="/industries/ecommerce" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
       {TEXT.industriesDropdown.ecommerce}
+    </Link>
+     <Link to="/industries/food_beverages" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
+      {TEXT.industriesDropdown.foodnbeverages}
+    </Link>
+   <Link to="/industries/retail" onClick={() => setIsMenuOpen(false)} className="text-white/90 font-archivo text-left">
+      {TEXT.industriesDropdown.retail}
     </Link>
   </div>
 )}

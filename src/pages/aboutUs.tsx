@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { SEO } from "../components/SEO";
 import { aboutUsMeta } from "./data/seoMeta";
+import WhyChooseUs from "../components/Why_choose_us";
 
 /* ─────────────────────────────────────────────
    COLOR PALETTE — edit hex values to retheme
@@ -339,8 +340,11 @@ function MissionSection() {
   );
 }
 
+
 function StatsSection() {
   return (
+    <>
+    <WhyChooseUs/>
     <section className="px-6 md:px-16 py-32" style={{ backgroundColor: C.forestGreen }}>
       <div className="max-w-7xl w-full mx-auto">
         <div className="grid md:grid-cols-12 gap-16 items-start">
@@ -367,6 +371,7 @@ function StatsSection() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 

@@ -1,15 +1,13 @@
-
-import SplitText from '../../components/splittext';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { SEO } from './SEO';
 import { servicesMeta } from '../pages/data/seoMeta';
 
 const services = [
-  { id: 1, name: 'Import & Export', size: 110, link:'/services/distribution'  },
+  { id: 1, name: 'Import & Export', size: 110, link:'/services/impo-expo'  },
   { id: 2, name: 'FMCG ', size: 95, link:'/services/fmcg' },
-  { id: 3, name: 'Distribution', size: 120, link:'/services/impo-expo' },
+  { id: 3, name: 'Distribution', size: 120, link:'/services/distribution' },
   { id: 4, name: 'Warehousing', size: 95, link:'/services/warehousing' },
   { id: 5, name: 'Customs', size: 110, link:'/services/Supply_chain' },
 ];
@@ -44,6 +42,31 @@ export default function Services() {
 
     return () => clearInterval(interval);
   }, [isHovered]);
+
+  const leftColRef = useRef<HTMLDivElement>(null);
+  const [translateY, setTranslateY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const col = leftColRef.current;
+      if (!col) return;
+
+      const rect = col.getBoundingClientRect();
+      const windowH = window.innerHeight;
+
+      // progress: 0 when top of col hits bottom of viewport, 1 when bottom of col hits top
+      const total = rect.height - windowH;
+      const scrolled = -rect.top;
+      const progress = Math.max(0, Math.min(1, scrolled / total));
+
+      // image is 150% tall; shift up by 50% of window height over the scroll range
+      setTranslateY(-progress * windowH * 0.9);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <>
     <SEO
@@ -79,72 +102,52 @@ transition={{
 
       <div className="max-w-7xl w-full  grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Side */}
-        <div className="space-y-6 pr-12 py-12">
-          <div className="flex justify-center" >
-              <SplitText
-              text="what we offer "
-              className="
-              uppercase 
-            text-[#228B5A]
-            font-archivo
-            text-lg
-            lg:text-xl
-            font-medium
-            tracking-[0.4em]
-            "
-    delay={80}
-  duration={0.8}
-
-
-/>
-
-</div>
-<div>
-  <SplitText
-    text="Comprehensive Logistics Solutions tailored to your business needs"
-    className="
-    mt-6
-      text-[#F7FAF8]
-      font-clash
-      text-left
-      lg:text-4xl
-      text-3xl
-      tracking-[0.1em]
-      font-semi-bold"
-    delay={50}
-    duration={0.8}
-  />
-</div>
-          <div>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="
-                mt-12
-                max-w-2xl
-                lg:text-center
-                text-left
-                text-xl
-                text-[#F7FAF8]/60
-                font-archivo
-                font-regular
-                tracking-wide
-              "
-            >
-              We deliver cutting edge global logistics solutions tailored to your needs. Our expert team
-              combines creativity, technology, and strategic thinking to help your
-              business thrive in the digital age. 
-              <br/>Discover how we can elevate your
-              brand and drive meaningful results.
-            </motion.p>
-          </div>
+        <div
+    ref={leftColRef}
+    className="relative h-[70vh] md:h-[120vh] overflow-hidden"
+  >
+    <div className="sticky top-0 h-[70vh] md:h-screen overflow-hidden">
+      <div
+        className="absolute inset-4 md:inset-8 overflow-hidden"
+        style={{ border: "1px solid rgba(26,22,18,0.15)" }}
+      >
+        <div
+          style={{
+            transform: `translateY(${translateY}px)`,
+            height: "200%",
+            width: "100%",
+            willChange: "transform",
+          }}
+        >
+          <img
+            src='/images/s60.webp'
+            alt="Cargo plane loading at the airport"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "center top",
+              display: "block",
+            }}
+          />
         </div>
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(245,240,234,0.06) 0%, transparent 20%, transparent 80%, rgba(245,240,234,0.1) 100%)",
+          }}
+        />
+      </div>
+    </div>
+  </div>
+        
         
         {/* Right Side */}
-        
-        <div className="flex items-center justify-center md:h-[720px] h-auto overflow-hidden">
-          <div className=" absolute left-[71.5%] top-0 h-full border-l border-white/10 -translate-x-1/2 z-0 "/>
+
+        <div className="relative h-[70vh] md:h-[120vh] overflow-hidden">
+          <div className="sticky top-0 h-[70vh] md:h-screen flex items-center justify-center overflow-hidden">
+          <div className="absolute left-0 top-0 h-full border-l border-white/10 z-0 "/>
           <div
             className="relative flex items-center justify-center w-[280px] h-[280px] md:w-[450px] md:h-[450px]"
             onMouseEnter={() => setIsHovered(true)}
@@ -223,6 +226,7 @@ transition={{
               <span className="px-4 leading-tight font-archivo font-regular text-xl ">Explore Our Services</span>
             </motion.a>
              </Link>
+          </div>
           </div>
         </div>
         </div>

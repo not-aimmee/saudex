@@ -2,8 +2,6 @@ import MainLayout from "./assets/main_layout";
 import SimpleLayout from "./assets/simple_layout";
 import Hero from "./components/Home";
 import Services from "./components/Services";
-import HowItWorks from "./components/How_it_works";
-import WhyChooseUs from "./components/Why_choose_us"
 import Industries from "./components/Industries";
 import Stats from "./components/Stats"
 import ServicePage from "./pages/service"
@@ -28,6 +26,7 @@ import AboutUs from "./pages/aboutUs";
 import BeOurPartner from "./pages/BeOurPartner";
 import NfcCard from "./pages/cards/nfcCard";
 import Cookies from "./components/cookies";
+import Partnercontact from "./components/partner_contact";
 import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 const Contact = lazy(() => import("./components/Contact"));
@@ -46,8 +45,6 @@ function App() {
             <Cookies />
               <Hero />
               <Services />
-              <HowItWorks/>
-              <WhyChooseUs/>
               <Industries/>
               <Stats/>
             </>
@@ -79,6 +76,7 @@ function App() {
        </Route>
        <Route path="aboutUs" element={<AboutUs/>} />
        <Route path="careers" element={<Careers/>} />
+       <Route path="partner_contact" element={<Partnercontact/>}/>
        
       </Route>
       <Route element={<SimpleLayout/>}>

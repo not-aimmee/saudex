@@ -130,7 +130,7 @@ export default function BeOurPartner() {
         {/* Left — Contact circle */}
         <div className="order-2 md:order-1 flex items-center justify-center px-6 sm:px-10 py-10 sm:py-12">
           <button
-            onClick={() => navigate("/contact")}
+            onClick={() => navigate("/partner_contact")}
             className="w-36 h-36 sm:w-48 sm:h-48 rounded-full border border-white/20 flex flex-col items-center justify-center gap-1 transition-all duration-300 hover:border-emerald-500/60 hover:bg-emerald-500/5 cursor-pointer"
           >
             <span className="text-sm sm:text-[16px] font-archivo font-medium tracking-[0.15em] text-white uppercase text-center leading-snug">

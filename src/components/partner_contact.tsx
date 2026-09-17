@@ -1,0 +1,431 @@
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import { CalendarDays, Check, Clock3, Mail, MapPin, Phone, Send } from "lucide-react";
+import { useWebMCP } from "usewebmcp";
+const isPrerender = typeof navigator !== "undefined" && navigator.webdriver;
+const C = {
+  deepGreen:   "#050f0f",  // Hero / closing section background
+  forestGreen: "#0d2e1e",  // Alternate dark sections
+  midGreen:    "#164d32",  // Values section background
+  accentGreen: "#2a7a4b",  // Borders, highlights, hover accents
+  brightGreen: "#3aab68",  // CTA button, active states, accent word
+  paleGreen:   "#8fc9a4",  // Muted labels on dark backgrounds
+  mintGreen:   "#c4e8d1",  // Subtle text on dark
+  offWhite:    "#f0ede6",  // Light section background
+  lightSand:   "#e8e4dc",  // Alt light section background
+  white:       "#ffffff",  // Pure white text / backgrounds
+  darkInk:     "#0d1f15",  // Text on light backgrounds
+  midInk:      "#274834",  // Secondary text on light backgrounds
+};
+function Rule({ color = C.accentGreen, opacity = 0.35 }: { color?: string; opacity?: number }) {
+  return <hr style={{ borderColor: color, opacity, borderTopWidth: 1 }} className="w-full border-0 border-t" />;
+}
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_nlnhzd2";
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_zjgqs1k";
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "sXmLsr6PApabpnmxa";
+
+type FormState = "idle" | "submitting" | "success" | "error";
+
+type FormData = {
+  fullName: string;
+  email: string;
+  phone: string;
+  service: string;
+  message: string;
+};
+
+const initialForm: FormData = {
+  fullName: "",
+  email: "",
+  phone: "",
+  service: "",
+  message: "",
+};
+
+
+export default function Partnercontact() {
+  const [form, setForm] = useState<FormData>(initialForm);
+  const [state, setState] = useState<FormState>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const onChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
+    setForm((previous) => ({ ...previous, [name]: value }));
+  };
+
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formRef.current) return;
+
+    setState("submitting");
+    setErrorMsg("");
+
+    emailjs
+      .sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formRef.current, {
+        publicKey: EMAILJS_PUBLIC_KEY,
+      })
+      .then(() => {
+        setForm(initialForm);
+        setState("success");
+      })
+      .catch((err) => {
+        console.error("EmailJS error:", err);
+        setErrorMsg("Something went wrong sending your enquiry. Please try again.");
+        setState("error");
+      });
+  };
+
+  const onReset = () => {
+    setForm(initialForm);
+    setState("idle");
+    setErrorMsg("");
+  };
+
+  // --- WebMCP: let AI agents submit an enquiry on the user's behalf ---
+  // This does not touch the visible form — it fills the same EmailJS
+  // template directly, then updates the same state the form uses so
+  // the success/error banner still shows on screen.
+  if (!isPrerender) {
+  useWebMCP({
+    name: "submit_contact_enquiry",
+    description:
+      "Submit a freight, warehousing, or logistics enquiry to SAUDEX GLOBAL's sales team. " +
+      "Use this when someone wants a quote, wants to ask about a service, or wants to get in touch.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        fullName: { type: "string", description: "Full name of the person making the enquiry" },
+        email: { type: "string", description: "Contact email address" },
+        phone: { type: "string", description: "Contact phone number (optional)" },
+        service: {
+          type: "string",
+          enum: ["air", "sea", "land", "customs", "warehouse", "other"],
+          description:
+            "Which service the enquiry relates to: air freight, sea freight, land freight, customs clearance, warehousing, or other",
+        },
+        message: {
+          type: "string",
+          description: "Details of the enquiry, e.g. cargo type, origin/destination, volume, timing",
+        },
+      },
+      required: ["fullName", "email", "service", "message"],
+    } as const,
+    execute: async (args) => {
+      setState("submitting");
+      setErrorMsg("");
+      try {
+        await emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          {
+            fullName: args.fullName,
+            email: args.email,
+            phone: args.phone ?? "",
+            service: args.service,
+            message: args.message,
+          },
+          { publicKey: EMAILJS_PUBLIC_KEY }
+        );
+        setForm(initialForm);
+        setState("success");
+        return {
+          success: true,
+          message:
+            "Enquiry sent to SAUDEX GLOBAL. Customer service hours are 9:00 AM–5:00 PM, Monday–Friday.",
+        };
+      } catch (err) {
+        console.error("EmailJS error (WebMCP tool):", err);
+        setErrorMsg("Something went wrong sending your enquiry. Please try again.");
+        setState("error");
+        return { success: false, message: "Failed to send the enquiry. Please try again." };
+      }
+    },
+  });
+
+  // --- WebMCP: read-only tool so agents can answer "how do I contact them" ---
+  useWebMCP({
+    name: "get_saudex_contact_info",
+    description:
+      "Get SAUDEX GLOBAL's customer service hours, email, phone numbers, and office address.",
+    inputSchema: { type: "object", properties: {} } as const,
+    execute: async () => ({
+      hours: "9:00 AM – 5:00 PM, Monday – Friday",
+      email: "sales@saudexglobal.com",
+      phoneSingapore: "+65 8535 1308",
+      phoneMalaysia: "+60 11511 68040",
+      address: "10 Anson Rd, #33-03 International Plaza, Singapore 079903",
+    }),
+  });
+}
+
+
+  return (
+    <div style={{ fontFamily: "'Outfit', sans-serif" }} className="min-h-screen bg-[#f0faf0] text-black">
+      <section
+      className="min-h-screen flex flex-col justify-end px-6 md:px-16 pb-16 pt-32 relative overflow-hidden"
+      style={{ backgroundColor: C.deepGreen }}
+    >
+      {/* Subtle vertical grid lines */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden>
+        {[...Array(6)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute top-0 bottom-0 border-r"
+            style={{ left: `${(i + 1) * (100 / 7)}%`, borderColor: C.accentGreen + "12" }}
+          />
+        ))}
+      </div>
+
+      {/* Ghost / outlined text behind headline — decorative */}
+      <div
+        className="absolute bottom-0 right-0 leading-none pointer-events-none select-none hidden md:block"
+        aria-hidden
+        style={{
+          fontFamily: "'Barlow Condensed', sans-serif",
+          fontSize: "clamp(8rem, 22vw, 26rem)",
+          fontWeight: 900,
+          color: "transparent",
+          WebkitTextStroke: `1px ${C.accentGreen}22`, /* Ghost outline text color — Change opacity */
+          lineHeight: 1,
+          letterSpacing: "-0.04em",
+          userSelect: "none",
+          transform: "translateY(8%)",
+        }}
+      >
+        {/* Ghost text word — Change this */}
+        
+      </div>
+
+      <div className="max-w-7xl w-full relative z-10">
+        {/* Hero headline with stagger animation */}
+        <h1
+          className="text-[9vw] md:text-[10vw] font-black font-clash font-semibold uppercase leading-[0.88] tracking-tight mb-16"
+          style={{  color: "#f7faf8" }}
+        >
+            <span
+              className="inline-block"
+              style={{
+                color: "#f7faf8", /* Green accent word color */
+                animation: "slideUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.3s both",
+              }}
+            >
+              Let's
+            </span>
+          {/* Accent line — color the word "world" */}
+          <span className="block overflow-hidden">
+            <span
+              className="inline-block"
+              style={{
+                color: C.brightGreen, /* Green accent word color */
+                animation: "slideUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.3s both",
+              }}
+            >
+              Talk 
+            </span>
+          </span>
+          <span
+            className="block overflow-hidden"
+            style={{ animation: "slideUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.5s both" }}
+          >
+            Partnership.
+          </span>
+        </h1>
+
+        <style>{`
+          @keyframes slideUp {
+            from { opacity: 0; transform: translateY(60px); }
+            to   { opacity: 1; transform: translateY(0); }
+          }
+          @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+          }
+        `}</style>
+
+        <Rule color={C.accentGreen} opacity={0.25} />
+      </div>
+    </section>
+
+      <div className="relative bg-white font-archivo">
+        <section className="relative max-w-5xl mx-auto px-8 py-16">
+          <h2 className="text-4xl font-extrabold text-black uppercase tracking-wide mb-3">
+            Get in Touch.
+          </h2>
+          <p className="text-gray-700 mb-10">
+            Submit the form below or{" "}
+            <a  target="_blank" rel="noreferrer" className="text-black hover:underline">
+              whatsapp
+            </a>{" "}
+            us and we will get back to you soonest.
+          </p>
+
+          <form ref={formRef} onSubmit={onSubmit} onReset={onReset} className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-xs font-bold text-black uppercase tracking-wider mb-1">
+                  Full Name
+                </label>
+                <input
+                  name="fullName"
+                  value={form.fullName}
+                  onChange={onChange}
+                  required
+                  type="text"
+                  placeholder="Jane Smith"
+                  className="w-full border border-gray-300 rounded px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#3aab68]"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-black uppercase tracking-wider mb-1">
+                  Email Address
+                </label>
+                <input
+                  name="email"
+                  value={form.email}
+                  onChange={onChange}
+                  required
+                  type="email"
+                  placeholder="jane@company.com"
+                  className="w-full border border-gray-300 rounded px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#3aab68]"
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-xs font-bold text-black uppercase tracking-wider mb-1">
+                  Phone
+                </label>
+                <input
+                  name="phone"
+                  value={form.phone}
+                  onChange={onChange}
+                  type="tel"
+                  placeholder="+1 555 000 0000"
+                  className="w-full border border-gray-300 rounded px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#3aab68]"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-black uppercase tracking-wider mb-1">
+                  Service
+                </label>
+                <select
+                  name="service"
+                  value={form.service}
+                  onChange={onChange}
+                  required
+                  className="w-full border border-gray-300 rounded px-3 py-2 text-sm text-gray-900 focus:outline-none focus:border-[#3aab68] cursor-pointer"
+                >
+                  <option value="" disabled>Select...</option>
+                  <option value="air">Air Freight</option>
+                  <option value="sea">Sea Freight</option>
+                  <option value="land">Land Freight</option>
+                  <option value="customs">Customs Clearance</option>
+                  <option value="warehouse">Warehousing</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold text-black uppercase tracking-wider mb-1">
+                Your Message
+              </label>
+              <textarea
+                name="message"
+                value={form.message}
+                onChange={onChange}
+                required
+                rows={6}
+                placeholder="Placing a Bulk order? Lose pack goods? Tell us what you need and we will get in touch as soon as we can."
+                className="w-full border border-gray-300 rounded px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#3aab68] resize-y"
+              />
+            </div>
+
+            {state === "success" && (
+              <div className="flex items-center gap-2 rounded border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-black">
+                <Check size={18} className="shrink-0" />
+                Your enquiry has been sent successfully. We will contact you soon.
+              </div>
+            )}
+
+            {state === "error" && (
+              <div className="rounded border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">{errorMsg}</div>
+            )}
+
+            <div className="flex flex-col sm:flex-row gap-3 pt-2">
+              <button
+                type="submit"
+                disabled={state === "submitting"}
+                className="inline-flex items-center justify-center gap-2 rounded bg-black px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#3aab68] disabled:cursor-not-allowed disabled:opacity-70"
+              >
+                {state === "submitting" ? "Sending..." : "Send Enquiry"}
+                <Send size={16} />
+              </button>
+
+              <button
+                type="reset"
+                className="inline-flex items-center justify-center rounded border border-gray-300 px-6 py-3 text-sm font-semibold text-gray-700 transition hover:border-gray-400 hover:bg-gray-50"
+              >
+                Clear
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <section className="max-w-5xl mx-auto px-8 py-16">
+         
+          <h2 className="text-3xl font-extrabold text-black uppercase tracking-wide mb-2">
+            Customer Service
+          </h2>
+          <div className="w-10 h-0.5  mb-8" />
+
+          <ul className="space-y-4 text-gray-800 text-base">
+            <li className="flex items-center gap-4">
+              <Clock3 size={20} className="text-black shrink-0" />
+              <span>9:00 AM – 5:00 PM</span>
+            </li>
+            <li className="flex items-center gap-4">
+              <CalendarDays size={20} className="text-black shrink-0" />
+              <span>Monday – Friday</span>
+            </li>
+            <li className="flex items-center gap-4">
+              <Mail size={20} className="text-black shrink-0" />
+              <span>sales@saudexglobal.com</span>
+            </li>
+            <li className="flex items-center gap-4">
+              <Phone size={20} className="text-black shrink-0" />
+              <span>(+65) 8535 1308</span>            
+            </li>
+            <li className="flex items-center gap-4">
+              <Phone size={20} className="text-black shrink-0" />
+              <span>(+60) 11511 68040 (Malaysia)</span>
+              </li>
+            <li className="flex items-center gap-4">
+              <MapPin size={20} className="text-black shrink-0" />
+              <span>10 Anson Rd, #33-03 International Plaza, Singapore 079903</span>
+            </li>
+          </ul>
+        </section>
+
+        <div className="w-full h-80">
+          <iframe
+            title="Location Map"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            loading="lazy"
+            allowFullScreen
+            
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.4145611232532!2d103.84510884242985!3d1.2758854342965082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da192f8428d57d%3A0xe83688a9109a630a!2sInternational%20Plaza!5e0!3m2!1sen!2sin!4v1789047154696!5m2!1sen!2sin"
+            />
+        </div>
+      </div>
+    </div>
+  );
+}
