@@ -273,7 +273,7 @@ export default function Industries() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="uppercase text-[#468189] text-center text-lg md:text-xl font-generalsans font-medium tracking-[0.1em] md:tracking-[0.4em] mb-6">
+          <p className="uppercase text-[#254d58] text-center text-lg md:text-xl font-generalsans font-medium tracking-[0.1em] md:tracking-[0.4em] mb-6">
             Industries We Serve
           </p>
           <h2 className="font-sentient font-regular"

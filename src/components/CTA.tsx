@@ -96,7 +96,7 @@ useEffect(() => {
   direction="top"
   className="
   uppercase 
-    text-[#254d58]/60
+    text-[#254d58]
     font-generalsans
     text-center
     text-lg
@@ -223,15 +223,15 @@ useEffect(() => {
                       <div className="flex flex-col items-center font-generalsans font-medium text-[#22223b] text-md leading-tight">
                         
   <span  style={{
-                color: fillProgress > 0.5 ? "#f4e9cd" : "#031926",
+                color: fillProgress > 0.5 ? "#f4e9cd" : "#254d58",
               }}>CONNECT</span>
 
   <div className="flex items-center font-generalsans font-medium text-[#22223b] text-md gap-2">
     <span style={{
-                color: fillProgress > 0.5 ? "#f4e9cd" : "#031926",
+                color: fillProgress > 0.5 ? "#f4e9cd" : "#254d58",
               }}>WITH US</span>
     <ArrowUpRight className="w-5 h-5" style={{
-    color: fillProgress > 0.5 ? "#f4e9cd" : "#031926",
+    color: fillProgress > 0.5 ? "#f4e9cd" : "#0254d58",
   }}/>
   </div>
 </div>

@@ -23,9 +23,9 @@ export default function Footer() {
   };
 
   const socialItems = [
-    { icon: Linkedin, color: 'blue', label: 'LinkedIn', link: 'https://www.linkedin.com/company/saudexglobal/' },
-    { icon: FaWhatsapp, color: 'green', label: 'WhatsApp', link: 'https://wa.me/6585351308' },
-    { icon: Facebook, color: 'blue', label: 'Facebook', link: 'https://www.facebook.com/share/19d9u8W9PA/' },
+    { icon: Linkedin, color: 'blue', label: 'LinkedIn', link: 'https://www.linkedin.com/company/saudexglobal/',hoverColor: '#0a66c2' },
+    { icon: FaWhatsapp, color: 'green', label: 'WhatsApp', link: 'https://wa.me/6585351308',hoverColor: '#25d366' },
+    { icon: Facebook, color: 'blue', label: 'Facebook', link: 'https://www.facebook.com/share/19d9u8W9PA/',hoverColor: '#1877f2' },
   ];
 
   const services = [
@@ -79,14 +79,14 @@ export default function Footer() {
       <div className=" max-w-screen-2xl bg-[#031926]/90 mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-14 grid grid-cols-1 gap-12 md:grid-cols-4">
         {/* Logo / Follow Us */}
         <div>
-          <div className="flex items-center gap-3 mb-4 md:ml-8 md:mt-12">
-            <img onClick={goHome} src={logo} alt="Saudex Global" className="w-16 h-16 cursor-pointer" draggable={false} />
+          <div className="flex items-center gap-3 mb-4 md:ml-8 md:mt-16">
+            <img onClick={goHome} src={logo} alt="Saudex Global" className="w-18 h-18 cursor-pointer" draggable={false} />
             <button
               onClick={goHome}
               className="flex flex-col leading-tight hover:opacity-80 transition-opacity text-left"
             >
-              <span className="text-2xl  font-light font-sentient text-[#f5fbef] tracking-tight">SAUDEX</span>
-              <span className="text-2xl font-light font-sentient text-[#f5fbef] tracking-wider">GLOBAL</span>
+              <span className="text-3xl  font-light font-sentient text-[#f5fbef] tracking-tight">SAUDEX</span>
+              <span className="text-3xl font-light font-sentient text-[#f5fbef] tracking-wider">GLOBAL</span>
             </button>
           </div>
         </div>
@@ -131,7 +131,7 @@ export default function Footer() {
           </h4>
           <ul className="flex flex-col gap-3">
             <li className="text-sm text-[#f5fbef]/50"></li>
-            <div className="translate-x-1">
+            <div className="translate-x-1 [&_svg]:transition-colors [&_svg]:duration-300 [&_button:hover_svg]:!text-[#77aca2]">
             <GlassIcons items={socialItems} className="custom-class" />
           </div>
 

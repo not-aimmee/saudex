@@ -80,7 +80,7 @@ export default function App() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="mt-10 uppercase font-generalsans text-center text-xl font-medium tracking-[0.4em]"
+              className="mt-10 uppercase font-generalsans text-center text-lg font-medium tracking-[0.4em]"
               style={{ color: "#254D58" }}
             >
               HOW IT WORKS
@@ -93,7 +93,7 @@ export default function App() {
   transition={{ duration: 0.7, delay: 0.2 }}
   className="mt-12 font-sentient font-regular text-center"
   style={{
-    fontSize: 'clamp(2.5rem, 3.75vw, 4.5rem)',
+    fontSize: 'clamp(1.5rem, 2.75vw, 3.5rem)',
     lineHeight: 1.15,
     letterSpacing: '0.05em',
     color: '#031926',
@@ -106,7 +106,7 @@ export default function App() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="mt-12 max-w-2xl text-center text-xl font-generalsans font-regular tracking-normal lg:tracking-wide"
+              className="mt-12 max-w-2xl text-center text-lg font-generalsans font-regular tracking-normal lg:tracking-wide"
               style={{ color: '#254D58'}}
             >
               Getting your goods moving is easy.

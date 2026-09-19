@@ -9,20 +9,30 @@ const services = [
   { id: 5, name: 'Customs', size: 120, link:'/services/Supply_chain/' },
 ];
 
-const getFanPosition = (index: number) => {
-  const angleRange = 120;
-  const startAngle = -angleRange / 2;
-  const step = angleRange / (services.length - 1);
-  const angleDeg = startAngle + index * step;
-  const angleRad = (angleDeg * Math.PI) / 180;
-  const radius = 190 + services[index].size / 3;
-  return {
-    x: Math.cos(angleRad) * radius,
-    y: Math.sin(angleRad) * radius,
-  };
-};
+// Layout tuning
+const ARC_RADIUS = 290; // distance from the centre circle to every service circle
+const GAP = 18;         // visible gap (px) between neighbouring circles
 
-export default function App() {
+// All circles sit on ONE arc. Each angular step is derived from the two
+// neighbouring circle sizes, so the edge-to-edge gap is identical everywhere
+// (no overlaps, no uneven spacing), then the fan is centred on the horizontal axis.
+const fanPositions = (() => {
+  const radii = services.map((s) => s.size / 2);
+  const angles: number[] = [0];
+  for (let i = 1; i < services.length; i++) {
+    const centreDistance = radii[i - 1] + radii[i] + GAP;
+    angles.push(angles[i - 1] + 2 * Math.asin(centreDistance / (2 * ARC_RADIUS)));
+  }
+  const mid = angles[angles.length - 1] / 2;
+  return angles.map((a) => ({
+    x: Math.cos(a - mid) * ARC_RADIUS,
+    y: Math.sin(a - mid) * ARC_RADIUS,
+  }));
+})();
+
+const getFanPosition = (index: number) => fanPositions[index];
+
+export default function Services() {
   const [isHovered, setIsHovered] = useState(false);
   const [activeService, setActiveService] = useState<number | null>(null);
 
@@ -33,26 +43,25 @@ export default function App() {
         className="flex flex-col justify-center px-12 lg:px-20 py-24 w-full lg:w-1/2 z-10"
       >
         <div className="flex flex-col gap-7 max-w-lg">
-          <span className="font-generalsans font-medium text-xl " style={{  letterSpacing: '0.42em', textTransform: 'uppercase', color: '#468189' }}>
+          <span className="font-generalsans font-medium text-lg " style={{  letterSpacing: '0.42em', textTransform: 'uppercase', color: '#468189' }}>
             What We Offer
           </span>
 
           <h2
   className="font-sentient font-regular"
   style={{
-    fontSize: 'clamp(2.5rem, 3.75vw, 4.5rem)', // scaled-down version of hero's clamp(3rem,8vw,7rem)         
+    fontSize: 'clamp(1.5rem, 2.75vw, 3.5rem)', // scaled-down version of hero's clamp(3rem,8vw,7rem)         
     lineHeight: 1.35,
     letterSpacing: '0.05em',                  // same tight tracking as hero
     color: '#031926',
   }}
 >
-  Comprehensive Logistics Solutions tailored to your business needs
+  Global Logistics & Supply Chain Solutions Built for International Business
 </h2>
 
-          <p className="font-generalsans font-medium text-xl" style={{  lineHeight: 1.78, color: '#254D58', maxWidth: '38ch' }}>
-            We deliver cutting edge global logistics solutions tailored to your needs.
-            Our expert team combines creativity, technology, and strategic thinking to
-            help your business thrive in the digital age.
+          <p className="font-generalsans font-medium text-lg" style={{  lineHeight: 1.78, color: '#254D58', maxWidth: '38ch' }}>
+           At Saudex Global, we provide end-to-end logistics, freight forwarding, import & export, sourcing, and supply chain solutions designed to help businesses move products efficiently across international markets. From global procurement and supplier management to sea, air, and land freight coordination, warehousing, distribution, and cross-border trade, we simplify complex logistics and connect businesses with reliable markets and supply partners worldwide.
+Our solutions are tailored to your business requirements, helping you source smarter, ship efficiently, manage international trade, and expand into new markets with confidence.
           </p>
         </div>
       </div>
@@ -72,7 +81,7 @@ export default function App() {
 
         <div
           className="relative flex items-center justify-center"
-          style={{ width: 400, height: 400 }}
+          style={{ width: 400, height: 400, transform: 'translateX(-90px)' }}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => { setIsHovered(false); setActiveService(null); }}
         >

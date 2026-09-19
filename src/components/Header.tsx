@@ -85,7 +85,7 @@ useEffect(() => {
           <nav className="hidden lg:flex items-center space-x-8 ml-34 ">
             <Link
               to="/#home/"
-              className="px-6 py-4 text-[#f5fbef] font-generalsans font-light text-lg hover:text-[#bbd6d1] tracking-wider transition-colors flex items-center gap-1"
+              className="px-6 py-4 text-[#f5fbef] font-generalsans font-regular text-lg hover:text-[#bbd6d1] tracking-wider transition-colors flex items-center gap-1"
             >
               {TEXT.nav.home}
             </Link>
@@ -96,7 +96,7 @@ useEffect(() => {
                 onMouseEnter={() => setNavbarAboutOpen(true)}
                 onMouseLeave={() => setNavbarAboutOpen(false)}
                 onClick={() => scrollToSection('about')}
-                className="px-6 py-4 text-[#f5fbef] font-generalsans font-light text-lg hover:text-[#bbd6d1] tracking-wider transition-colors flex items-center gap-1"
+                className="px-6 py-4 text-[#f5fbef] font-generalsans font-regular text-lg hover:text-[#bbd6d1] tracking-wider transition-colors flex items-center gap-1"
               >
                 {TEXT.nav.about}
               </button>
@@ -109,21 +109,21 @@ useEffect(() => {
                   <Link
                     to="/aboutUs/"
                     onClick={() => setNavbarAboutOpen(false) }
-                    className="block w-full text-left px-4 py-2.5 font-generalsans font-light text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
+                    className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
                   >
                     {TEXT.nav.aboutUs}
                   </Link>
                   <Link
                     to="/careers/"
                     onClick={() => setNavbarAboutOpen(false) }
-                    className="block w-full text-left px-4 py-2.5 font-generalsans font-light text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
+                    className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
                   >
                     {TEXT.nav.careers}
                   </Link>
                   <Link
                     to="/BeOurPartner/"
                     onClick={() => setNavbarAboutOpen(false) }
-                    className="block w-full text-left px-4 py-2.5 font-generalsans font-light text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
+                    className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
                   >
                     Be Our Partner
                   </Link>
@@ -138,7 +138,7 @@ useEffect(() => {
                 onMouseEnter={() => setNavbarServicesOpen(true)}
                 onMouseLeave={() => setNavbarServicesOpen(false)}
                 onClick={() => scrollToSection('services')}
-                className="px-6 py-4 text-[#f5fbef] font-generalsans font-light text-lg hover:text-[#bbd6d1] tracking-wider transition-colors flex items-center gap-1"
+                className="px-6 py-4 text-[#f5fbef] font-generalsans font-regular text-lg hover:text-[#bbd6d1] tracking-wider transition-colors flex items-center gap-1"
               >
                 {TEXT.nav.services}
               </button>
@@ -151,56 +151,56 @@ useEffect(() => {
                   <Link
                     to="/services/impo-expo/"
                     onClick={() => setNavbarServicesOpen(false)}
-                    className="block w-full text-left px-4 py-2.5 font-generalsans font-light text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
+                    className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
                   >
                     {TEXT.servicesDropdown.impoexpo}
                   </Link>
                   <Link
                     to="/services/fmcg/"
                     onClick={() => setNavbarServicesOpen(false)}
-                    className="block w-full text-left px-4 py-2.5 font-generalsans font-light text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
+                    className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
                   >
                     {TEXT.servicesDropdown.fmcgb}
                   </Link>
                   <Link
                     to="/services/freight/"
                     onClick={() => setNavbarServicesOpen(false)}
-                    className="block w-full text-left px-4 py-2.5 font-generalsans font-light text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
+                    className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
                   >
                     {TEXT.servicesDropdown.frieghtforwarding}
                   </Link>
                   <Link
                     to="/services/distribution/"
                     onClick={() => setNavbarServicesOpen(false)}
-                    className="block w-full text-left px-4 py-2.5 font-generalsans font-light text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
+                    className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
                   >
                     {TEXT.servicesDropdown.distribution}
                   </Link>
                   <Link
                     to="/services/warehousing/"
                     onClick={() => setNavbarServicesOpen(false)}
-                    className="block w-full text-left px-4 py-2.5 font-generalsans font-light text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
+                    className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
                   >
                     {TEXT.servicesDropdown.contractWarehousing}
                   </Link>
                   <Link
                     to="/services/TCL/"
                     onClick={() => setNavbarServicesOpen(false)}
-                    className="block w-full text-left px-4 py-2.5 font-generalsans font-light text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
+                    className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
                   >
                     {TEXT.servicesDropdown.tcl}
                   </Link>
                   <Link
                     to="/services/Supply_chain/"
                     onClick={() => setNavbarServicesOpen(false)}
-                    className="block w-full text-left px-4 py-2.5 font-generalsans font-light text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
+                    className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
                   >
                     {TEXT.servicesDropdown.scc}
                   </Link>
                   <Link
                     to="/services/customs/"
                     onClick={() => setNavbarServicesOpen(false)}
-                    className="block w-full text-left px-4 py-2.5 font-generalsans font-light text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
+                    className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
                   >
                     {TEXT.servicesDropdown.customs}
                   </Link>
@@ -214,7 +214,7 @@ useEffect(() => {
                 onMouseEnter={() => setNavbarIndustriesOpen(true)}
                 onMouseLeave={() => setNavbarIndustriesOpen(false)}
                 onClick={() => scrollToSection('industries')}
-                className="px-6 py-4 text-[#F5FBEF] font-generalsans font-light text-lg hover:text-[#bbd6d1] tracking-wider transition-colors flex items-center gap-1"
+                className="px-6 py-4 text-[#F5FBEF] font-generalsans font-regular text-lg hover:text-[#bbd6d1] tracking-wider transition-colors flex items-center gap-1"
               >
                 {TEXT.nav.industries}
                 </button>
@@ -227,42 +227,42 @@ useEffect(() => {
                   <Link
                     to="/industries/food_beverages/"
                     onClick={() => setNavbarIndustriesOpen(false)}
-                    className="block w-full text-left px-4 py-2.5 font-generalsans font-light text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
+                    className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
                   >
                     {TEXT.industriesDropdown.foodnbeverages}
                   </Link>
                   <Link
                     to="/industries/cold_chain/"
                     onClick={() => setNavbarIndustriesOpen(false) }
-                    className="block w-full text-left px-4 py-2.5 font-generalsans font-light text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
+                    className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
                   >
                     {TEXT.industriesDropdown.coldchain}
                   </Link>
                    <Link
                     to="/industries/horeca/"
                     onClick={() => setNavbarIndustriesOpen(false) }
-                    className="block w-full text-left px-4 py-2.5 font-generalsans font-light text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
+                    className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
                   >
                     {TEXT.industriesDropdown.horeca}
                   </Link>
                   <Link
                     to="/industries/FMCG/"
                     onClick={() => setNavbarIndustriesOpen(false)}
-                    className="block w-full text-left px-4 py-2.5 font-generalsans font-light text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
+                    className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
                   >
                     {TEXT.industriesDropdown.fmcg}
                   </Link>
                   <Link
                     to="/industries/retail/"
                     onClick={() => setNavbarIndustriesOpen(false) }
-                    className="block w-full text-left px-4 py-2.5 font-generalsans font-light text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
+                    className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
                   >
                     {TEXT.industriesDropdown.retail}
                   </Link>
                   <Link
                     to="/industries/e_commerce/"
                     onClick={() => setNavbarIndustriesOpen(false) }
-                    className="block w-full text-left px-4 py-2.5 font-generalsans font-light text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
+                    className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
                   >
                     {TEXT.industriesDropdown.ecommerce}
                   </Link>
@@ -271,7 +271,7 @@ useEffect(() => {
             </div>
               <button
         onClick={() => navigate("/contact/")}
-        className="px-6 py-4 text-[#F5FBEF] font-generalsans font-light text-lg hover:text-[#bbd6d1] tracking-wider transition-colors"
+        className="px-6 py-4 text-[#F5FBEF] font-generalsans font-regular text-lg hover:text-[#bbd6d1] tracking-wider transition-colors"
       >
         {TEXT.nav.contact}
       </button>

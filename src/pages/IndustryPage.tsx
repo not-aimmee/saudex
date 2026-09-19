@@ -1,20 +1,44 @@
-import { useState } from "react" ;
-import BlurText from "../../components/blurtext";
+import { useState } from "react";
+
+/* ─── color tokens ───────────────────────────────────────── */
+const C = {
+  almostBlack:    "#02090f",
+  inkBlack:       "#031926",
+  spaceIndigo:    "#22223b",
+  darkTeal:       "#254D58",
+  teal:           "#468189",
+  mutedTeal:      "#77aca2",
+  lightMutedTeal: "#bbd6d1",
+  vanillaCream:   "#f4e9cd",
+  bone:           "#e0ddcf",
+  parchment:      "#f1f0ea",
+  ivory:          "#F5FBEF",
+  almondSilk:     "#c9ada7",
+  chocolateBrown: "#9D4810",
+};
+
+const BG     = C.ivory;
+const FG     = C.inkBlack;
+const ACCENT = C.teal;
+const MUTED  = C.darkTeal;
+const SUBTLE = C.mutedTeal;
+const RULE   = `1px solid ${C.bone}`;
+
 /* ─── types ─────────────────────────────────────────────── */
 export interface IndustryStat {
-  value: string;  // e.g. "94%"
-  label: string;  // e.g. "Client retention rate"
+  value: string;
+  label: string;
 }
 
 export interface IndustrySection {
-  index: number;             // 01, 02, 03 …
+  index: number;
   tag: string;
   heading: string;
   body: string;
   image: string;
   imageAlt: string;
-  stats?: IndustryStat[];   // up to 2 supporting stats
-  callout?: string;         // pull-quote / bold callout
+  stats?: IndustryStat[];
+  callout?: string;
 }
 
 export interface IndustryChallenge {
@@ -28,38 +52,32 @@ export interface IndustryFaq {
 }
 
 export interface IndustryPageData {
-  industry: string;         // e.g. "Healthcare"
-  heroEyebrow: string;      // e.g. "Industry Solutions"
+  industry: string;
+  heroEyebrow: string;
   heroHeading: string;
   heroBody: string;
   heroImage: string;
   heroImageAlt: string;
-  heroStats: IndustryStat[];  // 3 stats shown in hero right panel
+  heroStats: IndustryStat[];
   sections: IndustrySection[];
-  challenges?: IndustryChallenge[];  // replaces FAQ
-  faqs?: IndustryFaq[];   
+  challenges?: IndustryChallenge[];
+  faqs?: IndustryFaq[];
 }
 
-/* ─── tokens ─────────────────────────────────────────────── */
-const BG = "#050f0f";
-const FG = "#e8ede8";
-const ACCENT = "rgba(120,210,160,0.9)";   // muted teal-green accent
-const D = (o: number) => `rgba(232,237,232,${o})`;
-const RULE = `1px solid ${D(0.08)}`;
-
+/* ─── shared text styles ─────────────────────────────────── */
 const TAG: React.CSSProperties = {
   fontSize: "0.65rem",
   letterSpacing: "0.28em",
-  textTransform: "uppercase" as const,
-  color: D(0.28),
+  textTransform: "uppercase",
+  color: SUBTLE,
   fontFamily: "inherit",
 };
 
 const IDX: React.CSSProperties = {
   fontSize: "0.65rem",
   letterSpacing: "0.2em",
-  textTransform: "uppercase" as const,
-  color: D(0.2),
+  textTransform: "uppercase",
+  color: C.lightMutedTeal,
   fontVariantNumeric: "tabular-nums",
 };
 
@@ -74,6 +92,7 @@ function MarqueeStrip({ text }: { text: string }) {
         overflow: "hidden",
         whiteSpace: "nowrap",
         padding: "0.9rem 0",
+        backgroundColor: C.lightMutedTeal,
       }}
     >
       <div
@@ -83,7 +102,7 @@ function MarqueeStrip({ text }: { text: string }) {
           fontSize: "0.75rem",
           letterSpacing: "0.22em",
           textTransform: "uppercase",
-          color: "#A3BDB8 " ,
+          color: C.chocolateBrown,
         }}
       >
         {repeated}
@@ -115,16 +134,17 @@ function StatCell({ stat, bordered }: { stat: IndustryStat; bordered?: boolean }
           fontWeight: 300,
           letterSpacing: "-0.05em",
           lineHeight: 1,
-          color: FG,
+          color: C.bone,
           marginBottom: "0.4rem",
         }}
       >
         {stat.value}
       </span>
-      <span style={{ ...TAG, color: D(0.3) }}>{stat.label}</span>
+      <span style={{ ...TAG }}>{stat.label}</span>
     </div>
   );
 }
+
 /* ─── LabelRow ───────────────────────────────────────────── */
 function LabelRow({ left, right }: { left: string; right: string }) {
   return (
@@ -133,13 +153,13 @@ function LabelRow({ left, right }: { left: string; right: string }) {
       style={{ borderBottom: RULE }}
     >
       <span style={TAG}>{left}</span>
-      <div style={{ flex: 1, height: "1px", backgroundColor: D(0.07) }} />
+      <div style={{ flex: 1, height: "1px", backgroundColor: C.bone }} />
       <span style={TAG}>{right}</span>
     </div>
   );
 }
 
-/* FAQ Section */
+/* ─── FAQ ────────────────────────────────────────────────── */
 function FaqBlock({ items }: { items: IndustryFaq[] }) {
   const [open, setOpen] = useState<number | null>(null);
   return (
@@ -147,34 +167,30 @@ function FaqBlock({ items }: { items: IndustryFaq[] }) {
       <LabelRow left="—" right="FAQ" />
       <div className="grid grid-cols-1 lg:grid-cols-2" style={{ borderBottom: RULE }}>
 
-        {/* Left anchor */}
         <div
-          className="px-8 md:px-16 lg:px-24 py-20 lg:py-28 flex flex-col justify-between"
-          style={{ borderRight: RULE, minHeight: "360px" }}
+          className="px-8 md:px-16 lg:px-24 py-20 lg:py-28 flex flex-col justify-between bg-[#bbd6d1]/40"
+          style={{ borderRight: RULE, minHeight: "360px"}}
         >
           <div>
-            <p style={{ ...TAG, color: "#A3BDB8", marginBottom: "1.4rem" }}>Questions</p>
-             <BlurText
-  text="Have questions about our logistics solutions?"
-  delay={120}
-  animateBy="words"
-  direction="top"
-  className="
-    text-white
-    font-clash
-    text-center
-    text-5xl
-    md:text-7xl
-    font-bold
-  "
-/>
+            <p style={{ ...TAG, color: C.chocolateBrown, marginBottom: "1.4rem" }}>Questions</p>
+            <h2
+              className="font-sentient"
+              style={{
+                fontSize: "clamp(2rem, 4vw, 3.8rem)",
+                fontWeight: 400,
+                letterSpacing: "-0.035em",
+                lineHeight: 1.05,
+                color: FG,
+              }}
+            >
+              Have questions about our solutions?
+            </h2>
           </div>
-          <p className="md:text-xl text-lg " style={{  lineHeight: 1.8, color: "#A3BDB8", maxWidth: "24rem", marginTop: "2rem" }}>
+          <p style={{ fontSize: "1rem", lineHeight: 1.8, color: MUTED, maxWidth: "24rem", marginTop: "2rem" }}>
             Find answers to the most common queries about how we serve your industry.
           </p>
         </div>
 
-        {/* Right accordion */}
         <div className="px-8 md:px-16 lg:px-20 py-12 lg:py-20">
           <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
             {items.map((item, i) => (
@@ -195,31 +211,30 @@ function FaqBlock({ items }: { items: IndustryFaq[] }) {
                   }}
                 >
                   <span
-                    className="text-lg md:text-xl "
+                    className="text-lg md:text-xl font-generalsans"
                     style={{
-                      fontWeight: 600,
+                      fontWeight: 400,
                       letterSpacing: "-0.01em",
                       lineHeight: 1.4,
-                      color: open === i ? "#A3BDB8" : D(0.65),
+                      color: '[#f5fbef]',
                       transition: "color 0.2s",
                       flex: 1,
                     }}
                   >
                     {item.q}
                   </span>
-                  {/* +/− */}
                   <span style={{ position: "relative", width: "18px", height: "18px", flexShrink: 0, marginTop: "3px" }}>
-                    <span style={{ position: "absolute", top: "50%", left: 0, right: 0, height: "1px", backgroundColor: D(0.35), transform: "translateY(-50%)" }} />
+                    <span style={{ position: "absolute", top: "50%", left: 0, right: 0, height: "1px", backgroundColor: C.lightMutedTeal, transform: "translateY(-50%)" }} />
                     <span style={{
                       position: "absolute", left: "50%", top: 0, bottom: 0, width: "1px",
-                      backgroundColor: D(0.35),
+                      backgroundColor: C.lightMutedTeal,
                       transform: `translateX(-50%) scaleY(${open === i ? 0 : 1})`,
                       transition: "transform 0.3s ease",
                     }} />
                   </span>
                 </button>
                 <div style={{ overflow: "hidden", maxHeight: open === i ? "200px" : "0px", transition: "max-height 0.4s cubic-bezier(0.4,0,0.2,1)" }}>
-                  <p style={{ fontSize: "1rem", lineHeight: 1.85, color: "#A3BDB8", paddingBottom: "1.5rem", maxWidth: "38rem" }}>
+                  <p style={{ fontSize: "1rem", lineHeight: 1.85, color: MUTED, paddingBottom: "1.5rem", maxWidth: "38rem" }}>
                     {item.a}
                   </p>
                 </div>
@@ -231,24 +246,18 @@ function FaqBlock({ items }: { items: IndustryFaq[] }) {
     </section>
   );
 }
-/* ─── HERO — split panel ─────────────────────────────────── */
+
+/* ─── Hero ───────────────────────────────────────────────── */
 function HeroSection({ data }: { data: IndustryPageData }) {
   return (
-    <section style={{ borderBottom: RULE }}>
-
-      {/* Top eyebrow bar */}
-      
-
-      {/* Main split: left text / right image */}
+    <section style={{ borderBottom: RULE, background: `linear-gradient(160deg, ${C.almostBlack} 0%, ${C.inkBlack} 40%, ${C.spaceIndigo} 100%)` }}>
       <div className="pt-24 grid grid-cols-1 lg:grid-cols-2" style={{ minHeight: "clamp(480px, 70vh, 760px)" }}>
 
-        {/* LEFT — heading + body */}
         <div
           className="px-8 md:px-16 lg:px-24 flex flex-col justify-between py-14 lg:py-20"
           style={{ borderRight: RULE }}
         >
           <div>
-            {/* Vertical accent line beside heading */}
             <div style={{ display: "flex", gap: "1.6rem", alignItems: "flex-start" }}>
               <div
                 style={{
@@ -260,13 +269,13 @@ function HeroSection({ data }: { data: IndustryPageData }) {
                 }}
               />
               <h1
-                className="font-clash"
+                className="font-sentient font-light"
                 style={{
-                  fontSize: "clamp(3.2rem, 7vw, 8rem)",
-                  fontWeight: 400,
+                  fontSize: "clamp(3.2rem, 6vw, 7rem)",
+                  fontWeight: 300,
                   lineHeight: 0.92,
                   letterSpacing: "-0.04em",
-                  color: FG,
+                  color: C.vanillaCream ,
                   whiteSpace: "pre-line",
                 }}
               >
@@ -275,12 +284,12 @@ function HeroSection({ data }: { data: IndustryPageData }) {
             </div>
 
             <p
-              className="font-archivo"
+              className="font-generalsans"
               style={{
                 marginTop: "3rem",
                 fontSize: "1.05rem",
                 lineHeight: 1.9,
-                color: "#A3BDB8",
+                color: C.lightMutedTeal,
                 maxWidth: "38ch",
               }}
             >
@@ -288,23 +297,14 @@ function HeroSection({ data }: { data: IndustryPageData }) {
             </p>
           </div>
 
-          {/* Inline stats row at the bottom */}
-          <div
-            style={{
-              display: "flex",
-              borderTop: RULE,
-              marginTop: "3rem",
-              flexWrap: "wrap",
-            }}
-          >
+          <div style={{ color: C.lightMutedTeal ,display: "flex", borderTop: RULE, marginTop: "3rem", flexWrap: "wrap" }}>
             {data.heroStats.map((s, i) => (
               <StatCell key={i} stat={s} bordered={i > 0} />
             ))}
           </div>
         </div>
 
-        {/* RIGHT — image with overlaid industry label */}
-        <div style={{ position: "relative", overflow: "hidden", backgroundColor: "#0c1e1e" }}>
+        <div style={{ position: "relative", overflow: "hidden", backgroundColor: C.lightMutedTeal }}>
           <img
             src={data.heroImage}
             alt={data.heroImageAlt}
@@ -314,11 +314,10 @@ function HeroSection({ data }: { data: IndustryPageData }) {
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              filter: "brightness(0.65) ",
+              filter: "brightness(0.82) saturate(0.9)",
             }}
           />
 
-          {/* Horizontal rule at 60% */}
           <div
             style={{
               position: "absolute",
@@ -326,11 +325,10 @@ function HeroSection({ data }: { data: IndustryPageData }) {
               left: 0,
               right: 0,
               height: "1px",
-              backgroundColor: D(0.08),
+              backgroundColor: "rgba(255,255,255,0.15)",
             }}
           />
 
-          {/* Rotated industry label */}
           <div
             style={{
               position: "absolute",
@@ -340,10 +338,9 @@ function HeroSection({ data }: { data: IndustryPageData }) {
               transformOrigin: "bottom right",
             }}
           >
-            <span style={{ ...TAG, color: "#A3BDB8" }}>{data.industry} Solutions</span>
+            <span style={{ ...TAG, color: C.chocolateBrown }}>{data.industry} Solutions</span>
           </div>
 
-          {/* Accent corner dot */}
           <div
             style={{
               position: "absolute",
@@ -352,7 +349,7 @@ function HeroSection({ data }: { data: IndustryPageData }) {
               width: "6px",
               height: "6px",
               borderRadius: "50%",
-              backgroundColor: ACCENT,
+              backgroundColor: C.vanillaCream,
             }}
           />
         </div>
@@ -366,25 +363,22 @@ function IndustrySectionBlock({ s, isLast }: { s: IndustrySection; isLast: boole
   return (
     <section style={{ borderBottom: isLast ? "none" : RULE }}>
 
-      {/* Index + tag strip */}
       <div
         className="px-8 md:px-16 lg:px-24 py-4 flex items-center gap-6"
         style={{ borderBottom: RULE }}
       >
         <span style={IDX}>{String(s.index).padStart(2, "0")}</span>
-        <div style={{ width: "40px", height: "1px", backgroundColor: D(0.1) }} />
+        <div className="bg-[#bbd6d1]/30" style={{ width: "40px", height: "1px" }} />
         <span style={TAG}>{s.tag}</span>
       </div>
 
-      {/* Main grid: 5 columns — image takes 3, text takes 2 */}
       <div
         className="grid grid-cols-1 lg:grid-cols-5"
         style={{ minHeight: "clamp(400px, 52vw, 620px)" }}
       >
-        {/* Image — always left on desktop */}
         <div
           className="lg:col-span-3 relative overflow-hidden"
-          style={{ backgroundColor: "#0d1e1e", minHeight: "300px" }}
+          style={{ backgroundColor: C.lightMutedTeal, minHeight: "300px" }}
         >
           <img
             src={s.image}
@@ -395,11 +389,10 @@ function IndustrySectionBlock({ s, isLast }: { s: IndustrySection; isLast: boole
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              filter: "brightness(0.75) ",
+              filter: "brightness(0.82) saturate(0.9)",
             }}
           />
 
-          {/* Stats overlay bottom-left */}
           {s.stats && s.stats.length > 0 && (
             <div
               style={{
@@ -408,8 +401,8 @@ function IndustrySectionBlock({ s, isLast }: { s: IndustrySection; isLast: boole
                 left: 0,
                 right: 0,
                 display: "flex",
-                borderTop: RULE,
-                background: `linear-gradient(to top, rgba(5,15,15,0.88), transparent)`,
+                borderTop: "1px solid rgba(255,255,255,0.18)",
+                background: `linear-gradient(to top, rgba(37,77,88,0.88), transparent)`,
               }}
             >
               {s.stats.map((stat, i) => (
@@ -417,7 +410,7 @@ function IndustrySectionBlock({ s, isLast }: { s: IndustrySection; isLast: boole
                   key={i}
                   style={{
                     padding: "1.5rem 2rem",
-                    borderLeft: i > 0 ? RULE : "none",
+                    borderLeft: i > 0 ? "1px solid rgba(255,255,255,0.15)" : "none",
                     flex: 1,
                   }}
                 >
@@ -427,28 +420,27 @@ function IndustrySectionBlock({ s, isLast }: { s: IndustrySection; isLast: boole
                       fontSize: "clamp(1.6rem, 3vw, 2.6rem)",
                       fontWeight: 300,
                       letterSpacing: "-0.04em",
-                      color: FG,
+                      color: C.ivory,
                       lineHeight: 1,
                       marginBottom: "0.3rem",
                     }}
                   >
                     {stat.value}
                   </span>
-                  <span style={{ ...TAG, color: "#A3BDB8 " }}>{stat.label}</span>
+                  <span style={{ ...TAG, color: C.lightMutedTeal }}>{stat.label}</span>
                 </div>
               ))}
             </div>
           )}
         </div>
 
-        {/* Text — right panel */}
         <div
           className="lg:col-span-2 px-8 md:px-12 lg:px-14 flex flex-col justify-between py-14"
           style={{ borderLeft: RULE }}
         >
           <div>
             <h2
-              className="font-clash"
+              className="font-sentient"
               style={{
                 fontSize: "clamp(2rem, 3vw, 3.2rem)",
                 fontWeight: 400,
@@ -462,27 +454,19 @@ function IndustrySectionBlock({ s, isLast }: { s: IndustrySection; isLast: boole
               {s.heading}
             </h2>
             <p
-              className="font-archivo"
+              className="font-generalsans"
               style={{
                 fontSize: "1rem",
                 lineHeight: 1.9,
-                color: "#A3BDB8",
+                color: MUTED,
               }}
             >
               {s.body}
             </p>
           </div>
 
-          {/* Callout */}
           {s.callout && (
-            <div
-              style={{
-                marginTop: "2.5rem",
-                paddingTop: "1.8rem",
-                borderTop: RULE,
-              }}
-            >
-              {/* Accent bar */}
+            <div style={{ marginTop: "2.5rem", paddingTop: "1.8rem", borderTop: RULE }}>
               <div
                 style={{
                   width: "28px",
@@ -492,13 +476,13 @@ function IndustrySectionBlock({ s, isLast }: { s: IndustrySection; isLast: boole
                 }}
               />
               <p
-                className="font-clash"
+                className="font-sentient"
                 style={{
                   fontSize: "clamp(1.2rem, 2vw, 1.7rem)",
                   fontWeight: 400,
                   letterSpacing: "-0.02em",
                   lineHeight: 1.3,
-                  color: "#F7FAF8",
+                  color: C.darkTeal,
                   fontStyle: "italic",
                 }}
               >
@@ -512,20 +496,19 @@ function IndustrySectionBlock({ s, isLast }: { s: IndustrySection; isLast: boole
   );
 }
 
-/* ─── Challenges (replaces FAQ) ─────────────────────────── */
+/* ─── Challenges ─────────────────────────────────────────── */
 function ChallengesBlock({ items, industry }: { items: IndustryChallenge[]; industry: string }) {
   return (
     <section style={{ borderTop: RULE }}>
 
-      {/* Header */}
       <div
         className="px-8 md:px-16 lg:px-24 py-16 lg:py-20 flex flex-col md:flex-row md:items-end justify-between gap-8"
-        style={{ borderBottom: RULE }}
+        style={{ borderBottom: RULE, backgroundColor: C.parchment }}
       >
         <div>
-          <p style={{ ...TAG, marginBottom: "1.2rem" }}>Industry Challenges</p>
+          <p style={{ ...TAG, color: ACCENT, marginBottom: "1.2rem" }}>Industry Challenges</p>
           <h2
-            className="font-clash"
+            className="font-sentient"
             style={{
               fontSize: "clamp(2.4rem, 5vw, 5.5rem)",
               fontWeight: 400,
@@ -540,11 +523,11 @@ function ChallengesBlock({ items, industry }: { items: IndustryChallenge[]; indu
           </h2>
         </div>
         <p
-          className="font-archivo"
+          className="font-generalsans"
           style={{
             fontSize: "1rem",
             lineHeight: 1.85,
-            color: "#A3BDB8",
+            color: MUTED,
             maxWidth: "34ch",
           }}
         >
@@ -552,7 +535,6 @@ function ChallengesBlock({ items, industry }: { items: IndustryChallenge[]; indu
         </p>
       </div>
 
-      {/* Card grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {items.map((item, i) => (
           <div
@@ -563,19 +545,10 @@ function ChallengesBlock({ items, industry }: { items: IndustryChallenge[]; indu
               borderBottom: i < items.length - (items.length % 3 || 3) ? RULE : "none",
             }}
           >
-            {/* Card index */}
-            <span
-              style={{
-                ...IDX,
-                display: "block",
-                marginBottom: "1.6rem",
-                color: D(0.15),
-              }}
-            >
+            <span style={{ ...IDX, display: "block", marginBottom: "1.6rem" }}>
               {String(i + 1).padStart(2, "0")}
             </span>
 
-            {/* Accent dash */}
             <div
               style={{
                 width: "20px",
@@ -586,7 +559,7 @@ function ChallengesBlock({ items, industry }: { items: IndustryChallenge[]; indu
             />
 
             <h3
-              className="font-clash"
+              className="font-sentient"
               style={{
                 fontSize: "clamp(1.1rem, 1.8vw, 1.4rem)",
                 fontWeight: 500,
@@ -599,11 +572,11 @@ function ChallengesBlock({ items, industry }: { items: IndustryChallenge[]; indu
               {item.title}
             </h3>
             <p
-              className="font-archivo"
+              className="font-generalsans"
               style={{
                 fontSize: "0.95rem",
                 lineHeight: 1.85,
-                color:"#A3BDB8",
+                color: MUTED,
               }}
             >
               {item.body}
@@ -615,20 +588,14 @@ function ChallengesBlock({ items, industry }: { items: IndustryChallenge[]; indu
   );
 }
 
-/* ─── main export ────────────────────────────────────────── */
+/* ─── IndustryPage ───────────────────────────────────────── */
 export function IndustryPage({ data }: { data: IndustryPageData }) {
   return (
     <div style={{ backgroundColor: BG, color: FG }}>
-
-      {/* ── HERO ───────────────────────────────────────── */}
       <HeroSection data={data} />
-
-      {/* ── MARQUEE STRIP ─────────────────────────────── */}
       <MarqueeStrip
         text={`${data.industry} · ${data.heroEyebrow} · Tailored Expertise · Proven Results`}
       />
-
-      {/* ── INDUSTRY SECTIONS ─────────────────────────── */}
       {data.sections.map((s, i) => (
         <IndustrySectionBlock
           key={i}
@@ -636,14 +603,15 @@ export function IndustryPage({ data }: { data: IndustryPageData }) {
           isLast={i === data.sections.length - 1}
         />
       ))}
-
-      {/* ── CHALLENGES GRID ───────────────────────────── */}
       {data.challenges && data.challenges.length > 0 && (
         <ChallengesBlock items={data.challenges} industry={data.industry} />
       )}
-
-      {/* ── FAQ ────────────────────────────────────────── */}
       {data.faqs && data.faqs.length > 0 && <FaqBlock items={data.faqs} />}
     </div>
   );
+}
+
+/* ─── App entrypoint ─────────────────────────────────────── */
+export default function App() {
+  return <div />;
 }
