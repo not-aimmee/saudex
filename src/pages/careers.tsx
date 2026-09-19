@@ -3,64 +3,61 @@ import { useNavigate } from "react-router-dom";
 import { SEO } from "../components/SEO";
 import { careersMeta } from "./data/seoMeta";
 
-
- 
 /* ─────────────────────────────────────────────
-   COLOR PALETTE — same brand, edit to retheme
+   COLOR PALETTE — light theme with provided tokens
    ───────────────────────────────────────────── */
 const C = {
-  deepGreen:   "#061510",
-  forestGreen: "#0d2e1e",
-  midGreen:    "#164d32",
-  accentGreen: "#2a7a4b",
-  brightGreen: "#3aab68",
-  paleGreen:   "#8fc9a4",
-  mintGreen:   "#c4e8d1",
-  offWhite:    "#f0ede6",
-  lightSand:   "#e8e4dc",
-  white:       "#ffffff",
-  darkInk:     "#0d1f15",
-  midInk:      "#274834",
+  heroBg:      "#f1f0ea", /* parchment */
+  rolesBg:     "#e0ddcf", /* bone */
+  surface:     "#F5FBEF", /* ivory */
+  border:      "#bbd6d1", /* light muted teal */
+  heading:     "#02090f", /* almost black */
+  darkHeading: "#031926", /* ink black */
+  body:        "#254D58", /* dark teal */
+  muted:       "#468189", /* teal */
+  mutedLight:  "#77aca2", /* muted teal */
+  accent:      "#9D4810", /* chocolate brown */
+  accentLight: "#c9ada7", /* almond silk */
+  vanilla:     "#f4e9cd", /* vanilla cream */
 };
 
 /* ─────────────────────────────────────────────
-   DATA — edit all text, roles, perks here
+   DATA
    ───────────────────────────────────────────── */
-
-// Job listings — Change title, dept, location, type for each role
 const JOBS = [
-  { id: 5, title: "Sales and Marketing Manager",dept: "Commercial",   location: "Singapore",     type: "Full-time" }
-  ];
+  { id: 5, title: "Sales and Marketing Manager", dept: "Commercial", location: "Singapore", type: "Full-time" }
+];
 
-// Departments for filter tabs — Change these labels
 const DEPTS = ["All", "Engineering", "Commercial", "Legal"];
 
 /* ─────────────────────────────────────────────
    SHARED COMPONENTS
    ───────────────────────────────────────────── */
-
-function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
+function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex items-center gap-4 mb-6">
-      <div className="h-px w-8 shrink-0" style={{ backgroundColor: light ? C.paleGreen : C.accentGreen }} />
-      <span className="text-xs tracking-[0.2em] uppercase font-medium" style={{ fontFamily: "'DM Mono', monospace", color: light ? C.paleGreen : C.accentGreen }}>
+      <div className="h-px w-8 shrink-0" style={{ backgroundColor: C.accent }} />
+      <span
+        className="text-xs tracking-[0.2em] uppercase font-medium"
+        style={{ fontFamily: "'DM Mono', monospace", color: C.accent }}
+      >
         {children}
       </span>
     </div>
   );
 }
+
 /* ─────────────────────────────────────────────
    SECTIONS
    ───────────────────────────────────────────── */
-
-/** HERO — vertical split: text left, image right */
 function HeroSection() {
   return (
-    <section className="min-h-screen grid md:grid-cols-2 relative overflow-hidden" style={{ backgroundColor: C.deepGreen }}>
-
+    <section
+      className="min-h-screen grid md:grid-cols-2 relative overflow-hidden"
+      style={{ backgroundColor: C.border }}
+    >
       {/* LEFT — text panel */}
       <div className="flex flex-col justify-end px-6 md:px-16 pb-16 pt-32 relative z-10">
-
         {/* Ghost background number */}
         <div
           className="absolute top-1/2 -translate-y-1/2 left-0 font-archivo pointer-events-none select-none"
@@ -69,58 +66,56 @@ function HeroSection() {
             fontSize: "clamp(14rem, 35vw, 48rem)",
             fontWeight: 900,
             color: "transparent",
-            WebkitTextStroke: `1px ${C.accentGreen}14`, /* Ghost text stroke opacity */
+            WebkitTextStroke: `1px ${C.muted}22`,
             lineHeight: 1,
             userSelect: "none",
             letterSpacing: "-0.06em",
             transform: "translateX(-8%) translateY(-50%)",
           }}
         >
-          {JOBS.length} {/* Shows open role count as ghost — auto-updates */}
+          {JOBS.length}
         </div>
 
         <div className="relative">
           <div className="flex items-center gap-4 mb-10">
-            <div className="h-px w-16" style={{ backgroundColor: C.brightGreen }} />
-            {/* Open roles badge — updates automatically from JOBS array */}
-            <span className="text-xs tracking-[0.25em] font-archivo uppercase px-3 py-1" style={{  color: C.brightGreen, border: `1px solid ${C.brightGreen}66` }}>
-              {JOBS.length} Open Roles {/* Updates with JOBS array length */}
+            <div className="h-px w-16" style={{ backgroundColor: C.accent }} />
+            <span
+              className="text-xs tracking-[0.25em] font-archivo uppercase px-3 py-1"
+              style={{ color: C.accent, border: `1px solid ${C.accent}66` }}
+            >
+              {JOBS.length} Open Roles
             </span>
           </div>
 
-          {/* Hero headline — Change this text */}
           <h1
             className="text-[7vw] md:text-[7.5vw] font-black font-clash uppercase leading-[0.88] tracking-tight mb-10"
-            style={{  color: C.white, animation: "slideUp 0.9s cubic-bezier(0.16,1,0.3,1) both" }}
+            style={{ color: C.darkHeading, animation: "slideUp 0.9s cubic-bezier(0.16,1,0.3,1) both" }}
           >
             Build
             <br />
-            <span style={{ color: C.brightGreen /* Hero accent word color */ }}>what</span>
+            <span style={{ color: C.accent }}>what</span>
             <br />
             moves
             <br />
             the world.
           </h1>
 
-          {/* Hero description — Change this text */}
           <p
             className="text-base md:text-lg font-regular font-archivo leading-relaxed max-w-xs"
-            style={{ color: C.mintGreen, animation: "fadeIn 1s ease 0.6s both" }}
+            style={{ color: C.body, animation: "fadeIn 1s ease 0.6s both" }}
           >
             We're looking for talented individuals who believe global logistics can be smarter, faster and cleaner.
           </p>
 
-          {/* Scroll-to-jobs CTA */}
           <button
             className="mt-10 flex items-center gap-3 text-sm font-archivo tracking-widest uppercase transition-all duration-200 group"
-            style={{  color: C.paleGreen, background: "none", border: "none", cursor: "pointer" }}
+            style={{ color: C.muted, background: "none", border: "none", cursor: "pointer" }}
             onClick={() => document.getElementById("open-roles")?.scrollIntoView({ behavior: "smooth" })}
           >
             <span>See open roles</span>
-            {/* Animated arrow */}
             <span
               className="transition-transform duration-200 group-hover:translate-x-2"
-              style={{ color: C.brightGreen, fontSize: "1.2rem" }}
+              style={{ color: C.accent, fontSize: "1.2rem" }}
             >
               →
             </span>
@@ -129,32 +124,27 @@ function HeroSection() {
       </div>
 
       {/* RIGHT — image panel */}
-      <div className="relative min-h-[50vh] md:min-h-0" style={{ backgroundColor: C.midGreen /* Image panel fallback bg */ }}>
+      <div className="relative min-h-[50vh] md:min-h-0" style={{ backgroundColor: C.border }}>
         <img
           src="/images/c.webp"
-          alt="saudex team member at work in warehouse" /* Change alt text */
+          alt="saudex team member at work in warehouse"
           className="w-full h-full object-cover"
-          style={{ filter: "brightness(0.75) saturate(0.9)" /* Image brightness/saturation — adjust these */ }}
+          style={{ filter: "brightness(0.85) saturate(0.85)" }}
         />
-        {/* Overlay gradient */}
         <div
           className="absolute inset-0"
-          style={{ background: `linear-gradient(to right, ${C.deepGreen} 0%, transparent 40%)` /* Gradient blending left edge */ }}
+          style={{ background: `linear-gradient(to right, ${C.border} 0%, transparent 40%)` }}
         />
-        
       </div>
 
       <style>{`
         @keyframes slideUp { from { opacity:0; transform:translateY(50px); } to { opacity:1; transform:translateY(0); } }
         @keyframes fadeIn  { from { opacity:0; } to { opacity:1; } }
-        @keyframes marquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
-        @keyframes scrollX { from { transform:translateX(0); } to { transform:translateX(-50%); } }
       `}</style>
     </section>
   );
 }
 
-/** OPEN ROLES — filterable job board */
 function OpenRolesSection() {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("All");
@@ -163,17 +153,16 @@ function OpenRolesSection() {
   const filtered = activeTab === "All" ? JOBS : JOBS.filter((j) => j.dept === activeTab);
 
   return (
-    <section id="open-roles" className="py-24 px-6 md:px-16" style={{ backgroundColor: C.offWhite }}>
+    <section id="open-roles" className="py-24 px-6 md:px-16" style={{ backgroundColor: C.rolesBg }}>
       <div className="max-w-7xl mx-auto">
 
         {/* Section header row */}
         <div className="grid md:grid-cols-12 gap-8 mb-16 items-end">
           <div className="md:col-span-5">
             <Eyebrow>Open positions</Eyebrow>
-            {/* Roles heading — Change this text */}
             <h2
               className="text-4xl md:text-6xl font-black uppercase leading-tight"
-              style={{ fontFamily: "'Barlow Condensed', sans-serif", color: C.darkInk }}
+              style={{ fontFamily: "'Barlow Condensed', sans-serif", color: C.darkHeading }}
             >
               Find your
               <br />
@@ -181,32 +170,33 @@ function OpenRolesSection() {
             </h2>
           </div>
 
-          {/* Role count */}
           <div className="md:col-span-3 md:col-start-8 text-right">
             <div
               className="text-6xl font-black font-clash leading-none tabular-nums"
-              style={{  color: C.brightGreen /* Role count color */ }}
+              style={{ color: C.accent }}
             >
               {filtered.length}
             </div>
-            <div className="text-xs tracking-widest font-archivo uppercase mt-1" style={{ color: C.midInk + "99" }}>
-              {activeTab === "All" ? "Total" : activeTab} {filtered.length === 1 ? "role" : "roles"} {/* Auto-updates */}
+            <div className="text-xs tracking-widest font-archivo uppercase mt-1" style={{ color: C.body + "99" }}>
+              {activeTab === "All" ? "Total" : activeTab} {filtered.length === 1 ? "role" : "roles"}
             </div>
           </div>
         </div>
 
-        {/* Department filter tabs — Change dept labels in DEPTS array above */}
-        <div className="flex flex-wrap gap-2 mb-10 border-b pb-6" style={{ borderColor: C.accentGreen + "33" }}>
+        {/* Filter tabs */}
+        <div
+          className="flex flex-wrap gap-2 mb-10 border-b pb-6"
+          style={{ borderColor: C.border }}
+        >
           {DEPTS.map((d) => (
             <button
               key={d}
               onClick={() => setActiveTab(d)}
               className="px-4 py-2 text-xs font-archivo tracking-widest uppercase transition-all duration-200"
               style={{
-                
-                backgroundColor: activeTab === d ? C.deepGreen : "transparent", /* Active tab bg */
-                color: activeTab === d ? C.white : C.midInk, /* Active tab text */
-                border: `1px solid ${activeTab === d ? C.deepGreen : C.accentGreen + "44"}`,
+                backgroundColor: activeTab === d ? C.darkHeading : "transparent",
+                color: activeTab === d ? C.vanilla : C.body,
+                border: `1px solid ${activeTab === d ? C.darkHeading : C.border}`,
                 cursor: "pointer",
               }}
             >
@@ -222,56 +212,58 @@ function OpenRolesSection() {
               key={job.id}
               className="grid grid-cols-12 gap-4 items-center py-5 border-b cursor-pointer transition-all duration-200"
               style={{
-                borderColor: C.accentGreen + "28",
-                backgroundColor: hoveredId === job.id ? C.midGreen + "12" : "transparent", /* Row hover bg */
+                borderColor: C.border,
+                backgroundColor: hoveredId === job.id ? C.muted + "14" : "transparent",
                 paddingLeft: hoveredId === job.id ? "1rem" : "0",
                 paddingRight: hoveredId === job.id ? "1rem" : "0",
               }}
               onMouseEnter={() => setHoveredId(job.id)}
               onMouseLeave={() => setHoveredId(null)}
             >
-              {/* Row index */}
               <div className="col-span-1 hidden md:block">
-                <span className="text-xs tabular-nums font-archivo" style={{ color: C.accentGreen + "66" }}>
+                <span className="text-xs tabular-nums font-archivo" style={{ color: C.mutedLight }}>
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </div>
 
-              {/* Job title */}
               <div className="col-span-12 md:col-span-5">
                 <span
                   className="text-lg md:text-xl font-black font-archivo uppercase tracking-tight"
-                  style={{  color: C.darkInk /* Job title color */ }}
+                  style={{ color: C.darkHeading }}
                 >
                   {job.title}
                 </span>
               </div>
 
-              {/* Dept tag */}
               <div className="col-span-5 md:col-span-2">
                 <span
                   className="text-xs tracking-widest font-archivo uppercase px-2 py-1"
-                  style={{  color: C.accentGreen, border: `1px solid ${C.accentGreen}44` }}
+                  style={{ color: C.accent, border: `1px solid ${C.accentLight}` }}
                 >
                   {job.dept}
                 </span>
               </div>
 
-              {/* Location */}
               <div className="col-span-4 md:col-span-2">
-                <span className="text-sm font-archivo" style={{  color: C.midInk /* Location color */ }}>
+                <span className="text-sm font-archivo" style={{ color: C.body }}>
                   {job.location}
                 </span>
               </div>
 
-              {/* Type + Arrow */}
-              <div  className="col-span-3 md:col-span-2 flex items-center justify-end gap-3">
-                <span onClick={() => navigate("/contact")} className="text-xs hidden md:block font-archivo" style={{ color: C.midInk + "88" }}>
+              <div className="col-span-3 md:col-span-2 flex items-center justify-end gap-3">
+                <span
+                  onClick={() => navigate("/contact")}
+                  className="text-xs hidden md:block font-archivo"
+                  style={{ color: C.body + "88" }}
+                >
                   {job.type}
                 </span>
                 <span
                   className="transition-transform duration-200 text-lg"
-                  style={{ color: C.brightGreen, transform: hoveredId === job.id ? "translateX(4px)" : "translateX(0)" }}
+                  style={{
+                    color: C.accent,
+                    transform: hoveredId === job.id ? "translateX(4px)" : "translateX(0)",
+                  }}
                 >
                   →
                 </span>
@@ -280,13 +272,12 @@ function OpenRolesSection() {
           ))}
         </div>
 
-        {/* No results state */}
         {filtered.length === 0 && (
           <div className="text-center py-20">
-            <div className="text-5xl font-black font-archivo uppercase" style={{  color: C.accentGreen + "55" }}>
+            <div className="text-5xl font-black font-archivo uppercase" style={{ color: C.mutedLight }}>
               Nothing yet
             </div>
-            <p className="mt-3 text-sm font-archivo" style={{  color: C.midInk + "88" }}>
+            <p className="mt-3 text-sm font-archivo" style={{ color: C.body + "88" }}>
               Check back soon — we're always growing.
             </p>
           </div>
@@ -296,12 +287,10 @@ function OpenRolesSection() {
   );
 }
 
-
 /* ─────────────────────────────────────────────
    ROOT
    ───────────────────────────────────────────── */
 export default function Careers() {
-  
   return (
     <>
       <SEO

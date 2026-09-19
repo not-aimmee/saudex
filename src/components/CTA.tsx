@@ -219,24 +219,26 @@ useEffect(() => {
                 
                   
                      {/* Contact Text */}
-                     <div className="relative z-10 group cursor-pointer flex flex-col items-center leading-tight">
-                      <div className="flex flex-col items-center font-generalsans font-medium text-[#22223b] text-md leading-tight">
-                        
-  <span  style={{
-                color: fillProgress > 0.5 ? "#f4e9cd" : "#254d58",
-              }}>CONNECT</span>
+            <div className="relative z-10 cursor-pointer flex flex-col items-center text-center leading-tight">
+              <div className="flex flex-col items-center font-generalsans font-medium text-md leading-tight">
+                <span style={{ color: fillProgress > 0.5 ? "#f4e9cd" : "#254d58" }}>
+                  CONNECT
+                </span>
 
-  <div className="flex items-center font-generalsans font-medium text-[#22223b] text-md gap-2">
-    <span style={{
-                color: fillProgress > 0.5 ? "#f4e9cd" : "#254d58",
-              }}>WITH US</span>
-    <ArrowUpRight className="w-5 h-5" style={{
-    color: fillProgress > 0.5 ? "#f4e9cd" : "#0254d58",
-  }}/>
-  </div>
-</div>
-</div>
- 
+                {/* arrow is absolutely positioned so it doesn't push "WITH US" off-centre */}
+                <span
+                  className="relative"
+                  style={{ color: fillProgress > 0.5 ? "#f4e9cd" : "#254d58" }}
+                >
+                  WITH US
+                  <ArrowUpRight
+                    className="absolute left-full ml-2 top-1/2 -translate-y-[68%] w-5 h-5"
+                    style={{ color: fillProgress > 0.5 ? "#f4e9cd" : "#254d58" }}
+                  />
+                </span>
+              </div>
+            </div>
+
             </motion.button>
           </div>
 
