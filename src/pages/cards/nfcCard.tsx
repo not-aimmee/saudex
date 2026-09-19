@@ -7,13 +7,9 @@ import {
 
 /* ─── Styles injected into <head> so everything lives in one file ─── */
 const STYLES = `
-  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
-
   * { scrollbar-width: none; box-sizing: border-box; }
   *::-webkit-scrollbar { display: none; }
-  body { background: #fff; color: #0d1f15; font-family: 'Inter', sans-serif; margin: 0; }
+  body { background: #fff; color: #0d1f15; font-family: Inter, "Segoe UI", sans-serif; margin: 0; }
 
   @keyframes shimmer-green {
     0%   { background-position: -200% center; }

@@ -2,6 +2,7 @@ import MainLayout from "./assets/main_layout";
 import SimpleLayout from "./assets/simple_layout";
 import Hero from "./components/Home";
 import Services from "./components/Services";
+import HowItWorks from "./components/How_it_works";
 import Industries from "./components/Industries";
 import Stats from "./components/Stats"
 import ServicePage from "./pages/service"
@@ -45,6 +46,7 @@ function App() {
             <Cookies />
               <Hero />
               <Services />
+              <HowItWorks />
               <Industries/>
               <Stats/>
             </>

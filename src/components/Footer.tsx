@@ -6,6 +6,7 @@ import logo from '/favicon2.png';
 import { Link } from "react-router-dom";
 import GlassIcons from '../../components/glassicons';
 import { useNavigate, useLocation } from "react-router-dom";
+import { PaperSection } from '../../components/PaperSection';
 
 export default function Footer() {
   const footerRef = useRef<HTMLElement>(null);
@@ -72,9 +73,10 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer ref={footerRef} className="bg-black border-t border-white/10">
+    <footer ref={footerRef} >
+      <PaperSection>
       {/* Tier 1 — logo/Follow Us + Company + Locations + Get in Touch */}
-      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 grid grid-cols-1 gap-12 md:grid-cols-4">
+      <div className=" max-w-screen-2xl bg-[#031926]/90 mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-14 grid grid-cols-1 gap-12 md:grid-cols-4">
         {/* Logo / Follow Us */}
         <div>
           <div className="flex items-center gap-3 mb-4 md:ml-8 md:mt-12">
@@ -83,15 +85,15 @@ export default function Footer() {
               onClick={goHome}
               className="flex flex-col leading-tight hover:opacity-80 transition-opacity text-left"
             >
-              <span className="text-2xl font-clash font-bold text-white tracking-tight">SAUDEX</span>
-              <span className="text-2xl text-white font-clash font-bold tracking-wider">GLOBAL</span>
+              <span className="text-2xl  font-light font-sentient text-[#f5fbef] tracking-tight">SAUDEX</span>
+              <span className="text-2xl font-light font-sentient text-[#f5fbef] tracking-wider">GLOBAL</span>
             </button>
           </div>
         </div>
 
         {/* Company */}
         <div>
-          <h4 className="font-clash text-white text-xs font-semibold uppercase tracking-widest mb-5">
+          <h4 className="font-generalsans text-[#f5fbef] text-xs font-medium uppercase tracking-widest mb-5">
             Quick Links
           </h4>
           <ul className="flex flex-col gap-3">
@@ -99,7 +101,7 @@ export default function Footer() {
               <li key={item.label}>
                 <Link
                   to={item.to}
-                  className="text-sm text-white/70 hover:text-white transition-colors duration-200"
+                  className="text-sm font-generalsans font-light text-[#f5fbef]/70 hover:text-[#f4e9cd] transition-colors duration-200"
                 >
                   {item.label}
                 </Link>
@@ -110,12 +112,12 @@ export default function Footer() {
 
         {/* Locations */}
         <div>
-          <h4 className="font-clash text-white text-xs font-semibold uppercase tracking-widest mb-5">
+          <h4 className="font-generalsans text-[#f5fbef] text-xs font-medium uppercase tracking-widest mb-5">
             Locations
           </h4>
           <ul className="flex flex-col gap-3">
             {locations.map((loc) => (
-              <li key={loc} className="text-sm text-white/70">
+              <li key={loc} className="text-sm text-[#f5fbef]/70">
                 {loc}
               </li>
             ))}
@@ -124,11 +126,11 @@ export default function Footer() {
 
         {/* Get in Touch */}
         <div>
-          <h4 className="font-clash text-white text-xs font-semibold uppercase tracking-widest mb-5">
+          <h4 className="font-generalsans text-[#f5fbef] text-xs font-medium uppercase tracking-widest mb-5">
             Get in Touch
           </h4>
           <ul className="flex flex-col gap-3">
-            <li className="text-sm text-white/50"></li>
+            <li className="text-sm text-[#f5fbef]/50"></li>
             <div className="translate-x-1">
             <GlassIcons items={socialItems} className="custom-class" />
           </div>
@@ -140,14 +142,14 @@ export default function Footer() {
       
 
       {/* 2nd grid*/}
-      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 gap-12 md:grid-cols-4">
+      <div className="max-w-screen-2xl mx-auto bg-[#031926]/90  px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 gap-12 md:grid-cols-4">
        <div>
 
        </div>
 
         {/* Services Column */}
         <div>
-          <h4 className="font-clash text-white text-xs font-semibold uppercase tracking-widest mb-5">
+          <h4 className="font-generalsans text-[#f5fbef] text-xs font-medium uppercase tracking-widest mb-5">
             {TEXT.footer.services}
           </h4>
           <ul className="flex flex-col gap-3">
@@ -155,7 +157,7 @@ export default function Footer() {
               <li key={item.label}>
                 <Link
                   to={item.to}
-                  className="text-sm text-white/70 hover:text-white transition-colors duration-200"
+                  className="text-sm font-generalsans font-light text-[#f5fbef]/70 hover:text-[#f4e9cd] transition-colors duration-200"
                 >
                   {item.label}
                 </Link>
@@ -166,7 +168,7 @@ export default function Footer() {
 
         {/* Industries COlumn */}
         <div>
-          <h4 className="font-clash text-white text-xs font-semibold uppercase tracking-widest mb-5">
+          <h4 className="font-generalsans text-[#f5fbef] text-xs font-medium uppercase tracking-widest mb-5">
             Industries
           </h4>
           <ul className="flex flex-col gap-3">
@@ -174,7 +176,7 @@ export default function Footer() {
               <li key={item.label}>
                 <Link
                   to={item.to}
-                  className="text-sm text-white/70 hover:text-white transition-colors duration-200"
+                  className="text-sm font-generalsans font-light text-[#f5fbef]/70 hover:text-[#f4e9cd] transition-colors duration-200"
                 >
                   {item.label}
                 </Link>
@@ -185,17 +187,17 @@ export default function Footer() {
           
         {/* Contact Us */}
         <div>
-          <h4 className="font-clash text-white text-xs font-semibold uppercase tracking-widest mb-5">
+          <h4 className="font-generalsans text-[#f5fbef] text-xs font-medium uppercase tracking-widest mb-5">
             Contact Us
           </h4>
           <ul className="flex flex-col gap-3">
-            <li className="text-sm text-white/50">
+            <li className="text-sm font-generalsans font-light text-[#f5fbef]/50">
     For Sales Inquiries
   </li>
              <li>
               <a
               href="mailto:sales@saudexglobal.com"
-      className="flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors duration-200"
+      className="flex font-generalsans font-medium items-center gap-2 text-sm text-[#f5fbef]/70 hover:text-[#f4e9cd] transition-colors duration-200"
     >
 <Mail className="w-4 h-4 shrink-0" />
       sales@saudexglobal.com
@@ -203,7 +205,7 @@ export default function Footer() {
               </a>
             </li>
 
-            <li className="text-sm text-white/50" >
+            <li className="text-sm font-generalsans font-light text-[#f5fbef]/50" >
     Singapore
 </li>
 <li>
@@ -211,13 +213,13 @@ export default function Footer() {
               href="https://wa.me/6585351308"
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors duration-200"
+      className="flex items-center font-generalsans font-medium gap-2 text-sm text-[#f5fbef]/70 hover:text-[#f4e9cd] transition-colors duration-200"
    >
  <FaWhatsapp className="w-4 h-4 shrink-0" />
       +65 8535 1308
               </a>
             </li>
-            <li className="text-sm text-white/50">
+            <li className="text-sm font-generalsans font-light text-[#f5fbef]/50">
     Malaysia
   </li>
   <li>
@@ -225,7 +227,7 @@ export default function Footer() {
               href="https://wa.me/601151168040"
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors duration-200"
+      className="flex items-center font-generalsans font-medium gap-2 text-sm text-[#f5fbef]/70 hover:text-[#f4e9cd] transition-colors duration-200"
    >
  <FaWhatsapp className="w-4 h-4 shrink-0" />
       +60 11511 68040
@@ -237,22 +239,17 @@ export default function Footer() {
        
       </div>
 
-      {/* Hairline divider */}
-      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="border-t border-white/10" />
-      </div>
-
+      
       {/* Bottom bar */}
-      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-        <p className="text-white/70 text-xs">
+      <div className="max-w-screen-2xl mx-auto bg-[#031926]/90  px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+        <p className="text-[#f5fbef]/70 text-xs font-generalsans font-light">
           {TEXT.footer.copyright}
         </p>
-        <div className="flex items-center gap-6">
-          <Link to="/privacy_policy" className="text-xs text-white/70 hover:text-white transition-colors duration-200">
+        <div className="flex items-center gap-6 font-generalsand font-light">
+          <Link to="/privacy_policy" className="text-xs text-[#f5fbef]/70 hover:text-[#f4e9cd] transition-colors duration-200">
             {TEXT.nav.policy}
           </Link>
-          <span className="text-white/20 text-xs">|</span>
-          <Link to="/terms_of_service" className="text-xs text-white/70 hover:text-white transition-colors duration-200">
+          <Link to="/terms_of_service" className="text-xs text-[#f5fbef]/70 hover:text-[#f4e9cd] transition-colors duration-200">
             {TEXT.nav.terms}
           </Link>
         </div>
@@ -275,10 +272,10 @@ export default function Footer() {
             h-14
             rounded-full
             border
-            border-white/10
-            bg-black/80
+            border-black/10
+            bg-[#031926]/90 
             backdrop-blur-xl
-            text-white
+            text-[#f4e9cd]
             hover:scale-110
             transition-all
             z-50
@@ -287,6 +284,7 @@ export default function Footer() {
           <ArrowUp className="w-5 h-5 mx-auto" />
         </button>
       )}
+      </PaperSection>
     </footer>
   );
 }

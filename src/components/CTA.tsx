@@ -6,7 +6,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { useNavigate } from "react-router-dom";
 
 export default function CTA() {
-  const [hovered, setHovered] = useState(false);
+  const [hovered] = useState(false);
   const [charge, setCharge] = useState(0);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [circleEntryPoint, setCircleEntryPoint] = useState({ x: 50, y: 50 });
@@ -79,54 +79,9 @@ useEffect(() => {
 
   return (
     <>
-<section className="relative bg-[#050F0F] overflow-hidden py-32">
+<section className="relative bg-[#77aca2]/10 overflow-hidden py-32">
 
-      {/* Orb */}
-      <div
-        className="absolute inset-0"
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-      >
-    
-        {/* Charge Overlay */}
-        <motion.div
-          className="absolute inset-0 pointer-events-none"
-          animate={{
-            opacity: charge,
-          }}
-          style={{
-            background: `
-              radial-gradient(
-                circle at center,
-                rgba(34,139,90,0.8),
-                rgba(34,139,90,0.3),
-                transparent 70%
-              )
-            `,
-          }}
-        />
-
-        {/* Secondary Glow */}
-        <motion.div
-          className="absolute inset-0 pointer-events-none"
-          animate={{
-            opacity: charge * 0.7,
-            scale: 1 + charge * 0.2,
-          }}
-          transition={{
-            duration: 0.3,
-          }}
-          style={{
-            background: `
-              radial-gradient(
-                circle at center,
-                rgba(34,139,90,0.35),
-                transparent 60%
-              )
-            `,
-          }}
-        />
-      </div>
+      
 <div className=" absolute left-[71%] top-0 h-full border-l border-white/10 -translate-x-1/2 z-0 "/>
       {/* Content */}
       <div className="relative z-20 max-w-7xl mx-auto px-8">
@@ -141,8 +96,8 @@ useEffect(() => {
   direction="top"
   className="
   uppercase 
-    text-[#228B5A]
-    font-archivo
+    text-[#254d58]/60
+    font-generalsans
     text-center
     text-lg
     md:text-xl
@@ -157,8 +112,8 @@ useEffect(() => {
               transition={{ delay: 0.2 }}
               className="
                 uppercase 
-    text-[#A3BDB8]
-    font-archivo
+    text-[#22223b]/70
+    font-generalsans
     text-left
     text-lg
     font-medium
@@ -175,12 +130,12 @@ useEffect(() => {
   animateBy="words"
   direction="top"
   className="
-    text-white
-    font-clash
+    text-[#254d58]
+    font-sentient
     text-center
     text-6xl
     md:text-8xl
-    font-bold
+    font-light
   "
 />
 
@@ -189,7 +144,9 @@ useEffect(() => {
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
               className="
-                text-[#A3BDB8]
+                text-[#22223b]/90
+                font-generalsans
+                font-light
                 text-md
                 md:text-lg
                 mt-8
@@ -206,7 +163,7 @@ useEffect(() => {
           <div className="flex justify-center">
 
             <motion.button
-             onClick={() => navigate("/contact")}
+             onClick={() => navigate("/contact/")}
               whileHover={{
                 scale: 1.05,
               }}
@@ -218,7 +175,7 @@ useEffect(() => {
                 w-64
                 rounded-full
                 border
-                border-white/20
+                border-[#031926]/20
                 backdrop-blur-xl
                 overflow-hidden
                  "
@@ -227,7 +184,7 @@ useEffect(() => {
               }}
             >
 <motion.div
-  className="absolute inset-0 rounded-full bg-[#FF6200]"
+  className="absolute inset-0 rounded-full bg-[#9d4810]"
   animate={{
     scale: fillProgress,
   }}
@@ -249,12 +206,12 @@ useEffect(() => {
               damping: 12,
             }}
             style={{
-              borderColor: fillProgress > 0.5 ? '#000000' : '#ffffff',
+              borderColor: fillProgress > 0.5 ? '#f4e9cd' : '#031926',
             }}
                 className="
                   absolute
                   inset-0
-                  bg-[#228B5A]/30
+                  bg-[#9d4810]/30
                 "
               />
 
@@ -263,18 +220,18 @@ useEffect(() => {
                   
                      {/* Contact Text */}
                      <div className="relative z-10 group cursor-pointer flex flex-col items-center leading-tight">
-                      <div className="flex flex-col items-center font-archivo font-medium text-[#F7FAF8] text-md leading-tight">
+                      <div className="flex flex-col items-center font-generalsans font-medium text-[#22223b] text-md leading-tight">
                         
   <span  style={{
-                color: fillProgress > 0.5 ? "#000000" : "#ffffff",
+                color: fillProgress > 0.5 ? "#f4e9cd" : "#031926",
               }}>CONNECT</span>
 
-  <div className="flex items-center font-archivo font-medium text-[#F7FAF8] text-md gap-2">
+  <div className="flex items-center font-generalsans font-medium text-[#22223b] text-md gap-2">
     <span style={{
-                color: fillProgress > 0.5 ? "#000000" : "#ffffff",
+                color: fillProgress > 0.5 ? "#f4e9cd" : "#031926",
               }}>WITH US</span>
     <ArrowUpRight className="w-5 h-5" style={{
-    color: fillProgress > 0.5 ? "#000000" : "#ffffff",
+    color: fillProgress > 0.5 ? "#f4e9cd" : "#031926",
   }}/>
   </div>
 </div>

@@ -84,7 +84,7 @@ export default function Hero() {
   />
     </video>
 
-  <div className="absolute inset-0 bg-[#050F0F]/75" />
+  <div className="absolute inset-0 bg-[#254D58]/50" />
       </div>
 
       {/* Content */}
@@ -99,9 +99,9 @@ export default function Hero() {
             aria-label="Logistics Made simple"
   text={TEXT.hero.headline}
   className="
-     text-[#F7FAF8]
-  font-clash
-  font-regular
+     text-[#f4e9cd]
+  font-sentient
+  font-light
   text-left
   leading-[1.2]
   pb-2
@@ -123,9 +123,9 @@ export default function Hero() {
       text-center
       text-xl
       md:text-2xl
-      text-[#F7FAF8]/80
-      font-archivo
-      font-regular
+      text-[#f4e9cd]
+      font-generalsans
+      font-light
       tracking-wide
     "
   >

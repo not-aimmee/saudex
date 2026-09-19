@@ -1,14 +1,53 @@
 /* Tailwind entry (v4) */
 @import "tailwindcss";
 
-.font-clash {
-  font-family: "Chivo", sans-serif;
+@font-face {
+  font-family: "Sentient";
+  src: url("./assets/fonts/Sentient-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-.font-archivo {
-  font-family: "News Cycle", sans-serif;
+@font-face {
+  font-family: "Sentient";
+  src: url("./assets/fonts/Sentient-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
+@font-face {
+  font-family: "Sentient";
+  src: url("./assets/fonts/Sentient-Extralight.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("./assets/fonts/GeneralSans-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("./assets/fonts/GeneralSans-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-sentient {
+  font-family: "Sentient", serif;
+}
+
+.font-generalsans {
+  font-family: "GeneralSans", sans-serif;
+}
 
 /* Global reset */
 body {
