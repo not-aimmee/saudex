@@ -48,7 +48,7 @@ export default function WhyChooseUs() {
         canonical={whyChooseUsMeta.canonical}
         ogImage={whyChooseUsMeta.ogImage}
       />
-    <section id="why-us" className="py-24 bg-[#22223b] relative overflow-hidden">
+    <section id="why-us" className="py-24 bg-[#031926] relative overflow-hidden">
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
@@ -82,7 +82,7 @@ export default function WhyChooseUs() {
     <BorderGlow
       edgeSensitivity={30}
       glowColor="40 80 80"
-      backgroundColor="#22223b"
+      backgroundColor="#031926"
       borderRadius={28}
       glowRadius={40}
       glowIntensity={1}
