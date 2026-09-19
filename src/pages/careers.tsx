@@ -60,7 +60,7 @@ function HeroSection() {
       <div className="flex flex-col justify-end px-6 md:px-16 pb-16 pt-32 relative z-10">
         {/* Ghost background number */}
         <div
-          className="absolute top-1/2 -translate-y-1/2 left-0 font-archivo pointer-events-none select-none"
+          className="absolute top-1/2 -translate-y-1/2 left-0 font-generalsans pointer-events-none select-none"
           aria-hidden
           style={{
             fontSize: "clamp(14rem, 35vw, 48rem)",
@@ -80,7 +80,7 @@ function HeroSection() {
           <div className="flex items-center gap-4 mb-10">
             <div className="h-px w-16" style={{ backgroundColor: C.accent }} />
             <span
-              className="text-xs tracking-[0.25em] font-archivo uppercase px-3 py-1"
+              className="text-xs tracking-[0.25em] font-generalsans uppercase px-3 py-1"
               style={{ color: C.accent, border: `1px solid ${C.accent}66` }}
             >
               {JOBS.length} Open Roles
@@ -88,7 +88,7 @@ function HeroSection() {
           </div>
 
           <h1
-            className="text-[7vw] md:text-[7.5vw] font-black font-clash uppercase leading-[0.88] tracking-tight mb-10"
+            className="text-[7vw] md:text-[7.5vw] font-black font-sentient uppercase leading-[0.88] tracking-tight mb-10"
             style={{ color: C.darkHeading, animation: "slideUp 0.9s cubic-bezier(0.16,1,0.3,1) both" }}
           >
             Build
@@ -101,14 +101,14 @@ function HeroSection() {
           </h1>
 
           <p
-            className="text-base md:text-lg font-regular font-archivo leading-relaxed max-w-xs"
+            className="text-base md:text-lg font-regular font-generalsans leading-relaxed max-w-xs"
             style={{ color: C.body, animation: "fadeIn 1s ease 0.6s both" }}
           >
             We're looking for talented individuals who believe global logistics can be smarter, faster and cleaner.
           </p>
 
           <button
-            className="mt-10 flex items-center gap-3 text-sm font-archivo tracking-widest uppercase transition-all duration-200 group"
+            className="mt-10 flex items-center gap-3 text-sm font-generalsans tracking-widest uppercase transition-all duration-200 group"
             style={{ color: C.muted, background: "none", border: "none", cursor: "pointer" }}
             onClick={() => document.getElementById("open-roles")?.scrollIntoView({ behavior: "smooth" })}
           >
@@ -172,12 +172,12 @@ function OpenRolesSection() {
 
           <div className="md:col-span-3 md:col-start-8 text-right">
             <div
-              className="text-6xl font-black font-clash leading-none tabular-nums"
+              className="text-6xl font-black font-sentient leading-none tabular-nums"
               style={{ color: C.accent }}
             >
               {filtered.length}
             </div>
-            <div className="text-xs tracking-widest font-archivo uppercase mt-1" style={{ color: C.body + "99" }}>
+            <div className="text-xs tracking-widest font-generalsans uppercase mt-1" style={{ color: C.body + "99" }}>
               {activeTab === "All" ? "Total" : activeTab} {filtered.length === 1 ? "role" : "roles"}
             </div>
           </div>
@@ -192,7 +192,7 @@ function OpenRolesSection() {
             <button
               key={d}
               onClick={() => setActiveTab(d)}
-              className="px-4 py-2 text-xs font-archivo tracking-widest uppercase transition-all duration-200"
+              className="px-4 py-2 text-xs font-generalsans tracking-widest uppercase transition-all duration-200"
               style={{
                 backgroundColor: activeTab === d ? C.darkHeading : "transparent",
                 color: activeTab === d ? C.vanilla : C.body,
@@ -221,14 +221,14 @@ function OpenRolesSection() {
               onMouseLeave={() => setHoveredId(null)}
             >
               <div className="col-span-1 hidden md:block">
-                <span className="text-xs tabular-nums font-archivo" style={{ color: C.mutedLight }}>
+                <span className="text-xs tabular-nums font-generalsans" style={{ color: C.mutedLight }}>
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </div>
 
               <div className="col-span-12 md:col-span-5">
                 <span
-                  className="text-lg md:text-xl font-black font-archivo uppercase tracking-tight"
+                  className="text-lg md:text-xl font-black font-generalsans uppercase tracking-tight"
                   style={{ color: C.darkHeading }}
                 >
                   {job.title}
@@ -237,7 +237,7 @@ function OpenRolesSection() {
 
               <div className="col-span-5 md:col-span-2">
                 <span
-                  className="text-xs tracking-widest font-archivo uppercase px-2 py-1"
+                  className="text-xs tracking-widest font-generalsans uppercase px-2 py-1"
                   style={{ color: C.accent, border: `1px solid ${C.accentLight}` }}
                 >
                   {job.dept}
@@ -245,7 +245,7 @@ function OpenRolesSection() {
               </div>
 
               <div className="col-span-4 md:col-span-2">
-                <span className="text-sm font-archivo" style={{ color: C.body }}>
+                <span className="text-sm font-generalsans" style={{ color: C.body }}>
                   {job.location}
                 </span>
               </div>
@@ -253,7 +253,7 @@ function OpenRolesSection() {
               <div className="col-span-3 md:col-span-2 flex items-center justify-end gap-3">
                 <span
                   onClick={() => navigate("/contact")}
-                  className="text-xs hidden md:block font-archivo"
+                  className="text-xs hidden md:block font-generalsans"
                   style={{ color: C.body + "88" }}
                 >
                   {job.type}
@@ -274,10 +274,10 @@ function OpenRolesSection() {
 
         {filtered.length === 0 && (
           <div className="text-center py-20">
-            <div className="text-5xl font-black font-archivo uppercase" style={{ color: C.mutedLight }}>
+            <div className="text-5xl font-black font-generalsans uppercase" style={{ color: C.mutedLight }}>
               Nothing yet
             </div>
-            <p className="mt-3 text-sm font-archivo" style={{ color: C.body + "88" }}>
+            <p className="mt-3 text-sm font-generalsans" style={{ color: C.body + "88" }}>
               Check back soon — we're always growing.
             </p>
           </div>

@@ -35,8 +35,8 @@ function Eyebrow({ children, light = false }: { children: React.ReactNode; light
     <div className="flex items-center gap-4 mb-8">
       <div className="h-px w-8 shrink-0" style={{ backgroundColor: light ? C.lightMutedTeal : C.teal }} />
       <span
-        className="text-xs tracking-[0.2em] uppercase font-medium"
-        style={{ fontFamily: "'DM Mono', monospace", color: light ? C.lightMutedTeal : C.teal }}
+        className="text-xs tracking-[0.2em] uppercase font-medium font-generalsans"
+        style={{  color: light ? C.lightMutedTeal : C.teal }}
       >
         {children}
       </span>
@@ -109,12 +109,12 @@ function AnimatedStat({ value, label, suffix = "" }: { value: number; label: str
   return (
     <div ref={ref} className="py-10 border-b" style={{ borderColor: C.teal + "55" }}>
       <div
-        className="text-7xl md:text-8xl font-black leading-none mb-3 tabular-nums"
-        style={{ fontFamily: "'Barlow Condensed', sans-serif", color: C.darkTeal }}
+        className="text-7xl md:text-8xl font-black font-generalsans leading-none mb-3 tabular-nums"
+        style={{  color: C.darkTeal }}
       >
         {count.toLocaleString()}{suffix}
       </div>
-      <div className="text-sm tracking-widest uppercase" style={{ fontFamily: "'DM Mono', monospace", color: C.mutedTeal }}>
+      <div className="text-sm font-sentient tracking-widest uppercase" style={{ color: C.mutedTeal }}>
         {label}
       </div>
     </div>
@@ -137,17 +137,17 @@ function ValueItem({ index, title, description }: { index: string; title: string
       onMouseLeave={() => setHovered(false)}
     >
       <div className="flex items-start gap-8">
-        <span className="text-xs mt-1 shrink-0" style={{ fontFamily: "'DM Mono', monospace", color: C.mutedTeal + "88" }}>
+        <span className="text-xs mt-1 shrink-0 font-generalsans" style={{  color: C.mutedTeal + "88" }}>
           {index}
         </span>
         <div className="flex-1 md:flex md:items-start md:justify-between gap-12">
           <h3
-            className="text-3xl md:text-4xl font-black uppercase tracking-tight mb-4 md:mb-0"
-            style={{ fontFamily: "'Barlow Condensed', sans-serif", color: C.inkBlack }}
+            className="text-3xl md:text-4xl font-sentient font-black uppercase tracking-tight mb-4 md:mb-0"
+            style={{  color: C.inkBlack }}
           >
             {title}
           </h3>
-          <p className="text-base leading-relaxed max-w-sm" style={{ fontFamily: "'DM Sans', sans-serif", color: C.darkTeal }}>
+          <p className="text-base leading-relaxed max-w-sm font-generalsans" style={{  color: C.darkTeal }}>
             {description}
           </p>
         </div>
@@ -179,10 +179,10 @@ function HeroSection() {
 
       {/* Ghost / outlined text behind headline — decorative */}
       <div
-        className="absolute bottom-0 right-0 leading-none pointer-events-none select-none hidden md:block"
+        className="absolute bottom-0 right-0 font-sentient leading-none pointer-events-none select-none hidden md:block"
         aria-hidden
         style={{
-          fontFamily: "'Barlow Condensed', sans-serif",
+        
           fontSize: "clamp(8rem, 22vw, 26rem)",
           fontWeight: 900,
           color: "transparent",
@@ -202,8 +202,8 @@ function HeroSection() {
         <div className="flex items-center gap-4 mb-12">
           <div className="h-px w-16" style={{ backgroundColor: C.teal }} />
           <span
-            className="text-xs tracking-[0.25em] uppercase"
-            style={{ fontFamily: "'DM Mono', monospace", color: C.mutedTeal }}
+            className="text-xs tracking-[0.25em] uppercase font-generalsans"
+            style={{  color: C.mutedTeal }}
           >
             Est. 2015 {/* Change founding year */}
           </span>
@@ -211,7 +211,7 @@ function HeroSection() {
 
         {/* Hero headline with stagger animation */}
         <h1
-          className="text-[9vw] md:text-[10vw] font-black font-clash font-semibold uppercase leading-[0.88] tracking-tight mb-16"
+          className="text-[9vw] md:text-[10vw] font-black font-sentient font-light uppercase leading-[0.88] tracking-tight mb-16"
           style={{ color: C.ivory }}
         >
           <StaggeredWords text="We move" style={{ display: "block" }} />
@@ -251,8 +251,8 @@ function HeroSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mt-8">
           {/* Tagline — Change this text */}
           <p
-            className="text-lg md:text-xl font-light leading-relaxed max-w-md"
-            style={{ fontFamily: "'DM Sans', sans-serif", color: C.lightMutedTeal, animation: "fadeIn 1s ease 0.8s both" }}
+            className="text-lg md:text-xl font-light font-generalsans leading-relaxed max-w-md"
+            style={{  color: C.lightMutedTeal, animation: "fadeIn 1s ease 0.8s both" }}
           >
             Connecting businesses across every continent with the precision,
             speed, and integrity global commerce demands.
@@ -272,10 +272,10 @@ function MissionSection() {
       >
         {/* Large decorative background number */}
         <div
-          className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none select-none"
+          className="absolute font-sentient right-0 top-1/2 -translate-y-1/2 pointer-events-none select-none"
           aria-hidden
           style={{
-            fontFamily: "'Barlow Condensed', sans-serif",
+            
             fontSize: "clamp(12rem, 30vw, 40rem)",
             fontWeight: 900,
             color: "transparent",
@@ -295,8 +295,8 @@ function MissionSection() {
               <Eyebrow>Our Mission</Eyebrow>
               {/* Mission heading — Change this text */}
               <h2
-                className="text-5xl md:text-7xl font-black uppercase leading-[0.92] tracking-tight"
-                style={{ fontFamily: "'Barlow Condensed', sans-serif", color: C.inkBlack }}
+                className="text-5xl md:text-7xl font-black font-sentient uppercase leading-[0.92] tracking-tight"
+                style={{ color: C.inkBlack }}
               >
                 <StaggeredWords text="Delivering excellence" style={{ display: "block" }} />
                 <StaggeredWords
@@ -310,11 +310,11 @@ function MissionSection() {
               <Rule color={C.teal} opacity={0.4} />
               <div className="mt-8 space-y-6">
                 {/* Mission paragraph 1 — Change this text */}
-                <p className="text-lg leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", color: C.darkTeal }}>
+                <p className="text-lg leading-relaxed font-generalsans" style={{  color: C.darkTeal }}>
                   For over 10 years, we have been moving businesses forward through world class logistics solutions. Driven by reliability, speed, and innovation, we help companies connect with markets, customers, and opportunities across the globe.
                 </p>
                 {/* Mission paragraph 2 — Change this text */}
-                <p className="text-lg leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", color: C.darkTeal + "cc" }}>
+                <p className="text-lg leading-relaxed font-generalsans" style={{  color: C.darkTeal + "cc" }}>
                   Every shipment is a commitment. Every delivery is a reflection of our promise. We've built our business around providing seamless, dependable logistics services that keep supply chains moving and businesses growing: on time, every time.
                 </p>
               </div>
@@ -324,8 +324,8 @@ function MissionSection() {
                 {["Americas", "Europe", "Asia Pacific", "Middle East", "Africa"].map((r) => (
                   <span
                     key={r}
-                    className="px-3 py-1 text-xs tracking-widest uppercase border transition-colors duration-200 cursor-default"
-                    style={{ fontFamily: "'DM Mono', monospace", color: C.teal, borderColor: C.teal + "55" }}
+                    className="px-3 py-1 text-xs tracking-widest font-generalsans uppercase border transition-colors duration-200 cursor-default"
+                    style={{ color: C.teal, borderColor: C.teal + "55" }}
                   >
                     {r} {/* Change region names */}
                   </span>
@@ -350,8 +350,8 @@ function StatsSection() {
               <Eyebrow>By the numbers</Eyebrow>
               {/* Stats heading — Change this text */}
               <h2
-                className="text-4xl md:text-5xl font-black uppercase leading-tight"
-                style={{ fontFamily: "'Barlow Condensed', sans-serif", color: C.inkBlack }}
+                className="text-4xl md:text-5xl font-black font-sentient uppercase leading-tight"
+                style={{ color: C.inkBlack }}
               >
                 Scale built
                 <br />
@@ -383,7 +383,7 @@ function ValuesSection() {
               <Eyebrow>What drives us</Eyebrow>
               {/* Values heading — Change this text */}
               <h2
-                className="text-5xl md:text-6xl font-black font-clash uppercase leading-tight"
+                className="text-5xl md:text-6xl font-black font-sentient uppercase leading-tight"
                 style={{ color: C.inkBlack }}
               >
                 Our
@@ -415,8 +415,8 @@ function StorySection() {
             <Eyebrow>Our story</Eyebrow>
             {/* Story heading — Change this text */}
             <h2
-              className="text-5xl md:text-7xl font-black uppercase leading-[0.92] tracking-tight"
-              style={{ fontFamily: "'Barlow Condensed', sans-serif", color: C.inkBlack }}
+              className="text-5xl md:text-7xl font-black font-sentient uppercase leading-[0.92] tracking-tight"
+              style={{  color: C.inkBlack }}
             >
               <StaggeredWords text="From one truck" style={{ display: "block" }} />
               <StaggeredWords text="to a global"    style={{ display: "block" }} />
@@ -429,7 +429,7 @@ function StorySection() {
           <div className="md:col-span-5 md:pt-20 md:col-start-8">
             <Rule color={C.teal} opacity={0.4} />
             {/* Story description — Change this text */}
-            <p className="mt-8 text-lg leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", color: C.darkTeal }}>
+            <p className="mt-8 text-lg leading-relaxed font-generalsans" style={{  color: C.darkTeal }}>
               What began as a modest family operation has grown into one of the
               world's most trusted logistics networks, present on six continents,
               employing thousands of dedicated professionals who share our
@@ -456,7 +456,7 @@ export default function AboutUs() {
         canonical={aboutUsMeta.canonical}
         ogImage={aboutUsMeta.ogImage}
       />
-      <div style={{ fontFamily: "'DM Sans', sans-serif" }}>
+      <div style={{ fontFamily: "generalsans" }}>
         <HeroSection />
         <MissionSection />
         <StatsSection />

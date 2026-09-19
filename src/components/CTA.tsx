@@ -153,7 +153,7 @@ useEffect(() => {
                 max-w-xl
               "
             >
-              Tell us about your shipment and we'll get back to you with a competitive quote and clear timeline 
+              Tell us about your shipment and we'll get back to you with a competitive quote and clear timeline.
             </motion.p>
 
           </div>

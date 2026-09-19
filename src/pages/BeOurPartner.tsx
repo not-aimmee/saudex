@@ -73,7 +73,7 @@ export default function BeOurPartner() {
               delay={120}
               animateBy="words"
               direction="top"
-              className="font-clash text-4xl sm:text-6xl md:text-8xl font-bold text-[#f4e9cd]"
+              className="font-sentient text-4xl sm:text-6xl md:text-8xl font-bold text-[#f4e9cd]"
             />
           </div>
           <p className="text-base sm:text-lg mt-6 sm:mt-8 max-w-xl mx-auto px-2" style={{ color: C.border }}>
@@ -89,7 +89,7 @@ export default function BeOurPartner() {
       >
         <div className="max-w-5xl mx-auto">
           <h2
-            className="font-clash text-4xl sm:text-5xl md:text-6xl font-bold mb-8 sm:mb-12 max-w-2xl"
+            className="font-sentient text-4xl sm:text-5xl md:text-6xl font-bold mb-8 sm:mb-12 max-w-2xl"
             style={{ color: C.heading }}
           >
             Why Choose Us?
@@ -98,7 +98,7 @@ export default function BeOurPartner() {
             {WHY_CHOOSE_US.map((point, i) => (
               <div key={i} className="p-6 sm:p-8 flex gap-4" style={{ backgroundColor: C.bgAlt }}>
                 <span
-                  className="flex-shrink-0 w-8 h-8 rounded-full font-clash font-bold flex items-center justify-center text-sm"
+                  className="flex-shrink-0 w-8 h-8 rounded-full font-sentient font-bold flex items-center justify-center text-sm"
                   style={{ backgroundColor: C.badgeBg, color: C.heading }}
                 >
                   {String(i + 1).padStart(2, "0")}
@@ -119,13 +119,13 @@ export default function BeOurPartner() {
       >
         <div className="max-w-5xl mx-auto">
           <p
-            className="uppercase font-archivo text-base sm:text-lg font-medium tracking-[0.3em] mb-4"
+            className="uppercase font-generalsans text-base sm:text-lg font-medium tracking-[0.3em] mb-4"
             style={{ color: C.accent }}
           >
             how it works
           </p>
           <h2
-            className="font-clash text-4xl sm:text-5xl md:text-7xl font-bold mb-8 sm:mb-12 max-w-2xl"
+            className="font-sentient text-4xl sm:text-5xl md:text-7xl font-bold mb-8 sm:mb-12 max-w-2xl"
             style={{ color: C.heading }}
           >
             From application to launch.
@@ -133,10 +133,10 @@ export default function BeOurPartner() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
             {STEPS.map((step) => (
               <div key={step.number}>
-                <span className="font-clash text-5xl sm:text-6xl font-bold" style={{ color: C.accent }}>
+                <span className="font-sentient text-5xl sm:text-6xl font-bold" style={{ color: C.accent }}>
                   {step.number}
                 </span>
-                <h3 className="font-archivo text-xl sm:text-2xl font-medium mt-3 mb-2" style={{ color: C.heading }}>
+                <h3 className="font-generalsans text-xl sm:text-2xl font-medium mt-3 mb-2" style={{ color: C.heading }}>
                   {step.title}
                 </h3>
                 <p className="text-base sm:text-lg leading-relaxed" style={{ color: C.body }}>
@@ -180,7 +180,7 @@ export default function BeOurPartner() {
             }}
           >
             <span
-              className="text-sm sm:text-[16px] font-archivo font-medium tracking-[0.15em] uppercase text-center leading-snug"
+              className="text-sm sm:text-[16px] font-generalsans font-medium tracking-[0.15em] uppercase text-center leading-snug"
               style={{ color: C.heading }}
             >
               Talk With
@@ -196,19 +196,19 @@ export default function BeOurPartner() {
         {/* Right — Text */}
         <div className="order-1 md:order-3 relative z-10 flex flex-col justify-center px-6 sm:px-10 py-10 sm:py-12 text-center md:text-left items-center md:items-start">
           <p
-            className="uppercase font-archivo text-lg sm:text-xl font-medium tracking-[0.4em] mb-4 sm:mb-6"
+            className="uppercase font-generalsans text-lg sm:text-xl font-medium tracking-[0.4em] mb-4 sm:mb-6"
             style={{ color: C.accent }}
           >
             your next step
           </p>
           <p
-            className="uppercase font-archivo text-xl sm:text-2xl font-medium mb-4 sm:mb-6"
+            className="uppercase font-generalsans text-xl sm:text-2xl font-medium mb-4 sm:mb-6"
             style={{ color: C.muted }}
           >
             ready to apply?
           </p>
           <p
-            className="font-clash text-3xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6"
+            className="font-sentient text-3xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6"
             style={{ color: C.heading }}
           >
             Let's talk partnership.

@@ -324,15 +324,6 @@ export default function Partnercontact() {
                         onFocus={e => e.currentTarget.style.borderColor = C.teal}
                         onBlur={e => e.currentTarget.style.borderColor = C.bone}
                       >
-                        <option value="" disabled>Select...</option>
-                        <option value="air">Air Freight</option>
-                        <option value="sea">Sea Freight</option>
-                        <option value="land">Land Freight</option>
-                        <option value="customs">Customs Clearance</option>
-                        <option value="warehouse">Warehousing</option>
-                        <option value="distribution">Distribution</option>
-                        <option value="scc">Supply Chain Consulting</option>
-                        <option value="cross_border">Cross Border Trade Advisory</option>
                         <option value="partnership">Partnership</option>
                         <option value="other">Other</option>
                       </select>

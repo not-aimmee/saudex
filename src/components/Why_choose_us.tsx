@@ -48,7 +48,7 @@ export default function WhyChooseUs() {
         canonical={whyChooseUsMeta.canonical}
         ogImage={whyChooseUsMeta.ogImage}
       />
-    <section id="why-us" className="py-24 bg-[#050F0F] relative overflow-hidden">
+    <section id="why-us" className="py-24 bg-[#22223b] relative overflow-hidden">
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
@@ -61,10 +61,10 @@ export default function WhyChooseUs() {
           className="text-center mb-16"
         >
             
-          <h1 className="text-3xl md:text-5xl font-clash font-semibold text-[#F7FAF8]  mb-8 lg:mb-4 ">
+          <h1 className="text-3xl md:text-5xl font-sentient font-light text-[#F7FAF8]  mb-8 lg:mb-4 ">
             {TEXT.whyUs.title}
           </h1>
-          <p className="text-xl text-gray-300 font-archivo font-regular max-w-3xl sm:mt-4 mx-auto">
+          <p className="text-xl text-gray-300 font-generalsans font-regular max-w-3xl sm:mt-4 mx-auto">
             {TEXT.whyUs.subtitle}
           </p>
         </motion.div>
@@ -82,13 +82,13 @@ export default function WhyChooseUs() {
     <BorderGlow
       edgeSensitivity={30}
       glowColor="40 80 80"
-      backgroundColor="#050F0F"
+      backgroundColor="#22223b"
       borderRadius={28}
       glowRadius={40}
       glowIntensity={1}
       coneSpread={25}
       animated={false}
-      colors={['#14543A', '#58C28A', '#F7FAF8']}
+      colors={['#77aca2', '#bbd6d1', '#f4e9cd']}
       className="h-full"  // important — fills the motion.div
     >
       <div className="backdrop-blur-sm p-8 rounded-full transition-all group h-full">
@@ -98,15 +98,15 @@ export default function WhyChooseUs() {
           </div>
         </div>
         {index === 0 ? (
-          <h2 className="text-2xl text-[#F7FAF8] font-archivo font-medium mb-3">
+          <h2 className="text-2xl text-[#F7FAF8] font-generalsans font-regular mb-3">
             {reason.title}
           </h2>
         ) : (
-          <h3 className="text-2xl text-[#F7FAF8] font-archivo font-medium mb-3">
+          <h3 className="text-2xl text-[#F7FAF8] font-generalsans font-regular mb-3">
             {reason.title}
           </h3>
         )}
-        <p className="text-gray-300 tex-xl font-archivo font-regular leading-relaxed">
+        <p className="text-gray-300 tex-xl font-generalsans font-regular leading-relaxed">
           {reason.description}
         </p>
       </div>
