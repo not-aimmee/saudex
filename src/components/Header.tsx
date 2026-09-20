@@ -84,7 +84,7 @@ useEffect(() => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8 ml-34 ">
             <Link
-              to="/#home/"
+              to="/#home"
               className="px-6 py-4 text-[#f5fbef] font-generalsans font-regular text-lg hover:text-[#bbd6d1] tracking-wider transition-colors flex items-center gap-1"
             >
               {TEXT.nav.home}
@@ -348,7 +348,7 @@ exit={{
       Services
     </button>
 
-    <Link to="./services/impo-expo/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
+    <Link to="/services/impo-expo/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
       {TEXT.servicesDropdown.impoexpo}
     </Link>
     <Link to="/services/fmcg/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
@@ -392,13 +392,13 @@ exit={{
      <Link to="/industries/horeca/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
       {TEXT.industriesDropdown.horeca}
     </Link>
-    <Link to="/industries/fmcg/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
+    <Link to="/industries/FMCG/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
       {TEXT.industriesDropdown.fmcg}
     </Link>
     <Link to="/industries/cold_chain/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
       {TEXT.industriesDropdown.coldchain}
     </Link>
-     <Link to="/industries/ecommerce/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
+    <Link to="/industries/e_commerce/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
       {TEXT.industriesDropdown.ecommerce}
     </Link>
      <Link to="/industries/food_beverages/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">

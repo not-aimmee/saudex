@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 /* ─── color tokens (matches App.tsx palette) ─────────────── */
 const C = {
@@ -268,8 +269,8 @@ export default function Service() {
                   ))}
                 </ul>
 
-                <a
-                  href="#"
+                <Link
+                  to="/contact/"
                   className="inline-flex items-center gap-4 group"
                   style={{ textDecoration: "none" }}
                   onMouseEnter={(e) => {
@@ -289,7 +290,7 @@ export default function Service() {
                     Learn more
                   </span>
                   <span className="cta-line" style={{ height: "1px", width: "40px", backgroundColor: C.teal, transition: "width 0.4s ease" }} />
-                </a>
+                </Link>
               </div>
             </div>
 

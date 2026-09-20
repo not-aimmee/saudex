@@ -154,7 +154,7 @@ const importExportSchema = {
           "@type": "ListItem",
           "position": 3,
           "name": "Import and Export",
-          "item": "https://saudexglobal.com/services/impo-expo"
+          "item": "https://saudexglobal.com/services/impo-expo/"
         }
       ]
     },

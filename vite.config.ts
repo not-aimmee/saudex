@@ -7,7 +7,7 @@ import react from '@vitejs/plugin-react'
 const routes = [
   "/",
   "/industries/",
-  "/Contact/",
+  "/contact/",
   "/industries/cold_chain/",
   "/industries/e_commerce/",
   "/industries/FMCG/",

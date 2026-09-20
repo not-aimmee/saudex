@@ -99,7 +99,7 @@ export default function App() {
     color: '#031926',
   }}
             >
-              A Simple, Transparent process from start to finish.
+              Simple, Transparent process from start to finish.
             </motion.div>
 
             <motion.p
@@ -109,10 +109,8 @@ export default function App() {
               className="mt-12 max-w-2xl text-center text-lg font-generalsans font-regular tracking-normal lg:tracking-wide"
               style={{ color: '#254D58'}}
             >
-              Getting your goods moving is easy.
-              <br className="hidden sm:block" /> Request a quote, confirm your
-              shipment details, and we handle pickup, transit, customs, and
-              final delivery <br /> while keeping you informed at every stage.
+Moving goods globally is easy with Saudex Global.
+ Request a quote, confirm your shipment, and let us handle the rest.<br/> From pickup and freight forwarding to customs clearance and final delivery, with clear updates every step of the way.
             </motion.p>
           </div>
         </main>

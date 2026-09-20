@@ -11,7 +11,7 @@
   "crawl": false,
   "include": [
     "/",
-    "/Contact/",
+    "/contact/",
     "/industries/cold_chain/",
     "/industries/e_commerce/",
     "/industries/FMCG/",

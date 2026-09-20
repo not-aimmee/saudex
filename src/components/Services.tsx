@@ -56,13 +56,12 @@ export default function Services() {
     color: '#031926',
   }}
 >
-  Global Logistics & Supply Chain Solutions Built for International Business
-</h2>
+Global Trading & Freight Forwarding Solutions</h2>
 
           <p className="font-generalsans font-medium text-lg" style={{  lineHeight: 1.78, color: '#254D58', maxWidth: '38ch' }}>
-           At Saudex Global, we provide end-to-end logistics, freight forwarding, import & export, sourcing, and supply chain solutions designed to help businesses move products efficiently across international markets. From global procurement and supplier management to sea, air, and land freight coordination, warehousing, distribution, and cross-border trade, we simplify complex logistics and connect businesses with reliable markets and supply partners worldwide.
-Our solutions are tailored to your business requirements, helping you source smarter, ship efficiently, manage international trade, and expand into new markets with confidence.
-          </p>
+           Saudex Global connects businesses with reliable products, suppliers, and international markets through integrated global trading and freight forwarding solutions.
+          <br/>  We support import and export, product sourcing, supplier coordination, sea, air and land freight, warehousing, and cross border logistics, helping businesses move goods efficiently from source to destination.
+<br/>From global product procurement to international shipping and delivery, we simplify trade and logistics so you can focus on growing your business.   </p>
         </div>
       </div>
 
@@ -146,7 +145,7 @@ Our solutions are tailored to your business requirements, helping you source sma
             }}
           >
             <Link
-              to="/services/service"
+              to="/services/service/"
               className="font-generalsans font-medium text-center"
               style={{
                 fontWeight: 700,

@@ -99,8 +99,8 @@ const SOCIALS = [
   },
   {
     label: "Website",
-    handle: "https://www.saudexglobal.com",
-    href: "https://www.saudexglobal.com",
+    handle: "https://saudexglobal.com",
+    href: "https://saudexglobal.com",
     svg: (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={C.teal} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" />

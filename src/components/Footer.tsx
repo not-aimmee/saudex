@@ -29,17 +29,17 @@ export default function Footer() {
   ];
 
   const services = [
-    { label: 'Import - Export', to: '/services/impo-expo' },
-    { label: 'FMCG Distribution', to: '/services/fmcg' },
-    { label: 'Freight Forwarding', to: '/services/freight' },
-    { label: 'Customs Clearance & Compliance', to: '/services/customs' },
+    { label: 'Import - Export', to: '/services/impo-expo/' },
+    { label: 'FMCG Distribution', to: '/services/fmcg/' },
+    { label: 'Freight Forwarding', to: '/services/freight/' },
+    { label: 'Customs Clearance & Compliance', to: '/services/customs/' },
   ];
 
   const industries=[
-    { label: 'E-Commerce', to:'/industries/e_commerce'},
-    { label: 'HoReCa', to:'/industries/horeca'},
-    { label: 'Retail and Wholesale', to:'/industries/retail'},
-    { label: 'Food & Beverage', to:'/industries/food_beverages'},
+    { label: 'E-Commerce', to:'/industries/e_commerce/'},
+    { label: 'HoReCa', to:'/industries/horeca/'},
+    { label: 'Retail and Wholesale', to:'/industries/retail/'},
+    { label: 'Food & Beverage', to:'/industries/food_beverages/'},
 
   ]
 
@@ -246,10 +246,10 @@ export default function Footer() {
           {TEXT.footer.copyright}
         </p>
         <div className="flex items-center gap-6 font-generalsand font-light">
-          <Link to="/privacy_policy" className="text-xs text-[#f5fbef]/70 hover:text-[#f4e9cd] transition-colors duration-200">
+          <Link to="/privacy_policy/" className="text-xs text-[#f5fbef]/70 hover:text-[#f4e9cd] transition-colors duration-200">
             {TEXT.nav.policy}
           </Link>
-          <Link to="/terms_of_service" className="text-xs text-[#f5fbef]/70 hover:text-[#f4e9cd] transition-colors duration-200">
+          <Link to="/terms_of_service/" className="text-xs text-[#f5fbef]/70 hover:text-[#f4e9cd] transition-colors duration-200">
             {TEXT.nav.terms}
           </Link>
         </div>

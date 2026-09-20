@@ -69,7 +69,7 @@ const transportationServicesSchema = {
     {
       "@type": "WebPage",
       "@id": "https://saudexglobal.com/services/distribution#webpage",
-      "url": "https://saudexglobal.com/services/distribution",
+      "url": "https://saudexglobal.com/services/distribution/",
       "name": "Transportation Services & Last Mile Delivery | SAUDEX GLOBAL",
       "description": "Transportation services by SAUDEX GLOBAL for reliable distribution, last mile delivery, scheduled routes and regional logistics support.",
       "isPartOf": { "@id": "https://saudexglobal.com/#website" },
@@ -82,7 +82,7 @@ const transportationServicesSchema = {
       "name": "Transportation Services",
       "serviceType": "Transportation Services",
       "description": "Reliable transportation services for bulk and last mile distribution, scheduled routes, regional delivery, distribution management, and integrated transportation support.",
-      "url": "https://saudexglobal.com/services/distribution",
+      "url": "https://saudexglobal.com/services/distribution/",
       "provider": {
         "@type": "Organization",
         "@id": "https://saudexglobal.com/#organization",
@@ -109,8 +109,8 @@ const transportationServicesSchema = {
       "@id": "https://saudexglobal.com/services/distribution#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://saudexglobal.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://saudexglobal.com/services" },
-        { "@type": "ListItem", "position": 3, "name": "Transportation Services", "item": "https://saudexglobal.com/services/distribution" }
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://saudexglobal.com/services/" },
+        { "@type": "ListItem", "position": 3, "name": "Transportation Services", "item": "https://saudexglobal.com/services/distribution/" }
       ]
     },
     {

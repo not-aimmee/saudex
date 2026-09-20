@@ -28,7 +28,7 @@ const JOBS = [
   { id: 5, title: "Sales and Marketing Manager", dept: "Commercial", location: "Singapore", type: "Full-time" }
 ];
 
-const DEPTS = ["All", "Engineering", "Commercial", "Legal"];
+const DEPTS = ["All", "Commercial", "Legal"];
 
 /* ─────────────────────────────────────────────
    SHARED COMPONENTS
