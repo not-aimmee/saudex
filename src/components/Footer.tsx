@@ -2,7 +2,7 @@ import { ArrowUp, Linkedin, Mail , Facebook } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { useRef, useState, useEffect } from 'react';
 import { TEXT } from '../constants';
-import logo from '/favicon.svg';
+import logo from '/logo.svg';
 import { Link } from "react-router-dom";
 import GlassIcons from '../../components/glassicons';
 import { useNavigate, useLocation } from "react-router-dom";
@@ -80,7 +80,7 @@ export default function Footer() {
         {/* Logo / Follow Us */}
         <div>
           <div className="flex items-center gap-3 mb-4 md:ml-8 md:mt-16">
-            <img onClick={goHome} src={logo} alt="Saudex Global" className="w-18 h-18 cursor-pointer" draggable={false} />
+            <img onClick={goHome} src={logo} alt="Saudex Global" className="w-12 h-12 cursor-pointer" draggable={false} />
             <button
               onClick={goHome}
               className="flex flex-col leading-tight hover:opacity-80 transition-opacity text-left"

@@ -2,7 +2,7 @@ import { useRef,useState, useEffect } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { TEXT } from '../constants';
-import logo from '/favicon.svg';
+import logo from '/logo.svg';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -77,7 +77,7 @@ useEffect(() => {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center gap-2">
             
-  <img src={logo}  onClick={goHome} alt="Saudex Global" className="w-12 h-12 lg:w-20 lg:h-20" draggable={false} />
+  <img src={logo}  onClick={goHome} alt="Saudex Global" className="w-10 h-10 lg:w-10 lg:h-10" draggable={false} />
   <span  onClick={goHome} className="font-sentient font-regular text-[22px] lg:text-[40px]  text-[#f5fbef] tracking-normal">SAUDEX GLOBAL</span>
 </div>
 
