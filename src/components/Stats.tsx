@@ -1,6 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { SEO } from "./SEO";
-import { statsMeta } from "../pages/data/seoMeta";
 
 const stats = [
   {
@@ -122,14 +120,6 @@ export default function Stats() {
   }, []);
 
   return (
-    <>
-    <SEO
-        
-        description={statsMeta.description}
-        keywords={statsMeta.keywords}
-        canonical={statsMeta.canonical}
-        ogImage={statsMeta.ogImage}
-      />
     <div
       className="w-full flex items-center justify-center bg-[#77aca2]/30"
     >
@@ -182,6 +172,5 @@ export default function Stats() {
         </div>
       </section>
     </div>
-    </>
   );
 }

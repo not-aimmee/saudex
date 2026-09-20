@@ -84,6 +84,7 @@ function App() {
        <Route path="terms_of_service" element ={<TermsOfService/>} />
        <Route path="BeOurPartner" element={<BeOurPartner/>}/>
       <Route path="contact" element={ <Suspense fallback={null}> <Contact /></Suspense>  }/>
+      <Route path="CTA" element={ <Suspense fallback={null}> <Contact /></Suspense>  }/>
        <Route path="partner_contact" element={<Partnercontact/>}/>
       </Route>
        <Route path="/nfcCard" element={<NfcCard/>} />

@@ -2,6 +2,8 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { CalendarDays, Check, Clock3, Mail, MapPin, Phone, Send } from "lucide-react";
 import { useWebMCP } from "usewebmcp";
+import { SEO } from "./SEO";
+import { contactMeta } from "../pages/data/seoMeta";
 
 const isPrerender = typeof navigator !== "undefined" && navigator.webdriver;
 
@@ -115,7 +117,15 @@ export default function Contact() {
   }
 
   return (
-    <div style={{  backgroundColor: C.parchment, color: C.inkBlack }}>
+    <>
+      <SEO
+        title="Contact Us | SAUDEX GLOBAL"
+        description={contactMeta.description}
+        keywords={contactMeta.keywords}
+        canonical={contactMeta.canonical}
+        ogImage={contactMeta.ogImage}
+      />
+      <div style={{  backgroundColor: C.parchment, color: C.inkBlack }}>
 
       {/* ── HERO ─────────────────────────────────────────────────────── */}
       <section
@@ -368,6 +378,7 @@ export default function Contact() {
           />
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

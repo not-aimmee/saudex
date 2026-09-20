@@ -1,8 +1,6 @@
 import { motion } from 'motion/react';
 import { Network, Smartphone, Shield, Users, TrendingUp, BaggageClaimIcon } from 'lucide-react';
 import { TEXT } from '../constants';
-import { SEO } from './SEO';
-import { whyChooseUsMeta } from '../pages/data/seoMeta';
 import BorderGlow from '../../components/borderglow'
 export default function WhyChooseUs() {
 
@@ -40,14 +38,6 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <>
-    <SEO
-        
-        description={whyChooseUsMeta.description}
-        keywords={whyChooseUsMeta.keywords}
-        canonical={whyChooseUsMeta.canonical}
-        ogImage={whyChooseUsMeta.ogImage}
-      />
     <section id="why-us" className="py-24 bg-[#031926] relative overflow-hidden">
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -118,6 +108,5 @@ export default function WhyChooseUs() {
       </div>
       
     </section>
-    </>
   );
 }
