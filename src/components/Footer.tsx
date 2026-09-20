@@ -2,7 +2,7 @@ import { ArrowUp, Linkedin, Mail , Facebook } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { useRef, useState, useEffect } from 'react';
 import { TEXT } from '../constants';
-import logo from '/favicon2.png';
+import logo from '/favicon.svg';
 import { Link } from "react-router-dom";
 import GlassIcons from '../../components/glassicons';
 import { useNavigate, useLocation } from "react-router-dom";

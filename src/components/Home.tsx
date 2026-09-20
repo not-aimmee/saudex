@@ -19,7 +19,7 @@ export default function Hero() {
               "@id": "https://saudexglobal.com/#organization",
               "name": "SAUDEX GLOBAL",
               "url": "https://saudexglobal.com/",
-              "logo": "https://saudexglobal.com/favicon2.png",
+              "logo": "https://saudexglobal.com/favicon.svg",
               "description": "SAUDEX GLOBAL provides global logistics solutions including freight forwarding, supply chain, warehousing, customs, cold chain, distribution and import-export services across international markets.",
               "areaServed": [
                 { "@type": "Place", "name": "Middle East" },

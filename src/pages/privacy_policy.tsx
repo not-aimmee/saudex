@@ -1,4 +1,6 @@
 import React from "react";
+import { SEO } from "../components/SEO";
+import { privacyPolicyMeta } from "./data/seoMeta";
 
 function SectionBlock({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
@@ -26,6 +28,7 @@ function Highlight({ children }: { children: React.ReactNode }) {
 export default function PrivacyPolicy() {
   return (
     <div className="font-archivo" style={{ minHeight: "100vh", background: "#f7faf8" }}>
+      <SEO {...privacyPolicyMeta} />
 
       {/* Hero strip */}
       <div style={{ background: "#050f0f", padding: "72px 0 64px" }}>

@@ -43,7 +43,6 @@ function App() {
           path="/"
           element={
             <>
-            <Cookies />
               <Hero />
               <Services />
               <HowItWorks />

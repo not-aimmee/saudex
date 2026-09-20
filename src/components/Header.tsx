@@ -2,7 +2,7 @@ import { useRef,useState, useEffect } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { TEXT } from '../constants';
-import logo from '/favicon2.png';
+import logo from '/favicon.svg';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -246,7 +246,7 @@ useEffect(() => {
                     {TEXT.industriesDropdown.horeca}
                   </Link>
                   <Link
-                    to="/industries/FMCG/"
+                    to="/industries/fmcg/"
                     onClick={() => setNavbarIndustriesOpen(false)}
                     className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
                   >
@@ -392,7 +392,7 @@ exit={{
      <Link to="/industries/horeca/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
       {TEXT.industriesDropdown.horeca}
     </Link>
-    <Link to="/industries/FMCG/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
+    <Link to="/industries/fmcg/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
       {TEXT.industriesDropdown.fmcg}
     </Link>
     <Link to="/industries/cold_chain/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">

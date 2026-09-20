@@ -6,7 +6,7 @@ const services = [
   { id: 2, name: 'FMCG ', size: 105, link:'/services/fmcg/' },
   { id: 3, name: 'Distribution', size: 130, link:'/services/distribution/' },
   { id: 4, name: 'Warehousing', size: 105, link:'/services/warehousing/' },
-  { id: 5, name: 'Customs', size: 120, link:'/services/Supply_chain/' },
+  { id: 5, name: 'Customs', size: 120, link:'/services/customs/' },
 ];
 
 // Layout tuning

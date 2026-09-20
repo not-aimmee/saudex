@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { SEO } from "../../components/SEO";
 
 /* ─── color tokens (matches App.tsx palette) ─────────────── */
 const C = {
@@ -296,8 +297,18 @@ function ServiceSectionBlock({ s }: { s: ServiceSection }) {
 
 /* ─── main export ────────────────────────────────────────── */
 export function ServicePage({ data }: { data: ServicePageData }) {
+  const canonical = typeof window !== "undefined"
+    ? `https://saudexglobal.com${window.location.pathname}`
+    : "https://saudexglobal.com/services/";
+
   return (
     <div style={{ backgroundColor: BG, color: FG }}>
+      <SEO
+        title={`${data.heading.replace("\n", " ")} | SAUDEX GLOBAL`}
+        description={data.subheading}
+        canonical={canonical}
+        ogImage="https://saudexglobal.com/og/og-default.jpg"
+      />
 
       {/* ── HERO ────────────────────────────────────────── */}
       <section style={{ borderBottom: RULE, position: "relative", overflow: "hidden" }}>

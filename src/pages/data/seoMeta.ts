@@ -284,11 +284,12 @@ export const sitemapMeta: PageMeta = {
 
 /*privacy policy and terms of service*/
 export const privacyPolicyMeta: PageMeta = {
+  title: "Privacy Policy | SAUDEX GLOBAL",
   description:
-    "Read Saudex Global's privacy policy — how we collect, use, and protect your personal data in line with applicable data protection regulations.",
+    "Read the Saudex Global Privacy Policy and learn how we collect, use, share, and protect personal information.",
   keywords:
     "Saudex Global privacy policy, data protection, GDPR, personal data",
-  canonical: `${BASE_URL}/privacy_policy`,
+  canonical: `${BASE_URL}/privacy_policy/`,
   ogImage:   `${OG}/og-default.jpg`,
 };
 
@@ -299,4 +300,23 @@ export const termsMeta: PageMeta = {
     "Saudex Global terms and conditions, logistics terms, service agreement",
   canonical: `${BASE_URL}/terms`,
   ogImage:   `${OG}/og-default.jpg`,
+};
+
+export const servicesIndexMeta: PageMeta = {
+  title: "Logistics Services | SAUDEX GLOBAL",
+  description:
+    "Explore freight forwarding, import and export, distribution, customs clearance, warehousing, and supply chain services from Saudex Global.",
+  keywords:
+    "logistics services, freight forwarding, customs clearance, warehousing, supply chain services, Saudex Global",
+  canonical: `${BASE_URL}/services/`,
+  ogImage: `${OG}/services.jpg`,
+};
+
+export const termsOfServiceMeta: PageMeta = {
+  title: "Terms of Service | SAUDEX GLOBAL",
+  description:
+    "Review the terms governing access to and use of Saudex Global logistics, freight forwarding, customs, warehousing, and delivery services.",
+  keywords: "Saudex Global terms of service, logistics terms, freight forwarding terms",
+  canonical: `${BASE_URL}/terms_of_service/`,
+  ogImage: `${OG}/og-default.jpg`,
 };

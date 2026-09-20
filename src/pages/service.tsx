@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { SEO } from "../components/SEO";
+import { servicesIndexMeta } from "./data/seoMeta";
 
 /* ─── color tokens (matches App.tsx palette) ─────────────── */
 const C = {
@@ -146,6 +148,7 @@ export default function Service() {
 
   return (
     <div className="min-h-screen overflow-x-hidden" style={{ backgroundColor: BG, color: FG }}>
+      <SEO {...servicesIndexMeta} />
 
       {/* ── PAGE INTRO ──────────────────────────────────────── */}
       <section

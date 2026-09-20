@@ -1,4 +1,6 @@
 import React from "react";
+import { SEO } from "../components/SEO";
+import { termsOfServiceMeta } from "./data/seoMeta";
 
 function SectionBlock({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
@@ -57,6 +59,7 @@ function MailLink({ address }: { address: string }) {
 export default function TermsOfService() {
   return (
     <div className="font-archivo " style={{ minHeight: "150vh", background: "#f7faf8" }}>
+      <SEO {...termsOfServiceMeta} />
 
       {/* Hero strip */}
       <div  style={{ background: "#050f0f", padding: "100px 0 64px" }}>
