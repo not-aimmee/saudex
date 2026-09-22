@@ -254,7 +254,6 @@ function FlowingMenuItem({
 
 const demoItems: MenuItem[] = [
   { link: '/industries/food_beverages/', text: 'Food & Beverages', image: '/images/i1.webp' },
-  { link: '/industries/cold_chain/', text: 'Cold Chain', image: '/images/in3.webp' },
   { link: '/industries/horeca/', text: 'HoReCa', image: '/images/horeca.webp' },
   { link: '/industries/fmcg/', text: 'FMCG', image: '/images/in32.webp' },
   { link: '/industries/retail/', text: 'Retail & Wholesale ', image: '/images/retail.webp' },

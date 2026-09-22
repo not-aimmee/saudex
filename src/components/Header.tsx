@@ -84,7 +84,7 @@ useEffect(() => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8 ml-34 ">
             <Link
-              to="/#home"
+              to="/"
               className="px-6 py-4 text-[#f5fbef] font-generalsans font-regular text-lg hover:text-[#bbd6d1] tracking-wider transition-colors flex items-center gap-1"
             >
               {TEXT.nav.home}
@@ -177,6 +177,13 @@ useEffect(() => {
                     {TEXT.servicesDropdown.distribution}
                   </Link>
                   <Link
+                    to="/industries/cold_chain/"
+                    onClick={() => setNavbarIndustriesOpen(false) }
+                    className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
+                  >
+                    {TEXT.industriesDropdown.coldchain}
+                  </Link>
+                  <Link
                     to="/services/warehousing/"
                     onClick={() => setNavbarServicesOpen(false)}
                     className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
@@ -231,13 +238,7 @@ useEffect(() => {
                   >
                     {TEXT.industriesDropdown.foodnbeverages}
                   </Link>
-                  <Link
-                    to="/industries/cold_chain/"
-                    onClick={() => setNavbarIndustriesOpen(false) }
-                    className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
-                  >
-                    {TEXT.industriesDropdown.coldchain}
-                  </Link>
+                  
                    <Link
                     to="/industries/horeca/"
                     onClick={() => setNavbarIndustriesOpen(false) }
@@ -269,12 +270,9 @@ useEffect(() => {
                 </div>
               )}
             </div>
-              <button
-        onClick={() => navigate("/contact/")}
-        className="px-6 py-4 text-[#F5FBEF] font-generalsans font-regular text-lg hover:text-[#bbd6d1] tracking-wider transition-colors"
-      >
+             <Link to="/Contact/"         className="px-6 py-4 text-[#F5FBEF] font-generalsans font-regular text-lg hover:text-[#bbd6d1] tracking-wider transition-colors">
         {TEXT.nav.contact}
-      </button>
+      </Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -332,7 +330,7 @@ exit={{
   shadow-2xl
 ">
             <div className="flex flex-col gap-6">
-              <Link to="/#home" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans  hover:text-[#f4e9cd] transition-colors text-left block">
+              <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans  hover:text-[#f4e9cd] transition-colors text-left block">
                 {TEXT.nav.home}
               </Link>
              <button
@@ -362,6 +360,9 @@ exit={{
     </Link>
     <Link to="/services/Supply_chain/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
       {TEXT.servicesDropdown.scc}
+    </Link>
+     <Link to="/industries/cold_chain/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
+      {TEXT.industriesDropdown.coldchain}
     </Link>
 
     <Link to="/services/distribution/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
@@ -394,9 +395,6 @@ exit={{
     </Link>
     <Link to="/industries/fmcg/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
       {TEXT.industriesDropdown.fmcg}
-    </Link>
-    <Link to="/industries/cold_chain/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
-      {TEXT.industriesDropdown.coldchain}
     </Link>
     <Link to="/industries/e_commerce/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
       {TEXT.industriesDropdown.ecommerce}
@@ -431,12 +429,9 @@ exit={{
     </Link>
   </div>
 )}
-              <button
-        onClick={() => navigate("/contact/")}
-        className=" text-[#F5FBEF] hover:text-[#f4e9cd] font-generalsans transition-colors text-left"
-      >
+              <Link to="/Contact/"         className="px-6 py-4 text-[#F5FBEF] font-generalsans font-regular text-lg hover:text-[#bbd6d1] tracking-wider transition-colors">
         {TEXT.nav.contact}
-      </button>
+      </Link>
             </div>
           </div>
           </motion.div>

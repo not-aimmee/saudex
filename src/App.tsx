@@ -16,7 +16,7 @@ import Warehousing from "./pages/services/warehousing";
 import ColdChainPage from "./pages/industries/cold_chain"
 import ECommercePage from "./pages/industries/e_commerce";
 import HorecaPage from "./pages/industries/horeca";
-import FMCGPage from "./pages/industries/FMCG";
+import FMCGPage from "./pages/industries/fmcg_industry";
 import RetailPage from "./pages/industries/retail";
 import FoodBevPage from "./pages/industries/food_beverages";
 import PrivacyPolicy from "./pages/privacy_policy";
@@ -57,23 +57,24 @@ function App() {
        <Route path="services">
         <Route index element={<Services />} />
         <Route path="service" element={<ServicePage/>}/>
-        <Route path="/services/customs" element={<Customs />} />
-        <Route path="/services/distribution" element={<Distribution/>} />
-        <Route path="/services/fmcg" element={<FMCG/>} />
-        <Route path="/services/freight" element={<Freight/>} />
-        <Route path="/services/impo-expo" element={<ImpoExpo/>} />
-        <Route path="/services/Supply_chain" element={<SCC/>} />
-        <Route path="/services/TCL" element={<TCL/>} />
-        <Route path="/services/warehousing" element={<Warehousing/>} />
+        <Route path="customs" element={<Customs />} />
+        <Route path="distribution" element={<Distribution/>} />
+        <Route path="fmcg" element={<FMCG/>} />
+        <Route path="freight" element={<Freight/>} />
+        <Route path="impo-expo" element={<ImpoExpo/>} />
+        <Route path="Supply_chain" element={<SCC/>} />
+        <Route path="TCL" element={<TCL/>} />
+        <Route path="warehousing" element={<Warehousing/>} />
+        
        </Route>
        <Route path="industries">
         <Route index element={<Industries />} />
-        <Route path="/industries/cold_chain" element={<ColdChainPage/>} />
-        <Route path="/industries/e_commerce" element={<ECommercePage/>} />
-        <Route path="/industries/horeca" element={<HorecaPage/>} />
-        <Route path="/industries/fmcg" element={<FMCGPage/>} />
-        <Route path="/industries/retail" element={<RetailPage/>} />
-        <Route path="/industries/food_beverages" element={<FoodBevPage/>} />
+        <Route path="e_commerce" element={<ECommercePage/>} />
+        <Route path="horeca" element={<HorecaPage/>} />
+        <Route path="fmcg_industry" element={<FMCGPage/>} />
+        <Route path="retail" element={<RetailPage/>} />
+        <Route path="food_beverages" element={<FoodBevPage/>} />
+        <Route path="cold_chain" element={<ColdChainPage/>} />
        </Route>
        <Route path="aboutUs" element={<AboutUs/>} />
        <Route path="careers" element={<Careers/>} />
@@ -83,7 +84,7 @@ function App() {
        <Route path="privacy_policy" element ={<PrivacyPolicy/>} />
        <Route path="terms_of_service" element ={<TermsOfService/>} />
        <Route path="BeOurPartner" element={<BeOurPartner/>}/>
-      <Route path="contact" element={ <Suspense fallback={null}> <Contact /></Suspense>  }/>
+      <Route path="Contact" element={ <Suspense fallback={null}> <Contact /></Suspense>  }/>
       <Route path="CTA" element={ <Suspense fallback={null}> <Contact /></Suspense>  }/>
        <Route path="partner_contact" element={<Partnercontact/>}/>
       </Route>
