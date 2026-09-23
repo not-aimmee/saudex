@@ -36,10 +36,13 @@ export default function Footer() {
   ];
 
   const industries=[
-    { label: 'E-Commerce', to:'/industries/e_commerce/'},
     { label: 'HoReCa', to:'/industries/horeca/'},
-    { label: 'Retail and Wholesale', to:'/industries/retail/'},
+    { label: 'FMCG', to:'/industries/fmcg_industry/'},
+    { label: 'E-Commerce', to:'/industries/e_commerce/'},
     { label: 'Food & Beverage', to:'/industries/food_beverages/'},
+    { label: 'Retail and Wholesale', to:'/industries/retail/'},
+    { label: 'Agri-Commodities & Palm Oil', to:'/industries/agriculture/'},
+
 
   ]
 

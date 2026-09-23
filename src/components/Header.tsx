@@ -191,13 +191,6 @@ useEffect(() => {
                     {TEXT.servicesDropdown.scc}
                   </Link>
                   <Link
-                    to="/services/TCL/"
-                    onClick={() => setNavbarServicesOpen(false)}
-                    className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
-                  >
-                    {TEXT.servicesDropdown.tcl}
-                  </Link>
-                  <Link
                     to="/services/distribution/"
                     onClick={() => setNavbarServicesOpen(false)}
                     className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
@@ -232,14 +225,6 @@ useEffect(() => {
                   className="absolute left-0 mt-0 w-64 bg-white rounded-md shadow-lg py-2 border border-gray-100"
                 >
                   <Link
-                    to="/industries/food_beverages/"
-                    onClick={() => setNavbarIndustriesOpen(false)}
-                    className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
-                  >
-                    {TEXT.industriesDropdown.foodnbeverages}
-                  </Link>
-                  
-                   <Link
                     to="/industries/horeca/"
                     onClick={() => setNavbarIndustriesOpen(false) }
                     className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
@@ -253,6 +238,21 @@ useEffect(() => {
                   >
                     {TEXT.industriesDropdown.fmcg}
                   </Link>
+                   <Link
+                    to="/industries/e_commerce/"
+                    onClick={() => setNavbarIndustriesOpen(false) }
+                    className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
+                  >
+                    {TEXT.industriesDropdown.ecommerce}
+                  </Link>
+                  <Link
+                    to="/industries/food_beverages/"
+                    onClick={() => setNavbarIndustriesOpen(false)}
+                    className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
+                  >
+                    {TEXT.industriesDropdown.foodnbeverages}
+                  </Link>
+                  
                   <Link
                     to="/industries/retail/"
                     onClick={() => setNavbarIndustriesOpen(false) }
@@ -260,12 +260,13 @@ useEffect(() => {
                   >
                     {TEXT.industriesDropdown.retail}
                   </Link>
-                  <Link
-                    to="/industries/e_commerce/"
+                 
+                   <Link
+                    to="/industries/agriculture/"
                     onClick={() => setNavbarIndustriesOpen(false) }
                     className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
                   >
-                    {TEXT.industriesDropdown.ecommerce}
+                    Agri-Commodities & Palm Oil
                   </Link>
                 </div>
               )}
@@ -368,9 +369,6 @@ exit={{
     <Link to="/services/distribution/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
       {TEXT.servicesDropdown.distribution}
     </Link>
-     <Link to="/services/TCL/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
-      {TEXT.servicesDropdown.tcl}
-    </Link>
     <Link to="/services/customs/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
       {TEXT.servicesDropdown.customs}
     </Link>
@@ -404,6 +402,9 @@ exit={{
     </Link>
    <Link to="/industries/retail/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
       {TEXT.industriesDropdown.retail}
+    </Link>
+    <Link to="/industries/agriculture/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
+      Agri-Commodities & Palm Oil
     </Link>
   </div>
 )}

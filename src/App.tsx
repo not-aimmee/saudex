@@ -11,12 +11,12 @@ import Distribution from "./pages/services/distribution";
 import FMCG from "./pages/services/fmcg";
 import ImpoExpo from "./pages/services/impo-expo";
 import SCC from "./pages/services/Supply_chain";
-import TCL from "./pages/services/TCL";
 import Warehousing from "./pages/services/warehousing";
 import ColdChainPage from "./pages/industries/cold_chain"
 import ECommercePage from "./pages/industries/e_commerce";
 import HorecaPage from "./pages/industries/horeca";
 import FMCGPage from "./pages/industries/fmcg_industry";
+import AgriPage from "./pages/industries/agriculture";
 import RetailPage from "./pages/industries/retail";
 import FoodBevPage from "./pages/industries/food_beverages";
 import PrivacyPolicy from "./pages/privacy_policy";
@@ -63,7 +63,6 @@ function App() {
         <Route path="freight" element={<Freight/>} />
         <Route path="impo-expo" element={<ImpoExpo/>} />
         <Route path="Supply_chain" element={<SCC/>} />
-        <Route path="TCL" element={<TCL/>} />
         <Route path="warehousing" element={<Warehousing/>} />
         
        </Route>
@@ -75,6 +74,7 @@ function App() {
         <Route path="retail" element={<RetailPage/>} />
         <Route path="food_beverages" element={<FoodBevPage/>} />
         <Route path="cold_chain" element={<ColdChainPage/>} />
+        <Route path="agriculture" element={<AgriPage/>} />
        </Route>
        <Route path="aboutUs" element={<AboutUs/>} />
        <Route path="careers" element={<Careers/>} />

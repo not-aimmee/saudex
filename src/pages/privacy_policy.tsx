@@ -40,7 +40,7 @@ export default function PrivacyPolicy() {
             Privacy Policy
           </h1>
           <p className="font-archivo" style={{ fontSize: 14, color: "rgba(163,189,184,0.7)", margin: 0 }}>
-            Last updated: June 20 2026 &nbsp;·&nbsp; Questions? &nbsp;
+            Last updated: September 20 2025 &nbsp;·&nbsp; Questions? &nbsp;
             <a href="mailto:privacy@saudexglobal.com" style={{ color: "#A3BDB8", textDecoration: "none", borderBottom: "1px solid rgba(163,189,184,0.3)" }}>
               privacy@saudexglobal.com
             </a>

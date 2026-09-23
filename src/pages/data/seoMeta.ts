@@ -142,6 +142,15 @@ export const coldChainMeta: PageMeta = {
   ogImage:   `${OG}/cold-chain.jpg`,
 };
 
+export const agriCommoditiesMeta: PageMeta = {
+  title: "Agri-Commodities & Palm Oil Logistics",
+  description:
+    "Bulk supply and transport of palm oil and agri-commodities with 99.2% quality specification compliance. Heated tankers, batch-level traceability, and RSPO and ISCC certified sourcing.",
+  keywords:
+    "palm oil supply, agri-commodities logistics, bulk edible oil transport, heated tanker delivery, RSPO certified palm oil, ISO tank and flexitank transport, sustainable palm oil sourcing",
+  canonical: `${BASE_URL}/industries/agri-commodities`,
+  ogImage: `${OG}/agri-commodities.jpg`,
+};
 export const horecaMeta: PageMeta = {
   
   description:

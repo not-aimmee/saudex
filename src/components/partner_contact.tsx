@@ -22,7 +22,7 @@ function Rule({ color = C.teal, opacity = 0.35 }: { color?: string; opacity?: nu
   return <hr style={{ borderColor: color, opacity, borderTopWidth: 1 }} className="w-full border-0 border-t" />;
 }
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_nlnhzd2";
-const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_zjgqs1k";
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_04d5302";
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "sXmLsr6PApabpnmxa";
 
 type FormState = "idle" | "submitting" | "success" | "error";

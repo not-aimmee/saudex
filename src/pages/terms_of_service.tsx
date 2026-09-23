@@ -71,7 +71,7 @@ export default function TermsOfService() {
             Terms of Service
           </h1>
           <p className="font-archivo" style={{ fontSize: 14, color: "rgba(163,189,184,0.7)", margin: 0 }}>
-            Effective June 20, 2026 &nbsp;·&nbsp; Version 1.0 &nbsp;·&nbsp;
+            Effective June 20, 2025 &nbsp;·&nbsp; Version 1.0 &nbsp;·&nbsp;
             <a href="mailto:privacy@saudexglobal.com" style={{ color: "#A3BDB8", textDecoration: "none", borderBottom: "1px solid rgba(163,189,184,0.3)" }}>
               privacy@saudexglobal.com
             </a>
@@ -592,15 +592,13 @@ export default function TermsOfService() {
               Singapore (Principal Place of Business)
             </p>
             <p>
-              Email: <MailLink address="legal@saudexglobal.com" /><br />
-              Operations: <MailLink address="ops@saudexglobal.com" /><br />
-              Finance: <MailLink address="finance@saudexglobal.com" /><br />
-              Data Protection Officer: <MailLink address="dpo@saudexglobal.com" /><br />
+              Email: For general inquiries  <MailLink address="info@saudexglobal.com" /><br />
+              For data protection and privacy <MailLink address="privacy@saudexglobal.com" /><br/>
               Website: saudexglobal.com
             </p>
             <p style={{ marginTop: 16, fontSize: 12, color: "rgba(5,15,15,0.5)" }}>
-              © 2026 Saudex Global Pte Ltd. All rights reserved.<br />
-              Version 1.0 &nbsp;·&nbsp; Effective 20 June 2026 &nbsp;·&nbsp; saudexglobal.com/terms
+              © 2025 Saudex Global Pte Ltd. All rights reserved.<br />
+              Version 1.0 &nbsp;·&nbsp; Effective 20 June 2025 &nbsp;·&nbsp; saudexglobal.com/terms
             </p>
           </SectionBlock>
         </main>
