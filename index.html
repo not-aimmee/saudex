@@ -1,14 +1,33 @@
 <!doctype html>
 <html lang="en">
-  <head>
+  <!-- FIX: Add preconnect/prefetch for external resources -->
+<head>
     <meta charset="UTF-8" />
     <title>Global Logistics Solutions for Businesses | SAUDEX GLOBAL</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    
+    <!-- ADD THESE: Preconnect to Google Analytics & external hosts -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- ADD: Font display strategy to reduce CLS -->
+    <link rel="preload" href="/fonts/boska.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/generalsans.woff2" as="font" type="font/woff2" crossorigin>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords" content="global logistics solutions, SAUDEX GLOBAL, freight forwarding, supply chain solutions, import export logistics, international logistics">
-    <meta name= "google-site-verification" content="Se5mYb_IkuilIZveJ1qgMB_kMR2k_KsGaZoIEmLNTJs"/>
-
-    <!-- Google tag (gtag.js) -->
+    <meta name="description" content="Global freight forwarding and logistics solutions">
+    <meta name="keywords" content="global logistics solutions, SAUDEX GLOBAL...">
+    
+    <!-- ADD: Open Graph & Twitter Cards for social sharing -->
+    <meta property="og:title" content="Global Logistics Solutions | SAUDEX GLOBAL">
+    <meta property="og:description" content="...">
+    <meta property="og:image" content="/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <meta name="google-site-verification" content="..."/>
+    
+    <!-- MODIFY: Async script should be after body content or use defer -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FCT4YN3LD4"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -16,7 +35,7 @@
       gtag('js', new Date());
       gtag('config', 'G-FCT4YN3LD4');
     </script>
-  </head>
+</head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
