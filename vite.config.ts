@@ -15,6 +15,7 @@ const routes = [
   "/industries/food_beverages/",
   "/industries/horeca/",
   "/industries/retail/",
+  "/industries/agriculture/",
   "/services/customs/",
   "/services/",
   "/services/service/",
