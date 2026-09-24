@@ -253,7 +253,7 @@ function FlowingMenuItem({
 /* ─── Page ────────────────────────────────────────────────────── */
 
 const demoItems: MenuItem[] = [
-  { link: '/industries/fmcg/', text: 'FMCG', image: '/images/in32.webp' },
+  { link: '/industries/fmcg_industry/', text: 'FMCG', image: '/images/in32.webp' },
   { link: '/industries/horeca/', text: 'HoReCa', image: '/images/horeca.webp' },
   { link: '/industries/e_commerce/', text: 'E-Commerce', image: '/images/s33.webp' },
   { link: '/industries/food_beverages/', text: 'Food & Beverages', image:'/images/i1.webp'},

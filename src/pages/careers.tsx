@@ -252,7 +252,7 @@ function OpenRolesSection() {
 
               <div className="col-span-3 md:col-span-2 flex items-center justify-end gap-3">
                 <span
-                  onClick={() => navigate("/contact")}
+                  onClick={() => navigate("/Contact/")}
                   className="text-xs hidden md:block font-generalsans"
                   style={{ color: C.body + "88" }}
                 >

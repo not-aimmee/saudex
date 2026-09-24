@@ -11,13 +11,13 @@
   "crawl": false,
   "include": [
     "/",
-    "/contact/",
+    "/Contact/",
     "/CTA/",
     "/partner_contact/",
     "/industries/",
     "/industries/cold_chain/",
     "/industries/e_commerce/",
-    "/industries/fmcg/",
+    "/industries/fmcg_industry/",
     "/industries/food_beverages/",
     "/industries/horeca/",
     "/industries/retail/",
@@ -30,7 +30,6 @@
     "/services/freight/",
     "/services/impo-expo/",
     "/services/Supply_chain/",
-    "/services/TCL/",
     "/services/warehousing/",
     "/aboutUs/",
     "/careers/",
@@ -45,7 +44,7 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "npm run build && gh-pages -d dist",
-    "postbuild": "react-snap && node -e \"const fs=require('fs'); fs.copyFileSync('dist/index.html','dist/404.html'); fs.rmSync('dist/CTA',{recursive:true,force:true}); fs.copyFileSync('dist/contact/index.html','dist/CTA')\""
+    "postbuild": "react-snap && node -e \"const fs=require('fs'); fs.copyFileSync('dist/index.html','dist/404.html'); fs.rmSync('dist/CTA',{recursive:true,force:true}); fs.copyFileSync('dist/Contact/index.html','dist/CTA')\""
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

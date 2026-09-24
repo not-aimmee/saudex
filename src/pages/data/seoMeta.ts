@@ -86,7 +86,7 @@ export const contactMeta: PageMeta = {
     "Get in touch with the Saudex Global team for logistics enquiries,partnership opportunities, or supply chain consultations.We're here to help you move smarter.",
   keywords:
     "contact Saudex Global, logistics enquiry, freight contact,supply chain consultation, Saudex Global office, logistics partnership",
-  canonical: `${BASE_URL}/contact/`,
+  canonical: `${BASE_URL}/Contact/`,
   ogImage:   `${OG}/contact.jpg`,
 };
 
@@ -138,7 +138,7 @@ export const coldChainMeta: PageMeta = {
     "End-to-end cold chain logistics with 99.6% temperature compliance. HACCP-certified facilities, real-time IoT monitoring, and last-mile cold delivery across the region.",
   keywords:
     "cold chain logistics, temperature-controlled storage, refrigerated transport, HACCP cold storage, frozen goods distribution, pharmaceutical cold chain",
-  canonical: `${BASE_URL}/industries/cold-chain`,
+  canonical: `${BASE_URL}/industries/cold_chain/`,
   ogImage:   `${OG}/cold-chain.jpg`,
 };
 
@@ -148,7 +148,7 @@ export const agriCommoditiesMeta: PageMeta = {
     "Bulk supply and transport of palm oil and agri-commodities with 99.2% quality specification compliance. Heated tankers, batch-level traceability, and RSPO and ISCC certified sourcing.",
   keywords:
     "palm oil supply, agri-commodities logistics, bulk edible oil transport, heated tanker delivery, RSPO certified palm oil, ISO tank and flexitank transport, sustainable palm oil sourcing",
-  canonical: `${BASE_URL}/industries/agri-commodities`,
+  canonical: `${BASE_URL}/industries/agriculture/`,
   ogImage: `${OG}/agri-commodities.jpg`,
 };
 export const horecaMeta: PageMeta = {
@@ -157,7 +157,7 @@ export const horecaMeta: PageMeta = {
     "Reliable supply chain solutions for hotels, restaurants, and catering operations. Pre-dawn delivery, 4,000+ SKUs, and unified sourcing from a single supplier.",
   keywords:
     "horeca supplier, hotel food supply, restaurant logistics, catering distribution, hospitality supply chain, food service delivery",
-  canonical: `${BASE_URL}/industries/horeca`,
+  canonical: `${BASE_URL}/industries/horeca/`,
   ogImage:   `${OG}/horeca.jpg`,
 };
 
@@ -167,7 +167,7 @@ export const ecommerceMeta: PageMeta = {
     "Same-day pick-and-pack fulfilment, 96.7% first-attempt delivery, and frictionless returns. Built for Shopify, WooCommerce, Magento, and custom platforms.",
   keywords:
     "ecommerce fulfilment, 3PL fulfilment, last-mile delivery, returns logistics, same-day dispatch, Shopify logistics partner",
-  canonical: `${BASE_URL}/industries/e-commerce`,
+  canonical: `${BASE_URL}/industries/e_commerce/`,
   ogImage:   `${OG}/ecommerce.jpg`,
 };
 
@@ -177,7 +177,7 @@ export const fmcgMeta: PageMeta = {
     "National FMCG distribution with 99.1% order fill rate. Demand planning, promotional logistics, and route-optimised delivery to modern and general trade.",
   keywords:
     "FMCG distribution, fast-moving consumer goods logistics, demand planning, trade activation logistics, retail distribution, general trade supply",
-  canonical: `${BASE_URL}/industries/fmcg`,
+  canonical: `${BASE_URL}/industries/fmcg_industry/`,
   ogImage:   `${OG}/fmcg.jpg`,
 };
 
@@ -186,7 +186,7 @@ export const foodBeveragesMeta: PageMeta = {
     "FSSC 22000-certified food and beverage logistics. Multi-temperature storage, full batch traceability, 2-hour recall capability, and zero major compliance failures in 5 years.",
   keywords:
     "food and beverage logistics, food safety supply chain, FSSC 22000 logistics, cold and ambient storage, HACCP food distribution, batch traceability",
-  canonical: `${BASE_URL}/industries/food-and-beverages`,
+  canonical: `${BASE_URL}/industries/food_beverages/`,
   ogImage:   `${OG}/food-beverages.jpg`,
 };
 
@@ -195,7 +195,7 @@ export const retailWholesaleMeta: PageMeta = {
     "Shelf-ready retail delivery and same-day wholesale break-bulk. 98.5% in-full delivery rate, omnichannel inventory management, and import duty optimisation.",
   keywords:
     "retail distribution, wholesale logistics, shelf-ready packaging, omnichannel fulfilment, store replenishment, wholesale supply chain",
-  canonical: `${BASE_URL}/industries/retail-and-wholesale`,
+  canonical: `${BASE_URL}/industries/retail/`,
   ogImage:   `${OG}/retail-wholesale.jpg`,
 };
 

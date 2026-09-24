@@ -163,7 +163,7 @@ useEffect(() => {
           <div className="flex justify-center">
 
             <motion.button
-             onClick={() => navigate("/contact/")}
+             onClick={() => navigate("/Contact/")}
               whileHover={{
                 scale: 1.05,
               }}

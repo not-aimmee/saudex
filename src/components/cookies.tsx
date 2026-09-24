@@ -87,7 +87,7 @@ export default function CookieConsentBanner() {
           <p style={{ fontSize: 13, lineHeight: 1.6, color: "rgba(163,189,184,0.75)", margin: 0 }}>
             We use essential cookies to run this site, plus optional cookies for functionality, analytics and marketing.
             Read our{" "}
-            <a href="/privacy_policy" style={{ color: "#A3BDB8", textDecoration: "none", borderBottom: "1px solid rgba(163,189,184,0.4)" }}>
+            <a href="/privacy_policy/" style={{ color: "#A3BDB8", textDecoration: "none", borderBottom: "1px solid rgba(163,189,184,0.4)" }}>
               Privacy Policy
             </a>{" "}
             for details.
