@@ -253,12 +253,12 @@ function FlowingMenuItem({
 /* ─── Page ────────────────────────────────────────────────────── */
 
 const demoItems: MenuItem[] = [
-  { link: '/industries/food_beverages/', text: 'Food & Beverages', image: '/images/i1.webp' },
-  { link: '/industries/horeca/', text: 'HoReCa', image: '/images/horeca.webp' },
-  { link: '/industries/agriculture/', text: 'Agri-Commodities', image: '/images/i37.webp' },
   { link: '/industries/fmcg/', text: 'FMCG', image: '/images/in32.webp' },
-  { link: '/industries/retail/', text: 'Retail & Wholesale ', image: '/images/retail.webp' },
+  { link: '/industries/horeca/', text: 'HoReCa', image: '/images/horeca.webp' },
   { link: '/industries/e_commerce/', text: 'E-Commerce', image: '/images/s33.webp' },
+  { link: '/industries/food_beverages/', text: 'Food & Beverages', image:'/images/i1.webp'},
+  { link: '/industries/retail/', text: 'Retail & Wholesale ', image: '/images/retail.webp' },
+  { link: '/industries/agriculture/', text: 'Agri-Commodities', image: '/images/i37.webp' },
 ]
 
 export default function Industries() {
