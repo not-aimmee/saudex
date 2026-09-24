@@ -83,7 +83,7 @@ export default function TermsOfService() {
       <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 40px 100px", display: "grid", gridTemplateColumns: "200px 1fr", gap: "80px", alignItems: "start" }}>
 
         {/* Sticky TOC */}
-        <nav style={{ position: "sticky", top: 40, paddingTop: 56 }}>
+        <nav aria-label="Terms of service table of contents" style={{ position: "sticky", top: 40, paddingTop: 56 }}>
           <p className="font-clash" style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(5,15,15,0.35)", marginBottom: 16 }}>
             Contents
           </p>
@@ -415,7 +415,7 @@ export default function TermsOfService() {
               <p>
                 We collect personal data necessary to provide our Services, including but not limited to:
                 contact information, company details, shipment information, payment details, and communications
-                records. Full details are set out in our Privacy Policy <ul>saudexglobal.com/privacy_policy</ul>
+                records. Full details are set out in our <a href="/privacy_policy/" style={{ color: "#050f0f", textDecoration: "none", borderBottom: "1px solid rgba(5,15,15,0.2)" }}>Privacy Policy</a>.
               </p>
             </SubBlock>
             <SubBlock title="11.3 Use of Personal Data">
@@ -558,8 +558,7 @@ export default function TermsOfService() {
             <p>
               Saudex reserves the right to update or modify these Terms at any time. Material changes will be
               communicated to registered users by email to the address on file at least thirty (30) days before
-              taking effect. The updated Terms will also be published at <ul>saudexglobal.com/terms_of_service</ul> with the
-              effective date.
+              taking effect. The updated Terms will also be published at <a href="/terms_of_service/" style={{ color: "#050f0f", textDecoration: "none", borderBottom: "1px solid rgba(5,15,15,0.2)" }}>saudexglobal.com/terms_of_service</a> with the effective date.
             </p>
             <p>
               Your continued use of our Services after the effective date of any update constitutes your

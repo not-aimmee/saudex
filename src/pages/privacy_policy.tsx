@@ -52,7 +52,7 @@ export default function PrivacyPolicy() {
       <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 40px 100px", display: "grid", gridTemplateColumns: "200px 1fr", gap: "80px", alignItems: "start" }}>
 
         {/* Sticky TOC */}
-        <nav style={{ position: "sticky", top: 40, paddingTop: 56 }}>
+        <nav aria-label="Privacy policy table of contents" style={{ position: "sticky", top: 40, paddingTop: 56 }}>
           <p className="font-clash" style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(5,15,15,0.35)", marginBottom: 16 }}>
             Contents
           </p>
@@ -63,11 +63,11 @@ export default function PrivacyPolicy() {
               ["how-we-use", "How We Use It"],
               ["data-sharing", "Data Sharing"],
               ["cookies", "Cookies & Tracking"],
-              ["your-rights", "Your Rights"],
+              ["privacy-rights", "Your Rights"],
               ["retention", "Data Retention"],
               ["security", "Security"],
               ["children", "Children"],
-              ["changes", "Policy Changes"],
+              ["policy-changes", "Policy Changes"],
             ].map(([href, label]) => (
               <li key={href}>
                 <a href={`#${href}`} className="font-archivo" style={{ fontSize: 13, color: "rgba(5,15,15,0.45)", textDecoration: "none", display: "block", padding: "4px 0", transition: "color 0.15s" }}
@@ -195,7 +195,7 @@ While we take reasonable steps to protect personal data, we do not warrant or gu
             </table>
           </SectionBlock>
           <Divider />
-          <SectionBlock id="your-rights" title="Your Rights">
+          <SectionBlock id="privacy-rights" title="Your Rights">
             <p>
               Subject to applicable law, you may request access to personal data that we hold about you, request correction of inaccurate or incomplete personal data, withdraw consent for certain processing activities, or make inquiries regarding our handling of personal information.
 We may require reasonable verification of identity before processing a request and may decline requests where permitted by applicable law.
@@ -203,7 +203,7 @@ We may require reasonable verification of identity before processing a request a
           </SectionBlock>
           <Divider />
 
-          <SectionBlock id="your-rights" title="Singapore Contact Section ">
+          <SectionBlock id="contact-section" title="Singapore Contact Section ">
             <p>
               Depending on your jurisdiction, you hold specific rights with respect to your personal data.
               Under PDPA, companies should provide a point of contact for privacy matters.
@@ -227,7 +227,7 @@ Singapore            </p>
           </SectionBlock>
           <Divider />
 
-          <SectionBlock id="retention" title="Data Retention">
+          <SectionBlock id="data-retention" title="Data Retention">
             <p>
               We retain personal data only as long as necessary to fulfill the purposes described in this
               policy, or as required by law.
@@ -240,27 +240,27 @@ Singapore            </p>
             </p>
           </SectionBlock>
           <Divider />
-          <SectionBlock id="retention" title="International Data Transfers">
+          <SectionBlock id="international-transfers" title="International Data Transfers">
             <p>
              In connection with our operations, your personal data may be transferred to, stored, or processed in countries outside Singapore. Where such transfers occur, we take reasonable steps to ensure that comparable standards of data protection are maintained in accordance with applicable law.
             </p>
           </SectionBlock>
           <Divider />
-<SectionBlock id="security" title="Trade Compliance and Regulatory Requirements">
+<SectionBlock id="trade-compliance" title="Trade Compliance and Regulatory Requirements">
             <p>
 We may collect, verify, process, and disclose personal and business information as necessary to comply with customs requirements, import and export controls, sanctions screening, anti-money laundering obligations, cargo security requirements, and other applicable trade regulations.
            </p>
           </SectionBlock>
           <Divider />
 
-          <SectionBlock id="security" title="Security">
+          <SectionBlock id="data-security" title="Security">
             <p>
               We implement reasonable administrative, technical, and physical safeguards designed to protect personal data against unauthorized access, disclosure, alteration, misuse, or loss. However, no method of transmission over the Internet or electronic storage system can be guaranteed to be completely secure.
             </p>
           </SectionBlock>
           <Divider />
 
-          <SectionBlock id="security" title="Governing Law">
+          <SectionBlock id="governing-law" title="Governing Law">
             <p>
 This Privacy Policy shall be governed by and construed in accordance with the laws of Singapore, without regard to conflict of law principles.
 Additional Protection for a Logistics Company            </p>
@@ -280,7 +280,7 @@ Our website may contain links to third-party websites. We are not responsible fo
           <Divider />
 
 
-          <SectionBlock id="changes" title="Policy Changes">
+          <SectionBlock id="policy-changes" title="Policy Changes">
             <p>
               We may update this Privacy Policy periodically. Material changes will be communicated via email
               to registered users at least 30 days before they take effect.

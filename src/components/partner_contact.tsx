@@ -262,7 +262,7 @@ export default function Partnercontact() {
                   <div className="w-12 h-[3px] mb-4"  />
                   <p className="font-generalsans font-light" style={{ color: C.darkTeal }}>
                     Submit the form below or{" "}
-                    <a target="_blank" rel="noreferrer" style={{ color: C.darkTeal }}>
+                    <a href="https://wa.me/6585351308" target="_blank" rel="noreferrer" aria-label="Contact Saudex on WhatsApp" style={{ color: C.darkTeal }}>
                       WhatsApp
                     </a>{" "}
                     us and we will get back to you soonest.

@@ -279,12 +279,14 @@ useEffect(() => {
           {/* Mobile Menu Button */}
           <div className="flex items-center gap-4 ml-auto">
             <button
-            aria-label="open menu"
-  onClick={() => setIsMenuOpen(!isMenuOpen)}
-  className="p-2 text-[#F5FBEF] hover:text-[#bbd6d1] transition-colors"
->
-  {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
- </button>
+              aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-navigation-menu"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 text-[#F5FBEF] hover:text-[#bbd6d1] transition-colors"
+            >
+              {isMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
+            </button>
           </div>
         </div>
 
@@ -319,7 +321,7 @@ exit={{
         duration: 0.3,
       }}
     >
-    <div ref={menuRef} className="
+    <div id="mobile-navigation-menu" ref={menuRef} className="
   w-[380px]
   max-h-[80vh]
   overflow-y-auto
