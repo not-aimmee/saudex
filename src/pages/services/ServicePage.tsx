@@ -307,7 +307,7 @@ export function ServicePage({ data }: { data: ServicePageData }) {
         title={`${data.heading.replace("\n", " ")} | SAUDEX GLOBAL`}
         description={data.subheading}
         canonical={canonical}
-        ogImage="https://saudexglobal.com/og/og-default.jpg"
+        ogImage="https://saudexglobal.com/images/indus.webp"
       />
 
       {/* ── HERO ────────────────────────────────────────── */}

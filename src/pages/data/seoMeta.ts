@@ -11,7 +11,7 @@ export interface PageMeta {
 }
 
 const BASE_URL = "https://saudexglobal.com";
-const OG       = `${BASE_URL}/og`;             // folder where your OG images live
+const OG       = `${BASE_URL}/images/indus.webp`;
 
 /* Home Page */
 export const homeMeta: PageMeta = {
@@ -20,7 +20,7 @@ export const homeMeta: PageMeta = {
   keywords:
     "global logistics solutions, SAUDEX GLOBAL, freight forwarding, supply chain solutions, import export logistics, international logistics",
   canonical: `${BASE_URL}/`,
-  ogImage:   `${OG}/home.jpg`,
+  ogImage:   OG,
 };
 
 export const defaultSiteMeta: PageMeta = {
@@ -29,7 +29,7 @@ export const defaultSiteMeta: PageMeta = {
   keywords:
     "Saudex Global, logistics company, supply chain, freight forwarding,cold chain, warehousing, customs clearance, 3PL provider",
   canonical: `${BASE_URL}/`,
-  ogImage:   `${OG}/og-default.jpg`,
+  ogImage:   OG,
 };
 
 
@@ -40,7 +40,7 @@ export const servicesMeta: PageMeta = {
   keywords:
     "logistics services, supply chain services, cold chain, warehousing,freight forwarding, customs brokerage, FMCG logistics, Saudex Global services",
   canonical: `${BASE_URL}/services`,
-  ogImage:   `${OG}/services.jpg`,
+  ogImage:   OG,
 };
 
 export const howWeWorkMeta: PageMeta = {
@@ -49,7 +49,7 @@ export const howWeWorkMeta: PageMeta = {
   keywords:
     "how Saudex works, logistics process, supply chain onboarding,logistics workflow, freight process, Saudex Global approach",
   canonical: `${BASE_URL}/how-we-work`,
-  ogImage:   `${OG}/how-we-work.jpg`,
+  ogImage:   OG,
 };
 
 export const statsMeta: PageMeta = {
@@ -57,7 +57,7 @@ export const statsMeta: PageMeta = {
   keywords:
     "Saudex Global stats, logistics performance, on-time delivery rate,supply chain metrics, 3PL track record, logistics KPIs",
   canonical: `${BASE_URL}/stats`,
-  ogImage:   `${OG}/stats.jpg`,
+  ogImage:   OG,
 };
 
 export const whyChooseUsMeta: PageMeta = {
@@ -67,7 +67,7 @@ export const whyChooseUsMeta: PageMeta = {
   keywords:
     "why choose Saudex Global, 3PL advantages, logistics partner,HACCP certified logistics, IoT supply chain, trusted freight partner",
   canonical: `${BASE_URL}/why-choose-us`,
-  ogImage:   `${OG}/why-choose-us.jpg`,
+  ogImage:   OG,
 };
 
 export const ctaMeta: PageMeta = {
@@ -77,7 +77,7 @@ export const ctaMeta: PageMeta = {
   keywords:
     "logistics quote, get a freight quote, supply chain consultation,Saudex Global contact, 3PL quote, logistics enquiry",
   canonical: `${BASE_URL}/get-a-quote`,
-  ogImage:   `${OG}/cta.jpg`,
+  ogImage:   OG,
 };
 
 export const contactMeta: PageMeta = {
@@ -87,7 +87,7 @@ export const contactMeta: PageMeta = {
   keywords:
     "contact Saudex Global, logistics enquiry, freight contact,supply chain consultation, Saudex Global office, logistics partnership",
   canonical: `${BASE_URL}/Contact/`,
-  ogImage:   `${OG}/contact.jpg`,
+  ogImage:   OG,
 };
 
 /* industry */
@@ -98,7 +98,7 @@ export const industriesMeta: PageMeta = {
   keywords:
     "logistics by industry, retail logistics, pharma supply chain,FMCG logistics, food logistics, ecommerce fulfilment, HORECA logistics",
   canonical: `${BASE_URL}/industries/`,
-  ogImage:   `${OG}/industries.jpg`,
+  ogImage:   OG,
 };
 
 export const aboutUsMeta: PageMeta = {
@@ -107,7 +107,7 @@ export const aboutUsMeta: PageMeta = {
     "Learn about Saudex Global and our approach to reliable, connected logistics and supply chain solutions across global markets.",
   keywords: "about Saudex Global, logistics company, supply chain partner",
   canonical: `${BASE_URL}/aboutUs/`,
-  ogImage: `${OG}/og-default.jpg`,
+  ogImage: OG,
 };
 
 export const careersMeta: PageMeta = {
@@ -116,7 +116,7 @@ export const careersMeta: PageMeta = {
     "Explore career opportunities at Saudex Global and help build smarter, more reliable logistics and supply chain solutions.",
   keywords: "Saudex Global careers, logistics jobs, supply chain careers",
   canonical: `${BASE_URL}/careers/`,
-  ogImage: `${OG}/og-default.jpg`,
+  ogImage: OG,
 };
 
 export const beOurPartnerMeta: PageMeta = {
@@ -125,7 +125,7 @@ export const beOurPartnerMeta: PageMeta = {
     "Join Saudex Global's partner network through reseller, technology, and referral opportunities built for mutual growth.",
   keywords: "Saudex Global partner, logistics partnership, supply chain partner",
   canonical: `${BASE_URL}/BeOurPartner/`,
-  ogImage: `${OG}/og-default.jpg`,
+  ogImage: OG,
 };
 
 /* ════════════════════════════════════════════
@@ -139,7 +139,7 @@ export const coldChainMeta: PageMeta = {
   keywords:
     "cold chain logistics, temperature-controlled storage, refrigerated transport, HACCP cold storage, frozen goods distribution, pharmaceutical cold chain",
   canonical: `${BASE_URL}/industries/cold_chain/`,
-  ogImage:   `${OG}/cold-chain.jpg`,
+  ogImage:   OG,
 };
 
 export const agriCommoditiesMeta: PageMeta = {
@@ -149,7 +149,7 @@ export const agriCommoditiesMeta: PageMeta = {
   keywords:
     "palm oil supply, agri-commodities logistics, bulk edible oil transport, heated tanker delivery, RSPO certified palm oil, ISO tank and flexitank transport, sustainable palm oil sourcing",
   canonical: `${BASE_URL}/industries/agriculture/`,
-  ogImage: `${OG}/agri-commodities.jpg`,
+  ogImage: OG,
 };
 export const horecaMeta: PageMeta = {
   
@@ -158,7 +158,7 @@ export const horecaMeta: PageMeta = {
   keywords:
     "horeca supplier, hotel food supply, restaurant logistics, catering distribution, hospitality supply chain, food service delivery",
   canonical: `${BASE_URL}/industries/horeca/`,
-  ogImage:   `${OG}/horeca.jpg`,
+  ogImage:   OG,
 };
 
 export const ecommerceMeta: PageMeta = {
@@ -168,7 +168,7 @@ export const ecommerceMeta: PageMeta = {
   keywords:
     "ecommerce fulfilment, 3PL fulfilment, last-mile delivery, returns logistics, same-day dispatch, Shopify logistics partner",
   canonical: `${BASE_URL}/industries/e_commerce/`,
-  ogImage:   `${OG}/ecommerce.jpg`,
+  ogImage:   OG,
 };
 
 export const fmcgMeta: PageMeta = {
@@ -178,7 +178,7 @@ export const fmcgMeta: PageMeta = {
   keywords:
     "FMCG distribution, fast-moving consumer goods logistics, demand planning, trade activation logistics, retail distribution, general trade supply",
   canonical: `${BASE_URL}/industries/fmcg_industry/`,
-  ogImage:   `${OG}/fmcg.jpg`,
+  ogImage:   OG,
 };
 
 export const foodBeveragesMeta: PageMeta = {
@@ -187,7 +187,7 @@ export const foodBeveragesMeta: PageMeta = {
   keywords:
     "food and beverage logistics, food safety supply chain, FSSC 22000 logistics, cold and ambient storage, HACCP food distribution, batch traceability",
   canonical: `${BASE_URL}/industries/food_beverages/`,
-  ogImage:   `${OG}/food-beverages.jpg`,
+  ogImage:   OG,
 };
 
 export const retailWholesaleMeta: PageMeta = {
@@ -196,7 +196,7 @@ export const retailWholesaleMeta: PageMeta = {
   keywords:
     "retail distribution, wholesale logistics, shelf-ready packaging, omnichannel fulfilment, store replenishment, wholesale supply chain",
   canonical: `${BASE_URL}/industries/retail/`,
-  ogImage:   `${OG}/retail-wholesale.jpg`,
+  ogImage:   OG,
 };
 
 /* ════════════════════════════════════════════
@@ -211,7 +211,7 @@ export const distributionLogisticsMeta: PageMeta = {
   keywords:
     "transportation services, last mile delivery, distribution services, distribution management, regional distribution, integrated transportation",
   canonical: "https://saudexglobal.com/services/distribution",
-  ogImage:   `${OG}/distribution.jpg`,
+  ogImage:   OG,
 };
 
 export const temperatureControlledLogisticsMeta: PageMeta = {
@@ -220,7 +220,7 @@ export const temperatureControlledLogisticsMeta: PageMeta = {
   keywords:
     "temperature controlled logistics, cold chain transport, frozen logistics, chilled distribution, pharmaceutical cold chain, IoT temperature monitoring",
   canonical: `${BASE_URL}/services/temperature-controlled`,
-  ogImage:   `${OG}/temperature-controlled.jpg`,
+  ogImage:   OG,
 };
 
 export const customsLogisticsMeta: PageMeta = {
@@ -229,7 +229,7 @@ export const customsLogisticsMeta: PageMeta = {
   keywords:
     "customs clearance, customs brokerage, HS code classification, duty optimisation, import compliance, border clearance services, trade compliance",
   canonical: `${BASE_URL}/services/customs`,
-  ogImage:   `${OG}/customs.jpg`,
+  ogImage:   OG,
 };
 
 export const fmcgLogisticsMeta: PageMeta = {
@@ -238,7 +238,7 @@ export const fmcgLogisticsMeta: PageMeta = {
   keywords:
     "FMCG logistics, fast-moving consumer goods supply chain, FMCG distribution, grocery logistics, short shelf-life logistics, FMCG 3PL",
   canonical: `${BASE_URL}/services/fmcg`,
-  ogImage:   `${OG}/fmcg.jpg`,
+  ogImage:   OG,
 };
 
 export const freightForwardingMeta: PageMeta = {
@@ -248,7 +248,7 @@ export const freightForwardingMeta: PageMeta = {
   keywords:
     "freight forwarding, freight forwarding services, international freight forwarding, freight forwarder, air freight, sea freight, land freight, cargo forwarding",
   canonical: "https://saudexglobal.com/services/freight",
-  ogImage:   `${OG}/freight-forwarding.jpg`,
+  ogImage:   OG,
 };
 
 export const importExportLogisticsMeta: PageMeta = {
@@ -258,7 +258,7 @@ export const importExportLogisticsMeta: PageMeta = {
   keywords:
     "import and export, import and export services, international import export services, import export logistics, customs clearance, trade documentation",
   canonical: "https://saudexglobal.com/services/impo-expo",
-  ogImage:   `${OG}/import-export.jpg`,
+  ogImage:   OG,
 };
 
 export const supplyChainLogisticsMeta: PageMeta = {
@@ -268,7 +268,7 @@ export const supplyChainLogisticsMeta: PageMeta = {
   keywords:
     "supply chain logistics, supply chain consulting, supply chain optimization, supply chain management, inventory planning, logistics consulting",
   canonical: "https://saudexglobal.com/services/Supply_chain",
-  ogImage:   `${OG}/supply-chain.jpg`,
+  ogImage:   OG,
 };
 
 export const warehousingLogisticsMeta: PageMeta = {
@@ -278,7 +278,7 @@ export const warehousingLogisticsMeta: PageMeta = {
   keywords:
     "warehousing services, contract warehousing, inventory management services, warehouse storage services, secure warehousing, dedicated warehousing, flexible storage",
   canonical: "https://saudexglobal.com/services/warehousing",
-  ogImage:   `${OG}/warehousing.jpg`,
+  ogImage:   OG,
 };
 
 /* sitemap */
@@ -288,7 +288,7 @@ export const sitemapMeta: PageMeta = {
   keywords:
     "Saudex Global sitemap, site index, all pages",
   canonical: `${BASE_URL}/sitemap`,
-  ogImage:   `${OG}/og-default.jpg`,
+  ogImage:   OG,
 };
 
 /*privacy policy and terms of service*/
@@ -299,7 +299,7 @@ export const privacyPolicyMeta: PageMeta = {
   keywords:
     "Saudex Global privacy policy, data protection, GDPR, personal data",
   canonical: `${BASE_URL}/privacy_policy/`,
-  ogImage:   `${OG}/og-default.jpg`,
+  ogImage:   OG,
 };
 
 export const termsMeta: PageMeta = {
@@ -308,7 +308,7 @@ export const termsMeta: PageMeta = {
   keywords:
     "Saudex Global terms and conditions, logistics terms, service agreement",
   canonical: `${BASE_URL}/terms`,
-  ogImage:   `${OG}/og-default.jpg`,
+  ogImage:   OG,
 };
 
 export const servicesIndexMeta: PageMeta = {
@@ -318,7 +318,7 @@ export const servicesIndexMeta: PageMeta = {
   keywords:
     "logistics services, freight forwarding, customs clearance, warehousing, supply chain services, Saudex Global",
   canonical: `${BASE_URL}/services/`,
-  ogImage: `${OG}/services.jpg`,
+  ogImage: OG,
 };
 
 export const termsOfServiceMeta: PageMeta = {
@@ -327,5 +327,5 @@ export const termsOfServiceMeta: PageMeta = {
     "Review the terms governing access to and use of Saudex Global logistics, freight forwarding, customs, warehousing, and delivery services.",
   keywords: "Saudex Global terms of service, logistics terms, freight forwarding terms",
   canonical: `${BASE_URL}/terms_of_service/`,
-  ogImage: `${OG}/og-default.jpg`,
+  ogImage: OG,
 };
