@@ -228,17 +228,23 @@ function FlowingMenuItem({
                 >
                   {text}
                 </span>
-                <div
+                <img
+                  src={image}
+                  alt={text}
+                  width={200}
+                  height={100}
+                  loading="lazy"
+                  decoding="async"
                   style={{
                     width: 200,
-                    height: '7vh',
+                    height: 'auto',
+                    maxHeight: '7vh',
                     margin: '2em 2vw',
                     padding: '1em 0',
                     borderRadius: 50,
-                    backgroundSize: 'cover',
-                    backgroundPosition: '50% 50%',
-                    backgroundImage: `url(${image})`,
-                    backgroundColor: `${marqueeTextColor}22`,
+                    objectFit: 'cover',
+                    objectPosition: '50% 50%',
+                    display: 'block',
                   }}
                 />
               </div>

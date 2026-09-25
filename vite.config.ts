@@ -67,14 +67,17 @@ export default defineConfig({
     },
   },
   build: {
-    // react-snap's bundled Puppeteer runs an old Chromium that can't parse
-    // optional chaining (?.) or nullish coalescing (??). Targeting es2015
-    // makes esbuild transpile those away in both app code and node_modules deps.
     target: 'es2015',
     minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: true,
+        drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info'],
+      },
+      mangle: true,
+      format: {
+        comments: false,
       },
     },
     rollupOptions: {
@@ -82,7 +85,7 @@ export default defineConfig({
         manualChunks: {
           'react-vendor': ['react', 'react-dom'],
           'router-vendor': ['react-router-dom'],
-          'animation-vendor': ['framer-motion', 'gsap'],
+          'animation-vendor': ['framer-motion', 'motion', 'gsap'],
         },
         entryFileNames: 'assets/[name]-[hash].js',
         chunkFileNames: 'assets/[name]-[hash].js',
@@ -91,7 +94,8 @@ export default defineConfig({
     },
     cssCodeSplit: true,
     reportCompressedSize: false,
-    chunkSizeWarningLimit: 500,
+    chunkSizeWarningLimit: 1000,
+    sourcemap: false,
   },
   server: {
     headers: {
