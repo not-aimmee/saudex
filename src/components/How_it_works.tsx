@@ -53,6 +53,10 @@ export default function App() {
                   <img
                     src="/images/s62.webp"
                     alt="Cargo plane loading at the airport"
+                    width={790}
+                    height={1148}
+                    loading="lazy"
+                    decoding="async"
                     style={{
                       width: "100%",
                       height: "100%",

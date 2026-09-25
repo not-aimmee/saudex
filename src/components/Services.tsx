@@ -43,7 +43,7 @@ export default function Services() {
         className="flex flex-col justify-center px-12 lg:px-20 py-24 w-full lg:w-1/2 z-10"
       >
         <div className="flex flex-col gap-7 max-w-lg">
-          <span className="font-generalsans font-medium text-lg " style={{  letterSpacing: '0.42em', textTransform: 'uppercase', color: '#468189' }}>
+          <span className="font-generalsans font-medium text-lg " style={{  letterSpacing: '0.42em', textTransform: 'uppercase', color: '#2d6558' }}>
             What We Offer
           </span>
 

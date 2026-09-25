@@ -1,0 +1,48 @@
+{
+  "version": "1.0",
+  "catalog_name": "SAUDEX GLOBAL - Logistics Solutions",
+  "description": "AI-powered discovery for SAUDEX GLOBAL logistics services and capabilities",
+  "site_url": "https://saudexglobal.com",
+  "ard_url": "https://saudexglobal.com/.well-known/ai-readiness.json",
+  "resources": [
+    {
+      "id": "logistics-services",
+      "type": "service_category",
+      "name": "Global Logistics Solutions",
+      "description": "Comprehensive logistics, freight, and supply chain services",
+      "url": "https://saudexglobal.com/services"
+    },
+    {
+      "id": "import-export",
+      "type": "service",
+      "name": "Import & Export Services",
+      "description": "Cross-border trade documentation and cargo coordination",
+      "url": "https://saudexglobal.com/services/impo-expo"
+    },
+    {
+      "id": "freight-forwarding",
+      "type": "service",
+      "name": "Freight Forwarding",
+      "description": "Air, sea, and land freight with end-to-end tracking",
+      "url": "https://saudexglobal.com/services/freight"
+    },
+    {
+      "id": "warehousing",
+      "type": "service",
+      "name": "Warehousing & Storage",
+      "description": "Flexible contract storage and inventory management",
+      "url": "https://saudexglobal.com/services/warehousing"
+    },
+    {
+      "id": "contact-form",
+      "type": "contact",
+      "name": "Contact SAUDEX GLOBAL",
+      "description": "Get in touch for logistics inquiries",
+      "url": "https://saudexglobal.com/contact"
+    }
+  ],
+  "contact": {
+    "email": "contact@saudexglobal.com",
+    "website": "https://saudexglobal.com"
+  }
+}

@@ -128,6 +128,10 @@ function HeroSection() {
         <img
           src="/images/c.webp"
           alt="saudex team member at work in warehouse"
+          width={1200}
+          height={800}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover"
           style={{ filter: "brightness(0.85) saturate(0.85)" }}
         />

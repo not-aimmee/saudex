@@ -83,7 +83,7 @@ export default function Footer() {
         {/* Logo / Follow Us */}
         <div>
           <div className="flex items-center gap-3 mb-4 md:ml-8 md:mt-16">
-            <img onClick={goHome} src={logo} alt="Saudex Global" className="w-12 h-12 cursor-pointer" draggable={false} />
+            <img onClick={goHome} src={logo} alt="Saudex Global" width={48} height={48} className="w-12 h-12 cursor-pointer" draggable={false} />
             <button
               onClick={goHome}
               className="flex flex-col leading-tight hover:opacity-80 transition-opacity text-left"

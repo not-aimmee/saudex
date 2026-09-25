@@ -205,7 +205,7 @@ export default function NfcCard() {
             {/* Avatar */}
             <div style={{ position: "relative" }}>
               <div style={{ width: 104, height: 104, borderRadius: "50%", overflow: "hidden", border: `3px solid ${C.border}`, boxShadow: `0 0 0 6px ${C.border}28` }}>
-                <img src={WORKER.photo} alt={`Portrait of ${WORKER.name}`} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }} />
+                <img src={WORKER.photo} alt={`Portrait of ${WORKER.name}`} width={104} height={104} decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }} />
               </div>
             </div>
 
@@ -289,6 +289,10 @@ export default function NfcCard() {
               <img
                 src="https://images.unsplash.com/photo-1590497008432-598f04441de8?w=700&h=220&fit=crop&auto=format"
                 alt="Busy shipping port with stacked containers at dusk"
+                width={700}
+                height={220}
+                loading="lazy"
+                decoding="async"
                 style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.85 }}
               />
               <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "flex-end", padding: 20, background: `linear-gradient(to top, ${C.inkBlack}cc 0%, transparent 60%)` }}>

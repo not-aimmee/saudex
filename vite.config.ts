@@ -71,5 +71,31 @@ export default defineConfig({
     // optional chaining (?.) or nullish coalescing (??). Targeting es2015
     // makes esbuild transpile those away in both app code and node_modules deps.
     target: 'es2015',
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+      },
+    },
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom'],
+          'router-vendor': ['react-router-dom'],
+          'animation-vendor': ['framer-motion', 'gsap'],
+        },
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash][extname]',
+      },
+    },
+    cssCodeSplit: true,
+    reportCompressedSize: false,
+    chunkSizeWarningLimit: 500,
+  },
+  server: {
+    headers: {
+      'Cache-Control': 'public, max-age=3600',
+    },
   },
 })

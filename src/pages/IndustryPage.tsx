@@ -21,7 +21,6 @@ const BG     = C.ivory;
 const FG     = C.inkBlack;
 const ACCENT = C.teal;
 const MUTED  = C.darkTeal;
-const SUBTLE = C.mutedTeal;
 const RULE   = `1px solid ${C.bone}`;
 
 /* ─── types ─────────────────────────────────────────────── */

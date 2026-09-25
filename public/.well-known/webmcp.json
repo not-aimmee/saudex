@@ -1,0 +1,32 @@
+{
+  "tools": [
+    {
+      "name": "get_services",
+      "description": "Get list of SAUDEX GLOBAL services",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string",
+            "description": "Service category (logistics, freight, warehousing, etc.)",
+            "enum": ["logistics", "freight", "warehousing", "supply-chain", "distribution"]
+          }
+        }
+      }
+    },
+    {
+      "name": "contact_business",
+      "description": "Submit a contact inquiry to SAUDEX GLOBAL",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "email": { "type": "string" },
+          "service_type": { "type": "string" },
+          "message": { "type": "string" }
+        },
+        "required": ["name", "email", "message"]
+      }
+    }
+  ]
+}
