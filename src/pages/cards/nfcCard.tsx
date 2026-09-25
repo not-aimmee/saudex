@@ -4,6 +4,7 @@ import {
   Building2,
    Copy, Check, Download,
 } from "lucide-react";
+import { SEO } from "../../components/SEO";
 
 /* ─── palette ───────────────────────────────────────────────────────────── */
 const C = {
@@ -15,7 +16,7 @@ const C = {
   heading:     "#02090f", /* almost black */
   inkBlack:    "#031926", /* ink black */
   body:        "#254D58", /* dark teal */
-  muted:       "#77aca2", /* muted teal */
+  muted:       "#336159", /* darkened for contrast */
   teal:        "#468189", /* teal */
   accent:      "#9D4810", /* chocolate brown */
   accentLight: "#c9ada7", /* almond silk */
@@ -186,6 +187,11 @@ export default function NfcCard() {
 
   return (
     <>
+      <SEO
+        title={`${WORKER.name} | SAUDEX GLOBAL`}
+        description={`${WORKER.name} — ${WORKER.role} at ${WORKER.company}. Digital contact card.`}
+        noIndex
+      />
       <style>{STYLES}</style>
 
       <div style={{ background: C.bodyBg, color: C.heading, minHeight: "100vh", fontFamily: "Inter, sans-serif" }}>

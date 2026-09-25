@@ -271,7 +271,8 @@ useEffect(() => {
                 </div>
               )}
             </div>
-             <Link to="/Contact/"         className="px-6 py-4 text-[#F5FBEF] font-generalsans font-regular text-lg hover:text-[#bbd6d1] tracking-wider transition-colors">
+             <Link to="/Contact/"
+                className="px-6 py-4 text-[#F5FBEF] font-generalsans font-regular text-lg hover:text-[#bbd6d1] tracking-wider transition-colors flex items-center gap-1">
         {TEXT.nav.contact}
       </Link>
           </nav>
@@ -432,7 +433,8 @@ exit={{
     </Link>
   </div>
 )}
-              <Link to="/Contact/"         className="px-6 py-4 text-[#F5FBEF] font-generalsans font-regular text-lg hover:text-[#bbd6d1] tracking-wider transition-colors">
+              <Link to="/Contact/"
+  className="flex items-center justify-between text-[#F5FBEF] font-generalsans hover:text-[#f4e9cd] transition-colors text-left">
         {TEXT.nav.contact}
       </Link>
             </div>

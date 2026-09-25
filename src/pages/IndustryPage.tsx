@@ -69,7 +69,7 @@ const TAG: React.CSSProperties = {
   fontSize: "0.65rem",
   letterSpacing: "0.28em",
   textTransform: "uppercase",
-  color: SUBTLE,
+  color: C.darkTeal,
   fontFamily: "inherit",
 };
 
@@ -77,7 +77,7 @@ const IDX: React.CSSProperties = {
   fontSize: "0.65rem",
   letterSpacing: "0.2em",
   textTransform: "uppercase",
-  color: C.lightMutedTeal,
+  color: "#3d766e",
   fontVariantNumeric: "tabular-nums",
 };
 

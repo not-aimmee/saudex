@@ -15,7 +15,7 @@ const C = {
   darkHeading: "#031926", /* ink black */
   body:        "#254D58", /* dark teal */
   muted:       "#468189", /* teal */
-  mutedLight:  "#77aca2", /* muted teal */
+  mutedLight:  "#336159", /* was #77aca2 (2.2:1 on bone bg) — darkened to pass WCAG AA */
   accent:      "#9D4810", /* chocolate brown */
   accentLight: "#c9ada7", /* almond silk */
   vanilla:     "#f4e9cd", /* vanilla cream */

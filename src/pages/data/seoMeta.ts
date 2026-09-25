@@ -172,7 +172,7 @@ export const ecommerceMeta: PageMeta = {
 };
 
 export const fmcgMeta: PageMeta = {
-  
+  title: "FMCG Distribution & Retail Logistics | SAUDEX GLOBAL",
   description:
     "National FMCG distribution with 99.1% order fill rate. Demand planning, promotional logistics, and route-optimised delivery to modern and general trade.",
   keywords:
@@ -210,7 +210,7 @@ export const distributionLogisticsMeta: PageMeta = {
     "Transportation services by SAUDEX GLOBAL for reliable distribution, last mile delivery, scheduled routes and regional logistics support.",
   keywords:
     "transportation services, last mile delivery, distribution services, distribution management, regional distribution, integrated transportation",
-  canonical: "https://saudexglobal.com/services/distribution",
+  canonical: "https://saudexglobal.com/services/distribution/",
   ogImage:   OG,
 };
 
@@ -228,7 +228,7 @@ export const customsLogisticsMeta: PageMeta = {
     "Expert customs clearance, HS code classification, and duty optimisation across 40+ markets. Reduce border delays, ensure compliance, and navigate import controls with precision from a team of licensed brokers.",
   keywords:
     "customs clearance, customs brokerage, HS code classification, duty optimisation, import compliance, border clearance services, trade compliance",
-  canonical: `${BASE_URL}/services/customs`,
+  canonical: `${BASE_URL}/services/customs/`,
   ogImage:   OG,
 };
 
@@ -237,7 +237,7 @@ export const fmcgLogisticsMeta: PageMeta = {
     "High-velocity logistics built for FMCG: fast-turn replenishment,promotional surge handling, and short shelf-life management. Integrated 3PL and distribution tailored to grocery, health, and FMCG brands.",
   keywords:
     "FMCG logistics, fast-moving consumer goods supply chain, FMCG distribution, grocery logistics, short shelf-life logistics, FMCG 3PL",
-  canonical: `${BASE_URL}/services/fmcg`,
+  canonical: `${BASE_URL}/services/fmcg/`,
   ogImage:   OG,
 };
 
@@ -247,7 +247,7 @@ export const freightForwardingMeta: PageMeta = {
     "Freight forwarding solutions from SAUDEX GLOBAL covering air, sea and land cargo with reliable coordination, tracking and compliance.",
   keywords:
     "freight forwarding, freight forwarding services, international freight forwarding, freight forwarder, air freight, sea freight, land freight, cargo forwarding",
-  canonical: "https://saudexglobal.com/services/freight",
+  canonical: "https://saudexglobal.com/services/freight/",
   ogImage:   OG,
 };
 
@@ -257,7 +257,7 @@ export const importExportLogisticsMeta: PageMeta = {
     "Import and export services by SAUDEX GLOBAL, covering documentation, customs compliance, cargo preparation and shipment coordination.",
   keywords:
     "import and export, import and export services, international import export services, import export logistics, customs clearance, trade documentation",
-  canonical: "https://saudexglobal.com/services/impo-expo",
+  canonical: "https://saudexglobal.com/services/impo-expo/",
   ogImage:   OG,
 };
 
@@ -267,7 +267,7 @@ export const supplyChainLogisticsMeta: PageMeta = {
     "Supply chain logistics by SAUDEX GLOBAL to reduce costs, remove bottlenecks and improve operations through strategic consulting.",
   keywords:
     "supply chain logistics, supply chain consulting, supply chain optimization, supply chain management, inventory planning, logistics consulting",
-  canonical: "https://saudexglobal.com/services/Supply_chain",
+  canonical: "https://saudexglobal.com/services/Supply_chain/",
   ogImage:   OG,
 };
 
@@ -277,7 +277,7 @@ export const warehousingLogisticsMeta: PageMeta = {
     "Warehousing services by SAUDEX GLOBAL with flexible storage, inventory management, real-time stock reporting and secure facilities.",
   keywords:
     "warehousing services, contract warehousing, inventory management services, warehouse storage services, secure warehousing, dedicated warehousing, flexible storage",
-  canonical: "https://saudexglobal.com/services/warehousing",
+  canonical: "https://saudexglobal.com/services/warehousing/",
   ogImage:   OG,
 };
 

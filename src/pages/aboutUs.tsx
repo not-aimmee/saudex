@@ -114,7 +114,7 @@ function AnimatedStat({ value, label, suffix = "" }: { value: number; label: str
       >
         {count.toLocaleString()}{suffix}
       </div>
-      <div className="text-sm font-sentient tracking-widest uppercase" style={{ color: C.mutedTeal }}>
+      <div className="text-sm font-sentient tracking-widest uppercase" style={{ color: "#336159" }}>
         {label}
       </div>
     </div>
@@ -137,7 +137,7 @@ function ValueItem({ index, title, description }: { index: string; title: string
       onMouseLeave={() => setHovered(false)}
     >
       <div className="flex items-start gap-8">
-        <span className="text-xs mt-1 shrink-0 font-generalsans" style={{  color: C.mutedTeal + "88" }}>
+        <span className="text-xs mt-1 shrink-0 font-generalsans" style={{  color: "#336159" }}>
           {index}
         </span>
         <div className="flex-1 md:flex md:items-start md:justify-between gap-12">

@@ -16,7 +16,7 @@ const C = {
 const BG    = C.ivory;
 const FG    = C.inkBlack;
 const MUTED = C.darkTeal;
-const SUBTLE= C.mutedTeal;
+const SUBTLE = "#336159"; // was C.mutedTeal (#77aca2), 2.4:1 on ivory — darkened to pass WCAG AA
 const RULE  = `1px solid ${C.bone}`;
 
 const TAG: React.CSSProperties = {

@@ -5,15 +5,15 @@ import { agriCommoditiesMeta } from "../data/seoMeta";
 
 export default function AgriPage() {
   return (
-  <>
-  <SEO
-        
+    <>
+      <SEO
+        title={agriCommoditiesMeta.title}
         description={agriCommoditiesMeta.description}
         keywords={agriCommoditiesMeta.keywords}
         canonical={agriCommoditiesMeta.canonical}
         ogImage={agriCommoditiesMeta.ogImage}
       />
-  <IndustryPage data={agriCommoditiesData} />
-  </>
+      <IndustryPage data={agriCommoditiesData} />
+    </>
   );
 }

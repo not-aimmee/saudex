@@ -215,7 +215,7 @@ export default function Contact() {
                   name="fullName" value={form.fullName} onChange={onChange}
                   required type="text" placeholder="Jane Smith"
                   style={{ borderColor: C.bone, color: C.inkBlack, backgroundColor: C.ivory }}
-                  className="w-full border rounded px-3 py-2 text-sm placeholder-[#77aca2] focus:outline-none transition"
+                  className="w-full border rounded px-3 py-2 text-sm placeholder-[#336159] focus:outline-none transition"
                   onFocus={e => e.currentTarget.style.borderColor = C.teal}
                   onBlur={e => e.currentTarget.style.borderColor = C.bone}
                 />
@@ -228,7 +228,7 @@ export default function Contact() {
                   name="email" value={form.email} onChange={onChange}
                   required type="email" placeholder="jane@company.com"
                   style={{ borderColor: C.bone, color: C.inkBlack, backgroundColor: C.ivory }}
-                  className="w-full border rounded px-3 py-2 text-sm placeholder-[#77aca2] focus:outline-none transition"
+                  className="w-full border rounded px-3 py-2 text-sm placeholder-[#336159] focus:outline-none transition"
                   onFocus={e => e.currentTarget.style.borderColor = C.teal}
                   onBlur={e => e.currentTarget.style.borderColor = C.bone}
                 />
@@ -244,7 +244,7 @@ export default function Contact() {
                   name="phone" value={form.phone} onChange={onChange}
                   type="tel" placeholder="+1 555 000 0000"
                   style={{ borderColor: C.bone, color: C.inkBlack, backgroundColor: C.ivory }}
-                  className="w-full border rounded px-3 py-2 text-sm placeholder-[#77aca2] focus:outline-none transition"
+                  className="w-full border rounded px-3 py-2 text-sm placeholder-[#336159] focus:outline-none transition"
                   onFocus={e => e.currentTarget.style.borderColor = C.teal}
                   onBlur={e => e.currentTarget.style.borderColor = C.bone}
                 />
@@ -283,7 +283,7 @@ export default function Contact() {
                 required rows={6}
                 placeholder="Placing a bulk order? Loose pack goods? Tell us what you need and we will get in touch as soon as we can."
                 style={{ borderColor: C.bone, color: C.inkBlack, backgroundColor: C.ivory }}
-                className="w-full border rounded px-3 py-2 text-sm placeholder-[#77aca2] focus:outline-none resize-y transition"
+                className="w-full border rounded px-3 py-2 text-sm placeholder-[#336159] focus:outline-none resize-y transition"
                 onFocus={e => e.currentTarget.style.borderColor = C.teal}
                 onBlur={e => e.currentTarget.style.borderColor = C.bone}
               />
