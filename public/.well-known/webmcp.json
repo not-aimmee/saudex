@@ -1,31 +1,29 @@
 {
+  "version": "1.0",
   "tools": [
     {
-      "name": "get_services",
-      "description": "Get list of SAUDEX GLOBAL services",
+      "name": "freight_inquiry",
+      "description": "Handle freight forwarding inquiries",
       "inputSchema": {
         "type": "object",
         "properties": {
-          "category": {
-            "type": "string",
-            "description": "Service category (logistics, freight, warehousing, etc.)",
-            "enum": ["logistics", "freight", "warehousing", "supply-chain", "distribution"]
-          }
-        }
+          "origin": { "type": "string" },
+          "destination": { "type": "string" },
+          "weight": { "type": "number" },
+          "dimensions": { "type": "string" }
+        },
+        "required": ["origin", "destination", "weight"]
       }
     },
     {
-      "name": "contact_business",
-      "description": "Submit a contact inquiry to SAUDEX GLOBAL",
+      "name": "cargo_tracking",
+      "description": "Track shipment status",
       "inputSchema": {
         "type": "object",
         "properties": {
-          "name": { "type": "string" },
-          "email": { "type": "string" },
-          "service_type": { "type": "string" },
-          "message": { "type": "string" }
+          "tracking_id": { "type": "string" }
         },
-        "required": ["name", "email", "message"]
+        "required": ["tracking_id"]
       }
     }
   ]
