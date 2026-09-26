@@ -300,25 +300,25 @@ export function ServicePage({ data }: { data: ServicePageData }) {
   const canonical = typeof window !== "undefined"
     ? `https://saudexglobal.com${window.location.pathname}`
     : "https://saudexglobal.com/services/";
+
   const faqSchema = data.faqs?.length ? {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": data.faqs.map(f => ({
-    "@type": "Question",
-    "name": f.q,
-    "acceptedAnswer": { "@type": "Answer", "text": f.a }
-  }))
-} : undefined;
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": data.faqs.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a }
+    }))
+  } : undefined;
 
   return (
     <div style={{ backgroundColor: BG, color: FG }}>
       <SEO
-        title={`${data.heading.replace("\n", " ")} | SAUDEX GLOBAL`}
+        title={`${data.heading.replace(/\n/g, " ")} | SAUDEX GLOBAL`}
         description={data.subheading}
         canonical={canonical}
         ogImage="https://saudexglobal.com/images/indus.webp"
-        
-        
+        schemaMarkup={faqSchema}
       />
 
       {/* ── HERO ────────────────────────────────────────── */}
