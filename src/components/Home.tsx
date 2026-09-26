@@ -54,6 +54,27 @@ export default function Hero() {
                 { "@type": "Place", "name": "Asia" }
               ],
               "description": "Reliable global logistics solutions for freight forwarding, supply chain management, warehousing, customs, cold chain, distribution and import-export operations."
+            },
+            {
+              "@type": "LocalBusiness",
+              "@id": "https://saudexglobal.com/#local-business",
+              "name": "SAUDEX GLOBAL",
+              "image": "https://saudexglobal.com/logo.svg",
+              "description": "Singapore-registered logistics, import/export, and freight forwarding company serving Asia-Pacific and Middle East.",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Singapore",
+                "addressCountry": "SG"
+              },
+              "email": "sales@saudexglobal.com",
+              "url": "https://saudexglobal.com/",
+              "parentOrganization": { "@id": "https://saudexglobal.com/#organization" },
+              "areaServed": [
+                { "@type": "Place", "name": "Singapore" },
+                { "@type": "Place", "name": "Saudi Arabia" },
+                { "@type": "Place", "name": "Asia-Pacific" }
+              ],
+              "sameAs": ["https://www.linkedin.com/company/saudexglobal/"]
             }
           ]
         })}

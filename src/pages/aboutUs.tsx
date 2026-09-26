@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Helmet } from "react-helmet-async";
 import { SEO } from "../components/SEO";
 import { aboutUsMeta } from "./data/seoMeta";
 import WhyChooseUs from "../components/Why_choose_us";
@@ -443,9 +444,71 @@ function StorySection() {
   );
 }
 
+function TrustSection() {
+  const cards = [
+    {
+      title: "Regional Trade Expertise",
+      // TODO: replace with your real founding year / years of operation
+      body: "SAUDEX GLOBAL specializes in the Singapore–GCC–Asia-Pacific trade corridor, coordinating customs, freight, supply chain, and warehousing across multiple markets.",
+    },
+    {
+      title: "Experienced Leadership",
+      // TODO: confirm bio details before publishing
+      body: "Led by a team with backgrounds spanning finance, international business, and logistics operations across Saudi Arabia, Singapore, and Asia-Pacific.",
+    },
+    {
+      title: "Compliance & Standards",
+      // TODO: only list certifications you actually hold — this is placeholder text
+      body: "Operations are structured around Singapore's trade facilitation framework, IATA/ICC guidance for air and sea freight, and relevant regional trade agreements.",
+    },
+    {
+      title: "Regional Coverage",
+      body: "Dedicated corridors for Singapore-GCC customs and compliance, ASEAN routing and distribution, and temperature-controlled logistics for pharma and food clients.",
+    },
+  ];
+
+  return (
+    <section className="px-6 md:px-16 py-32" style={{ backgroundColor: C.parchment }}>
+      <div className="max-w-7xl mx-auto">
+        <Eyebrow>Why trust SAUDEX GLOBAL</Eyebrow>
+        <h2
+          className="text-4xl md:text-6xl font-black font-sentient uppercase leading-[0.95] tracking-tight mb-16 max-w-3xl"
+          style={{ color: C.inkBlack }}
+        >
+          Built on regional expertise, not guesswork.
+        </h2>
+        <div className="grid md:grid-cols-2 gap-10">
+          {cards.map((c) => (
+            <div key={c.title} className="pt-8" style={{ borderTop: `1px solid ${C.teal}` }}>
+              <h3
+                className="text-xl font-bold font-sentient mb-3"
+                style={{ color: C.inkBlack }}
+              >
+                {c.title}
+              </h3>
+              <p className="text-base leading-relaxed font-generalsans" style={{ color: C.darkTeal }}>
+                {c.body}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ─────────────────────────────────────────────
    ROOT
    ───────────────────────────────────────────── */
+const aboutUsBreadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://saudexglobal.com/" },
+    { "@type": "ListItem", "position": 2, "name": "About Us", "item": "https://saudexglobal.com/aboutUs/" }
+  ]
+};
+
 export default function AboutUs() {
   return (
     <>
@@ -456,12 +519,16 @@ export default function AboutUs() {
         canonical={aboutUsMeta.canonical}
         ogImage={aboutUsMeta.ogImage}
       />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(aboutUsBreadcrumbSchema)}</script>
+      </Helmet>
       <div style={{ fontFamily: "generalsans" }}>
         <HeroSection />
         <MissionSection />
         <StatsSection />
         <ValuesSection />
         <StorySection />
+        <TrustSection />
       </div>
     </>
   );

@@ -119,6 +119,24 @@ export const careersMeta: PageMeta = {
   ogImage: OG,
 };
 
+export const teamMeta: PageMeta = {
+  title: "Our Team | SAUDEX GLOBAL",
+  description:
+    "Meet the logistics experts behind SAUDEX GLOBAL's freight forwarding, customs, and supply chain solutions across Singapore, the GCC, and Asia-Pacific.",
+  keywords: "Saudex Global team, logistics leadership, supply chain experts",
+  canonical: `${BASE_URL}/team/`,
+  ogImage: OG,
+};
+
+export const caseStudiesMeta: PageMeta = {
+  title: "Case Studies | SAUDEX GLOBAL",
+  description:
+    "See how Saudex Global has helped clients across FMCG, cold chain, and customs clearance move faster and cut costs across the Singapore–GCC–Asia-Pacific corridor.",
+  keywords: "Saudex Global case studies, logistics results, customs clearance case study",
+  canonical: `${BASE_URL}/case-studies/`,
+  ogImage: OG,
+};
+
 export const beOurPartnerMeta: PageMeta = {
   title: "Be Our Partner | SAUDEX GLOBAL",
   description:

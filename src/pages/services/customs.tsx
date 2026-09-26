@@ -1,5 +1,6 @@
 import { ServicePage, type ServicePageData } from "./ServicePage"
 import { SEO } from "../../components/SEO";
+import { Helmet } from "react-helmet-async";
 import { customsLogisticsMeta } from "../data/seoMeta"
 const globalFreight: ServicePageData = {
   heroTag: "Custom Clearance",
@@ -61,16 +62,102 @@ highlight: "Avg. 1–3 day clearance",
   ],
 };
 
+const customsClearanceSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://saudexglobal.com/services/customs#webpage",
+      "url": "https://saudexglobal.com/services/customs/",
+      "name": "Customs Clearance | SAUDEX GLOBAL",
+      "description": customsLogisticsMeta.description,
+      "isPartOf": { "@id": "https://saudexglobal.com/#website" },
+      "about": { "@id": "https://saudexglobal.com/services/customs#service" },
+      "breadcrumb": { "@id": "https://saudexglobal.com/services/customs#breadcrumb" }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://saudexglobal.com/services/customs#service",
+      "name": "Customs Clearance",
+      "serviceType": "Customs Clearance",
+      "description": customsLogisticsMeta.description,
+      "url": "https://saudexglobal.com/services/customs/",
+      "provider": {
+        "@type": "Organization",
+        "@id": "https://saudexglobal.com/#organization",
+        "name": "SAUDEX GLOBAL",
+        "url": "https://saudexglobal.com/"
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "Saudi Arabia" },
+        { "@type": "Place", "name": "Middle East" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Customs Clearance Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tariff Classification & Duty Calculation" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Import & Export Documentation" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Restricted Goods Licensing" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Last-Mile Delivery" } }
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://saudexglobal.com/services/customs#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://saudexglobal.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://saudexglobal.com/services/" },
+        { "@type": "ListItem", "position": 3, "name": "Customs Clearance", "item": "https://saudexglobal.com/services/customs/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://saudexglobal.com/services/customs#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does customs clearance take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For standard shipments with complete documentation, clearance typically takes 1 to 3 business days. Delays usually occur due to missing paperwork or inspections, which we proactively help you avoid."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if my shipment is held at customs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We handle it. Our team liaises directly with customs authorities, resolves documentation issues, and keeps you informed until your shipment is released."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you handle both import and export customs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, for both directions and for multiple countries across our service region."
+          }
+        }
+      ]
+    }
+  ]
+};
+
 export default function Customs() {
   return (
   <>
   <SEO
-       
+        title="Customs Clearance | SAUDEX GLOBAL"
         description={customsLogisticsMeta.description}
         keywords={customsLogisticsMeta.keywords}
         canonical={customsLogisticsMeta.canonical}
         ogImage={customsLogisticsMeta.ogImage}
       />
+  <Helmet>
+    <script type="application/ld+json">{JSON.stringify(customsClearanceSchema)}</script>
+  </Helmet>
   <ServicePage data={globalFreight} />
   </>
   );

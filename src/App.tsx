@@ -24,6 +24,8 @@ import TermsOfService from "./pages/terms_of_service";
 import Freight from "./pages/services/freight";
 import Careers from "./pages/careers";
 import AboutUs from "./pages/aboutUs";
+import Team from "./pages/Team";
+import CaseStudies from "./pages/CaseStudies";
 import BeOurPartner from "./pages/BeOurPartner";
 import NfcCard from "./pages/cards/nfcCard";
 import Cookies from "./components/cookies";
@@ -77,6 +79,8 @@ function App() {
         <Route path="agriculture" element={<AgriPage/>} />
        </Route>
        <Route path="aboutUs" element={<AboutUs/>} />
+       <Route path="team" element={<Team/>} />
+       <Route path="case-studies" element={<CaseStudies/>} />
        <Route path="careers" element={<Careers/>} />
        
       </Route>

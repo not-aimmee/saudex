@@ -13,11 +13,25 @@
       "url": "https://saudexglobal.com/services"
     },
     {
-      "id": "import-export",
+      "id": "customs-clearance",
       "type": "service",
-      "name": "Import & Export Services",
-      "description": "Cross-border trade documentation and cargo coordination",
-      "url": "https://saudexglobal.com/services/impo-expo"
+      "name": "Customs Clearance",
+      "description": "Tariff classification, duty calculation, and customs documentation",
+      "url": "https://saudexglobal.com/services/customs"
+    },
+    {
+      "id": "distribution",
+      "type": "service",
+      "name": "Distribution & Transportation",
+      "description": "Bulk and last-mile distribution across regional routes",
+      "url": "https://saudexglobal.com/services/distribution"
+    },
+    {
+      "id": "fmcg-logistics",
+      "type": "service",
+      "name": "FMCG Distribution",
+      "description": "High-frequency distribution for consumer goods and beverages",
+      "url": "https://saudexglobal.com/services/fmcg"
     },
     {
       "id": "freight-forwarding",
@@ -27,6 +41,20 @@
       "url": "https://saudexglobal.com/services/freight"
     },
     {
+      "id": "import-export",
+      "type": "service",
+      "name": "Import & Export Services",
+      "description": "Cross-border trade documentation and cargo coordination",
+      "url": "https://saudexglobal.com/services/impo-expo"
+    },
+    {
+      "id": "supply-chain",
+      "type": "service",
+      "name": "Supply Chain Logistics",
+      "description": "Strategic supply chain consulting to reduce costs and remove bottlenecks",
+      "url": "https://saudexglobal.com/services/Supply_chain"
+    },
+    {
       "id": "warehousing",
       "type": "service",
       "name": "Warehousing & Storage",
@@ -34,15 +62,92 @@
       "url": "https://saudexglobal.com/services/warehousing"
     },
     {
+      "id": "industries",
+      "type": "service_category",
+      "name": "Industries Served",
+      "description": "Specialist logistics for regulated and high-velocity industries",
+      "url": "https://saudexglobal.com/industries"
+    },
+    {
+      "id": "cold-chain",
+      "type": "industry",
+      "name": "Cold Chain Logistics",
+      "description": "Temperature-controlled transport for pharma, food, and perishables",
+      "url": "https://saudexglobal.com/industries/cold_chain"
+    },
+    {
+      "id": "agriculture",
+      "type": "industry",
+      "name": "Agri-Commodities & Palm Oil Logistics",
+      "description": "Bulk supply and transport of palm oil and agri-commodities",
+      "url": "https://saudexglobal.com/industries/agriculture"
+    },
+    {
+      "id": "ecommerce",
+      "type": "industry",
+      "name": "E-Commerce Fulfilment",
+      "description": "Same-day pick-and-pack fulfilment and returns logistics",
+      "url": "https://saudexglobal.com/industries/e_commerce"
+    },
+    {
+      "id": "fmcg-industry",
+      "type": "industry",
+      "name": "FMCG Industry Logistics",
+      "description": "National FMCG distribution and demand planning",
+      "url": "https://saudexglobal.com/industries/fmcg_industry"
+    },
+    {
+      "id": "food-beverages",
+      "type": "industry",
+      "name": "Food & Beverage Logistics",
+      "description": "FSSC 22000-certified multi-temperature food logistics",
+      "url": "https://saudexglobal.com/industries/food_beverages"
+    },
+    {
+      "id": "horeca",
+      "type": "industry",
+      "name": "HoReCa Logistics",
+      "description": "Supply chain solutions for hotels, restaurants, and catering",
+      "url": "https://saudexglobal.com/industries/horeca"
+    },
+    {
+      "id": "retail-wholesale",
+      "type": "industry",
+      "name": "Retail & Wholesale Logistics",
+      "description": "Shelf-ready retail delivery and wholesale break-bulk",
+      "url": "https://saudexglobal.com/industries/retail"
+    },
+    {
+      "id": "about",
+      "type": "company_info",
+      "name": "About SAUDEX GLOBAL",
+      "description": "Company background, expertise, and regional coverage",
+      "url": "https://saudexglobal.com/aboutUs"
+    },
+    {
+      "id": "team",
+      "type": "company_info",
+      "name": "Our Team",
+      "description": "Leadership and team bios",
+      "url": "https://saudexglobal.com/team"
+    },
+    {
+      "id": "case-studies",
+      "type": "company_info",
+      "name": "Case Studies",
+      "description": "Client results and success stories",
+      "url": "https://saudexglobal.com/case-studies"
+    },
+    {
       "id": "contact-form",
       "type": "contact",
       "name": "Contact SAUDEX GLOBAL",
       "description": "Get in touch for logistics inquiries",
-      "url": "https://saudexglobal.com/contact"
+      "url": "https://saudexglobal.com/Contact"
     }
   ],
   "contact": {
-    "email": "contact@saudexglobal.com",
+    "email": "sales@saudexglobal.com",
     "website": "https://saudexglobal.com"
   }
 }

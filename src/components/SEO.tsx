@@ -8,7 +8,8 @@ interface SEOProps {
   canonical?: string;           // e.g. "https://yoursite.com/industries/cold-chain"
   ogImage?: string;             // absolute URL to OG image
   ogType?: "website" | "article";
-  noIndex?: boolean;            // set true on drafts / internal pages
+  noIndex?: boolean;           // set true on drafts / internal pages
+  schemaMarkup?: object | object[];
 }
 
 const SITE_NAME = "Saudex Global";           // ← change this
@@ -23,6 +24,7 @@ export function SEO({
   ogImage = DEFAULT_OG_IMAGE,
   ogType = "website",
   noIndex = false,
+  schemaMarkup ,
 }: SEOProps) {
   
 
@@ -48,6 +50,12 @@ export function SEO({
       {title && <meta name="twitter:title" content={title} />}
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image"       content={ogImage} />
+      {/*schema markup */}
+      {schemaMarkup && (
+        <script type="application/ld+json">
+          {JSON.stringify(schemaMarkup)}
+        </script>
+      )}
     </Helmet>
   );
 }

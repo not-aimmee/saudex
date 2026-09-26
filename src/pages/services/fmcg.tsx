@@ -1,5 +1,6 @@
 import { ServicePage, type ServicePageData } from "./ServicePage"
 import { SEO } from "../../components/SEO";
+import { Helmet } from "react-helmet-async";
 import { fmcgLogisticsMeta } from "../data/seoMeta"
 
 const globalFreight: ServicePageData = {
@@ -62,16 +63,102 @@ highlight: "Direct retail delivery",
   ],
 };
 
+const fmcgLogisticsSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://saudexglobal.com/services/fmcg#webpage",
+      "url": "https://saudexglobal.com/services/fmcg/",
+      "name": "FMCG Logistics | SAUDEX GLOBAL",
+      "description": fmcgLogisticsMeta.description,
+      "isPartOf": { "@id": "https://saudexglobal.com/#website" },
+      "about": { "@id": "https://saudexglobal.com/services/fmcg#service" },
+      "breadcrumb": { "@id": "https://saudexglobal.com/services/fmcg#breadcrumb" }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://saudexglobal.com/services/fmcg#service",
+      "name": "FMCG Distribution",
+      "serviceType": "FMCG Distribution",
+      "description": fmcgLogisticsMeta.description,
+      "url": "https://saudexglobal.com/services/fmcg/",
+      "provider": {
+        "@type": "Organization",
+        "@id": "https://saudexglobal.com/#organization",
+        "name": "SAUDEX GLOBAL",
+        "url": "https://saudexglobal.com/"
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "Saudi Arabia" },
+        { "@type": "Place", "name": "Middle East" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "FMCG Distribution Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fixed Route Scheduling" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Direct Retail Delivery" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Returns & Reverse Logistics Management" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Batch & Expiry Tracking" } }
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://saudexglobal.com/services/fmcg#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://saudexglobal.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://saudexglobal.com/services/" },
+        { "@type": "ListItem", "position": 3, "name": "FMCG Distribution", "item": "https://saudexglobal.com/services/fmcg/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://saudexglobal.com/services/fmcg#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you handle high frequency FMCG deliveries?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We build fixed route schedules and dedicated driver assignments for FMCG clients to ensure consistent, on time delivery to retail and wholesale points."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you distribute directly to retail outlets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We handle last mile delivery to supermarkets, convenience stores, and wholesale distributors across the region."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer returns management for FMCG?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We can manage the reverse logistics process including collection, sorting, and reporting of returned goods."
+          }
+        }
+      ]
+    }
+  ]
+};
+
 export default function FMCG() {
   return (
   <>
   <SEO
-          
+          title="FMCG Distribution | SAUDEX GLOBAL"
           description={fmcgLogisticsMeta.description}
           keywords={fmcgLogisticsMeta.keywords}
           canonical={fmcgLogisticsMeta.canonical}
           ogImage={fmcgLogisticsMeta.ogImage}
         />
+   <Helmet>
+     <script type="application/ld+json">{JSON.stringify(fmcgLogisticsSchema)}</script>
+   </Helmet>
    <ServicePage data={globalFreight} />
   </>
   );
