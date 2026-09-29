@@ -4,6 +4,7 @@ import {
   Building2,
    Copy, Check, Download,
 } from "lucide-react";
+
 import { SEO } from "../../components/SEO";
 
 /* ─── palette ───────────────────────────────────────────────────────────── */
@@ -86,6 +87,27 @@ const SOCIALS = [
         <rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" />
       </svg>
     ),
+  },
+   {
+    label: "Instagram",
+    handle: "Saudex Global",
+    href: "https://www.instagram.com/saudexglobal?stkn=MWNtb3c5N3E3c3ViNA==",
+   svg: (
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke={C.teal}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
+    <circle cx="12" cy="12" r="4" />
+    <circle cx="17.5" cy="6.5" r="1" fill={C.teal} stroke="none" />
+  </svg>
+),
   },
   {
     label: "Location",

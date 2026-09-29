@@ -1,5 +1,5 @@
 import { ArrowUp, Linkedin, Mail , Facebook } from 'lucide-react';
-import { FaWhatsapp } from 'react-icons/fa';
+import { FaWhatsapp,FaInstagram } from 'react-icons/fa';
 import { useRef, useState, useEffect } from 'react';
 import { TEXT } from '../constants';
 import logo from '/logo.svg';
@@ -26,6 +26,7 @@ export default function Footer() {
     { icon: Linkedin, color: 'blue', label: 'LinkedIn', link: 'https://www.linkedin.com/company/saudexglobal/',hoverColor: '#0a66c2' },
     { icon: FaWhatsapp, color: 'green', label: 'WhatsApp', link: 'https://wa.me/6585351308',hoverColor: '#25d366' },
     { icon: Facebook, color: 'blue', label: 'Facebook', link: 'https://www.facebook.com/share/19d9u8W9PA/',hoverColor: '#1877f2' },
+    { icon: FaInstagram, color:'purple', label:'Instagram', link:'https://www.instagram.com/saudexglobal?stkn=MWNtb3c5N3E3c3ViNA==', hoverColor:'#E1306C'},
   ];
 
   const services = [
@@ -49,7 +50,7 @@ export default function Footer() {
   const company = [
     { label: 'About Us', to: '/aboutUs/' },
     { label: 'Careers', to: '/careers/' },
-    { label: 'Be Our Partner', to: '/BeOurPartner/' }
+    { label: 'Be Our Partner', to: '/BeOurPartner/' },
   ];
 
   const locations = ['Singapore','Malaysia', 'Saudi Arabia', 'United Arab Emirates' ];
