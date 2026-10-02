@@ -67,21 +67,21 @@ const supplyChainLogisticsSchema = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": "https://saudexglobal.com/services/Supply_chain#webpage",
-      "url": "https://saudexglobal.com/services/Supply_chain",
+      "@id": "https://saudexglobal.com/services/supply-chain#webpage",
+      "url": "https://saudexglobal.com/services/supply-chain",
       "name": "Supply Chain Logistics & Consulting Services | SAUDEX GLOBAL",
       "description": "Supply chain logistics by SAUDEX GLOBAL to reduce costs, remove bottlenecks and improve operations through strategic consulting.",
       "isPartOf": { "@id": "https://saudexglobal.com/#website" },
-      "about": { "@id": "https://saudexglobal.com/services/Supply_chain#service" },
-      "breadcrumb": { "@id": "https://saudexglobal.com/services/Supply_chain#breadcrumb" }
+      "about": { "@id": "https://saudexglobal.com/services/supply-chain#service" },
+      "breadcrumb": { "@id": "https://saudexglobal.com/services/supply-chain#breadcrumb" }
     },
     {
       "@type": "Service",
-      "@id": "https://saudexglobal.com/services/Supply_chain#service",
+      "@id": "https://saudexglobal.com/services/supply-chain#service",
       "name": "Supply Chain Logistics",
       "serviceType": "Supply Chain Logistics",
       "description": "Strategic supply chain logistics consulting focused on reducing costs, removing bottlenecks, improving inventory planning, and building scalable logistics operations.",
-      "url": "https://saudexglobal.com/services/Supply_chain",
+      "url": "https://saudexglobal.com/services/supply-chain",
       "provider": {
         "@type": "Organization",
         "@id": "https://saudexglobal.com/#organization",
@@ -105,16 +105,16 @@ const supplyChainLogisticsSchema = {
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://saudexglobal.com/services/Supply_chain#breadcrumb",
+      "@id": "https://saudexglobal.com/services/supply-chain#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://saudexglobal.com/" },
         { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://saudexglobal.com/services" },
-        { "@type": "ListItem", "position": 3, "name": "Supply Chain Logistics", "item": "https://saudexglobal.com/services/Supply_chain" }
+        { "@type": "ListItem", "position": 3, "name": "Supply Chain Logistics", "item": "https://saudexglobal.com/services/supply-chain" }
       ]
     },
     {
       "@type": "FAQPage",
-      "@id": "https://saudexglobal.com/services/Supply_chain#faq",
+      "@id": "https://saudexglobal.com/services/supply-chain#faq",
       "mainEntity": [
         {
           "@type": "Question",

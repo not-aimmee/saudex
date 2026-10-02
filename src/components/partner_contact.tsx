@@ -2,6 +2,8 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { CalendarDays, Check, Clock3, Mail, MapPin, Phone, Send } from "lucide-react";
 import { useWebMCP } from "usewebmcp";
+import { SEO } from "./SEO";
+import { beOurPartnerMeta } from "../pages/data/seoMeta";
 const isPrerender = typeof navigator !== "undefined" && navigator.webdriver;
 const C = {
   almostBlack:    "#02090f",
@@ -164,7 +166,15 @@ export default function Partnercontact() {
 
 
   return (
-    <div style={{ fontFamily: "'Outfit', sans-serif" }} className="min-h-screen bg-[#f1f0ea] text-[#031926]">
+    <>
+      <SEO
+        title="Partner Contact | SAUDEX GLOBAL"
+        description={beOurPartnerMeta.description}
+        keywords={beOurPartnerMeta.keywords}
+        canonical={beOurPartnerMeta.canonical}
+        ogImage={beOurPartnerMeta.ogImage}
+      />
+      <div style={{ fontFamily: "'Outfit', sans-serif" }} className="min-h-screen bg-[#f1f0ea] text-[#031926]">
       <section
       className="min-h-screen flex flex-col justify-end px-6 md:px-16 pb-16 pt-32 relative overflow-hidden"
       style={{ background: `linear-gradient(160deg, ${C.almostBlack} 0%, ${C.inkBlack} 40%, ${C.spaceIndigo} 100%)` }}
@@ -435,5 +445,6 @@ export default function Partnercontact() {
               </div>
       </div>
     </div>
+    </>
   );
 }

@@ -273,7 +273,7 @@ export default function Service() {
                 </ul>
 
                 <Link
-                  to="/Contact/"
+                  to="/contact/"
                   className="inline-flex items-center gap-4 group"
                   style={{ textDecoration: "none" }}
                   onMouseEnter={(e) => {

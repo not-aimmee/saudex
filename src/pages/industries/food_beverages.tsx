@@ -9,21 +9,21 @@ const foodBeveragesSchema = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": "https://saudexglobal.com/industries/food_beverages#webpage",
-      "url": "https://saudexglobal.com/industries/food_beverages/",
+      "@id": "https://saudexglobal.com/industries/food-beverages#webpage",
+      "url": "https://saudexglobal.com/industries/food-beverages/",
       "name": "Food & Beverage Logistics | SAUDEX GLOBAL",
       "description": foodBeveragesMeta.description,
       "isPartOf": { "@id": "https://saudexglobal.com/#website" },
-      "about": { "@id": "https://saudexglobal.com/industries/food_beverages#service" },
-      "breadcrumb": { "@id": "https://saudexglobal.com/industries/food_beverages#breadcrumb" }
+      "about": { "@id": "https://saudexglobal.com/industries/food-beverages#service" },
+      "breadcrumb": { "@id": "https://saudexglobal.com/industries/food-beverages#breadcrumb" }
     },
     {
       "@type": "Service",
-      "@id": "https://saudexglobal.com/industries/food_beverages#service",
+      "@id": "https://saudexglobal.com/industries/food-beverages#service",
       "name": "Food & Beverage Logistics",
       "serviceType": "Food & Beverage Logistics",
       "description": foodBeveragesMeta.description,
-      "url": "https://saudexglobal.com/industries/food_beverages/",
+      "url": "https://saudexglobal.com/industries/food-beverages/",
       "provider": {
         "@type": "Organization",
         "@id": "https://saudexglobal.com/#organization",
@@ -38,16 +38,16 @@ const foodBeveragesSchema = {
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://saudexglobal.com/industries/food_beverages#breadcrumb",
+      "@id": "https://saudexglobal.com/industries/food-beverages#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://saudexglobal.com/" },
         { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://saudexglobal.com/industries/" },
-        { "@type": "ListItem", "position": 3, "name": "Food & Beverages", "item": "https://saudexglobal.com/industries/food_beverages/" }
+        { "@type": "ListItem", "position": 3, "name": "Food & Beverages", "item": "https://saudexglobal.com/industries/food-beverages/" }
       ]
     },
     {
       "@type": "FAQPage",
-      "@id": "https://saudexglobal.com/industries/food_beverages#faq",
+      "@id": "https://saudexglobal.com/industries/food-beverages#faq",
       "mainEntity": [
         {
           "@type": "Question",

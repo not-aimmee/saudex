@@ -8,21 +8,21 @@ const fmcgIndustrySchema = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": "https://saudexglobal.com/industries/fmcg_industry#webpage",
-      "url": "https://saudexglobal.com/industries/fmcg_industry/",
+      "@id": "https://saudexglobal.com/industries/fmcg-industry#webpage",
+      "url": "https://saudexglobal.com/industries/fmcg-industry/",
       "name": fmcgMeta.title,
       "description": fmcgMeta.description,
       "isPartOf": { "@id": "https://saudexglobal.com/#website" },
-      "about": { "@id": "https://saudexglobal.com/industries/fmcg_industry#service" },
-      "breadcrumb": { "@id": "https://saudexglobal.com/industries/fmcg_industry#breadcrumb" }
+      "about": { "@id": "https://saudexglobal.com/industries/fmcg-industry#service" },
+      "breadcrumb": { "@id": "https://saudexglobal.com/industries/fmcg-industry#breadcrumb" }
     },
     {
       "@type": "Service",
-      "@id": "https://saudexglobal.com/industries/fmcg_industry#service",
+      "@id": "https://saudexglobal.com/industries/fmcg-industry#service",
       "name": "FMCG Distribution & Retail Logistics",
       "serviceType": "FMCG Distribution & Retail Logistics",
       "description": fmcgMeta.description,
-      "url": "https://saudexglobal.com/industries/fmcg_industry/",
+      "url": "https://saudexglobal.com/industries/fmcg-industry/",
       "provider": {
         "@type": "Organization",
         "@id": "https://saudexglobal.com/#organization",
@@ -37,16 +37,16 @@ const fmcgIndustrySchema = {
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://saudexglobal.com/industries/fmcg_industry#breadcrumb",
+      "@id": "https://saudexglobal.com/industries/fmcg-industry#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://saudexglobal.com/" },
         { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://saudexglobal.com/industries/" },
-        { "@type": "ListItem", "position": 3, "name": "FMCG", "item": "https://saudexglobal.com/industries/fmcg_industry/" }
+        { "@type": "ListItem", "position": 3, "name": "FMCG", "item": "https://saudexglobal.com/industries/fmcg-industry/" }
       ]
     },
     {
       "@type": "FAQPage",
-      "@id": "https://saudexglobal.com/industries/fmcg_industry#faq",
+      "@id": "https://saudexglobal.com/industries/fmcg-industry#faq",
       "mainEntity": [
         {
           "@type": "Question",

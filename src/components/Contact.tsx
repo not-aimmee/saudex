@@ -40,6 +40,7 @@ type FormData = {
 const initialForm: FormData = { fullName: "", email: "", phone: "", service: "", message: "" };
 
 export default function Contact() {
+  const isQuotePage = typeof window !== "undefined" && window.location.pathname.toLowerCase().includes("cta");
   const [form, setForm] = useState<FormData>(initialForm);
   const [state, setState] = useState<FormState>("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -119,8 +120,8 @@ export default function Contact() {
   return (
     <>
       <SEO
-        title="Contact Us | SAUDEX GLOBAL"
-        description={contactMeta.description}
+        title={isQuotePage ? "Get a Logistics Quote | SAUDEX GLOBAL" : "Contact Us | SAUDEX GLOBAL"}
+        description={isQuotePage ? "Request a tailored logistics quote from SAUDEX GLOBAL. Share your freight, warehousing, customs, or supply chain requirements and our team will respond quickly." : contactMeta.description}
         keywords={contactMeta.keywords}
         canonical={contactMeta.canonical}
         ogImage={contactMeta.ogImage}

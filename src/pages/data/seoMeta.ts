@@ -86,7 +86,7 @@ export const contactMeta: PageMeta = {
     "Get in touch with the Saudex Global team for logistics enquiries,partnership opportunities, or supply chain consultations.We're here to help you move smarter.",
   keywords:
     "contact Saudex Global, logistics enquiry, freight contact,supply chain consultation, Saudex Global office, logistics partnership",
-  canonical: `${BASE_URL}/Contact/`,
+  canonical: `${BASE_URL}/contact/`,
   ogImage:   OG,
 };
 
@@ -142,7 +142,7 @@ export const beOurPartnerMeta: PageMeta = {
   description:
     "Join Saudex Global's partner network through reseller, technology, and referral opportunities built for mutual growth.",
   keywords: "Saudex Global partner, logistics partnership, supply chain partner",
-  canonical: `${BASE_URL}/BeOurPartner/`,
+  canonical: `${BASE_URL}/be-our-partner/`,
   ogImage: OG,
 };
 
@@ -156,7 +156,7 @@ export const coldChainMeta: PageMeta = {
     "End-to-end cold chain logistics with 99.6% temperature compliance. HACCP-certified facilities, real-time IoT monitoring, and last-mile cold delivery across the region.",
   keywords:
     "cold chain logistics, temperature-controlled storage, refrigerated transport, HACCP cold storage, frozen goods distribution, pharmaceutical cold chain",
-  canonical: `${BASE_URL}/industries/cold_chain/`,
+  canonical: `${BASE_URL}/industries/cold-chain/`,
   ogImage:   OG,
 };
 
@@ -185,7 +185,7 @@ export const ecommerceMeta: PageMeta = {
     "Same-day pick-and-pack fulfilment, 96.7% first-attempt delivery, and frictionless returns. Built for Shopify, WooCommerce, Magento, and custom platforms.",
   keywords:
     "ecommerce fulfilment, 3PL fulfilment, last-mile delivery, returns logistics, same-day dispatch, Shopify logistics partner",
-  canonical: `${BASE_URL}/industries/e_commerce/`,
+  canonical: `${BASE_URL}/industries/e-commerce/`,
   ogImage:   OG,
 };
 
@@ -195,7 +195,7 @@ export const fmcgMeta: PageMeta = {
     "National FMCG distribution with 99.1% order fill rate. Demand planning, promotional logistics, and route-optimised delivery to modern and general trade.",
   keywords:
     "FMCG distribution, fast-moving consumer goods logistics, demand planning, trade activation logistics, retail distribution, general trade supply",
-  canonical: `${BASE_URL}/industries/fmcg_industry/`,
+  canonical: `${BASE_URL}/industries/fmcg-industry/`,
   ogImage:   OG,
 };
 
@@ -204,7 +204,7 @@ export const foodBeveragesMeta: PageMeta = {
     "FSSC 22000-certified food and beverage logistics. Multi-temperature storage, full batch traceability, 2-hour recall capability, and zero major compliance failures in 5 years.",
   keywords:
     "food and beverage logistics, food safety supply chain, FSSC 22000 logistics, cold and ambient storage, HACCP food distribution, batch traceability",
-  canonical: `${BASE_URL}/industries/food_beverages/`,
+  canonical: `${BASE_URL}/industries/food-beverages/`,
   ogImage:   OG,
 };
 
@@ -285,7 +285,7 @@ export const supplyChainLogisticsMeta: PageMeta = {
     "Supply chain logistics by SAUDEX GLOBAL to reduce costs, remove bottlenecks and improve operations through strategic consulting.",
   keywords:
     "supply chain logistics, supply chain consulting, supply chain optimization, supply chain management, inventory planning, logistics consulting",
-  canonical: "https://saudexglobal.com/services/Supply_chain/",
+  canonical: "https://saudexglobal.com/services/supply-chain/",
   ogImage:   OG,
 };
 
@@ -316,7 +316,7 @@ export const privacyPolicyMeta: PageMeta = {
     "Read the Saudex Global Privacy Policy and learn how we collect, use, share, and protect personal information.",
   keywords:
     "Saudex Global privacy policy, data protection, GDPR, personal data",
-  canonical: `${BASE_URL}/privacy_policy/`,
+  canonical: `${BASE_URL}/privacy-policy/`,
   ogImage:   OG,
 };
 
@@ -325,7 +325,7 @@ export const termsMeta: PageMeta = {
     "Review the terms and conditions governing use of Saudex Global's website and logistics services.",
   keywords:
     "Saudex Global terms and conditions, logistics terms, service agreement",
-  canonical: `${BASE_URL}/terms`,
+  canonical: `${BASE_URL}/terms-of-service/`,
   ogImage:   OG,
 };
 
@@ -344,6 +344,6 @@ export const termsOfServiceMeta: PageMeta = {
   description:
     "Review the terms governing access to and use of Saudex Global logistics, freight forwarding, customs, warehousing, and delivery services.",
   keywords: "Saudex Global terms of service, logistics terms, freight forwarding terms",
-  canonical: `${BASE_URL}/terms_of_service/`,
+  canonical: `${BASE_URL}/terms-of-service/`,
   ogImage: OG,
 };

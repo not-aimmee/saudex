@@ -64,17 +64,23 @@ function App() {
         <Route path="fmcg" element={<FMCG/>} />
         <Route path="freight" element={<Freight/>} />
         <Route path="impo-expo" element={<ImpoExpo/>} />
-        <Route path="Supply_chain" element={<SCC/>} />
+        <Route path="import-export" element={<ImpoExpo/>} />
+        <Route path="supply-chain" element={<SCC/>} />
+        <Route path="supply_chain" element={<SCC/>} />
         <Route path="warehousing" element={<Warehousing/>} />
-        
+        <Route path="import_export" element={<ImpoExpo/>} />
        </Route>
        <Route path="industries">
         <Route index element={<Industries />} />
+        <Route path="e-commerce" element={<ECommercePage/>} />
         <Route path="e_commerce" element={<ECommercePage/>} />
         <Route path="horeca" element={<HorecaPage/>} />
+        <Route path="fmcg-industry" element={<FMCGPage/>} />
         <Route path="fmcg_industry" element={<FMCGPage/>} />
         <Route path="retail" element={<RetailPage/>} />
+        <Route path="food-beverages" element={<FoodBevPage/>} />
         <Route path="food_beverages" element={<FoodBevPage/>} />
+        <Route path="cold-chain" element={<ColdChainPage/>} />
         <Route path="cold_chain" element={<ColdChainPage/>} />
         <Route path="agriculture" element={<AgriPage/>} />
        </Route>
@@ -86,11 +92,17 @@ function App() {
       </Route>
       <Route element={<SimpleLayout/>}>
        <Route path="privacy_policy" element ={<PrivacyPolicy/>} />
+       <Route path="privacy-policy" element={<PrivacyPolicy/>} />
        <Route path="terms_of_service" element ={<TermsOfService/>} />
+       <Route path="terms-of-service" element={<TermsOfService/>} />
        <Route path="BeOurPartner" element={<BeOurPartner/>}/>
+       <Route path="be-our-partner" element={<BeOurPartner/>}/>
       <Route path="Contact" element={ <Suspense fallback={null}> <Contact /></Suspense>  }/>
+      <Route path="contact" element={ <Suspense fallback={null}> <Contact /></Suspense>  }/>
       <Route path="CTA" element={ <Suspense fallback={null}> <Contact /></Suspense>  }/>
+      <Route path="cta" element={ <Suspense fallback={null}> <Contact /></Suspense>  }/>
        <Route path="partner_contact" element={<Partnercontact/>}/>
+       <Route path="partner-contact" element={<Partnercontact/>}/>
       </Route>
        <Route path="/nfcCard" element={<NfcCard/>} />
     </Routes>

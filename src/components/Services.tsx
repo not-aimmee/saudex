@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router-dom';
+import { SEO } from './SEO';
+import { servicesIndexMeta } from '../pages/data/seoMeta';
+
 const services = [
   { id: 1, name: 'Import & Export', size: 120, link:'/services/impo-expo/'  },
   { id: 2, name: 'FMCG ', size: 105, link:'/services/fmcg/' },
@@ -37,7 +40,15 @@ export default function Services() {
   const [activeService, setActiveService] = useState<number | null>(null);
 
   return (
-    <div className="relative lg:min-h-[80vh] flex overflow-hidden bg-[#77aca2]/10" >
+    <>
+      <SEO
+        title={servicesIndexMeta.title}
+        description={servicesIndexMeta.description}
+        keywords={servicesIndexMeta.keywords}
+        canonical={servicesIndexMeta.canonical}
+        ogImage={servicesIndexMeta.ogImage}
+      />
+      <div className="relative lg:min-h-[80vh] flex overflow-hidden bg-[#77aca2]/10" >
       {/* ── Left panel — warm cream ── */}
       <div
         className="flex flex-col justify-center px-12 lg:px-20 py-24 w-full lg:w-1/2 z-10"
@@ -47,16 +58,16 @@ export default function Services() {
             What We Offer
           </span>
 
-          <h2
+          <h1
   className="font-sentient font-regular"
   style={{
-    fontSize: 'clamp(1.5rem, 2.75vw, 3.5rem)', // scaled-down version of hero's clamp(3rem,8vw,7rem)         
+    fontSize: 'clamp(1.5rem, 2.75vw, 3.5rem)',
     lineHeight: 1.35,
-    letterSpacing: '0.05em',                  // same tight tracking as hero
+    letterSpacing: '0.05em',
     color: '#031926',
   }}
 >
-Global Trading & Freight Forwarding Solutions</h2>
+Global Trading & Freight Forwarding Solutions</h1>
 
           <p className="font-generalsans font-medium text-lg" style={{  lineHeight: 1.78, color: '#254D58', maxWidth: '38ch' }}>
            Saudex Global connects businesses with reliable products, suppliers, and international markets through integrated global trading and freight forwarding solutions.
@@ -163,5 +174,6 @@ From global product procurement to international shipping and delivery, we simpl
         </div>
       </div>
     </div>
+    </>
   );
 }

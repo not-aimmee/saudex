@@ -8,21 +8,21 @@ const coldChainSchema = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": "https://saudexglobal.com/industries/cold_chain#webpage",
-      "url": "https://saudexglobal.com/industries/cold_chain/",
+      "@id": "https://saudexglobal.com/industries/cold-chain#webpage",
+      "url": "https://saudexglobal.com/industries/cold-chain/",
       "name": "Cold Chain Logistics | SAUDEX GLOBAL",
       "description": coldChainMeta.description,
       "isPartOf": { "@id": "https://saudexglobal.com/#website" },
-      "about": { "@id": "https://saudexglobal.com/industries/cold_chain#service" },
-      "breadcrumb": { "@id": "https://saudexglobal.com/industries/cold_chain#breadcrumb" }
+      "about": { "@id": "https://saudexglobal.com/industries/cold-chain#service" },
+      "breadcrumb": { "@id": "https://saudexglobal.com/industries/cold-chain#breadcrumb" }
     },
     {
       "@type": "Service",
-      "@id": "https://saudexglobal.com/industries/cold_chain#service",
+      "@id": "https://saudexglobal.com/industries/cold-chain#service",
       "name": "Cold Chain Logistics",
       "serviceType": "Cold Chain Logistics",
       "description": coldChainMeta.description,
-      "url": "https://saudexglobal.com/industries/cold_chain/",
+      "url": "https://saudexglobal.com/industries/cold-chain/",
       "provider": {
         "@type": "Organization",
         "@id": "https://saudexglobal.com/#organization",
@@ -37,16 +37,16 @@ const coldChainSchema = {
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://saudexglobal.com/industries/cold_chain#breadcrumb",
+      "@id": "https://saudexglobal.com/industries/cold-chain#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://saudexglobal.com/" },
         { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://saudexglobal.com/industries/" },
-        { "@type": "ListItem", "position": 3, "name": "Cold Chain", "item": "https://saudexglobal.com/industries/cold_chain/" }
+        { "@type": "ListItem", "position": 3, "name": "Cold Chain", "item": "https://saudexglobal.com/industries/cold-chain/" }
       ]
     },
     {
       "@type": "FAQPage",
-      "@id": "https://saudexglobal.com/industries/cold_chain#faq",
+      "@id": "https://saudexglobal.com/industries/cold-chain#faq",
       "mainEntity": [
         {
           "@type": "Question",

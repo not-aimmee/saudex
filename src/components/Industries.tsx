@@ -1,6 +1,8 @@
 import { motion } from 'motion/react'
 import { useRef, useEffect, useState } from 'react'
 import { gsap } from 'gsap'
+import { SEO } from './SEO';
+import { industriesMeta } from '../pages/data/seoMeta';
 
 /* ─── FlowingMenu (exact ReactBits implementation) ───────────── */
 
@@ -259,17 +261,25 @@ function FlowingMenuItem({
 /* ─── Page ────────────────────────────────────────────────────── */
 
 const demoItems: MenuItem[] = [
-  { link: '/industries/fmcg_industry/', text: 'FMCG', image: '/images/in32.webp' },
+  { link: '/industries/fmcg-industry/', text: 'FMCG', image: '/images/in32.webp' },
   { link: '/industries/horeca/', text: 'HoReCa', image: '/images/horeca.webp' },
-  { link: '/industries/e_commerce/', text: 'E-Commerce', image: '/images/s33.webp' },
-  { link: '/industries/food_beverages/', text: 'Food & Beverages', image:'/images/i1.webp'},
+  { link: '/industries/e-commerce/', text: 'E-Commerce', image: '/images/s33.webp' },
+  { link: '/industries/food-beverages/', text: 'Food & Beverages', image:'/images/i1.webp'},
   { link: '/industries/retail/', text: 'Retail & Wholesale ', image: '/images/retail.webp' },
   { link: '/industries/agriculture/', text: 'Agri-Commodities', image: '/images/i37.webp' },
 ]
 
 export default function Industries() {
   return (
-    <section id="industries" className="py-9 bg-[#77aca2]/50 relative overflow-hidden">
+    <>
+      <SEO
+        title="Industries | SAUDEX GLOBAL"
+        description={industriesMeta.description}
+        keywords={industriesMeta.keywords}
+        canonical={industriesMeta.canonical}
+        ogImage={industriesMeta.ogImage}
+      />
+      <section id="industries" className="py-9 bg-[#77aca2]/50 relative overflow-hidden">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
@@ -282,15 +292,15 @@ export default function Industries() {
           <p className="uppercase text-[#254d58] text-center text-lg md:text-xl font-generalsans font-medium tracking-[0.1em] md:tracking-[0.4em] mb-6">
             Industries We Serve
           </p>
-          <h2 className="font-sentient font-regular"
+          <h1 className="font-sentient font-regular"
   style={{
-    fontSize: 'clamp(2.5rem, 3.75vw, 4.5rem)', // scaled-down version of hero's clamp(3rem,8vw,7rem)      
+    fontSize: 'clamp(2.5rem, 3.75vw, 4.5rem)',
     lineHeight: 1.35,
-    letterSpacing: '0.05em',                  // same tight tracking as hero
+    letterSpacing: '0.05em',
     color: '#031926',
   }}>
             Logistics Solutions across diverse sectors
-          </h2>
+          </h1>
           <p className="mt-12 text-[#031926]/70 text-center text-lg md:text-xl font-generalsans font-regular mb-6">
             Every industry has different shipping challenges. Whether you're in retail, e-commerce,
             cold chain, or food & beverage, we provide customized logistics solutions designed
@@ -312,5 +322,6 @@ export default function Industries() {
       </div>
 
     </section>
+    </>
   )
 }

@@ -38,9 +38,9 @@ export default function Footer() {
 
   const industries=[
     { label: 'HoReCa', to:'/industries/horeca/'},
-    { label: 'FMCG', to:'/industries/fmcg_industry/'},
-    { label: 'E-Commerce', to:'/industries/e_commerce/'},
-    { label: 'Food & Beverage', to:'/industries/food_beverages/'},
+    { label: 'FMCG', to:'/industries/fmcg-industry/'},
+    { label: 'E-Commerce', to:'/industries/e-commerce/'},
+    { label: 'Food & Beverage', to:'/industries/food-beverages/'},
     { label: 'Retail and Wholesale', to:'/industries/retail/'},
     { label: 'Agri-Commodities & Palm Oil', to:'/industries/agriculture/'},
 
@@ -50,7 +50,7 @@ export default function Footer() {
   const company = [
     { label: 'About Us', to: '/aboutUs/' },
     { label: 'Careers', to: '/careers/' },
-    { label: 'Be Our Partner', to: '/BeOurPartner/' },
+    { label: 'Be Our Partner', to: '/be-our-partner/' },
   ];
 
   const locations = ['Singapore','Malaysia', 'Saudi Arabia', 'United Arab Emirates' ];
@@ -248,10 +248,10 @@ export default function Footer() {
           {TEXT.footer.copyright}
         </p>
         <div className="flex items-center gap-6 font-generalsand font-light">
-          <Link to="/privacy_policy/" className="text-xs text-[#f5fbef]/70 hover:text-[#f4e9cd] transition-colors duration-200">
+          <Link to="/privacy-policy/" className="text-xs text-[#f5fbef]/70 hover:text-[#f4e9cd] transition-colors duration-200">
             {TEXT.nav.policy}
           </Link>
-          <Link to="/terms_of_service/" className="text-xs text-[#f5fbef]/70 hover:text-[#f4e9cd] transition-colors duration-200">
+          <Link to="/terms-of-service/" className="text-xs text-[#f5fbef]/70 hover:text-[#f4e9cd] transition-colors duration-200">
             {TEXT.nav.terms}
           </Link>
         </div>

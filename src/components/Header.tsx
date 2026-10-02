@@ -121,7 +121,7 @@ useEffect(() => {
                     {TEXT.nav.careers}
                   </Link>
                   <Link
-                    to="/BeOurPartner/"
+                    to="/be-our-partner/"
                     onClick={() => setNavbarAboutOpen(false) }
                     className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
                   >
@@ -149,7 +149,7 @@ useEffect(() => {
                   className="absolute left-0 mt-0 w-64 bg-white rounded-md shadow-lg py-2 border border-gray-100"
                 >
                    <Link
-                    to="/industries/cold_chain/"
+                    to="/industries/cold-chain/"
                     onClick={() => setNavbarIndustriesOpen(false) }
                     className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
                   >
@@ -184,7 +184,7 @@ useEffect(() => {
                     {TEXT.servicesDropdown.frieghtforwarding}
                   </Link>
                   <Link
-                    to="/services/Supply_chain/"
+                    to="/services/supply-chain/"
                     onClick={() => setNavbarServicesOpen(false)}
                     className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
                   >
@@ -232,21 +232,21 @@ useEffect(() => {
                     {TEXT.industriesDropdown.horeca}
                   </Link>
                   <Link
-                    to="/industries/fmcg_industry/"
+                    to="/industries/fmcg-industry/"
                     onClick={() => setNavbarIndustriesOpen(false)}
                     className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
                   >
                     {TEXT.industriesDropdown.fmcg}
                   </Link>
                    <Link
-                    to="/industries/e_commerce/"
+                    to="/industries/e-commerce/"
                     onClick={() => setNavbarIndustriesOpen(false) }
                     className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
                   >
                     {TEXT.industriesDropdown.ecommerce}
                   </Link>
                   <Link
-                    to="/industries/food_beverages/"
+                    to="/industries/food-beverages/"
                     onClick={() => setNavbarIndustriesOpen(false)}
                     className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
                   >
@@ -271,7 +271,7 @@ useEffect(() => {
                 </div>
               )}
             </div>
-             <Link to="/Contact/"
+             <Link to="/contact/"
                 className="px-6 py-4 text-[#F5FBEF] font-generalsans font-regular text-lg hover:text-[#bbd6d1] tracking-wider transition-colors flex items-center gap-1">
         {TEXT.nav.contact}
       </Link>
@@ -362,10 +362,10 @@ exit={{
     <Link to="/services/warehousing/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
       {TEXT.servicesDropdown.contractWarehousing}
     </Link>
-    <Link to="/services/Supply_chain/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
+    <Link to="/services/supply-chain/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
       {TEXT.servicesDropdown.scc}
     </Link>
-     <Link to="/industries/cold_chain/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
+     <Link to="/industries/cold-chain/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
       {TEXT.industriesDropdown.coldchain}
     </Link>
 
@@ -394,13 +394,13 @@ exit={{
      <Link to="/industries/horeca/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
       {TEXT.industriesDropdown.horeca}
     </Link>
-    <Link to="/industries/fmcg_industry/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
+    <Link to="/industries/fmcg-industry/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
       {TEXT.industriesDropdown.fmcg}
     </Link>
-    <Link to="/industries/e_commerce/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
+    <Link to="/industries/e-commerce/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
       {TEXT.industriesDropdown.ecommerce}
     </Link>
-     <Link to="/industries/food_beverages/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
+     <Link to="/industries/food-beverages/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
       {TEXT.industriesDropdown.foodnbeverages}
     </Link>
    <Link to="/industries/retail/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
@@ -428,12 +428,12 @@ exit={{
       {TEXT.nav.careers}
     </Link>
 
-    <Link to="/BeOurPartner/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
+    <Link to="/be-our-partner/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
       Be our Partner
     </Link>
   </div>
 )}
-              <Link to="/Contact/"
+              <Link to="/contact/"
   className="flex items-center justify-between text-[#F5FBEF] font-generalsans hover:text-[#f4e9cd] transition-colors text-left">
         {TEXT.nav.contact}
       </Link>

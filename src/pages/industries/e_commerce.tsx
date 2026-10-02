@@ -8,21 +8,21 @@ const ecommerceSchema = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": "https://saudexglobal.com/industries/e_commerce#webpage",
-      "url": "https://saudexglobal.com/industries/e_commerce/",
+      "@id": "https://saudexglobal.com/industries/e-commerce#webpage",
+      "url": "https://saudexglobal.com/industries/e-commerce/",
       "name": "E-Commerce Fulfilment | SAUDEX GLOBAL",
       "description": ecommerceMeta.description,
       "isPartOf": { "@id": "https://saudexglobal.com/#website" },
-      "about": { "@id": "https://saudexglobal.com/industries/e_commerce#service" },
-      "breadcrumb": { "@id": "https://saudexglobal.com/industries/e_commerce#breadcrumb" }
+      "about": { "@id": "https://saudexglobal.com/industries/e-commerce#service" },
+      "breadcrumb": { "@id": "https://saudexglobal.com/industries/e-commerce#breadcrumb" }
     },
     {
       "@type": "Service",
-      "@id": "https://saudexglobal.com/industries/e_commerce#service",
+      "@id": "https://saudexglobal.com/industries/e-commerce#service",
       "name": "E-Commerce Fulfilment",
       "serviceType": "E-Commerce Fulfilment",
       "description": ecommerceMeta.description,
-      "url": "https://saudexglobal.com/industries/e_commerce/",
+      "url": "https://saudexglobal.com/industries/e-commerce/",
       "provider": {
         "@type": "Organization",
         "@id": "https://saudexglobal.com/#organization",
@@ -37,16 +37,16 @@ const ecommerceSchema = {
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://saudexglobal.com/industries/e_commerce#breadcrumb",
+      "@id": "https://saudexglobal.com/industries/e-commerce#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://saudexglobal.com/" },
         { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://saudexglobal.com/industries/" },
-        { "@type": "ListItem", "position": 3, "name": "E-Commerce", "item": "https://saudexglobal.com/industries/e_commerce/" }
+        { "@type": "ListItem", "position": 3, "name": "E-Commerce", "item": "https://saudexglobal.com/industries/e-commerce/" }
       ]
     },
     {
       "@type": "FAQPage",
-      "@id": "https://saudexglobal.com/industries/e_commerce#faq",
+      "@id": "https://saudexglobal.com/industries/e-commerce#faq",
       "mainEntity": [
         {
           "@type": "Question",
