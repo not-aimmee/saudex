@@ -45,9 +45,10 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
+    "build:local": "npm run build && react-snap && node scripts/generate-404.mjs",
     "predeploy": "npm run build",
     "deploy": "npm run build && gh-pages -d dist",
-    "postbuild": "node -e \"const cloudflare = process.env.CF_PAGES === '1' || process.env.CLOUDFLARE_PAGES === '1'; if (cloudflare) process.exit(0); require('child_process').execSync('react-snap', {stdio:'inherit'});\" && node scripts/generate-404.mjs"
+    "postbuild": "node scripts/generate-404.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
