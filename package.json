@@ -47,7 +47,7 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "npm run build && gh-pages -d dist",
-    "postbuild": "react-snap && node scripts/generate-404.mjs"
+    "postbuild": "node -e \"if (process.env.CLOUDFLARE_PAGES) process.exit(0); require('child_process').execSync('react-snap', {stdio:'inherit'});\" && node scripts/generate-404.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
