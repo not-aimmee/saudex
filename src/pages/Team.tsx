@@ -134,6 +134,32 @@ export default function Team() {
               </article>
             ))}
           </div>
+
+          <div className="mt-20 pt-10" style={{ borderTop: `1px solid ${C.bone}` }}>
+            <div className="grid gap-8 md:grid-cols-3">
+              <div>
+                <p className="text-xs uppercase tracking-[0.2em]" style={{ color: C.teal }}>Strategy</p>
+                <h3 className="mt-4 text-2xl font-sentient font-bold" style={{ color: C.inkBlack }}>Regional clarity</h3>
+                <p className="mt-3 text-base leading-relaxed" style={{ color: C.darkTeal }}>
+                  We combine regional understanding with practical execution so clients can move goods confidently across Singapore, the GCC, and Asia-Pacific corridors.
+                </p>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-[0.2em]" style={{ color: C.teal }}>Execution</p>
+                <h3 className="mt-4 text-2xl font-sentient font-bold" style={{ color: C.inkBlack }}>Operational focus</h3>
+                <p className="mt-3 text-base leading-relaxed" style={{ color: C.darkTeal }}>
+                  Every decision is built around schedule reliability, compliance, route visibility, and high-touch customer service for time-sensitive cargo.
+                </p>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-[0.2em]" style={{ color: C.teal }}>Partnership</p>
+                <h3 className="mt-4 text-2xl font-sentient font-bold" style={{ color: C.inkBlack }}>Long-term trust</h3>
+                <p className="mt-3 text-base leading-relaxed" style={{ color: C.darkTeal }}>
+                  We work with suppliers, transport partners, and clients as one integrated network so service levels remain consistent as businesses expand.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </>

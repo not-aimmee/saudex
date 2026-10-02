@@ -307,6 +307,50 @@ export default function Careers() {
       <div style={{ fontFamily: "'DM Sans', sans-serif" }}>
         <HeroSection />
         <OpenRolesSection />
+
+        <section className="px-6 md:px-16 py-20" style={{ backgroundColor: "#f1f0ea" }}>
+          <div className="max-w-6xl mx-auto grid gap-10 md:grid-cols-2">
+            <div>
+              <p className="text-xs tracking-[0.25em] uppercase" style={{ color: C.accent }}>Why join us</p>
+              <h2 className="mt-4 text-4xl md:text-5xl font-black font-sentient uppercase leading-tight" style={{ color: C.darkHeading }}>
+                Work with people who move businesses forward.
+              </h2>
+            </div>
+            <div className="space-y-5 text-base md:text-lg leading-relaxed" style={{ color: C.body }}>
+              <p>
+                SAUDEX GLOBAL is built for people who enjoy solving operational problems, designing better logistics flows, and creating a better customer experience in a fast-moving trade environment.
+              </p>
+              <p>
+                Our team works across commercial strategy, freight coordination, customs support, warehousing, and client communication. We value practical thinking, accountability, and a willingness to learn quickly in regional and cross-border operations.
+              </p>
+              <p>
+                Whether you are early in your career or already experienced in freight, trade, or supply chain operations, you will have the opportunity to contribute directly to real client outcomes and see the impact of your work every day.
+              </p>
+            </div>
+          </div>
+
+          <div className="max-w-6xl mx-auto mt-16 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                title: "Commercial impact",
+                body: "Every role influences how goods move, how quickly clients are served, and how visible our operations remain across multiple markets.",
+              },
+              {
+                title: "Regional exposure",
+                body: "You will work across Singapore, the GCC, and Asia-Pacific trade corridors where operational decisions directly affect service reliability.",
+              },
+              {
+                title: "Growth mindset",
+                body: "We value initiative, learning, and responsiveness, especially in a business where supply chain conditions change quickly and teams need to adapt fast.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="rounded-2xl border p-6" style={{ borderColor: C.border, backgroundColor: "rgba(255,255,255,0.3)" }}>
+                <h3 className="text-2xl font-sentient font-bold" style={{ color: C.darkHeading }}>{item.title}</h3>
+                <p className="mt-3 text-base leading-relaxed" style={{ color: C.body }}>{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
     </>
   );

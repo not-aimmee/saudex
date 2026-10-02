@@ -16,31 +16,29 @@
     "crawl": false,
     "include": [
       "/",
-      "/Contact/",
-      "/CTA/",
-      "/partner_contact/",
       "/industries/",
-      "/industries/cold_chain/",
-      "/industries/e_commerce/",
-      "/industries/fmcg_industry/",
-      "/industries/food_beverages/",
+      "/services/",
+      "/contact/",
+      "/partner-contact/",
+      "/industries/cold-chain/",
+      "/industries/e-commerce/",
+      "/industries/fmcg-industry/",
+      "/industries/food-beverages/",
       "/industries/horeca/",
       "/industries/retail/",
       "/industries/agriculture/",
       "/services/customs/",
-      "/services/",
-      "/services/service/",
       "/services/distribution/",
       "/services/fmcg/",
       "/services/freight/",
       "/services/impo-expo/",
-      "/services/Supply_chain/",
+      "/services/supply-chain/",
       "/services/warehousing/",
       "/aboutUs/",
       "/careers/",
-      "/BeOurPartner/",
-      "/privacy_policy/",
-      "/terms_of_service/"
+      "/be-our-partner/",
+      "/privacy-policy/",
+      "/terms-of-service/"
     ]
   },
   "scripts": {
@@ -49,7 +47,7 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "npm run build && gh-pages -d dist",
-    "postbuild": "react-snap && node -e \"const fs=require('fs'); fs.copyFileSync('dist/index.html','dist/404.html'); fs.rmSync('dist/CTA',{recursive:true,force:true}); fs.copyFileSync('dist/Contact/index.html','dist/CTA')\""
+    "postbuild": "react-snap && node scripts/generate-404.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

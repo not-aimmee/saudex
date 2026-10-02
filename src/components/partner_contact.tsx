@@ -260,7 +260,28 @@ export default function Partnercontact() {
       </div>
     </section>
 
-      
+    <section className="px-6 md:px-16 py-16" style={{ backgroundColor: C.parchment }}>
+      <div className="max-w-5xl mx-auto grid gap-8 md:grid-cols-2">
+        <div>
+          <p className="text-xs uppercase tracking-[0.25em]" style={{ color: C.teal }}>Partnership model</p>
+          <h2 className="mt-4 text-4xl md:text-5xl font-sentient font-bold uppercase leading-tight" style={{ color: C.inkBlack }}>
+            Built for long-term commercial growth.
+          </h2>
+        </div>
+        <div className="space-y-4 text-base md:text-lg leading-relaxed" style={{ color: C.darkTeal }}>
+          <p>
+            SAUDEX GLOBAL works with businesses, suppliers, and strategic partners who value reliable execution and a clear path to expanded market reach.
+          </p>
+          <p>
+            We support channel partnerships, reseller relationships, reference introductions, and commercial collaborations that are built around trust, operational discipline, and shared growth.
+          </p>
+          <p>
+            If you are looking to create a stronger logistics capability or connect more customers to reliable import, export, warehousing, or freight support, we are ready to discuss the right model for your business.
+          </p>
+        </div>
+      </div>
+    </section>
+
             {/* ── FORM SECTION ─────────────────────────────────────────────── */}
             <div style={{ backgroundColor: C.ivory }}>
               <section className="relative max-w-5xl mx-auto px-8 py-16">
