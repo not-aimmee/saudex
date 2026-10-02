@@ -1,6 +1,5 @@
 import { ServicePage, type ServicePageData } from "./ServicePage"
 import { SEO } from "../../components/SEO";
-import { Helmet } from "react-helmet-async";
 import { distributionLogisticsMeta } from "../data/seoMeta"
 
 const globalFreight: ServicePageData = {
@@ -155,10 +154,8 @@ export default function Distribution() {
         keywords={distributionLogisticsMeta.keywords}
         canonical={distributionLogisticsMeta.canonical}
         ogImage={distributionLogisticsMeta.ogImage}
+        schemaMarkup={transportationServicesSchema}
       />
-      <Helmet>
-        <script type="application/ld+json">{JSON.stringify(transportationServicesSchema)}</script>
-      </Helmet>
       <ServicePage data={globalFreight} />
     </>
   );

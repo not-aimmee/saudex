@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { Helmet } from "react-helmet-async";
 import { SEO } from "../components/SEO";
 import { aboutUsMeta } from "./data/seoMeta";
 import WhyChooseUs from "../components/Why_choose_us";
@@ -518,10 +517,8 @@ export default function AboutUs() {
         keywords={aboutUsMeta.keywords}
         canonical={aboutUsMeta.canonical}
         ogImage={aboutUsMeta.ogImage}
+        schemaMarkup={aboutUsBreadcrumbSchema}
       />
-      <Helmet>
-        <script type="application/ld+json">{JSON.stringify(aboutUsBreadcrumbSchema)}</script>
-      </Helmet>
       <div style={{ fontFamily: "generalsans" }}>
         <HeroSection />
         <MissionSection />

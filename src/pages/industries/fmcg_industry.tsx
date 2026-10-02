@@ -1,7 +1,6 @@
 import { IndustryPage } from "../IndustryPage";
 import { fmcgData } from "../data/fmcgData";
 import { SEO } from "../../components/SEO"
-import { Helmet } from "react-helmet-async";
 import { fmcgMeta } from "../data/seoMeta";
 
 const fmcgIndustrySchema = {
@@ -87,10 +86,8 @@ export default function FMCGPage() {
         keywords={fmcgMeta.keywords}
         canonical={fmcgMeta.canonical}
         ogImage={fmcgMeta.ogImage}
+        schemaMarkup={fmcgIndustrySchema}
       />
-  <Helmet>
-    <script type="application/ld+json">{JSON.stringify(fmcgIndustrySchema)}</script>
-  </Helmet>
   <IndustryPage data={fmcgData} />
   </>
   );

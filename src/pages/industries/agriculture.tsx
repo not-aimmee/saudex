@@ -1,7 +1,6 @@
 import { IndustryPage } from "../IndustryPage";
 import { agriCommoditiesData } from "../data/agriculture";
 import { SEO } from "../../components/SEO"
-import { Helmet } from "react-helmet-async";
 import { agriCommoditiesMeta } from "../data/seoMeta";
 
 const agricultureSchema = {
@@ -87,10 +86,8 @@ export default function AgriPage() {
         keywords={agriCommoditiesMeta.keywords}
         canonical={agriCommoditiesMeta.canonical}
         ogImage={agriCommoditiesMeta.ogImage}
+        schemaMarkup={agricultureSchema}
       />
-      <Helmet>
-        <script type="application/ld+json">{JSON.stringify(agricultureSchema)}</script>
-      </Helmet>
       <IndustryPage data={agriCommoditiesData} />
     </>
   );

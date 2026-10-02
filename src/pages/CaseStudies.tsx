@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import { SEO } from "../components/SEO";
 import { caseStudiesMeta } from "./data/seoMeta";
 
@@ -90,10 +89,8 @@ export default function CaseStudies() {
         keywords={caseStudiesMeta.keywords}
         canonical={caseStudiesMeta.canonical}
         ogImage={caseStudiesMeta.ogImage}
+        schemaMarkup={caseStudiesPageSchema}
       />
-      <Helmet>
-        <script type="application/ld+json">{JSON.stringify(caseStudiesPageSchema)}</script>
-      </Helmet>
 
       <section className="px-6 md:px-16 py-32" style={{ backgroundColor: C.ivory }}>
         <div className="max-w-5xl mx-auto">

@@ -1,7 +1,6 @@
 import { IndustryPage } from "../IndustryPage";
 import { ecommerceData } from "../data/ecommerceData";
 import { SEO } from "../../components/SEO"
-import { Helmet } from "react-helmet-async";
 import { ecommerceMeta } from "../data/seoMeta";
 
 const ecommerceSchema = {
@@ -87,10 +86,8 @@ export default function ECommercePage() {
         keywords={ecommerceMeta.keywords}
         canonical={ecommerceMeta.canonical}
         ogImage={ecommerceMeta.ogImage}
+        schemaMarkup={ecommerceSchema}
       />
-  <Helmet>
-    <script type="application/ld+json">{JSON.stringify(ecommerceSchema)}</script>
-  </Helmet>
   <IndustryPage data={ecommerceData} />
   </>
   );

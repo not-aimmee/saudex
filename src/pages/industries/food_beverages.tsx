@@ -1,7 +1,7 @@
 import { IndustryPage } from "../IndustryPage";
 import { foodBeveragesData } from "../data/foodBeveragesData";
 import { SEO } from "../../components/SEO";
-import { Helmet } from "react-helmet-async";
+
 import { foodBeveragesMeta } from "../data/seoMeta";
 
 const foodBeveragesSchema = {
@@ -87,10 +87,8 @@ export default function FoodBevPage() {
         keywords={foodBeveragesMeta.keywords}
         canonical={foodBeveragesMeta.canonical}
         ogImage={foodBeveragesMeta.ogImage}
+        schemaMarkup={foodBeveragesSchema}
       />
-  <Helmet>
-    <script type="application/ld+json">{JSON.stringify(foodBeveragesSchema)}</script>
-  </Helmet>
   <IndustryPage data={foodBeveragesData} />
   </>
   );

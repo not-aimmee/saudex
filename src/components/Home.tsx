@@ -3,89 +3,83 @@ import { TEXT } from '../constants';
 import { SEO } from './SEO';
 import { homeMeta } from '../pages/data/seoMeta';
 import SplitText from "../../components/splittext";
-import { Helmet } from "react-helmet-async";
 
 export default function Hero() {
   return (
     <>
-    <Helmet>
-      <title>Global Logistics Solutions for Businesses | SAUDEX GLOBAL</title>
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@graph": [
-            {
-              "@type": "Organization",
-              "@id": "https://saudexglobal.com/#organization",
-              "name": "SAUDEX GLOBAL",
-              "url": "https://saudexglobal.com/",
-              "logo": "https://saudexglobal.com/favicon.svg",
-              "description": "SAUDEX GLOBAL provides global logistics solutions including freight forwarding, supply chain, warehousing, customs, cold chain, distribution and import-export services across international markets.",
-              "areaServed": [
-                { "@type": "Place", "name": "Middle East" },
-                { "@type": "Place", "name": "Asia" }
-              ]
-            },
-            {
-              "@type": "WebSite",
-              "@id": "https://saudexglobal.com/#website",
-              "url": "https://saudexglobal.com/",
-              "name": "SAUDEX GLOBAL",
-              "publisher": { "@id": "https://saudexglobal.com/#organization" }
-            },
-            {
-              "@type": "WebPage",
-              "@id": "https://saudexglobal.com/#webpage",
-              "url": "https://saudexglobal.com/",
-              "name": "Global Logistics Solutions for Businesses | SAUDEX GLOBAL",
-              "description": "Discover global logistics solutions from SAUDEX GLOBAL, combining reliable freight, supply chain expertise and international operations.",
-              "isPartOf": { "@id": "https://saudexglobal.com/#website" },
-              "about": { "@id": "https://saudexglobal.com/#organization" }
-            },
-            {
-              "@type": "Service",
-              "@id": "https://saudexglobal.com/#global-logistics-solutions",
-              "name": "Global Logistics Solutions",
-              "serviceType": "Global logistics solutions",
-              "provider": { "@id": "https://saudexglobal.com/#organization" },
-              "url": "https://saudexglobal.com/",
-              "areaServed": [
-                { "@type": "Place", "name": "Middle East" },
-                { "@type": "Place", "name": "Asia" }
-              ],
-              "description": "Reliable global logistics solutions for freight forwarding, supply chain management, warehousing, customs, cold chain, distribution and import-export operations."
-            },
-            {
-              "@type": "LocalBusiness",
-              "@id": "https://saudexglobal.com/#local-business",
-              "name": "SAUDEX GLOBAL",
-              "image": "https://saudexglobal.com/logo.svg",
-              "description": "Singapore-registered logistics, import/export, and freight forwarding company serving Asia-Pacific and Middle East.",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Singapore",
-                "addressCountry": "SG"
-              },
-              "email": "sales@saudexglobal.com",
-              "url": "https://saudexglobal.com/",
-              "parentOrganization": { "@id": "https://saudexglobal.com/#organization" },
-              "areaServed": [
-                { "@type": "Place", "name": "Singapore" },
-                { "@type": "Place", "name": "Saudi Arabia" },
-                { "@type": "Place", "name": "Asia-Pacific" }
-              ],
-              "sameAs": ["https://www.linkedin.com/company/saudexglobal/"]
-            }
-          ]
-        })}
-      </script>
-    </Helmet>
     <SEO
       title="Global Logistics Solutions for Businesses | SAUDEX GLOBAL"
       description={homeMeta.description}
       keywords={homeMeta.keywords}
       canonical={homeMeta.canonical}
       ogImage={homeMeta.ogImage}
+      schemaMarkup={{
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://saudexglobal.com/#organization",
+            "name": "SAUDEX GLOBAL",
+            "url": "https://saudexglobal.com/",
+            "logo": "https://saudexglobal.com/favicon.svg",
+            "description": "SAUDEX GLOBAL provides global logistics solutions including freight forwarding, supply chain, warehousing, customs, cold chain, distribution and import-export services across international markets.",
+            "areaServed": [
+              { "@type": "Place", "name": "Middle East" },
+              { "@type": "Place", "name": "Asia" }
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://saudexglobal.com/#website",
+            "url": "https://saudexglobal.com/",
+            "name": "SAUDEX GLOBAL",
+            "publisher": { "@id": "https://saudexglobal.com/#organization" }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://saudexglobal.com/#webpage",
+            "url": "https://saudexglobal.com/",
+            "name": "Global Logistics Solutions for Businesses | SAUDEX GLOBAL",
+            "description": "Discover global logistics solutions from SAUDEX GLOBAL, combining reliable freight, supply chain expertise and international operations.",
+            "isPartOf": { "@id": "https://saudexglobal.com/#website" },
+            "about": { "@id": "https://saudexglobal.com/#organization" }
+          },
+          {
+            "@type": "Service",
+            "@id": "https://saudexglobal.com/#global-logistics-solutions",
+            "name": "Global Logistics Solutions",
+            "serviceType": "Global logistics solutions",
+            "provider": { "@id": "https://saudexglobal.com/#organization" },
+            "url": "https://saudexglobal.com/",
+            "areaServed": [
+              { "@type": "Place", "name": "Middle East" },
+              { "@type": "Place", "name": "Asia" }
+            ],
+            "description": "Reliable global logistics solutions for freight forwarding, supply chain management, warehousing, customs, cold chain, distribution and import-export operations."
+          },
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://saudexglobal.com/#local-business",
+            "name": "SAUDEX GLOBAL",
+            "image": "https://saudexglobal.com/logo.svg",
+            "description": "Singapore-registered logistics, import/export, and freight forwarding company serving Asia-Pacific and Middle East.",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Singapore",
+              "addressCountry": "SG"
+            },
+            "email": "sales@saudexglobal.com",
+            "url": "https://saudexglobal.com/",
+            "parentOrganization": { "@id": "https://saudexglobal.com/#organization" },
+            "areaServed": [
+              { "@type": "Place", "name": "Singapore" },
+              { "@type": "Place", "name": "Saudi Arabia" },
+              { "@type": "Place", "name": "Asia-Pacific" }
+            ],
+            "sameAs": ["https://www.linkedin.com/company/saudexglobal/"]
+          }
+        ]
+      }}
     />
     <section id="home" className="relative min-h-screen flex lg:items-center ">
       {/* Background Image */}

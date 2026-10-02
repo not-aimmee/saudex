@@ -1,7 +1,6 @@
 import { IndustryPage } from "../IndustryPage";
 import { coldChainData } from "../data/coldChainData";
 import { SEO } from "../../components/SEO"
-import { Helmet } from "react-helmet-async";
 import { coldChainMeta } from "../data/seoMeta";
 
 const coldChainSchema = {
@@ -87,10 +86,8 @@ export default function ColdChainPage() {
         keywords={coldChainMeta.keywords}
         canonical={coldChainMeta.canonical}
         ogImage={coldChainMeta.ogImage}
+        schemaMarkup={coldChainSchema}
       />
-  <Helmet>
-    <script type="application/ld+json">{JSON.stringify(coldChainSchema)}</script>
-  </Helmet>
   <IndustryPage data={coldChainData} />
   </>
   );

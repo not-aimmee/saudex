@@ -1,7 +1,7 @@
 import { IndustryPage } from "../IndustryPage";
 import { retailWholesaleData } from "../data/retailWholesaleData";
 import { SEO } from "../../components/SEO";
-import { Helmet } from "react-helmet-async";
+
 import { retailWholesaleMeta } from "../data/seoMeta";
 
 const retailWholesaleSchema = {
@@ -87,10 +87,8 @@ export default function RetailPage() {
         keywords={retailWholesaleMeta.keywords}
         canonical={retailWholesaleMeta.canonical}
         ogImage={retailWholesaleMeta.ogImage}
+        schemaMarkup={retailWholesaleSchema}
       />
-  <Helmet>
-    <script type="application/ld+json">{JSON.stringify(retailWholesaleSchema)}</script>
-  </Helmet>
   <IndustryPage data={retailWholesaleData} />
   </>
   );

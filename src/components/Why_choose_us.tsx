@@ -51,9 +51,9 @@ export default function WhyChooseUs() {
           className="text-center mb-16"
         >
             
-          <h1 className="text-3xl md:text-5xl font-sentient font-light text-[#F7FAF8]  mb-8 lg:mb-4 ">
+          <h2 className="text-3xl md:text-5xl font-sentient font-light text-[#F7FAF8]  mb-8 lg:mb-4 ">
             {TEXT.whyUs.title}
-          </h1>
+          </h2>
           <p className="text-xl text-gray-300 font-generalsans font-regular max-w-3xl sm:mt-4 mx-auto">
             {TEXT.whyUs.subtitle}
           </p>

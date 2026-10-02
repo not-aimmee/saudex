@@ -1,6 +1,5 @@
 import { ServicePage, type ServicePageData } from "./ServicePage"
 import { SEO } from "../../components/SEO";
-import { Helmet } from "react-helmet-async";
 import { customsLogisticsMeta } from "../data/seoMeta"
 const globalFreight: ServicePageData = {
   heroTag: "Custom Clearance",
@@ -154,10 +153,8 @@ export default function Customs() {
         keywords={customsLogisticsMeta.keywords}
         canonical={customsLogisticsMeta.canonical}
         ogImage={customsLogisticsMeta.ogImage}
+        schemaMarkup={customsClearanceSchema}
       />
-  <Helmet>
-    <script type="application/ld+json">{JSON.stringify(customsClearanceSchema)}</script>
-  </Helmet>
   <ServicePage data={globalFreight} />
   </>
   );

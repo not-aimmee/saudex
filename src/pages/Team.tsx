@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import { SEO } from "../components/SEO";
 import { teamMeta } from "./data/seoMeta";
 
@@ -76,10 +75,8 @@ export default function Team() {
         keywords={teamMeta.keywords}
         canonical={teamMeta.canonical}
         ogImage={teamMeta.ogImage}
+        schemaMarkup={teamSchema}
       />
-      <Helmet>
-        <script type="application/ld+json">{JSON.stringify(teamSchema)}</script>
-      </Helmet>
 
       <section className="px-6 md:px-16 py-32" style={{ backgroundColor: C.ivory }}>
         <div className="max-w-5xl mx-auto">

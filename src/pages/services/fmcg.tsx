@@ -1,6 +1,5 @@
 import { ServicePage, type ServicePageData } from "./ServicePage"
 import { SEO } from "../../components/SEO";
-import { Helmet } from "react-helmet-async";
 import { fmcgLogisticsMeta } from "../data/seoMeta"
 
 const globalFreight: ServicePageData = {
@@ -155,10 +154,8 @@ export default function FMCG() {
           keywords={fmcgLogisticsMeta.keywords}
           canonical={fmcgLogisticsMeta.canonical}
           ogImage={fmcgLogisticsMeta.ogImage}
+          schemaMarkup={fmcgLogisticsSchema}
         />
-   <Helmet>
-     <script type="application/ld+json">{JSON.stringify(fmcgLogisticsSchema)}</script>
-   </Helmet>
    <ServicePage data={globalFreight} />
   </>
   );
