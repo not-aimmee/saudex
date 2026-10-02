@@ -68,13 +68,15 @@ export default function BeOurPartner() {
         />
         <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-10 pt-20 pb-16 sm:pt-32 sm:pb-24 text-center">
           <div className="flex justify-center">
-            <BlurText
-              text="Be Our Partner."
-              delay={120}
-              animateBy="words"
-              direction="top"
-              className="font-sentient text-4xl sm:text-6xl md:text-8xl font-bold text-[#f4e9cd]"
-            />
+            <h1 className="font-sentient text-4xl sm:text-6xl md:text-8xl font-bold text-[#f4e9cd]">
+              <BlurText
+                text="Be Our Partner."
+                delay={120}
+                animateBy="words"
+                direction="top"
+                className="font-sentient text-4xl sm:text-6xl md:text-8xl font-bold text-[#f4e9cd]"
+              />
+            </h1>
           </div>
           <p className="text-base sm:text-lg mt-6 sm:mt-8 max-w-xl mx-auto px-2" style={{ color: C.border }}>
             Join our growing network of partners and unlock new opportunities. Together, we create smarter logistics solutions, expand market reach, and deliver greater value to customers. We offer competitive terms, dedicated support, and a clear path to mutual growth.

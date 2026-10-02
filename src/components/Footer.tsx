@@ -48,7 +48,7 @@ export default function Footer() {
   ]
 
   const company = [
-    { label: 'About Us', to: '/aboutUs/' },
+    { label: 'About Us', to: '/about-us/' },
     { label: 'Careers', to: '/careers/' },
     { label: 'Be Our Partner', to: '/be-our-partner/' },
   ];

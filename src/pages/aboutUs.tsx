@@ -504,7 +504,7 @@ const aboutUsBreadcrumbSchema = {
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://saudexglobal.com/" },
-    { "@type": "ListItem", "position": 2, "name": "About Us", "item": "https://saudexglobal.com/aboutUs/" }
+    { "@type": "ListItem", "position": 2, "name": "About Us", "item": "https://saudexglobal.com/about-us/" }
   ]
 };
 

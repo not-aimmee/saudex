@@ -24,7 +24,7 @@ const routes = [
   "/services/import-export/",
   "/services/supply-chain/",
   "/services/warehousing/",
-  "/aboutUs/",
+  "/about-us/",
   "/careers/",
   "/be-our-partner/",
   "/privacy-policy/",

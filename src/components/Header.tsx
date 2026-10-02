@@ -107,7 +107,7 @@ useEffect(() => {
                   className="absolute left-0 mt-0 w-64 bg-white rounded-md shadow-lg py-2 border border-gray-100"
                 >
                   <Link
-                    to="/aboutUs/"
+                    to="/about-us/"
                     onClick={() => setNavbarAboutOpen(false) }
                     className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
                   >
@@ -420,7 +420,7 @@ exit={{
 </button>
 {drawerAboutOpen && (
   <div className="ml-4 flex flex-col space-y-2">
-    <Link to="/aboutUs/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
+    <Link to="/about-us/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
       {TEXT.nav.aboutUs}
     </Link>
     

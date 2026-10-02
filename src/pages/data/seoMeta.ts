@@ -106,7 +106,7 @@ export const aboutUsMeta: PageMeta = {
   description:
     "Learn about Saudex Global and our approach to reliable, connected logistics and supply chain solutions across global markets.",
   keywords: "about Saudex Global, logistics company, supply chain partner",
-  canonical: `${BASE_URL}/aboutUs/`,
+  canonical: `${BASE_URL}/about-us/`,
   ogImage: OG,
 };
 
