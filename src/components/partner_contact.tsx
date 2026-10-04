@@ -453,8 +453,7 @@ export default function Partnercontact() {
               </section>
       
               {/* ── MAP ──────────────────────────────────────────────────────── */}
-              <div className="w-full h-80"
-                style={{ filter: "sepia(30%) hue-rotate(150deg) saturate(0.7)" }}>
+              <div className="w-full h-80">
                 <iframe
                   title="Location Map"
                   width="100%" height="100%"

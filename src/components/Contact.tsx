@@ -120,7 +120,7 @@ export default function Contact() {
   return (
     <>
       <SEO
-        title={isQuotePage ? "Get a Logistics Quote | SAUDEX GLOBAL" : "Contact Us | SAUDEX GLOBAL"}
+        title={isQuotePage ? "Get a Logistics Quote from SAUDEX GLOBAL" : "Contact SAUDEX GLOBAL | Logistics Support"}
         description={isQuotePage ? "Request a tailored logistics quote from SAUDEX GLOBAL. Share your freight, warehousing, customs, or supply chain requirements and our team will respond quickly." : contactMeta.description}
         keywords={contactMeta.keywords}
         canonical={contactMeta.canonical}
@@ -370,8 +370,7 @@ export default function Contact() {
         </section>
 
         {/* ── MAP ──────────────────────────────────────────────────────── */}
-        <div className="w-full h-80"
-          style={{ filter: "sepia(30%) hue-rotate(150deg) saturate(0.7)" }}>
+        <div className="w-full h-80">
           <iframe
             title="Location Map"
             width="100%" height="100%"

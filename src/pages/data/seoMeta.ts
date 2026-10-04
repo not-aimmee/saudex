@@ -101,7 +101,7 @@ export const industriesMeta: PageMeta = {
 };
 
 export const aboutUsMeta: PageMeta = {
-  title: "About Us | SAUDEX GLOBAL",
+  title: "About SAUDEX GLOBAL: Our Company",
   description:
     "Learn about Saudex Global and our approach to reliable, connected logistics and supply chain solutions across global markets.",
   keywords: "about Saudex Global, logistics company, supply chain partner",

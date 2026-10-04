@@ -269,7 +269,7 @@ export default function Industries() {
   return (
     <>
       <SEO
-        title="Industries | SAUDEX GLOBAL"
+        title="Industry Logistics Solutions | SAUDEX GLOBAL"
         description={industriesMeta.description}
         keywords={industriesMeta.keywords}
         canonical={industriesMeta.canonical}
@@ -301,18 +301,6 @@ export default function Industries() {
             Every industry has different shipping challenges. Whether you're in retail, e-commerce,
             cold chain, or food & beverage, we provide customized logistics solutions designed
             around your needs.
-          </p>
-          <p className="mx-auto max-w-5xl text-[#031926]/70 text-center text-base md:text-lg font-generalsans font-regular mb-6">
-            Retail and wholesale operations need dependable replenishment, store delivery, and flexible handling for mixed loads. E-commerce businesses rely on coordinated fulfilment, accurate order handling, and returns support, while FMCG distribution depends on frequent deliveries and consistent product availability.
-          </p>
-          <p className="mx-auto max-w-5xl text-[#031926]/70 text-center text-base md:text-lg font-generalsans font-regular mb-6">
-            Food, beverage, and hospitality supply chains require careful scheduling and product handling. Cold-chain shipments need temperature-aware transport and storage, while agricultural commodities call for suitable bulk movement and clear coordination from origin to destination. Our solutions are shaped around each sector's cargo, route, and delivery requirements.
-          </p>
-          <p className="mx-auto max-w-5xl text-[#031926]/70 text-center text-base md:text-lg font-generalsans font-regular mb-6">
-            We work with businesses to coordinate sourcing, transport, storage, and delivery as one connected flow. Whether products need frequent replenishment, careful temperature control, or movement across borders, our team helps plan around the operational details that matter to each industry.
-          </p>
-          <p className="mx-auto max-w-5xl text-[#031926]/70 text-center text-base md:text-lg font-generalsans font-regular mb-6">
-            This includes aligning shipment schedules with receiving windows, arranging appropriate handling, and keeping suppliers and delivery teams informed as goods move through the supply chain.
           </p>
         </motion.div>
       </div>
