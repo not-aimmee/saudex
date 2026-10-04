@@ -208,12 +208,13 @@ export default function Contact() {
           <form webmcp-form="contact" webmcp-handler="contact_business" ref={formRef} onSubmit={onSubmit} onReset={onReset} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="font-generalsans">
-                <label className="block text-xs font-regular uppercase tracking-wider mb-1" style={{ color: C.darkTeal }}>
+                <label htmlFor="contact-full-name" className="block text-xs font-regular uppercase tracking-wider mb-1" style={{ color: C.darkTeal }}>
                   Full Name
                 </label>
                 <input
-                  name="fullName" value={form.fullName} onChange={onChange}
+                  id="contact-full-name" name="fullName" value={form.fullName} onChange={onChange}
                   webmcp-field="contact_name"
+                  autoComplete="name"
                   required type="text" placeholder="Jane Smith"
                   style={{ borderColor: C.bone, color: C.inkBlack, backgroundColor: C.ivory }}
                   className="w-full border rounded px-3 py-2 text-sm placeholder-[#336159] focus:outline-none transition"
@@ -222,12 +223,13 @@ export default function Contact() {
                 />
               </div>
               <div className="font-generalsans">
-                <label className="block text-xs font-regular uppercase tracking-wider mb-1" style={{ color: C.darkTeal }}>
+                <label htmlFor="contact-email" className="block text-xs font-regular uppercase tracking-wider mb-1" style={{ color: C.darkTeal }}>
                   Email Address
                 </label>
                 <input
-                  name="email" value={form.email} onChange={onChange}
+                  id="contact-email" name="email" value={form.email} onChange={onChange}
                   webmcp-field="contact_email"
+                  autoComplete="email"
                   required type="email" placeholder="jane@company.com"
                   style={{ borderColor: C.bone, color: C.inkBlack, backgroundColor: C.ivory }}
                   className="w-full border rounded px-3 py-2 text-sm placeholder-[#336159] focus:outline-none transition"
@@ -239,11 +241,13 @@ export default function Contact() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 font-generalsans">
               <div>
-                <label className="block text-xs font-regular uppercase tracking-wider mb-1" style={{ color: C.darkTeal }}>
+                <label htmlFor="contact-phone" className="block text-xs font-regular uppercase tracking-wider mb-1" style={{ color: C.darkTeal }}>
                   Phone
                 </label>
                 <input
-                  name="phone" value={form.phone} onChange={onChange}
+                  id="contact-phone" name="phone" value={form.phone} onChange={onChange}
+                  webmcp-field="phone"
+                  autoComplete="tel"
                   type="tel" placeholder="+1 555 000 0000"
                   style={{ borderColor: C.bone, color: C.inkBlack, backgroundColor: C.ivory }}
                   className="w-full border rounded px-3 py-2 text-sm placeholder-[#336159] focus:outline-none transition"
@@ -252,11 +256,11 @@ export default function Contact() {
                 />
               </div>
               <div>
-                <label className="block text-xs font-regular uppercase tracking-wider mb-1" style={{ color: C.darkTeal }}>
+                <label htmlFor="contact-service" className="block text-xs font-regular uppercase tracking-wider mb-1" style={{ color: C.darkTeal }}>
                   Service
                 </label>
                 <select
-                  name="service" value={form.service} onChange={onChange} required
+                  id="contact-service" name="service" value={form.service} onChange={onChange} required
                   webmcp-field="service_type"
                   style={{ borderColor: C.bone, color: form.service ? C.inkBlack : C.darkTeal, backgroundColor: C.ivory }}
                   className="w-full border rounded px-3 py-2 text-sm focus:outline-none transition cursor-pointer"
@@ -278,11 +282,11 @@ export default function Contact() {
             </div>
 
             <div className="font-generalsans">
-              <label className="block text-xs font-regular uppercase tracking-wider mb-1" style={{ color: C.darkTeal }}>
+              <label htmlFor="contact-message" className="block text-xs font-regular uppercase tracking-wider mb-1" style={{ color: C.darkTeal }}>
                 Your Message
               </label>
               <textarea
-                name="message" value={form.message} onChange={onChange}
+                id="contact-message" name="message" value={form.message} onChange={onChange}
                 webmcp-field="message"
                 required rows={6}
                 placeholder="Placing a bulk order? Loose pack goods? Tell us what you need and we will get in touch as soon as we can."
