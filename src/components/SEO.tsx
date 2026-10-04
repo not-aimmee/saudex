@@ -26,7 +26,14 @@ export function SEO({
   noIndex = false,
   schemaMarkup ,
 }: SEOProps) {
-  
+  const normalizePath = (pathname: string) => pathname.replace(/\/+$/, "") || "/";
+  const isCurrentPage =
+    !canonical ||
+    typeof window === "undefined" ||
+    normalizePath(new URL(canonical, window.location.origin).pathname) ===
+      normalizePath(window.location.pathname);
+
+  if (!isCurrentPage) return null;
 
   return (
     <Helmet>
