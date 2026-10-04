@@ -230,25 +230,21 @@ function FlowingMenuItem({
                 >
                   {text}
                 </span>
-                <img
-                  src={image}
-                  alt={text}
-                  width={200}
-                  height={100}
-                  loading="lazy"
-                  decoding="async"
-                  style={{
-                    width: 200,
-                    height: 'auto',
-                    maxHeight: '7vh',
-                    margin: '2em 2vw',
-                    padding: '1em 0',
-                    borderRadius: 50,
-                    objectFit: 'cover',
-                    objectPosition: '50% 50%',
-                    display: 'block',
-                  }}
-                />
+                <div
+  role="img"
+  aria-label={text}
+  style={{
+    width: 200,
+    height: '7vh',
+    margin: '2em 2vw',
+    padding: '1em 0',
+    borderRadius: 50,
+    backgroundImage: `url(${image})`,
+    backgroundSize: 'cover',
+    backgroundPosition: '50% 50%',
+    flexShrink: 0,
+  }}
+/>
               </div>
             ))}
           </div>

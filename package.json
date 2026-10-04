@@ -43,9 +43,9 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && react-snap",
     "preview": "vite preview",
-    "build:local": "npm run build && react-snap && node scripts/generate-404.mjs",
+    "build:local": "npm run build && node scripts/generate-404.mjs",
     "predeploy": "npm run build",
     "deploy": "npm run build && gh-pages -d dist",
     "postbuild": "node scripts/generate-404.mjs"
