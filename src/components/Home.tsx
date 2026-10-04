@@ -1,8 +1,6 @@
-import { motion } from 'motion/react';
 import { TEXT } from '../constants';
 import { SEO } from './SEO';
 import { homeMeta } from '../pages/data/seoMeta';
-import SplitText from "../../components/splittext";
 
 export default function Hero() {
   return (
@@ -89,14 +87,14 @@ export default function Hero() {
     muted
     loop
     playsInline
-    preload="auto"
-    poster="/hero-poster.webp"
+    preload="metadata"
+    poster="/images/indus.webp"
     aria-label="Background video illustrating logistics movement"
     title="Background video illustrating logistics movement"
     className="absolute inset-0 w-full h-full object-cover"
   >
 <source
-    src="https://res.cloudinary.com/dvdcdj8ye/video/upload/f_auto,q_auto,w_1920,c_limit/v1781262356/14437597_1280_720_30fps_s1qysi.mp4"
+    src="https://res.cloudinary.com/dvdcdj8ye/video/upload/so_0,du_8,q_auto:low,w_640,c_limit/v1781262356/14437597_1280_720_30fps_s1qysi.mp4"
     type="video/mp4"
   />
     </video>
@@ -107,32 +105,17 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 w-full px-8 lg:px-20 pt-44 md:pt-20">
         <div className="max-w-4xl ">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <SplitText
-            tag="h1"
-            aria-label="Logistics Made simple"
-  text={TEXT.hero.headline}
-  className="
-     text-[#f4e9cd]
-  font-sentient
-  font-light
-  text-left
-  leading-[1.2]
-  pb-2
-  tracking-[-0.03em]
-  text-[clamp(3rem,8vw,7rem)]
-  "
-  delay={80}
-  duration={0.8}
-/>
-          </motion.div>
+          <div className="hero-title-reveal">
+            <h1
+              aria-label="Logistics Made simple"
+              className="text-[#f4e9cd] font-sentient font-light text-left leading-[1.2] pb-2 tracking-[-0.03em] text-[clamp(3rem,8vw,7rem)]"
+            >
+              {TEXT.hero.headline}
+            </h1>
+          </div>
 </div>
           <div className="flex justify-end sm:items-centerlg:mr-18">
-  <motion.p
+  <p
     className="
       lg:mt-10
       mt-14
@@ -148,7 +131,7 @@ export default function Hero() {
     "
   >
     {TEXT.hero.subheadline}
-  </motion.p>
+  </p>
 </div>
         </div>
     </section>

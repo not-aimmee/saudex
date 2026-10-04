@@ -35,19 +35,21 @@ const fanPositions = (() => {
 
 const getFanPosition = (index: number) => fanPositions[index];
 
-export default function Services() {
+export default function Services({ includeSEO = true }: { includeSEO?: boolean }) {
   const [isHovered, setIsHovered] = useState(false);
   const [activeService, setActiveService] = useState<number | null>(null);
 
   return (
     <>
-      <SEO
-        title={servicesIndexMeta.title}
-        description={servicesIndexMeta.description}
-        keywords={servicesIndexMeta.keywords}
-        canonical={servicesIndexMeta.canonical}
-        ogImage={servicesIndexMeta.ogImage}
-      />
+      {includeSEO && (
+        <SEO
+          title={servicesIndexMeta.title}
+          description={servicesIndexMeta.description}
+          keywords={servicesIndexMeta.keywords}
+          canonical={servicesIndexMeta.canonical}
+          ogImage={servicesIndexMeta.ogImage}
+        />
+      )}
       <div className="relative lg:min-h-[80vh] flex overflow-hidden bg-[#77aca2]/10" >
       {/* ── Left panel — warm cream ── */}
       <div

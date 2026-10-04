@@ -66,7 +66,7 @@ export default defineConfig({
     },
   },
   build: {
-    target: 'es2015',
+    target: 'es2020',
     minify: 'terser',
     terserOptions: {
       compress: {
@@ -84,7 +84,6 @@ export default defineConfig({
         manualChunks: {
           'react-vendor': ['react', 'react-dom'],
           'router-vendor': ['react-router-dom'],
-          'animation-vendor': ['framer-motion', 'motion', 'gsap'],
         },
         entryFileNames: 'assets/[name]-[hash].js',
         chunkFileNames: 'assets/[name]-[hash].js',

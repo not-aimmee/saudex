@@ -1,5 +1,6 @@
 // src/components/SEO.tsx
 import { Helmet } from "react-helmet-async";
+import { useLayoutEffect } from "react";
 
 interface SEOProps {
   title?: string;
@@ -33,6 +34,20 @@ export function SEO({
     normalizePath(new URL(canonical, window.location.origin).pathname) ===
       normalizePath(window.location.pathname);
 
+  useLayoutEffect(() => {
+    if (!canonical || !isCurrentPage) return;
+    const canonicalLink = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (canonicalLink) {
+      canonicalLink.href = canonical;
+      return;
+    }
+
+    const link = document.createElement("link");
+    link.rel = "canonical";
+    link.href = canonical;
+    document.head.append(link);
+  }, [canonical, isCurrentPage]);
+
   if (!isCurrentPage) return null;
 
   return (
@@ -41,7 +56,6 @@ export function SEO({
       {title && <title>{title}</title>}
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
-      {canonical && <link rel="canonical" href={canonical} />}
       {noIndex && <meta name="robots" content="noindex, nofollow" />}
 
       {/* ── Open Graph ────────────────────────────────── */}

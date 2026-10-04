@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type CategoryId = "functional" | "analytics" | "marketing";
 type ConsentState = Record<CategoryId, boolean>;
@@ -50,6 +50,49 @@ export default function CookieConsentBanner() {
   const [decided, setDecided] = useState(stored !== null);
   const [showPrefs, setShowPrefs] = useState(false);
   const [prefs, setPrefs] = useState<ConsentState>(stored ?? DEFAULT_PREFS);
+
+  useEffect(() => {
+    const analyticsWindow = window as Window & {
+      dataLayer?: unknown[];
+      gtag?: (...args: unknown[]) => void;
+    };
+
+    if (!prefs.analytics) {
+      analyticsWindow.gtag?.("consent", "update", {
+        analytics_storage: "denied",
+        ad_storage: "denied",
+      });
+      return;
+    }
+
+    if (!analyticsWindow.gtag) {
+      analyticsWindow.dataLayer = analyticsWindow.dataLayer ?? [];
+      analyticsWindow.gtag = (...args) => analyticsWindow.dataLayer?.push(args);
+      analyticsWindow.gtag("consent", "default", {
+        analytics_storage: "denied",
+        ad_storage: "denied",
+      });
+      analyticsWindow.gtag("js", new Date());
+      analyticsWindow.gtag("consent", "update", {
+        analytics_storage: "granted",
+        ad_storage: prefs.marketing ? "granted" : "denied",
+      });
+      analyticsWindow.gtag("config", "G-FCT4YN3LD4", { anonymize_ip: true });
+
+      const script = document.createElement("script");
+      script.id = "google-analytics-script";
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-FCT4YN3LD4";
+      script.onerror = () => console.error("Unable to load Google Analytics.");
+      document.head.append(script);
+      return;
+    }
+
+    analyticsWindow.gtag("consent", "update", {
+      analytics_storage: "granted",
+      ad_storage: prefs.marketing ? "granted" : "denied",
+    });
+  }, [prefs.analytics, prefs.marketing]);
 
   const commit = (next: ConsentState) => {
     setPrefs(next);

@@ -257,24 +257,26 @@ function FlowingMenuItem({
 /* ─── Page ────────────────────────────────────────────────────── */
 
 const demoItems: MenuItem[] = [
-  { link: '/industries/fmcg-industry/', text: 'FMCG', image: '/images/in32.webp' },
-  { link: '/industries/horeca/', text: 'HoReCa', image: '/images/horeca.webp' },
-  { link: '/industries/e-commerce/', text: 'E-Commerce', image: '/images/s33.webp' },
-  { link: '/industries/food-beverages/', text: 'Food & Beverages', image:'/images/i1.webp'},
-  { link: '/industries/retail/', text: 'Retail & Wholesale ', image: '/images/retail.webp' },
-  { link: '/industries/agriculture/', text: 'Agri-Commodities', image: '/images/i37.webp' },
+  { link: '/industries/fmcg-industry/', text: 'FMCG', image: '/images/marquee/in32-marquee.webp' },
+  { link: '/industries/horeca/', text: 'HoReCa', image: '/images/marquee/horeca-marquee.webp' },
+  { link: '/industries/e-commerce/', text: 'E-Commerce', image: '/images/marquee/s33-marquee.webp' },
+  { link: '/industries/food-beverages/', text: 'Food & Beverages', image:'/images/marquee/i1-marquee.webp'},
+  { link: '/industries/retail/', text: 'Retail & Wholesale ', image: '/images/marquee/retail-marquee.webp' },
+  { link: '/industries/agriculture/', text: 'Agri-Commodities', image: '/images/marquee/i37-marquee.webp' },
 ]
 
-export default function Industries() {
+export default function Industries({ includeSEO = true }: { includeSEO?: boolean }) {
   return (
     <>
-      <SEO
-        title="Industry Logistics Solutions | SAUDEX GLOBAL"
-        description={industriesMeta.description}
-        keywords={industriesMeta.keywords}
-        canonical={industriesMeta.canonical}
-        ogImage={industriesMeta.ogImage}
-      />
+      {includeSEO && (
+        <SEO
+          title="Industry Logistics Solutions | SAUDEX GLOBAL"
+          description={industriesMeta.description}
+          keywords={industriesMeta.keywords}
+          canonical={industriesMeta.canonical}
+          ogImage={industriesMeta.ogImage}
+        />
+      )}
       <section id="industries" className="py-9 bg-[#77aca2]/50 relative overflow-hidden">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

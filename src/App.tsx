@@ -1,44 +1,45 @@
 import MainLayout from "./assets/main_layout";
 import SimpleLayout from "./assets/simple_layout";
 import Hero from "./components/Home";
-import Services from "./components/Services";
-import HowItWorks from "./components/How_it_works";
-import Industries from "./components/Industries";
-import Stats from "./components/Stats"
-import ServicePage from "./pages/service"
-import Customs from "./pages/services/customs"
-import Distribution from "./pages/services/distribution";
-import FMCG from "./pages/services/fmcg";
-import ImpoExpo from "./pages/services/impo-expo";
-import SCC from "./pages/services/Supply_chain";
-import Warehousing from "./pages/services/warehousing";
-import ColdChainPage from "./pages/industries/cold_chain"
-import ECommercePage from "./pages/industries/e_commerce";
-import HorecaPage from "./pages/industries/horeca";
-import FMCGPage from "./pages/industries/fmcg_industry";
-import AgriPage from "./pages/industries/agriculture";
-import RetailPage from "./pages/industries/retail";
-import FoodBevPage from "./pages/industries/food_beverages";
-import PrivacyPolicy from "./pages/privacy_policy";
-import TermsOfService from "./pages/terms_of_service";
-import Freight from "./pages/services/freight";
-import Careers from "./pages/careers";
-import AboutUs from "./pages/aboutUs";
-import Team from "./pages/Team";
-import CaseStudies from "./pages/CaseStudies";
-import BeOurPartner from "./pages/BeOurPartner";
-import NfcCard from "./pages/cards/nfcCard";
+import DeferredSection from "./components/DeferredSection";
 import Cookies from "./components/cookies";
-import Partnercontact from "./components/partner_contact";
 import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
+const Services = lazy(() => import("./components/Services"));
+const HowItWorks = lazy(() => import("./components/How_it_works"));
+const Industries = lazy(() => import("./components/Industries"));
+const Stats = lazy(() => import("./components/Stats"));
+const ServicePage = lazy(() => import("./pages/service"));
+const Customs = lazy(() => import("./pages/services/customs"));
+const Distribution = lazy(() => import("./pages/services/distribution"));
+const FMCG = lazy(() => import("./pages/services/fmcg"));
+const ImpoExpo = lazy(() => import("./pages/services/impo-expo"));
+const SCC = lazy(() => import("./pages/services/Supply_chain"));
+const Warehousing = lazy(() => import("./pages/services/warehousing"));
+const ColdChainPage = lazy(() => import("./pages/industries/cold_chain"));
+const ECommercePage = lazy(() => import("./pages/industries/e_commerce"));
+const HorecaPage = lazy(() => import("./pages/industries/horeca"));
+const FMCGPage = lazy(() => import("./pages/industries/fmcg_industry"));
+const AgriPage = lazy(() => import("./pages/industries/agriculture"));
+const RetailPage = lazy(() => import("./pages/industries/retail"));
+const FoodBevPage = lazy(() => import("./pages/industries/food_beverages"));
+const PrivacyPolicy = lazy(() => import("./pages/privacy_policy"));
+const TermsOfService = lazy(() => import("./pages/terms_of_service"));
+const Freight = lazy(() => import("./pages/services/freight"));
+const Careers = lazy(() => import("./pages/careers"));
+const AboutUs = lazy(() => import("./pages/aboutUs"));
+const Team = lazy(() => import("./pages/Team"));
+const CaseStudies = lazy(() => import("./pages/CaseStudies"));
+const BeOurPartner = lazy(() => import("./pages/BeOurPartner"));
+const NfcCard = lazy(() => import("./pages/cards/nfcCard"));
+const Partnercontact = lazy(() => import("./components/partner_contact"));
 const Contact = lazy(() => import("./components/Contact"));
-
 
 function App() {
   return (
     <>
     <Cookies />
+    <Suspense fallback={<div role="status" className="min-h-screen bg-[#f1f0ea] p-8 text-[#031926]">Loading page...</div>}>
     <Routes>
       <Route element={<MainLayout />}>
         <Route
@@ -46,10 +47,18 @@ function App() {
           element={
             <>
               <Hero />
-              <Services />
-              <HowItWorks />
-              <Industries/>
-              <Stats/>
+              <DeferredSection minHeight="80vh">
+                <Services includeSEO={false} />
+              </DeferredSection>
+              <DeferredSection minHeight="100vh">
+                <HowItWorks />
+              </DeferredSection>
+              <DeferredSection minHeight="540px">
+                <Industries includeSEO={false} />
+              </DeferredSection>
+              <DeferredSection minHeight="480px">
+                <Stats />
+              </DeferredSection>
             </>
           }
         />
@@ -107,6 +116,7 @@ function App() {
       </Route>
        <Route path="/nfcCard" element={<NfcCard/>} />
     </Routes>
+    </Suspense>
   
 </>
   );

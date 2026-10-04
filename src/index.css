@@ -49,6 +49,47 @@
   font-family: "GeneralSans", sans-serif;
 }
 
+.hero-title-reveal {
+  animation: hero-title-enter 0.8s ease-out both;
+}
+
+.mobile-menu-backdrop {
+  animation: menu-backdrop-enter 0.2s ease-out both;
+}
+
+.mobile-menu-panel {
+  animation: menu-panel-enter 0.25s ease-out both;
+}
+
+@keyframes hero-title-enter {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes menu-backdrop-enter {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes menu-panel-enter {
+  from { opacity: 0; transform: translate(20px, -10px); }
+  to { opacity: 1; transform: translate(0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-title-reveal,
+  .mobile-menu-backdrop,
+  .mobile-menu-panel {
+    animation: none;
+  }
+}
+
 /* Global reset */
 body {
   margin: 0;

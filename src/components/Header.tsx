@@ -3,7 +3,6 @@ import { ChevronDown, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { TEXT } from '../constants';
 import logo from '/logo.svg';
-import { AnimatePresence, motion } from 'framer-motion';
 import { useNavigate, useLocation } from "react-router-dom";
 
 
@@ -292,36 +291,13 @@ useEffect(() => {
         </div>
 
         {/* Mobile Menu */}
-        <AnimatePresence>
         {isMenuOpen && (
           <>
-           <motion.div
-        className="fixed inset-0 bg-[#0A2947]/40 z-[9998]"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
+           <div
+        className="mobile-menu-backdrop fixed inset-0 bg-[#0A2947]/40 z-[9998]"
         onClick={() => setIsMenuOpen(false)}
       />
-          <motion.div className="fixed top-24 right-8 z-[9999]"
-      initial={{
-  opacity: 0,
-  y: -10,
-  x: 20,
-}}
-animate={{
-  opacity: 1,
-  y: 0,
-  x: 0,
-}}
-exit={{
-  opacity: 0,
-  y: -10,
-  x: 20,
-}}
-   transition={{
-        duration: 0.3,
-      }}
-    >
+          <div className="mobile-menu-panel fixed top-24 right-8 z-[9999]">
     <div id="mobile-navigation-menu" ref={menuRef} className="
   w-[380px]
   max-h-[80vh]
@@ -439,10 +415,9 @@ exit={{
       </Link>
             </div>
           </div>
-          </motion.div>
+          </div>
           </>
         )}
-        </AnimatePresence>
       </div>
     </header>
     

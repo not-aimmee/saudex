@@ -16,7 +16,8 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://saudexglobal.com/">
     <meta property="og:image" content="https://saudexglobal.com/images/indus.webp">
-    <link rel="preload" as="image" href="/hero-poster.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/images/indus.webp" fetchpriority="high">
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Global Logistics Solutions | SAUDEX GLOBAL">
     <meta name="twitter:description" content="SAUDEX GLOBAL helps businesses move goods worldwide with freight, customs, warehousing, and supply chain logistics.">
@@ -37,22 +38,13 @@
 
     <!-- AI Agent Discovery -->
 <link rel="webmcp" href="/.well-known/webmcp.json" />
+<link rel="ard" href="/.well-known/ard.json" type="application/json" />
+<link rel="ai-catalog" href="/.well-known/ai-catalog.json" type="application/ai-catalog+json" />
 <meta name="ai-agent-compatible" content="true" />
-<meta name="ai-catalog" content="/.well-known/ai-catalog.json" />
 </head>
 <body>
   <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
 
-    <!-- Analytics - Deferred until after page load -->
-    <script defer>
-      (function() {
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-FCT4YN3LD4', { 'anonymize_ip': true });
-      })();
-    </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FCT4YN3LD4"></script>
   </body>
 </html>
