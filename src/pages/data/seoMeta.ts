@@ -81,11 +81,10 @@ export const ctaMeta: PageMeta = {
 };
 
 export const contactMeta: PageMeta = {
-  
   description:
-    "Get in touch with the Saudex Global team for logistics enquiries,partnership opportunities, or supply chain consultations.We're here to help you move smarter.",
+    "Get in touch with SAUDEX GLOBAL for freight, warehousing, customs, and supply chain enquiries.",
   keywords:
-    "contact Saudex Global, logistics enquiry, freight contact,supply chain consultation, Saudex Global office, logistics partnership",
+    "contact Saudex Global, logistics enquiry, freight contact, supply chain consultation, Saudex Global office, logistics partnership",
   canonical: `${BASE_URL}/contact/`,
   ogImage:   OG,
 };

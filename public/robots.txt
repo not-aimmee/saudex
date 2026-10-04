@@ -21,5 +21,8 @@ Disallow:
 
 User-agent: *
 Allow: /
+Disallow: /assets/
+Disallow: /src/
+Disallow: /node_modules/
 
 Sitemap: https://saudexglobal.com/sitemap.xml
