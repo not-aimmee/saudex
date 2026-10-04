@@ -5,8 +5,6 @@ import { useWebMCP } from "usewebmcp";
 import { SEO } from "./SEO";
 import { contactMeta } from "../pages/data/seoMeta";
 
-const isPrerender = typeof navigator !== "undefined" && navigator.webdriver;
-
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_nlnhzd2";
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_zjgqs1k";
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "sXmLsr6PApabpnmxa";
@@ -68,8 +66,7 @@ export default function Contact() {
 
   const onReset = () => { setForm(initialForm); setState("idle"); setErrorMsg(""); };
 
-  if (!isPrerender) {
-    useWebMCP({
+  useWebMCP({
       name: "submit_contact_enquiry",
       description:
         "Submit a freight, warehousing, or logistics enquiry to SAUDEX GLOBAL's sales team. " +
@@ -80,8 +77,21 @@ export default function Contact() {
           fullName: { type: "string", description: "Full name of the person making the enquiry" },
           email:    { type: "string", description: "Contact email address" },
           phone:    { type: "string", description: "Contact phone number (optional)" },
-          service:  { type: "string", enum: ["air", "sea", "land", "customs", "warehouse", "other"],
-            description: "Which service the enquiry relates to" },
+          service:  {
+            type: "string",
+            enum: [
+              "air",
+              "sea",
+              "land",
+              "customs",
+              "warehouse",
+              "distribution",
+              "scc",
+              "cross_border",
+              "other",
+            ],
+            description: "Which service the enquiry relates to",
+          },
           message:  { type: "string", description: "Details of the enquiry" },
         },
         required: ["fullName", "email", "service", "message"],
@@ -101,9 +111,9 @@ export default function Contact() {
           return { success: false, message: "Failed to send the enquiry. Please try again." };
         }
       },
-    });
+  });
 
-    useWebMCP({
+  useWebMCP({
       name: "get_saudex_contact_info",
       description: "Get SAUDEX GLOBAL's customer service hours, email, phone numbers, and office address.",
       inputSchema: { type: "object", properties: {} } as const,
@@ -114,8 +124,7 @@ export default function Contact() {
         phoneMalaysia: "+60 11511 68040",
         address: "10 Anson Rd, #33-03 International Plaza, Singapore 079903",
       }),
-    });
-  }
+  });
 
   return (
     <>

@@ -43,7 +43,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/optimize-marquee-images.mjs && tsc && vite build && node scripts/generate-seo-pages.mjs",
+    "build": "node scripts/optimize-marquee-images.mjs && tsc && vite build && node scripts/inject-critical-font-preloads.mjs && node scripts/generate-seo-pages.mjs",
     "preview": "vite preview",
     "build:local": "node scripts/optimize-marquee-images.mjs && tsc && vite build && react-snap && node scripts/generate-seo-pages.mjs && node scripts/generate-404.mjs",
     "predeploy": "npm run build",

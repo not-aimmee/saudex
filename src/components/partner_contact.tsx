@@ -4,7 +4,6 @@ import { CalendarDays, Check, Clock3, Mail, MapPin, Phone, Send } from "lucide-r
 import { useWebMCP } from "usewebmcp";
 import { SEO } from "./SEO";
 import { beOurPartnerMeta } from "../pages/data/seoMeta";
-const isPrerender = typeof navigator !== "undefined" && navigator.webdriver;
 const C = {
   almostBlack:    "#02090f",
   inkBlack:       "#031926",
@@ -91,7 +90,6 @@ export default function Partnercontact() {
   // This does not touch the visible form — it fills the same EmailJS
   // template directly, then updates the same state the form uses so
   // the success/error banner still shows on screen.
-  if (!isPrerender) {
   useWebMCP({
     name: "submit_contact_enquiry",
     description:
@@ -162,9 +160,6 @@ export default function Partnercontact() {
       address: "10 Anson Rd, #33-03 International Plaza, Singapore 079903",
     }),
   });
-}
-
-
   return (
     <>
       <SEO

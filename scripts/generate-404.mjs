@@ -38,7 +38,7 @@ const html = fs.readFileSync(sourceFile, 'utf8');
 const withoutHomepagePreload = html.replace(
   /<link rel="preload" as="image" href="\/images\/indus-hero\.webp" fetchpriority="high"\s*\/?>\s*/,
   '',
-);
+).replace(/<link rel="preload" as="font" type="font\/otf" href="[^"]+" crossorigin>\s*/g, '');
 const redirectScript = `<script src="/404-redirect.js" defer></script>`;
 const withRedirect = withoutHomepagePreload.replace('</head>', `${redirectScript}\n</head>`);
 fs.writeFileSync(targetFile, withRedirect, 'utf8');

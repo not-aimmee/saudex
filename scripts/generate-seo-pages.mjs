@@ -133,6 +133,7 @@ function renderPage(page) {
 
   if (page.route !== "/") {
     html = html.replace(/<link rel="preload" as="image" href="\/images\/indus-hero\.webp" fetchpriority="high"\s*\/?>\s*/, "");
+    html = html.replace(/<link rel="preload" as="font" type="font\/otf" href="[^"]+" crossorigin>\s*/g, "");
   }
   html = replaceRequired(html, /<title>[\s\S]*?<\/title>/, `<title>${title}</title>`, "title");
   html = replaceRequired(
