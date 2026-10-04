@@ -23,8 +23,8 @@ await Promise.all(
 );
 
 await sharp(join(sourceDirectory, "indus.webp"))
-  .resize({ width: 1600, withoutEnlargement: true })
-  .webp({ quality: 74, effort: 5 })
+  .resize({ width: 1400, withoutEnlargement: true })
+  .webp({ quality: 64, effort: 6 })
   .toFile(join(sourceDirectory, "indus-hero.webp"));
 
 console.log("Optimized indus.webp for the homepage video poster.");

@@ -25,7 +25,7 @@ export default function DeferredSection({ children, minHeight }: DeferredSection
           observer.disconnect();
         }
       },
-      { rootMargin: "0px" },
+      { rootMargin: "0px 0px -160px 0px" },
     );
     observer.observe(section);
     return () => observer.disconnect();

@@ -5,6 +5,7 @@ import DeferredSection from "./components/DeferredSection";
 import Cookies from "./components/cookies";
 import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
+import { loadWebMcpRuntime } from "./webmcpRuntime";
 const Services = lazy(() => import("./components/Services"));
 const HowItWorks = lazy(() => import("./components/How_it_works"));
 const Industries = lazy(() => import("./components/Industries"));
@@ -32,8 +33,14 @@ const Team = lazy(() => import("./pages/Team"));
 const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 const BeOurPartner = lazy(() => import("./pages/BeOurPartner"));
 const NfcCard = lazy(() => import("./pages/cards/nfcCard"));
-const Partnercontact = lazy(() => import("./components/partner_contact"));
-const Contact = lazy(() => import("./components/Contact"));
+const Partnercontact = lazy(async () => {
+  await loadWebMcpRuntime();
+  return import("./components/partner_contact");
+});
+const Contact = lazy(async () => {
+  await loadWebMcpRuntime();
+  return import("./components/Contact");
+});
 
 function App() {
   return (

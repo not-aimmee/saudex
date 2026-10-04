@@ -1,8 +1,39 @@
+import { useEffect, useRef } from "react";
 import { TEXT } from '../constants';
 import { SEO } from './SEO';
 import { homeMeta } from '../pages/data/seoMeta';
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    const source = video?.querySelector<HTMLSourceElement>("source[data-src]");
+    if (!video || !source || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    let timeoutId: number | undefined;
+    const loadVideoAfterPageLoad = () => {
+      timeoutId = window.setTimeout(() => {
+        const src = source.dataset.src;
+        if (!src) return;
+        source.src = src;
+        source.removeAttribute("data-src");
+        video.load();
+      }, 1800);
+    };
+
+    if (document.readyState === "complete") {
+      loadVideoAfterPageLoad();
+    } else {
+      window.addEventListener("load", loadVideoAfterPageLoad, { once: true });
+    }
+
+    return () => {
+      window.removeEventListener("load", loadVideoAfterPageLoad);
+      if (timeoutId !== undefined) window.clearTimeout(timeoutId);
+    };
+  }, []);
+
   return (
     <>
     <SEO
@@ -83,18 +114,19 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <video
+    ref={videoRef}
     autoPlay
     muted
     loop
     playsInline
-    preload="metadata"
+    preload="none"
     poster="/images/indus-hero.webp"
     aria-label="Background video illustrating logistics movement"
     title="Background video illustrating logistics movement"
     className="absolute inset-0 w-full h-full object-cover"
   >
 <source
-    src="https://res.cloudinary.com/dvdcdj8ye/video/upload/so_0,du_8,q_auto:low,w_640,c_limit/v1781262356/14437597_1280_720_30fps_s1qysi.mp4"
+    data-src="https://res.cloudinary.com/dvdcdj8ye/video/upload/so_0,du_8,q_auto:low,w_640,c_limit/v1781262356/14437597_1280_720_30fps_s1qysi.mp4"
     type="video/mp4"
   />
     </video>
