@@ -132,7 +132,7 @@ function renderPage(page) {
   let html = template;
 
   if (page.route !== "/") {
-    html = html.replace(/<link rel="preload" as="image" href="\/images\/indus\.webp" fetchpriority="high"\s*\/>\s*/, "");
+    html = html.replace(/<link rel="preload" as="image" href="\/images\/indus-hero\.webp" fetchpriority="high"\s*\/?>\s*/, "");
   }
   html = replaceRequired(html, /<title>[\s\S]*?<\/title>/, `<title>${title}</title>`, "title");
   html = replaceRequired(

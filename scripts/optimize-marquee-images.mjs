@@ -21,3 +21,10 @@ await Promise.all(
     console.log(`Optimized ${name}.webp for marquee use.`);
   }),
 );
+
+await sharp(join(sourceDirectory, "indus.webp"))
+  .resize({ width: 1600, withoutEnlargement: true })
+  .webp({ quality: 74, effort: 5 })
+  .toFile(join(sourceDirectory, "indus-hero.webp"));
+
+console.log("Optimized indus.webp for the homepage video poster.");

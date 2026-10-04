@@ -88,7 +88,7 @@ export default function Hero() {
     loop
     playsInline
     preload="metadata"
-    poster="/images/indus.webp"
+    poster="/images/indus-hero.webp"
     aria-label="Background video illustrating logistics movement"
     title="Background video illustrating logistics movement"
     className="absolute inset-0 w-full h-full object-cover"

@@ -65,6 +65,10 @@ const redirectScript = `
 `;
 
 const html = fs.readFileSync(sourceFile, 'utf8');
-const withRedirect = html.replace('</head>', `${redirectScript}\n</head>`);
+const withoutHomepagePreload = html.replace(
+  /<link rel="preload" as="image" href="\/images\/indus-hero\.webp" fetchpriority="high"\s*\/?>\s*/,
+  '',
+);
+const withRedirect = withoutHomepagePreload.replace('</head>', `${redirectScript}\n</head>`);
 fs.writeFileSync(targetFile, withRedirect, 'utf8');
 console.log('Generated canonical redirect page at dist/404.html');

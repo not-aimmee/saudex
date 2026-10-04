@@ -266,6 +266,8 @@ const demoItems: MenuItem[] = [
 ]
 
 export default function Industries({ includeSEO = true }: { includeSEO?: boolean }) {
+  const Heading = includeSEO ? 'h1' : 'h2';
+
   return (
     <>
       {includeSEO && (
@@ -290,7 +292,7 @@ export default function Industries({ includeSEO = true }: { includeSEO?: boolean
           <p className="uppercase text-[#254d58] text-center text-lg md:text-xl font-generalsans font-medium tracking-[0.1em] md:tracking-[0.4em] mb-6">
             Industries We Serve
           </p>
-          <h1 className="font-sentient font-regular"
+          <Heading className="font-sentient font-regular"
   style={{
     fontSize: 'clamp(2.5rem, 3.75vw, 4.5rem)',
     lineHeight: 1.35,
@@ -298,7 +300,7 @@ export default function Industries({ includeSEO = true }: { includeSEO?: boolean
     color: '#031926',
   }}>
             Logistics Solutions across diverse sectors
-          </h1>
+          </Heading>
           <p className="mt-12 text-[#031926]/70 text-center text-lg md:text-xl font-generalsans font-regular mb-6">
             Every industry has different shipping challenges. Whether you're in retail, e-commerce,
             cold chain, or food & beverage, we provide customized logistics solutions designed

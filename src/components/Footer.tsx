@@ -97,9 +97,9 @@ export default function Footer() {
 
         {/* Company */}
         <div>
-          <h3 className="font-generalsans text-[#f5fbef] text-xs font-medium uppercase tracking-widest mb-5">
+          <h2 className="font-generalsans text-[#f5fbef] text-xs font-medium uppercase tracking-widest mb-5">
             Quick Links
-          </h3>
+          </h2>
           <ul className="flex flex-col gap-3">
             {company.map((item) => (
               <li key={item.label}>
@@ -116,9 +116,9 @@ export default function Footer() {
 
         {/* Locations */}
         <div>
-          <h3 className="font-generalsans text-[#f5fbef] text-xs font-medium uppercase tracking-widest mb-5">
+          <h2 className="font-generalsans text-[#f5fbef] text-xs font-medium uppercase tracking-widest mb-5">
             Locations
-          </h3>
+          </h2>
           <ul className="flex flex-col gap-3">
             {locations.map((loc) => (
               <li key={loc} className="text-sm text-[#f5fbef]/70">
@@ -130,9 +130,9 @@ export default function Footer() {
 
         {/* Get in Touch */}
         <div>
-          <h3 className="font-generalsans text-[#f5fbef] text-xs font-medium uppercase tracking-widest mb-5">
+          <h2 className="font-generalsans text-[#f5fbef] text-xs font-medium uppercase tracking-widest mb-5">
             Get in Touch
-          </h3>
+          </h2>
           <ul className="flex flex-col gap-3">
             <li className="translate-x-1 [&_svg]:transition-colors [&_svg]:duration-300 [&_button:hover_svg]:!text-[#77aca2]">
               <GlassIcons items={socialItems} className="custom-class" />
@@ -151,9 +151,9 @@ export default function Footer() {
 
         {/* Services Column */}
         <div>
-          <h3 className="font-generalsans text-[#f5fbef] text-xs font-medium uppercase tracking-widest mb-5">
+          <h2 className="font-generalsans text-[#f5fbef] text-xs font-medium uppercase tracking-widest mb-5">
             {TEXT.footer.services}
-          </h3>
+          </h2>
           <ul className="flex flex-col gap-3">
             {services.map((item) => (
               <li key={item.label}>
@@ -170,9 +170,9 @@ export default function Footer() {
 
         {/* Industries COlumn */}
         <div>
-          <h3 className="font-generalsans text-[#f5fbef] text-xs font-medium uppercase tracking-widest mb-5">
+          <h2 className="font-generalsans text-[#f5fbef] text-xs font-medium uppercase tracking-widest mb-5">
             Industries
-          </h3>
+          </h2>
           <ul className="flex flex-col gap-3">
             {industries.map((item) => (
               <li key={item.label}>
@@ -189,9 +189,9 @@ export default function Footer() {
           
         {/* Contact Us */}
         <div>
-          <h3 className="font-generalsans text-[#f5fbef] text-xs font-medium uppercase tracking-widest mb-5">
+          <h2 className="font-generalsans text-[#f5fbef] text-xs font-medium uppercase tracking-widest mb-5">
             Contact Us
-          </h3>
+          </h2>
           <ul className="flex flex-col gap-3">
             <li className="text-sm font-generalsans font-light text-[#f5fbef]/50">
     For Sales Inquiries

@@ -38,6 +38,7 @@ const getFanPosition = (index: number) => fanPositions[index];
 export default function Services({ includeSEO = true }: { includeSEO?: boolean }) {
   const [isHovered, setIsHovered] = useState(false);
   const [activeService, setActiveService] = useState<number | null>(null);
+  const Heading = includeSEO ? 'h1' : 'h2';
 
   return (
     <>
@@ -60,7 +61,7 @@ export default function Services({ includeSEO = true }: { includeSEO?: boolean }
             What We Offer
           </span>
 
-          <h1
+          <Heading
   className="font-sentient font-regular"
   style={{
     fontSize: 'clamp(1.5rem, 2.75vw, 3.5rem)',
@@ -69,7 +70,7 @@ export default function Services({ includeSEO = true }: { includeSEO?: boolean }
     color: '#031926',
   }}
 >
-Global Trading & Freight Forwarding Solutions</h1>
+Global Trading & Freight Forwarding Solutions</Heading>
 
           <p className="font-generalsans font-medium text-lg" style={{  lineHeight: 1.78, color: '#254D58', maxWidth: '38ch' }}>
            Saudex Global connects businesses with reliable products, suppliers, and international markets through integrated global trading and freight forwarding solutions.
