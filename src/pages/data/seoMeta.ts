@@ -16,7 +16,7 @@ const OG       = `${BASE_URL}/images/indus.webp`;
 /* Home Page */
 export const homeMeta: PageMeta = {
   description:
-    "Discover global logistics solutions from SAUDEX GLOBAL, combining reliable freight, supply chain expertise and international operations.",
+    "SAUDEX GLOBAL helps businesses move goods worldwide with freight, customs, warehousing, and supply chain logistics.",
   keywords:
     "global logistics solutions, SAUDEX GLOBAL, freight forwarding, supply chain solutions, import export logistics, international logistics",
   canonical: `${BASE_URL}/`,
@@ -93,7 +93,7 @@ export const contactMeta: PageMeta = {
 export const industriesMeta: PageMeta = {
   
   description:
-    "Saudex Global delivers specialist logistics across retail, FMCG, pharma, food & beverage, e-commerce, and HORECA. Tailored supply chain solutions built around the demands of your industry.",
+    "Explore tailored logistics for retail, FMCG, e-commerce, food, hospitality, agriculture, and cold-chain businesses.",
   keywords:
     "logistics by industry, retail logistics, pharma supply chain,FMCG logistics, food logistics, ecommerce fulfilment, HORECA logistics",
   canonical: `${BASE_URL}/industries/`,

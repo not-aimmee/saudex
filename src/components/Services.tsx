@@ -73,6 +73,12 @@ Global Trading & Freight Forwarding Solutions</h1>
            Saudex Global connects businesses with reliable products, suppliers, and international markets through integrated global trading and freight forwarding solutions.
           <br/><br/>  We support import and export, product sourcing, supplier coordination, sea, air and land freight, warehousing, and cross border logistics, helping businesses move goods efficiently from source to destination.
 From global product procurement to international shipping and delivery, we simplify trade and logistics so you can focus on growing your business.   </p>
+          <p className="font-generalsans text-base" style={{ lineHeight: 1.75, color: '#254D58', maxWidth: '42ch' }}>
+            Our team coordinates freight options, customs documentation, cargo handling, and delivery schedules around each shipment's route and requirements. Importers and exporters can combine transport with storage, distribution, and supplier support instead of managing separate logistics handoffs.
+          </p>
+          <p className="font-generalsans text-base" style={{ lineHeight: 1.75, color: '#254D58', maxWidth: '42ch' }}>
+            From one-time shipments to recurring business flows, we help plan practical routes, monitor key milestones, and keep goods moving between suppliers, ports, warehouses, and final destinations.
+          </p>
         </div>
       </div>
 
