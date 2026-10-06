@@ -68,27 +68,27 @@ const importExportSchema = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": "https://saudexglobal.com/services/impo-expo#webpage",
-      "url": "https://saudexglobal.com/services/impo-expo",
+      "@id": "https://saudexglobal.com/services/import-export/#webpage",
+      "url": "https://saudexglobal.com/services/import-export/",
       "name": "Import and Export Services & Logistics Experts | SAUDEX GLOBAL",
       "description": "Import and export services by SAUDEX GLOBAL, covering documentation, customs compliance, cargo preparation and shipment coordination.",
       "isPartOf": {
         "@id": "https://saudexglobal.com/#website"
       },
       "about": {
-        "@id": "https://saudexglobal.com/services/impo-expo#service"
+        "@id": "https://saudexglobal.com/services/import-export/#service"
       },
       "breadcrumb": {
-        "@id": "https://saudexglobal.com/services/impo-expo#breadcrumb"
+        "@id": "https://saudexglobal.com/services/import-export/#breadcrumb"
       }
     },
     {
       "@type": "Service",
-      "@id": "https://saudexglobal.com/services/impo-expo#service",
+      "@id": "https://saudexglobal.com/services/import-export/#service",
       "name": "Import and Export Services",
       "serviceType": "Import and Export",
       "description": "Import and export services across the Middle East and Southeast Asia, with documentation, customs compliance, cargo preparation, shipment tracking, and coordination managed by SAUDEX GLOBAL.",
-      "url": "https://saudexglobal.com/services/impo-expo",
+      "url": "https://saudexglobal.com/services/import-export/",
       "provider": {
         "@type": "Organization",
         "@id": "https://saudexglobal.com/#organization",
@@ -135,7 +135,7 @@ const importExportSchema = {
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://saudexglobal.com/services/impo-expo#breadcrumb",
+      "@id": "https://saudexglobal.com/services/import-export/#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -153,13 +153,13 @@ const importExportSchema = {
           "@type": "ListItem",
           "position": 3,
           "name": "Import and Export",
-          "item": "https://saudexglobal.com/services/impo-expo/"
+          "item": "https://saudexglobal.com/services/import-export/"
         }
       ]
     },
     {
       "@type": "FAQPage",
-      "@id": "https://saudexglobal.com/services/impo-expo#faq",
+      "@id": "https://saudexglobal.com/services/import-export/#faq",
       "mainEntity": [
         {
           "@type": "Question",

@@ -18,7 +18,7 @@ export const homeMeta: PageMeta = {
   description:
     "SAUDEX GLOBAL helps businesses move goods worldwide with freight, customs, warehousing, and supply chain logistics.",
   keywords:
-    "global logistics solutions, SAUDEX GLOBAL, freight forwarding, supply chain solutions, import export logistics, international logistics",
+    "Singapore Freight Forwarding & Import-Export | Saudex Global, SAUDEX GLOBAL, freight forwarding, supply chain solutions, import export logistics, international logistics",
   canonical: `${BASE_URL}/`,
   ogImage:   OG,
 };
@@ -39,7 +39,7 @@ export const servicesMeta: PageMeta = {
     "From temperature-controlled transport and customs brokerage to warehousing,FMCG distribution, and freight forwarding — explore the full range of logistics services Saudex Global delivers across 40+ markets.",
   keywords:
     "logistics services, supply chain services, cold chain, warehousing,freight forwarding, customs brokerage, FMCG logistics, Saudex Global services",
-  canonical: `${BASE_URL}/services`,
+  canonical: `${BASE_URL}/services/`,
   ogImage:   OG,
 };
 
@@ -48,7 +48,7 @@ export const howWeWorkMeta: PageMeta = {
     "A transparent, step-by-step process built around your supply chain.From onboarding and route planning to real-time tracking and continuous optimisation — here's how Saudex Global delivers, every time.",
   keywords:
     "how Saudex works, logistics process, supply chain onboarding,logistics workflow, freight process, Saudex Global approach",
-  canonical: `${BASE_URL}/how-we-work`,
+  canonical: `${BASE_URL}/`,
   ogImage:   OG,
 };
 
@@ -56,7 +56,7 @@ export const statsMeta: PageMeta = {
   description:"99.1% on-time delivery, 40+ markets served, and 91% SKU-level forecast accuracy. See the numbers behind Saudex Global's logistics performance and why our clients trust us with their most critical supply chains.",
   keywords:
     "Saudex Global stats, logistics performance, on-time delivery rate,supply chain metrics, 3PL track record, logistics KPIs",
-  canonical: `${BASE_URL}/stats`,
+  canonical: `${BASE_URL}/`,
   ogImage:   OG,
 };
 
@@ -66,7 +66,7 @@ export const whyChooseUsMeta: PageMeta = {
     "HACCP-certified facilities, IoT-monitored cold chain, licensed customs brokers,and AI-assisted demand planning. Discover what sets Saudex Global apart as a trusted 3PL partner across retail, FMCG, pharma, and more.",
   keywords:
     "why choose Saudex Global, 3PL advantages, logistics partner,HACCP certified logistics, IoT supply chain, trusted freight partner",
-  canonical: `${BASE_URL}/why-choose-us`,
+  canonical: `${BASE_URL}/about-us/`,
   ogImage:   OG,
 };
 
@@ -76,7 +76,7 @@ export const ctaMeta: PageMeta = {
     "Ready to streamline your supply chain? Get in touch with Saudex Global for a tailored logistics quote — covering freight, warehousing, customs,cold chain, and end-to-end supply chain management.",
   keywords:
     "logistics quote, get a freight quote, supply chain consultation,Saudex Global contact, 3PL quote, logistics enquiry",
-  canonical: `${BASE_URL}/get-a-quote`,
+  canonical: `${BASE_URL}/get-a-quote/`,
   ogImage:   OG,
 };
 
@@ -87,6 +87,15 @@ export const contactMeta: PageMeta = {
     "contact Saudex Global, logistics enquiry, freight contact, supply chain consultation, Saudex Global office, logistics partnership",
   canonical: `${BASE_URL}/contact/`,
   ogImage:   OG,
+};
+
+export const partnerContactMeta: PageMeta = {
+  title: "Partner Enquiry | SAUDEX GLOBAL",
+  description:
+    "Contact SAUDEX GLOBAL about partnership opportunities, freight forwarding, and logistics collaboration.",
+  keywords: "Saudex Global partner enquiry, logistics partnership, freight forwarding collaboration",
+  canonical: `${BASE_URL}/partner-contact/`,
+  ogImage: OG,
 };
 
 /* industry */
@@ -274,7 +283,7 @@ export const importExportLogisticsMeta: PageMeta = {
     "Import and export services by SAUDEX GLOBAL, covering documentation, customs compliance, cargo preparation and shipment coordination.",
   keywords:
     "import and export, import and export services, international import export services, import export logistics, customs clearance, trade documentation",
-  canonical: "https://saudexglobal.com/services/impo-expo/",
+  canonical: `${BASE_URL}/services/import-export/`,
   ogImage:   OG,
 };
 

@@ -3,7 +3,8 @@ import emailjs from "@emailjs/browser";
 import { CalendarDays, Check, Clock3, Mail, MapPin, Phone, Send } from "lucide-react";
 import { useWebMCP } from "usewebmcp";
 import { SEO } from "./SEO";
-import { contactMeta } from "../pages/data/seoMeta";
+import { getEmailJsErrorMessage } from "./emailjsError";
+import { contactMeta, ctaMeta } from "../pages/data/seoMeta";
 
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_nlnhzd2";
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_zjgqs1k";
@@ -38,7 +39,7 @@ type FormData = {
 const initialForm: FormData = { fullName: "", email: "", phone: "", service: "", message: "" };
 
 export default function Contact() {
-  const isQuotePage = typeof window !== "undefined" && window.location.pathname.toLowerCase().includes("cta");
+  const isQuotePage = typeof window !== "undefined" && window.location.pathname.toLowerCase().includes("quote");
   const [form, setForm] = useState<FormData>(initialForm);
   const [state, setState] = useState<FormState>("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -52,6 +53,8 @@ export default function Contact() {
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formRef.current) return;
+    const honeypot = formRef.current.elements.namedItem("companyWebsite");
+    if (honeypot instanceof HTMLInputElement && honeypot.value) return;
     setState("submitting");
     setErrorMsg("");
     emailjs
@@ -59,7 +62,7 @@ export default function Contact() {
       .then(() => { setForm(initialForm); setState("success"); })
       .catch((err) => {
         console.error("EmailJS error:", err);
-        setErrorMsg("Something went wrong sending your enquiry. Please try again.");
+        setErrorMsg(getEmailJsErrorMessage(err));
         setState("error");
       });
   };
@@ -106,7 +109,7 @@ export default function Contact() {
           return { success: true, message: "Enquiry sent to SAUDEX GLOBAL. Customer service hours are 9:00 AM–5:00 PM, Monday–Friday." };
         } catch (err) {
           console.error("EmailJS error (WebMCP tool):", err);
-          setErrorMsg("Something went wrong sending your enquiry. Please try again.");
+          setErrorMsg(getEmailJsErrorMessage(err));
           setState("error");
           return { success: false, message: "Failed to send the enquiry. Please try again." };
         }
@@ -130,9 +133,9 @@ export default function Contact() {
     <>
       <SEO
         title={isQuotePage ? "Get a Logistics Quote from SAUDEX GLOBAL" : "Contact SAUDEX GLOBAL | Logistics Support"}
-        description={isQuotePage ? "Request a tailored logistics quote from SAUDEX GLOBAL. Share your freight, warehousing, customs, or supply chain requirements and our team will respond quickly." : contactMeta.description}
+        description={isQuotePage ? ctaMeta.description : contactMeta.description}
         keywords={contactMeta.keywords}
-        canonical={contactMeta.canonical}
+        canonical={isQuotePage ? ctaMeta.canonical : contactMeta.canonical}
         ogImage={contactMeta.ogImage}
       />
       <div style={{  backgroundColor: C.parchment, color: C.inkBlack }}>
@@ -215,6 +218,14 @@ export default function Contact() {
             </p>
           </div>
           <form webmcp-form="contact" webmcp-handler="contact_business" ref={formRef} onSubmit={onSubmit} onReset={onReset} className="space-y-6">
+            <input
+              name="companyWebsite"
+              type="text"
+              autoComplete="off"
+              tabIndex={-1}
+              aria-hidden="true"
+              className="absolute -left-[10000px] h-px w-px overflow-hidden"
+            />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="font-generalsans">
                 <label htmlFor="contact-full-name" className="block text-xs font-regular uppercase tracking-wider mb-1" style={{ color: C.darkTeal }}>

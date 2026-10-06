@@ -20,7 +20,6 @@ const DEFAULT_OG_IMAGE = `${BASE_URL}/images/indus.webp`;
 export function SEO({
   title,
   description,
-  keywords,
   canonical,
   ogImage = DEFAULT_OG_IMAGE,
   ogType = "website",
@@ -55,7 +54,6 @@ export function SEO({
       {/* ── Primary ───────────────────────────────────── */}
       {title && <title>{title}</title>}
       <meta name="description" content={description} />
-      {keywords && <meta name="keywords" content={keywords} />}
       {noIndex && <meta name="robots" content="noindex, nofollow" />}
 
       {/* ── Open Graph ────────────────────────────────── */}

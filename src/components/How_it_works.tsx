@@ -26,7 +26,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative bg-[#77aca2]/30 ">
+    <div id="how-it-works" className="relative bg-[#77aca2]/30 ">
       <div className="w-full ">
         <div className="absolute left-[25%] top-0 h-full border-l border-[#254D58]/10 -translate-x-1/2 z-0" />
 

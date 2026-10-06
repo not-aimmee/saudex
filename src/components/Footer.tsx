@@ -30,7 +30,7 @@ export default function Footer() {
   ];
 
   const services = [
-    { label: 'Import - Export', to: '/services/impo-expo/' },
+    { label: 'Import - Export', to: '/services/import-export/' },
     { label: 'FMCG Distribution', to: '/services/fmcg/' },
     { label: 'Freight Forwarding', to: '/services/freight/' },
     { label: 'Customs Clearance & Compliance', to: '/services/customs/' },

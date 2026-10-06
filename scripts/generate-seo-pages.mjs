@@ -8,10 +8,10 @@ const baseUrl = "https://saudexglobal.com";
 const pages = [
   {
     route: "/",
-    title: "Global Logistics for Businesses | SAUDEX GLOBAL",
+    title: "Singapore Freight Forwarding & Import-Export | Saudex Global",
     description:
       "SAUDEX GLOBAL helps businesses move goods worldwide with freight, customs, warehousing, and supply chain logistics.",
-    heading: "Global logistics solutions for businesses",
+    heading: "Singapore Freight Forwarding & Import-Export | Saudex Global",
     subheading: "Freight and supply chain help for your business",
     paragraphs: [
       "SAUDEX GLOBAL helps firms move goods around the world. We plan each trip with care. Our team can arrange air, sea, and land freight. We also help with import, export, customs, storage, and delivery. We work with you to choose a route that fits your goods, timing, and budget. You can ask us about one shipment or regular trips.",
@@ -68,6 +68,18 @@ const pages = [
       "Some firms need help with one trip. Others need help each week or month. Tell us how often goods move and who will get them. You can also tell us if you need a place to hold stock. Our team can then look at the route and the services that may fit.",
       "If you do not have all the facts yet, that is fine. Send what you know now. We can ask more questions as we talk. We want to learn what matters to your firm and help you plan the move. Our team is here to make the first step easy.",
       "We also welcome questions about our services and the fields we help. If you want to work with us as a partner, tell us about your firm and your idea. We will send your note to the right team and share what to do next.",
+    ],
+  },
+  {
+    route: "/get-a-quote/",
+    title: "Get a Logistics Quote from SAUDEX GLOBAL",
+    description:
+      "Request a tailored logistics quote from SAUDEX GLOBAL for freight, warehousing, customs, cold chain, and supply chain management.",
+    heading: "Get a Logistics Quote",
+    subheading: "Tell us what you need to move",
+    paragraphs: [
+      "Share your freight, warehousing, customs, or supply chain needs with SAUDEX GLOBAL. Tell us what the goods are, where they need to go, and when they are due. Our team will review the details and get in touch.",
+      "We can help with air, sea, and land freight, as well as import-export, customs, storage, and distribution. If your cargo has special handling needs or a regular schedule, include those details in your request.",
     ],
   },
   {
@@ -132,7 +144,6 @@ function renderPage(page) {
   let html = template;
 
   if (page.route !== "/") {
-    html = html.replace(/<link rel="preload" as="image" href="\/images\/indus-hero\.webp" fetchpriority="high"\s*\/?>\s*/, "");
     html = html.replace(/<link rel="preload" as="font" type="font\/otf" href="[^"]+" crossorigin>\s*/g, "");
   }
   html = replaceRequired(html, /<title>[\s\S]*?<\/title>/, `<title>${title}</title>`, "title");

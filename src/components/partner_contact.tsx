@@ -3,7 +3,8 @@ import emailjs from "@emailjs/browser";
 import { CalendarDays, Check, Clock3, Mail, MapPin, Phone, Send } from "lucide-react";
 import { useWebMCP } from "usewebmcp";
 import { SEO } from "./SEO";
-import { beOurPartnerMeta } from "../pages/data/seoMeta";
+import { getEmailJsErrorMessage } from "./emailjsError";
+import { partnerContactMeta } from "../pages/data/seoMeta";
 const C = {
   almostBlack:    "#02090f",
   inkBlack:       "#031926",
@@ -61,6 +62,8 @@ export default function Partnercontact() {
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formRef.current) return;
+    const honeypot = formRef.current.elements.namedItem("companyWebsite");
+    if (honeypot instanceof HTMLInputElement && honeypot.value) return;
 
     setState("submitting");
     setErrorMsg("");
@@ -75,7 +78,7 @@ export default function Partnercontact() {
       })
       .catch((err) => {
         console.error("EmailJS error:", err);
-        setErrorMsg("Something went wrong sending your enquiry. Please try again.");
+        setErrorMsg(getEmailJsErrorMessage(err));
         setState("error");
       });
   };
@@ -139,7 +142,7 @@ export default function Partnercontact() {
         };
       } catch (err) {
         console.error("EmailJS error (WebMCP tool):", err);
-        setErrorMsg("Something went wrong sending your enquiry. Please try again.");
+        setErrorMsg(getEmailJsErrorMessage(err));
         setState("error");
         return { success: false, message: "Failed to send the enquiry. Please try again." };
       }
@@ -163,11 +166,11 @@ export default function Partnercontact() {
   return (
     <>
       <SEO
-        title="Partner Contact | SAUDEX GLOBAL"
-        description={beOurPartnerMeta.description}
-        keywords={beOurPartnerMeta.keywords}
-        canonical={beOurPartnerMeta.canonical}
-        ogImage={beOurPartnerMeta.ogImage}
+        title={partnerContactMeta.title}
+        description={partnerContactMeta.description}
+        keywords={partnerContactMeta.keywords}
+        canonical={partnerContactMeta.canonical}
+        ogImage={partnerContactMeta.ogImage}
       />
       <div style={{ fontFamily: "'Outfit', sans-serif" }} className="min-h-screen bg-[#f1f0ea] text-[#031926]">
       <section
@@ -303,6 +306,14 @@ export default function Partnercontact() {
                   onReset={onReset}
                   className="space-y-6"
                 >
+                  <input
+                    name="companyWebsite"
+                    type="text"
+                    autoComplete="off"
+                    tabIndex={-1}
+                    aria-hidden="true"
+                    className="absolute -left-[10000px] h-px w-px overflow-hidden"
+                  />
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="font-generalsans">
                       <label htmlFor="partner-full-name" className="block text-xs font-regular uppercase tracking-wider mb-1" style={{ color: C.darkTeal }}>

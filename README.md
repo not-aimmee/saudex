@@ -1,38 +1,40 @@
-# React + TypeScript + Vite
+# Saudex Global
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Saudex Global website is a React, TypeScript, and Vite application for the
+company's freight forwarding, import-export, customs, warehousing, distribution,
+and supply-chain services.
 
-Currently, two official plugins are available:
+## Requirements
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Node.js 20.19 or newer in the 20.x line, or 22.12 or newer
+- npm
 
-## React Compiler
+## Local development
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```sh
+npm ci
+```
 
-## Expanding the ESLint configuration
+Copy `.env.example` to `.env.local` before starting the dev server
+(`Copy-Item .env.example .env.local` in PowerShell).
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```sh
+npm run dev
+```
 
-```js
-export default defineConfig([
-  # Saudex Global
+Set the EmailJS values in `.env.local` to enable the contact forms. The EmailJS
+public key is intended for browser use; never put private credentials in a
+`VITE_` variable.
 
-  Saudex Global is a React and TypeScript logistics website built with Vite. It presents the company's freight forwarding, import and export, customs, warehousing, distribution, and supply chain services.
+## Build and checks
 
-  ## Development
+```sh
+npm run lint
+npm run build
+npm run preview
+```
 
-  ```bash
-  npm install
-  npm run dev
-  ```
-
-  Create a production build and prerender the public routes with:
-
-  ```bash
-  npm run build
-  ```
-
-  The generated static site is written to `dist/`. `npm run deploy` publishes that directory to GitHub Pages.
-        tsconfigRootDir: import.meta.dirname,
+The build writes the static site to `dist/`, including the canonical sitemap and
+SEO landing pages. `wrangler.jsonc` configures Cloudflare's SPA fallback so
+client-side routes return the application shell. Configure the Cloudflare
+deployment to run `npm run build` and publish `dist/`.

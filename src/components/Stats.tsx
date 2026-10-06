@@ -124,7 +124,7 @@ export default function Stats() {
       className="w-full flex items-center justify-center bg-[#77aca2]/30"
     >
       {/* MARKER-MAKE-KIT-INVOKED */}
-      <section ref={ref} className="w-full max-w-7xl px-6 py-20 md:px-12 md:py-28">
+      <section id="stats" ref={ref} className="w-full max-w-7xl px-6 py-20 md:px-12 md:py-28">
 
         {/* header row */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
