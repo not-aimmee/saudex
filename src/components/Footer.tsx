@@ -254,6 +254,13 @@ export default function Footer() {
           <Link to="/terms-of-service/" className="text-xs text-[#f5fbef]/70 hover:text-[#f4e9cd] transition-colors duration-200">
             {TEXT.nav.terms}
           </Link>
+          <button
+            type="button"
+            onClick={() => window.dispatchEvent(new Event("open-cookie-preferences"))}
+            className="text-xs text-[#f5fbef]/70 hover:text-[#f4e9cd] transition-colors duration-200"
+          >
+            Cookie preferences
+          </button>
         </div>
       </div>
 

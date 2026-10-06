@@ -1,23 +1,23 @@
 const stats = [
   {
-    value: "Air, sea & land",
+    value: "Freight",
     label: "Freight modes",
-    sub: "Transport coordination",
+    sub: "Air, sea & land",
   },
   {
-    value: "Import & export",
-    label: "Trade support",
+    value: "Trade",
+    label: "Import & export",
     sub: "Documentation coordination",
   },
   {
-    value: "Warehousing",
+    value: "Storage",
     label: "Storage support",
-    sub: "Inventory coordination",
+    sub: "Warehousing",
   },
   {
-    value: "Distribution",
+    value: "Delivery",
     label: "Delivery support",
-    sub: "Business logistics",
+    sub: "Distribution",
   },
 ];
 
@@ -32,7 +32,7 @@ function StatItem({ stat, last }: { stat: (typeof stats)[0]; last: boolean }) {
       <div className="flex-1 font-sentient font-extralight flex flex-col justify-center ">
         <div
           className="leading-none text-[#031926] hover:text-[#9d4810]"
-          style={{ fontSize: "clamp(3rem, 5.5vw, 6rem)", fontWeight: 600, letterSpacing: "-0.03em" }}
+          style={{ fontSize: "clamp(2.5rem, 3.5vw, 3.5rem)", fontWeight: 500, letterSpacing: "-0.03em" }}
         >
           {stat.value}
         </div>

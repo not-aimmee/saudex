@@ -119,10 +119,8 @@ export default function Hero() {
     muted
     loop
     playsInline
-    controls
     preload="auto"
-    aria-label="Background video illustrating logistics movement"
-    title="Background video illustrating logistics movement"
+    aria-hidden="true"
     className="absolute inset-0 w-full h-full object-cover bg-[#254D58] bg-cover bg-center"
   >
 <source

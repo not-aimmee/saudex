@@ -52,6 +52,16 @@ export default function CookieConsentBanner() {
   const [prefs, setPrefs] = useState<ConsentState>(stored ?? DEFAULT_PREFS);
 
   useEffect(() => {
+    const openPreferences = () => {
+      setDecided(true);
+      setShowPrefs(true);
+    };
+
+    window.addEventListener("open-cookie-preferences", openPreferences);
+    return () => window.removeEventListener("open-cookie-preferences", openPreferences);
+  }, []);
+
+  useEffect(() => {
     const analyticsWindow = window as Window & {
       dataLayer?: unknown[];
       gtag?: (...args: unknown[]) => void;
@@ -113,27 +123,7 @@ export default function CookieConsentBanner() {
   const saveChoices = () => commit(prefs);
 
   if (decided && !showPrefs) {
-    return (
-      <button
-        type="button"
-        onClick={() => setShowPrefs(true)}
-        className="font-archivo"
-        style={{
-          position: "fixed",
-          bottom: 16,
-          left: 16,
-          zIndex: 9999,
-          padding: "8px 12px",
-          border: "1px solid #A3BDB8",
-          borderRadius: 6,
-          background: "#050f0f",
-          color: "#f7faf8",
-          cursor: "pointer",
-        }}
-      >
-        Cookie preferences
-      </button>
-    );
+    return null;
   }
 
   return (
