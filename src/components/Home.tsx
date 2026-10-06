@@ -119,16 +119,15 @@ export default function Hero() {
     muted
     loop
     playsInline
-    preload="none"
-    poster="/images/indus-hero.webp"
+    preload="auto"
     aria-label="Background video illustrating logistics movement"
     title="Background video illustrating logistics movement"
-    className="absolute inset-0 w-full h-full object-cover"
+    className="absolute inset-0 w-full h-full object-cover bg-[#254D58] opacity-100"
   >
 <source
-    data-src="https://res.cloudinary.com/dvdcdj8ye/video/upload/so_0,du_8,q_auto:low,w_640,c_limit/v1781262356/14437597_1280_720_30fps_s1qysi.mp4"
-    type="video/mp4"
-  />
+  src="https://res.cloudinary.com/dvdcdj8ye/video/upload/so_0,du_20,q_auto:good,w_1280,c_limit/v1781262356/14437597_1280_720_30fps_s1qysi.mp4"
+  type="video/mp4"
+/>
     </video>
 
   <div className="absolute inset-0 bg-[#254D58]/50" />
