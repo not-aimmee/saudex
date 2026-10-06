@@ -177,26 +177,6 @@ function HeroSection() {
         ))}
       </div>
 
-      {/* Ghost / outlined text behind headline — decorative */}
-      <div
-        className="absolute bottom-0 right-0 font-sentient leading-none pointer-events-none select-none hidden md:block"
-        aria-hidden
-        style={{
-        
-          fontSize: "clamp(8rem, 22vw, 26rem)",
-          fontWeight: 900,
-          color: "transparent",
-          WebkitTextStroke: `1px ${C.teal}22`, /* Ghost outline text color — Change opacity */
-          lineHeight: 1,
-          letterSpacing: "-0.04em",
-          userSelect: "none",
-          transform: "translateY(8%)",
-        }}
-      >
-        {/* Ghost text word — Change this */}
-        MOVE
-      </div>
-
       <div className="max-w-7xl w-full relative z-10">
         {/* Est. label */}
         <div className="flex items-center gap-4 mb-12">
