@@ -37,7 +37,7 @@ export default function Hero() {
   return (
     <>
     <SEO
-      title="Global Logistics Solutions for Businesses | SAUDEX GLOBAL"
+      title="  Singapore Freight Forwarding & Import-Export | Saudex Global"
       description={homeMeta.description}
       keywords={homeMeta.keywords}
       canonical={homeMeta.canonical}
