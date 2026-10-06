@@ -37,7 +37,7 @@ export default function Hero() {
   return (
     <>
     <SEO
-      title="Singapore Freight Forwarding & Import-Export | Saudex Global"
+      title="Global Logistics Solutions for Businesses | SAUDEX GLOBAL"
       description={homeMeta.description}
       keywords={homeMeta.keywords}
       canonical={homeMeta.canonical}
@@ -51,7 +51,7 @@ export default function Hero() {
             "name": "SAUDEX GLOBAL",
             "url": "https://saudexglobal.com/",
             "logo": "https://saudexglobal.com/favicon.svg",
-            "description": "SAUDEX GLOBAL provides freight forwarding, supply chain, warehousing, customs, cold chain, distribution, and import-export services to businesses in Singapore and international markets.",
+            "description": "SAUDEX GLOBAL provides global logistics solutions including freight forwarding, supply chain, warehousing, customs, cold chain, distribution and import-export services across international markets.",
             "areaServed": [
               { "@type": "Place", "name": "Middle East" },
               { "@type": "Place", "name": "Asia" }
@@ -68,23 +68,23 @@ export default function Hero() {
             "@type": "WebPage",
             "@id": "https://saudexglobal.com/#webpage",
             "url": "https://saudexglobal.com/",
-            "name": "Singapore Freight Forwarding & Import-Export | Saudex Global",
-            "description": "Singapore-based freight forwarding and import-export support from SAUDEX GLOBAL, with supply chain expertise and international operations.",
+            "name": "Global Logistics Solutions for Businesses | SAUDEX GLOBAL",
+            "description": "Discover global logistics solutions from SAUDEX GLOBAL, combining reliable freight, supply chain expertise and international operations.",
             "isPartOf": { "@id": "https://saudexglobal.com/#website" },
             "about": { "@id": "https://saudexglobal.com/#organization" }
           },
           {
             "@type": "Service",
             "@id": "https://saudexglobal.com/#global-logistics-solutions",
-            "name": "Freight Forwarding and Import-Export",
-            "serviceType": "Freight forwarding and import-export",
+            "name": "Global Logistics Solutions",
+            "serviceType": "Global logistics solutions",
             "provider": { "@id": "https://saudexglobal.com/#organization" },
             "url": "https://saudexglobal.com/",
             "areaServed": [
               { "@type": "Place", "name": "Middle East" },
               { "@type": "Place", "name": "Asia" }
             ],
-            "description": "Freight forwarding, supply chain management, warehousing, customs, cold chain, distribution, and import-export services for businesses in Singapore and international markets."
+            "description": "Reliable global logistics solutions for freight forwarding, supply chain management, warehousing, customs, cold chain, distribution and import-export operations."
           },
           {
             "@type": "LocalBusiness",
@@ -119,12 +119,15 @@ export default function Hero() {
     muted
     loop
     playsInline
-    preload="auto"
-    aria-hidden="true"
-    className="absolute inset-0 w-full h-full object-cover bg-[#254D58] bg-cover bg-center"
+    preload="none"
+    poster="/images/indus-hero.webp"
+    aria-label="Background video illustrating logistics movement"
+    title="Background video illustrating logistics movement"
+    className="absolute inset-0 w-full h-full object-cover"
   >
 <source
-data-src="https://res.cloudinary.com/dvdcdj8ye/video/upload/so_0,du_20,q_auto:good,w_1280,c_limit/v1781262356/14437597_1280_720_30fps_s1qysi.mp4"    type="video/mp4"
+    data-src="https://res.cloudinary.com/dvdcdj8ye/video/upload/so_0,du_8,q_auto:low,w_640,c_limit/v1781262356/14437597_1280_720_30fps_s1qysi.mp4"
+    type="video/mp4"
   />
     </video>
 
@@ -143,7 +146,7 @@ data-src="https://res.cloudinary.com/dvdcdj8ye/video/upload/so_0,du_20,q_auto:go
             </h1>
           </div>
 </div>
-          <div className="flex justify-end sm:items-center lg:mr-18">
+          <div className="flex justify-end sm:items-centerlg:mr-18">
   <p
     className="
       lg:mt-10

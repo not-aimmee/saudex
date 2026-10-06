@@ -1,20 +1,42 @@
 import { defineConfig } from "vite";
 import { writeFileSync } from "fs";
 import path from 'path'
-import { fileURLToPath } from "node:url";
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
-import { publicRoutes } from "./src/routes";
 
-const projectRoot = path.dirname(fileURLToPath(import.meta.url));
+const routes = [
+  "/",
+  "/industries/",
+  "/services/",
+  "/contact/",
+  "/partner-contact/",
+  "/industries/cold-chain/",
+  "/industries/e-commerce/",
+  "/industries/fmcg-industry/",
+  "/industries/food-beverages/",
+  "/industries/horeca/",
+  "/industries/retail/",
+  "/industries/agriculture/",
+  "/services/customs/",
+  "/services/distribution/",
+  "/services/fmcg/",
+  "/services/freight/",
+  "/services/import-export/",
+  "/services/supply-chain/",
+  "/services/warehousing/",
+  "/about-us/",
+  "/careers/",
+  "/be-our-partner/",
+  "/privacy-policy/",
+  "/terms-of-service/",
+];
 
 const trailingSlashSitemap = {
   name: "trailing-slash-sitemap",
   closeBundle() {
-    const urls = publicRoutes.filter((route) => route.sitemap !== false).map(({ path: route }) => {
-      const canonicalPath = route === "/" ? "/" : `${route}/`;
-      return `    <url><loc>https://saudexglobal.com${canonicalPath}</loc></url>`;
-    });
+    const urls = [...new Set(routes)].map(
+      (route) => `    <url><loc>https://saudexglobal.com${route}</loc></url>`,
+    );
     const sitemapXml = [
       '<?xml version="1.0" encoding="UTF-8"?>',
       '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
@@ -23,7 +45,7 @@ const trailingSlashSitemap = {
       '',
     ].join('\n');
 
-    writeFileSync(path.resolve(projectRoot, "dist/sitemap.xml"), sitemapXml);
+    writeFileSync(path.resolve(__dirname, "dist/sitemap.xml"), sitemapXml);
   },
 };
 
@@ -37,28 +59,10 @@ export default defineConfig({
     trailingSlashSitemap,
   ],
   base:'/',
-  optimizeDeps: {
-    entries: ["src/**/*.{ts,tsx}"],
-    include: [
-      "@emailjs/browser",
-      "@gsap/react",
-      "@mcp-b/global",
-      "gsap",
-      "lucide-react",
-      "motion/react",
-      "react",
-      "react-dom",
-      "react-helmet-async",
-      "react-icons/fa",
-      "react-router-dom",
-      "usewebmcp",
-      "web-vitals",
-    ],
-  },
   resolve: {
     alias: {
       // Alias @ to the src directory
-      '@': path.resolve(projectRoot, './src'),
+      '@': path.resolve(__dirname, './src'),
     },
   },
   build: {
@@ -78,6 +82,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
+          'react-vendor': ['react', 'react-dom'],
           'router-vendor': ['react-router-dom'],
         },
         entryFileNames: 'assets/[name]-[hash].js',
@@ -91,9 +96,8 @@ export default defineConfig({
     sourcemap: false,
   },
   server: {
-    strictPort: true,
     headers: {
-      'Cache-Control': 'no-store',
+      'Cache-Control': 'public, max-age=3600',
     },
   },
 })

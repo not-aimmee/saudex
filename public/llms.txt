@@ -1,38 +1,43 @@
-# SAUDEX GLOBAL
+# Saudex Global
 
-SAUDEX GLOBAL provides freight forwarding and logistics services for businesses. The company lists its office in Singapore and coordinates air, sea, and land freight, customs, warehousing, distribution, and supply chain services.
+> Saudex Global is a Singapore-registered logistics, import/export and freight forwarding company serving businesses across Asia and the Middle East, with a focus on the Singapore–GCC–APAC trade corridor.
 
-Contact: [sales@saudexglobal.com](mailto:sales@saudexglobal.com)
+Key facts:
 
-## Company
-
-- [About SAUDEX GLOBAL](https://saudexglobal.com/about-us/): Company information and approach to logistics services.
-- [Our team](https://saudexglobal.com/team/): Information about the SAUDEX GLOBAL team.
-- [Contact](https://saudexglobal.com/contact/): Contact the team about logistics enquiries.
-- [Get a quote](https://saudexglobal.com/get-a-quote/): Request a logistics quote.
-- [Partnerships](https://saudexglobal.com/be-our-partner/): Partnership information.
+- Based in Singapore; main lanes: All over the world
+- Modes: sea, air and land freight
+- Typical cargo: food & beverage, FMCG, agricultural commodities (incl. palm oil), retail and e-commerce goods
+- To get a quote, use the Contact page or email sales
 
 ## Services
 
-- [Freight forwarding](https://saudexglobal.com/services/freight/): Air, sea, and land freight coordination.
-- [Import and export](https://saudexglobal.com/services/import-export/): Import-export coordination and trade documentation.
-- [Customs](https://saudexglobal.com/services/customs/): Customs clearance and documentation support.
-- [Warehousing](https://saudexglobal.com/services/warehousing/): Warehousing and inventory support.
-- [Distribution](https://saudexglobal.com/services/distribution/): Distribution and delivery coordination.
-- [FMCG logistics](https://saudexglobal.com/services/fmcg/): Logistics services for fast-moving consumer goods.
-- [Supply chain](https://saudexglobal.com/services/supply-chain/): Supply chain logistics and planning support.
+- [Import & Export](https://saudexglobal.com/services/impo-expo/): Supplier sourcing and coordination for [products/markets]
+- [Freight Forwarding](https://saudexglobal.com/services/freight/): Sea, air and land freight on [key lanes]; [FCL/LCL, etc.]
+- [Customs Clearance](https://saudexglobal.com/services/customs/): Documentation and compliance for [Singapore/GCC] clearance
+- [Warehousing](https://saudexglobal.com/services/warehousing/): Storage and inventory management at [location(s)]
+- [Distribution](https://saudexglobal.com/services/distribution/): Last-mile and regional delivery in [regions]
+- [FMCG Distribution](https://saudexglobal.com/services/fmcg/): Distribution specifically for consumer goods brands, [how it differs]
+- [Supply Chain](https://saudexglobal.com/services/Supply_chain/): Consulting and end-to-end planning
 
 ## Industries
 
-- [Agriculture](https://saudexglobal.com/industries/agriculture/): Logistics for agriculture businesses.
-- [Cold chain](https://saudexglobal.com/industries/cold-chain/): Temperature-controlled logistics.
-- [E-commerce](https://saudexglobal.com/industries/e-commerce/): Logistics and fulfilment support for e-commerce.
-- [FMCG](https://saudexglobal.com/industries/fmcg-industry/): Logistics for fast-moving consumer goods businesses.
-- [Food and beverages](https://saudexglobal.com/industries/food-beverages/): Logistics for food and beverage businesses.
-- [HoReCa](https://saudexglobal.com/industries/horeca/): Logistics for hotels, restaurants, and catering businesses.
-- [Retail](https://saudexglobal.com/industries/retail/): Logistics for retail and wholesale businesses.
+- [Food & Beverage](https://saudexglobal.com/industries/food_beverages/): [temperature control, halal, etc.]
+- [Agriculture](https://saudexglobal.com/industries/agriculture/): Commodities including palm oil
+- [HoReCa](https://saudexglobal.com/industries/horeca/): Supply to hotels, restaurants and catering
+- [FMCG](https://saudexglobal.com/industries/fmcg_industry/): Consumer goods logistics
+- [Retail](https://saudexglobal.com/industries/retail/): Retail and wholesale support
+- [E-Commerce](https://saudexglobal.com/industries/e_commerce/): Fulfilment and shipping
 
-## Policies
+## Company
 
-- [Privacy policy](https://saudexglobal.com/privacy-policy/): Information about privacy and personal data.
-- [Terms of service](https://saudexglobal.com/terms-of-service/): Terms governing use of the website and services.
+- [About Us](https://saudexglobal.com/about-us/): Background and team
+- [Contact](https://saudexglobal.com/Contact/): Request a quote
+- [Sales email](mailto:sales@saudexglobal.com)
+- [Be Our Partner](https://saudexglobal.com/BeOurPartner/): Partnership opportunities
+
+## Optional
+
+- [Careers](https://saudexglobal.com/careers/)
+- [Privacy Policy](https://saudexglobal.com/privacy_policy/)
+- [Terms of Service](https://saudexglobal.com/terms_of_service/)
+- [LinkedIn](https://www.linkedin.com/company/saudexglobal/)

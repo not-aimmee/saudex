@@ -16,13 +16,13 @@ const globalFreight: ServicePageData = {
       body: "Elevating the standard for contract warehousing. Our flexible, scalable solutions support manufacturers, distributors, and retailers with secure storage, efficient inventory management, and seamless distribution.",
       image: "/images/in27.webp",
       imageAlt: "Contract warehousing and inventory management",
-      highlight: "",
+      highlight: "Real-Time Stock Reports",
     },
     {
       tag: "",
       layout: "image-top",
       heading: "Flexible Storage Plans",
-      body: "Warehousing can include goods receiving, storage, pick and pack, and dispatch. Contact our team to discuss your storage and inventory requirements.",
+      body: "Our secure warehousing facilities are equipped with 24/7 surveillance, controlled access, and a straightforward inventory management system so you always know what you have and where it is. We handle goods receiving, storage, pick and pack, and dispatch, giving you one less operation to manage yourself.",
       image: "/images/in35.webp",
       imageAlt: "Flexible storage and warehousing services",
       highlight: "",
@@ -43,7 +43,7 @@ const globalFreight: ServicePageData = {
       body: "Secure, dedicated warehousing solutions tailored to your operational requirements. We manage infrastructure, labor, and processes while ensuring flexibility and cost efficiency.",
       image: "/images/s33.webp",
       imageAlt: "Dedicated warehousing facilities by SAUDEX GLOBAL",
-      highlight: "",
+      highlight: "24/7 secure facilities",
     },
   ],
   faqs: [
@@ -53,7 +53,7 @@ const globalFreight: ServicePageData = {
     },
     {
       q: "Is your warehouse secure?",
-      a: "Contact our team to discuss the security arrangements and access controls available for the facility proposed for your goods.",
+      a: "Yes. Our facilities have 24/7 security, CCTV surveillance, and controlled access to ensure your stock is protected at all times.",
     },
     {
       q: "Can I scale my storage space up or down?",
@@ -70,7 +70,7 @@ const warehousingServicesSchema = {
       "@id": "https://saudexglobal.com/services/warehousing#webpage",
       "url": "https://saudexglobal.com/services/warehousing",
       "name": "Warehousing Services & Inventory Solutions | SAUDEX GLOBAL",
-      "description": "Warehousing and inventory coordination services for businesses managing goods and supply chains.",
+      "description": "Warehousing services by SAUDEX GLOBAL with flexible storage, inventory management, real-time stock reporting and secure facilities.",
       "isPartOf": {
         "@id": "https://saudexglobal.com/#website"
       },
@@ -180,7 +180,7 @@ const warehousingServicesSchema = {
           "name": "Is your warehouse secure?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Contact our team to discuss the security arrangements and access controls available for the facility proposed for your goods."
+            "text": "Yes. SAUDEX GLOBAL facilities use 24/7 security, CCTV surveillance, and controlled access to help keep stock protected."
           }
         },
         {

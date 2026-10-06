@@ -76,15 +76,8 @@ useEffect(() => {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center gap-2">
             
-  <button
-    type="button"
-    onClick={goHome}
-    aria-label="SAUDEX GLOBAL home"
-    className="flex items-center gap-2"
-  >
-    <img src={logo} alt="" width={40} height={40} className="w-10 h-10 lg:w-10 lg:h-10" draggable={false} />
-    <span className="font-sentient font-regular text-[22px] lg:text-[40px] text-[#f5fbef] tracking-normal">SAUDEX GLOBAL</span>
-  </button>
+  <img src={logo} onClick={goHome} alt="Saudex Global" width={40} height={40} className="w-10 h-10 lg:w-10 lg:h-10" draggable={false} />
+  <span  onClick={goHome} className="font-sentient font-regular text-[22px] lg:text-[40px]  text-[#f5fbef] tracking-normal">SAUDEX GLOBAL</span>
 </div>
 
           {/* Desktop Navigation */}
@@ -169,7 +162,7 @@ useEffect(() => {
                     {TEXT.servicesDropdown.contractWarehousing}
                   </Link>
                   <Link
-                    to="/services/import-export/"
+                    to="/services/impo-expo/"
                     onClick={() => setNavbarServicesOpen(false)}
                     className="block w-full text-left px-4 py-2.5 font-generalsans font-regular text-sm text-[#031926] hover:bg-gray-50 hover:text-[#468189] transition-colors"
                   >
@@ -333,7 +326,7 @@ useEffect(() => {
       Services
     </button>
 
-    <Link to="/services/import-export/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
+    <Link to="/services/impo-expo/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">
       {TEXT.servicesDropdown.impoexpo}
     </Link>
     <Link to="/services/fmcg/" onClick={() => setIsMenuOpen(false)} className="text-[#F5FBEF] font-generalsans text-left">

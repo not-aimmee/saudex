@@ -2,26 +2,28 @@
   "version": "1.0",
   "tools": [
     {
-      "name": "submit_contact_enquiry",
-      "description": "Prepare a contact enquiry for human review. This tool does not send the enquiry; a person must review and submit the form.",
+      "name": "freight_inquiry",
+      "description": "Handle freight forwarding inquiries",
       "inputSchema": {
         "type": "object",
         "properties": {
-          "fullName": { "type": "string" },
-          "email": { "type": "string" },
-          "phone": { "type": "string" },
-          "service": { "type": "string" },
-          "message": { "type": "string" }
+          "origin": { "type": "string" },
+          "destination": { "type": "string" },
+          "weight": { "type": "number" },
+          "dimensions": { "type": "string" }
         },
-        "required": ["fullName", "email", "service", "message"]
+        "required": ["origin", "destination", "weight"]
       }
     },
     {
-      "name": "get_saudex_contact_info",
-      "description": "Return SAUDEX GLOBAL public contact information.",
+      "name": "cargo_tracking",
+      "description": "Track shipment status",
       "inputSchema": {
         "type": "object",
-        "properties": {}
+        "properties": {
+          "tracking_id": { "type": "string" }
+        },
+        "required": ["tracking_id"]
       }
     }
   ]

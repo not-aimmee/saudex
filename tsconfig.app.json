@@ -7,7 +7,6 @@
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "jsx": "react-jsx",
-    "resolveJsonModule": true,
     "types": ["vite/client","react", "react-dom"],
     "skipLibCheck": true,
 
@@ -26,5 +25,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src", "components/**/*.tsx"]
+  "include": ["src", "tailwind.config.js", "components/blurtext.tsx", "components/click_spark.tsx", "components/glassicons.tsx", "components/globalcursor.tsx", "components/splittext.tsx", "components/scroll_float.tsx"]
 }

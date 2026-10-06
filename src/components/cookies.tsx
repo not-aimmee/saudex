@@ -52,16 +52,6 @@ export default function CookieConsentBanner() {
   const [prefs, setPrefs] = useState<ConsentState>(stored ?? DEFAULT_PREFS);
 
   useEffect(() => {
-    const openPreferences = () => {
-      setDecided(true);
-      setShowPrefs(true);
-    };
-
-    window.addEventListener("open-cookie-preferences", openPreferences);
-    return () => window.removeEventListener("open-cookie-preferences", openPreferences);
-  }, []);
-
-  useEffect(() => {
     const analyticsWindow = window as Window & {
       dataLayer?: unknown[];
       gtag?: (...args: unknown[]) => void;
@@ -71,8 +61,6 @@ export default function CookieConsentBanner() {
       analyticsWindow.gtag?.("consent", "update", {
         analytics_storage: "denied",
         ad_storage: "denied",
-        ad_user_data: "denied",
-        ad_personalization: "denied",
       });
       return;
     }
@@ -83,15 +71,11 @@ export default function CookieConsentBanner() {
       analyticsWindow.gtag("consent", "default", {
         analytics_storage: "denied",
         ad_storage: "denied",
-        ad_user_data: "denied",
-        ad_personalization: "denied",
       });
       analyticsWindow.gtag("js", new Date());
       analyticsWindow.gtag("consent", "update", {
         analytics_storage: "granted",
         ad_storage: prefs.marketing ? "granted" : "denied",
-        ad_user_data: prefs.marketing ? "granted" : "denied",
-        ad_personalization: prefs.marketing ? "granted" : "denied",
       });
       analyticsWindow.gtag("config", "G-FCT4YN3LD4", { anonymize_ip: true });
 
@@ -107,8 +91,6 @@ export default function CookieConsentBanner() {
     analyticsWindow.gtag("consent", "update", {
       analytics_storage: "granted",
       ad_storage: prefs.marketing ? "granted" : "denied",
-      ad_user_data: prefs.marketing ? "granted" : "denied",
-      ad_personalization: prefs.marketing ? "granted" : "denied",
     });
   }, [prefs.analytics, prefs.marketing]);
 
@@ -122,15 +104,14 @@ export default function CookieConsentBanner() {
   const rejectAll = () => commit({ functional: false, analytics: false, marketing: false });
   const saveChoices = () => commit(prefs);
 
-  if (decided && !showPrefs) {
+  // Once a choice has been made (this load or a previous one), render nothing.
+  if (decided) {
     return null;
   }
 
   return (
     <div className="font-archivo" style={{ position: "fixed", bottom: 20, left: 20, zIndex: 9999, maxWidth: 380 }}>
       <div
-        role="dialog"
-        aria-labelledby="cookie-consent-title"
         style={{
           width: "100%",
           maxWidth: 380,
@@ -143,7 +124,7 @@ export default function CookieConsentBanner() {
         <div style={{ height: 2, background: "linear-gradient(to right, #A3BDB8, transparent)" }} />
 
         <div style={{ padding: "20px 20px 18px" }}>
-          <p id="cookie-consent-title" className="font-clash" style={{ fontSize: 15, fontWeight: 600, color: "#f7faf8", margin: "0 0 8px", letterSpacing: "-0.01em" }}>
+          <p className="font-clash" style={{ fontSize: 15, fontWeight: 600, color: "#f7faf8", margin: "0 0 8px", letterSpacing: "-0.01em" }}>
             Your privacy on this site
           </p>
           <p style={{ fontSize: 13, lineHeight: 1.6, color: "rgba(163,189,184,0.75)", margin: 0 }}>
@@ -161,7 +142,7 @@ export default function CookieConsentBanner() {
                 <div>
                   <p style={{ fontSize: 13, fontWeight: 600, color: "#f7faf8", margin: 0 }}>Essential</p>
                   <p style={{ fontSize: 11.5, color: "rgba(163,189,184,0.55)", margin: "2px 0 0" }}>
-                    Required for the website to function. Always on.
+                    Required for authentication and shipment tracking. Always on.
                   </p>
                 </div>
                 <div

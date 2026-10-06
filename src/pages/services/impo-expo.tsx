@@ -16,7 +16,7 @@ heading: "Import & Export Handling",
 body: "We manage the full process on both sides of the border. From preparing your shipping documents and customs declarations to coordinating with carriers and local authorities, we make sure your goods move without delays, fines, or last minute surprises. Whether you're bringing goods in or sending them out, we handle every step.",
 image: "/images/s9.webp",
 imageAlt: "Import and export customs clearance and documentation",
-highlight: "Cross-border shipment coordination",
+highlight: "15+ countries served",
     },
     {
       tag: "",
@@ -40,16 +40,16 @@ highlight: "Cross-border shipment coordination",
       tag: "",
       layout: "image-bottom",
       heading: "Shipment Tracking & Trade Visibility",
-      body: "Our team coordinates shipment documentation, customs clearance progress, port movements, and delivery arrangements with the relevant service providers.",
+      body: "Gain complete end to end visibility into every shipment moving through our network. Our advanced tracking system provides real time status updates, milestone notifications, and document visibility throughout the entire transit journey. Monitor customs clearance progress, port movements, and last mile delivery with precision. Access detailed shipment reports anytime, anywhere keeping you and your customers informed every step of the way.",
       image: "/images/s26.webp",
       imageAlt: "Shipment tracking for import and export logistics",
-      highlight: "",
+      highlight: "98% On-Time Rate",
     },
   ],
   faqs: [
     {
       q: "What countries do you import and export to?",
-      a: "We coordinate import and export shipments across available carrier and service-provider networks. Contact us to discuss a specific origin and destination.",
+      a: " We currently serve 15+ countries across the Middle East and Southeast Asia, with the ability to coordinate shipments to other regions through our carrier network.",
     },
     {
       q: "How long does an import or export shipment take?",
@@ -68,27 +68,27 @@ const importExportSchema = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": "https://saudexglobal.com/services/import-export/#webpage",
-      "url": "https://saudexglobal.com/services/import-export/",
+      "@id": "https://saudexglobal.com/services/impo-expo#webpage",
+      "url": "https://saudexglobal.com/services/impo-expo",
       "name": "Import and Export Services & Logistics Experts | SAUDEX GLOBAL",
       "description": "Import and export services by SAUDEX GLOBAL, covering documentation, customs compliance, cargo preparation and shipment coordination.",
       "isPartOf": {
         "@id": "https://saudexglobal.com/#website"
       },
       "about": {
-        "@id": "https://saudexglobal.com/services/import-export/#service"
+        "@id": "https://saudexglobal.com/services/impo-expo#service"
       },
       "breadcrumb": {
-        "@id": "https://saudexglobal.com/services/import-export/#breadcrumb"
+        "@id": "https://saudexglobal.com/services/impo-expo#breadcrumb"
       }
     },
     {
       "@type": "Service",
-      "@id": "https://saudexglobal.com/services/import-export/#service",
+      "@id": "https://saudexglobal.com/services/impo-expo#service",
       "name": "Import and Export Services",
       "serviceType": "Import and Export",
-      "description": "Import and export services with documentation, customs coordination, cargo preparation, and shipment planning from SAUDEX GLOBAL.",
-      "url": "https://saudexglobal.com/services/import-export/",
+      "description": "Import and export services across the Middle East and Southeast Asia, with documentation, customs compliance, cargo preparation, shipment tracking, and coordination managed by SAUDEX GLOBAL.",
+      "url": "https://saudexglobal.com/services/impo-expo",
       "provider": {
         "@type": "Organization",
         "@id": "https://saudexglobal.com/#organization",
@@ -135,7 +135,7 @@ const importExportSchema = {
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://saudexglobal.com/services/import-export/#breadcrumb",
+      "@id": "https://saudexglobal.com/services/impo-expo#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -153,20 +153,20 @@ const importExportSchema = {
           "@type": "ListItem",
           "position": 3,
           "name": "Import and Export",
-          "item": "https://saudexglobal.com/services/import-export/"
+          "item": "https://saudexglobal.com/services/impo-expo/"
         }
       ]
     },
     {
       "@type": "FAQPage",
-      "@id": "https://saudexglobal.com/services/import-export/#faq",
+      "@id": "https://saudexglobal.com/services/impo-expo#faq",
       "mainEntity": [
         {
           "@type": "Question",
           "name": "What countries do you import and export to?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We coordinate import and export shipments across available carrier and service-provider networks. Contact us to discuss a specific origin and destination."
+            "text": "We currently serve 15+ countries across the Middle East and Southeast Asia, with the ability to coordinate shipments to other regions through our carrier network."
           }
         },
         {

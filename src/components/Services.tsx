@@ -5,7 +5,7 @@ import { SEO } from './SEO';
 import { servicesIndexMeta } from '../pages/data/seoMeta';
 
 const services = [
-  { id: 1, name: 'Import & Export', size: 120, link:'/services/import-export/'  },
+  { id: 1, name: 'Import & Export', size: 120, link:'/services/impo-expo/'  },
   { id: 2, name: 'FMCG ', size: 105, link:'/services/fmcg/' },
   { id: 3, name: 'Distribution', size: 130, link:'/services/distribution/' },
   { id: 4, name: 'Warehousing', size: 105, link:'/services/warehousing/' },

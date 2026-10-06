@@ -148,7 +148,7 @@ export default function TermsOfService() {
           <SectionBlock id="definitions" title="2. Definitions">
             <p>For the purposes of these Terms, the following definitions apply:</p>
             <BulletList items={[
-              <><Highlight>"Services"</Highlight> means logistics, freight forwarding, customs brokerage, warehousing, fulfilment, last-mile delivery, shipment coordination, supply chain consulting, and any other services offered by Saudex.</>,
+              <><Highlight>"Services"</Highlight> means all logistics, freight forwarding, customs brokerage, warehousing, fulfilment, last-mile delivery, shipment tracking, supply chain consulting, and any other services offered by Saudex.</>,
               <><Highlight>"Shipment"</Highlight> or <Highlight>"Cargo"</Highlight> means any goods, packages, or freight accepted by Saudex for transport, storage, or handling on your behalf.</>,
               <><Highlight>"Platform"</Highlight> means the Saudex website (saudexglobal.com), client portal, and any associated applications or digital tools.</>,
               <><Highlight>"Carrier"</Highlight> means any third-party transport provider engaged by Saudex to perform physical transportation services.</>,

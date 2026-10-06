@@ -1,46 +1,38 @@
-# Saudex Global
+# React + TypeScript + Vite
 
-The Saudex Global website is a React, TypeScript, and Vite application for the
-company's freight forwarding, import-export, customs, warehousing, distribution,
-and supply-chain services.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Requirements
+Currently, two official plugins are available:
 
-- Node.js 20.19 or newer in the 20.x line, or 22.12 or newer
-- npm
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Local development
+## React Compiler
 
-```sh
-npm ci
-```
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-Copy `.env.example` to `.env.local` before starting the dev server
-(`Copy-Item .env.example .env.local` in PowerShell).
+## Expanding the ESLint configuration
 
-```sh
-npm run dev
-```
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-Set the EmailJS values in `.env.local` to enable the contact forms. The EmailJS
-public key is intended for browser use; never put private credentials in a
-`VITE_` variable.
+```js
+export default defineConfig([
+  # Saudex Global
 
-## Build and checks
+  Saudex Global is a React and TypeScript logistics website built with Vite. It presents the company's freight forwarding, import and export, customs, warehousing, distribution, and supply chain services.
 
-```sh
-npm run lint
-npm run build
-npm run preview
-```
+  ## Development
 
-The build writes the static site to `dist/`, including a pre-rendered HTML page
-for every route in `routes.json`, the eligible routes in the sitemap, `llms.txt`,
-and a dedicated `404.html`. The route manifest is shared by the client router
-and sitemap generator; set `sitemap` to `false` for routes that should not be
-listed and `noIndex` to `true` for routes that should not be indexed.
+  ```bash
+  npm install
+  npm run dev
+  ```
 
-`wrangler.jsonc` configures Cloudflare to return `404.html` with a not-found
-status for unknown URLs. Configure the Cloudflare build to run `npm ci` followed
-by `npm run build`, publish `dist/`, and provide the three `VITE_EMAILJS_*`
-variables as build-time environment variables to enable contact forms.
+  Create a production build and prerender the public routes with:
+
+  ```bash
+  npm run build
+  ```
+
+  The generated static site is written to `dist/`. `npm run deploy` publishes that directory to GitHub Pages.
+        tsconfigRootDir: import.meta.dirname,

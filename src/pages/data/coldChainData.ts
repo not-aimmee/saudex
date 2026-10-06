@@ -19,7 +19,7 @@ export const coldChainData: IndustryPageData = {
       tag: "Infrastructure",
       heading: "Controlled Environments at Scale",
       body:
-        "Temperature-sensitive goods may require specialised storage and transport. Contact our team to discuss the available arrangements for your cargo.",
+        "Our network of multi zone cold rooms, blast freezers, and ambient buffer spaces is engineered for pharmaceutical, fresh produce, and frozen goods under one roof. HACCP certified facilities with live IoT sensor grids across every zone.",
       image: "/images/in1.webp",
       imageAlt: "Cold room with IoT temperature sensors mounted on ceiling",
       stats: [
@@ -61,7 +61,7 @@ export const coldChainData: IndustryPageData = {
   challenges: [
     {
       title: "Silent Temperature Excursions",
-      body: "Temperature-sensitive goods require suitable handling during transport and at transfer points. Discuss monitoring and documentation requirements with our team.",
+      body: "Most breaches go undetected until the destination. Our continuous IoT mesh logs and alerts in real time, catching drift before product is compromised.",
     },
     {
       title: "Regulatory Documentation Gaps",
@@ -77,7 +77,7 @@ export const coldChainData: IndustryPageData = {
     },
     {
       title: "Pharma vs. Food Compliance",
-      body: "Different goods may have different handling and documentation requirements. Confirm the requirements for your shipment with our team.",
+      body: "Different sectors, different rules. We operate separate GDP and HACCP compliant zones so pharmaceutical and food cargo never share risk.",
     },
     {
       title: "Carrier Accountability",
@@ -91,11 +91,11 @@ faqs: [
     },
     {
       q: "How do you ensure temperature compliance throughout transit?",
-      a: "Temperature monitoring options depend on the shipment and service provider. Contact our team to confirm what monitoring and reporting are available for your route.",
+      a: "Every cold chain shipment is monitored in real time via IoT sensors that feed into our TMS. If a temperature deviation is detected, our operations team is alerted immediately and corrective action is taken, whether that's rerouting, swapping vehicles, or notifying you proactively.",
     },
     {
       q: "Can you provide temperature logs and compliance documentation for audits?",
-      a: "Documentation depends on the shipment and service provider. Contact our team to confirm which records can be provided for your route.",
+      a: "Yes. After every delivery, you receive a full temperature log report with timestamps, deviation alerts (if any), and proof of delivery. These reports are formatted to meet FSSAI, HACCP, and pharma cold chain audit standards.",
     },
   ],
 };

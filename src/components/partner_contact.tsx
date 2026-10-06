@@ -3,8 +3,7 @@ import emailjs from "@emailjs/browser";
 import { CalendarDays, Check, Clock3, Mail, MapPin, Phone, Send } from "lucide-react";
 import { useWebMCP } from "usewebmcp";
 import { SEO } from "./SEO";
-import { getEmailJsErrorMessage } from "./emailjsError";
-import { partnerContactMeta } from "../pages/data/seoMeta";
+import { beOurPartnerMeta } from "../pages/data/seoMeta";
 const C = {
   almostBlack:    "#02090f",
   inkBlack:       "#031926",
@@ -23,9 +22,9 @@ const C = {
 function Rule({ color = C.teal, opacity = 0.35 }: { color?: string; opacity?: number }) {
   return <hr style={{ borderColor: color, opacity, borderTopWidth: 1 }} className="w-full border-0 border-t" />;
 }
-const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_nlnhzd2";
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_04d5302";
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "sXmLsr6PApabpnmxa";
 
 type FormState = "idle" | "submitting" | "success" | "error";
 
@@ -62,13 +61,6 @@ export default function Partnercontact() {
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formRef.current) return;
-    const honeypot = formRef.current.elements.namedItem("companyWebsite");
-    if (honeypot instanceof HTMLInputElement && honeypot.value) return;
-    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
-      setErrorMsg("The enquiry form is not configured. Please email sales@saudexglobal.com.");
-      setState("error");
-      return;
-    }
 
     setState("submitting");
     setErrorMsg("");
@@ -83,7 +75,7 @@ export default function Partnercontact() {
       })
       .catch((err) => {
         console.error("EmailJS error:", err);
-        setErrorMsg(getEmailJsErrorMessage(err));
+        setErrorMsg("Something went wrong sending your enquiry. Please try again.");
         setState("error");
       });
   };
@@ -94,7 +86,10 @@ export default function Partnercontact() {
     setErrorMsg("");
   };
 
-  // WebMCP may prepare a draft, but a person must review and submit it.
+  // --- WebMCP: let AI agents submit an enquiry on the user's behalf ---
+  // This does not touch the visible form — it fills the same EmailJS
+  // template directly, then updates the same state the form uses so
+  // the success/error banner still shows on screen.
   useWebMCP({
     name: "submit_contact_enquiry",
     description:
@@ -120,21 +115,34 @@ export default function Partnercontact() {
       required: ["fullName", "email", "service", "message"],
     } as const,
     execute: async (args) => {
-      setState("idle");
+      setState("submitting");
       setErrorMsg("");
-      setForm({
-        fullName: args.fullName,
-        email: args.email,
-        phone: args.phone ?? "",
-        service: args.service,
-        message: args.message,
-      });
-      formRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-      formRef.current?.querySelector<HTMLInputElement>('input[name="fullName"]')?.focus();
-      return {
-        success: true,
-        message: "The enquiry is ready for review in the form. It has not been sent. Review the details and submit the form to send it.",
-      };
+      try {
+        await emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          {
+            fullName: args.fullName,
+            email: args.email,
+            phone: args.phone ?? "",
+            service: args.service,
+            message: args.message,
+          },
+          { publicKey: EMAILJS_PUBLIC_KEY }
+        );
+        setForm(initialForm);
+        setState("success");
+        return {
+          success: true,
+          message:
+            "Enquiry sent to SAUDEX GLOBAL. Customer service hours are 9:00 AM–5:00 PM, Monday–Friday.",
+        };
+      } catch (err) {
+        console.error("EmailJS error (WebMCP tool):", err);
+        setErrorMsg("Something went wrong sending your enquiry. Please try again.");
+        setState("error");
+        return { success: false, message: "Failed to send the enquiry. Please try again." };
+      }
     },
   });
 
@@ -155,11 +163,11 @@ export default function Partnercontact() {
   return (
     <>
       <SEO
-        title={partnerContactMeta.title}
-        description={partnerContactMeta.description}
-        keywords={partnerContactMeta.keywords}
-        canonical={partnerContactMeta.canonical}
-        ogImage={partnerContactMeta.ogImage}
+        title="Partner Contact | SAUDEX GLOBAL"
+        description={beOurPartnerMeta.description}
+        keywords={beOurPartnerMeta.keywords}
+        canonical={beOurPartnerMeta.canonical}
+        ogImage={beOurPartnerMeta.ogImage}
       />
       <div style={{ fontFamily: "'Outfit', sans-serif" }} className="min-h-screen bg-[#f1f0ea] text-[#031926]">
       <section
@@ -295,14 +303,6 @@ export default function Partnercontact() {
                   onReset={onReset}
                   className="space-y-6"
                 >
-                  <input
-                    name="companyWebsite"
-                    type="text"
-                    autoComplete="off"
-                    tabIndex={-1}
-                    aria-hidden="true"
-                    className="absolute -left-[10000px] h-px w-px overflow-hidden"
-                  />
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="font-generalsans">
                       <label htmlFor="partner-full-name" className="block text-xs font-regular uppercase tracking-wider mb-1" style={{ color: C.darkTeal }}>
@@ -314,7 +314,7 @@ export default function Partnercontact() {
                         autoComplete="name"
                         required type="text" placeholder="Jane Smith"
                         style={{ borderColor: C.bone, color: C.inkBlack, backgroundColor: C.ivory }}
-                        className="w-full border rounded px-3 py-2 text-sm placeholder-[#336159] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#468189] focus-visible:outline-offset-2 transition"
+                        className="w-full border rounded px-3 py-2 text-sm placeholder-[#336159] focus:outline-none transition"
                         onFocus={e => e.currentTarget.style.borderColor = C.teal}
                         onBlur={e => e.currentTarget.style.borderColor = C.bone}
                       />
@@ -329,7 +329,7 @@ export default function Partnercontact() {
                         autoComplete="email"
                         required type="email" placeholder="jane@company.com"
                         style={{ borderColor: C.bone, color: C.inkBlack, backgroundColor: C.ivory }}
-                        className="w-full border rounded px-3 py-2 text-sm placeholder-[#336159] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#468189] focus-visible:outline-offset-2 transition"
+                        className="w-full border rounded px-3 py-2 text-sm placeholder-[#336159] focus:outline-none transition"
                         onFocus={e => e.currentTarget.style.borderColor = C.teal}
                         onBlur={e => e.currentTarget.style.borderColor = C.bone}
                       />
@@ -347,7 +347,7 @@ export default function Partnercontact() {
                         autoComplete="tel"
                         type="tel" placeholder="+1 555 000 0000"
                         style={{ borderColor: C.bone, color: C.inkBlack, backgroundColor: C.ivory }}
-                        className="w-full border rounded px-3 py-2 text-sm placeholder-[#336159] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#468189] focus-visible:outline-offset-2 transition"
+                        className="w-full border rounded px-3 py-2 text-sm placeholder-[#336159] focus:outline-none transition"
                         onFocus={e => e.currentTarget.style.borderColor = C.teal}
                         onBlur={e => e.currentTarget.style.borderColor = C.bone}
                       />
@@ -360,7 +360,7 @@ export default function Partnercontact() {
                         id="partner-service" name="service" value={form.service} onChange={onChange} required
                         webmcp-field="service_type"
                         style={{ borderColor: C.bone, color: form.service ? C.inkBlack : C.darkTeal, backgroundColor: C.ivory }}
-                        className="w-full border rounded px-3 py-2 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#468189] focus-visible:outline-offset-2 transition cursor-pointer"
+                        className="w-full border rounded px-3 py-2 text-sm focus:outline-none transition cursor-pointer"
                         onFocus={e => e.currentTarget.style.borderColor = C.teal}
                         onBlur={e => e.currentTarget.style.borderColor = C.bone}
                       >
@@ -380,7 +380,7 @@ export default function Partnercontact() {
                       required rows={6}
                       placeholder="Placing a bulk order? Loose pack goods? Tell us what you need and we will get in touch as soon as we can."
                       style={{ borderColor: C.bone, color: C.inkBlack, backgroundColor: C.ivory }}
-                      className="w-full border rounded px-3 py-2 text-sm placeholder-[#336159] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#468189] focus-visible:outline-offset-2 resize-y transition"
+                      className="w-full border rounded px-3 py-2 text-sm placeholder-[#336159] focus:outline-none resize-y transition"
                       onFocus={e => e.currentTarget.style.borderColor = C.teal}
                       onBlur={e => e.currentTarget.style.borderColor = C.bone}
                     />

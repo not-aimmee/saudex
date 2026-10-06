@@ -36,7 +36,7 @@ export const agriCommoditiesData: IndustryPageData = {
       tag: "Bulk Logistics",
       heading: "Temperature-Controlled\nBulk Transport",
       body:
-        "Palm oil and other agricultural commodities may require specialised equipment and careful temperature management. Contact our team to discuss available transport options and documentation for your shipment.",
+        "Palm oil solidifies when it cools, so it needs careful handling from loading to discharge. Our fleet includes insulated and heated tankers, flexitanks, and ISO tank containers, with steam coils and temperature logging on every journey. Dry commodities move in sealed, moisture-protected bulk carriers and bagged loads, with a digital proof of delivery and a weighbridge record at each stage.",
       image: "/images/in40.webp",
       imageAlt:
         "Row of insulated bulk tankers waiting at a palm oil refinery loading bay",
@@ -52,7 +52,7 @@ export const agriCommoditiesData: IndustryPageData = {
       tag: "Compliance & Traceability",
       heading: "Sustainable Sourcing You Can Prove",
       body:
-        "Buyers and regulators may request origin and product documentation for agricultural commodities. Discuss the documentation required for a shipment with our team before arranging transport.",
+        "Buyers, regulators, and retailers now expect palm oil to be traceable to its origin. We work with RSPO and ISCC certified suppliers and keep batch-level records from the mill to your gate. Documentation for no-deforestation and NDPE commitments, along with full certificates of analysis, is issued with each shipment.",
       image: "/images/in39.webp",
       imageAlt:
         "Compliance officer reviewing traceability documents beside a loaded palm oil tanker",
@@ -77,7 +77,7 @@ export const agriCommoditiesData: IndustryPageData = {
     },
     {
       title: "Supply Interruptions",
-      body: "Weather, harvest cycles, and port delays can disrupt supply. Discuss routing and contingency options with our team when planning a shipment.",
+      body: "Weather, harvest cycles, and port delays can disrupt supply. We maintain buffer stock and multiple origin options, so a single disruption does not halt your production.",
     },
     {
       title: "Regulatory and Sustainability Pressure",
@@ -90,8 +90,8 @@ export const agriCommoditiesData: IndustryPageData = {
   ],
   faqs: [
     {
-      q: "Can you help coordinate palm oil shipments?",
-      a: "Contact our team to discuss the product, origin, destination, and any documentation requirements for your shipment.",
+      q: "Can you supply certified sustainable palm oil?",
+      a: "Yes. We source from RSPO and ISCC certified producers and can supply segregated, mass balance, or book and claim volumes, depending on your requirements. Each shipment includes the relevant certificates and batch-level traceability records.",
     },
     {
       q: "How do you keep palm oil from solidifying during transport?",

@@ -33,7 +33,7 @@ const agricultureSchema = {
         { "@type": "Country", "name": "Saudi Arabia" },
         { "@type": "Place", "name": "Middle East" }
       ],
-      "knowsAbout": ["Agricultural commodity logistics", "Palm oil shipment coordination", "Bulk cargo planning"]
+      "knowsAbout": ["Palm oil supply", "Agri-commodities logistics", "Bulk edible oil transport", "Heated tanker delivery", "RSPO certified palm oil"]
     },
     {
       "@type": "BreadcrumbList",
@@ -53,7 +53,7 @@ const agricultureSchema = {
           "name": "Can you supply certified sustainable palm oil?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Contact our team to discuss the product, origin, destination, and any documentation requirements for your shipment."
+            "text": "Yes. We source from RSPO and ISCC certified producers and can supply segregated, mass balance, or book and claim volumes, depending on your requirements. Each shipment includes the relevant certificates and batch-level traceability records."
           }
         },
         {

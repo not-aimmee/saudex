@@ -113,7 +113,7 @@ export const TEXT = {
     },
     foodnbeverages: {
       title: 'Food and Beverages.',
-      description: 'Temperature-sensitive cargo coordination and distribution support.'
+      description: 'Comprehensive cold chain logistics, HACCP compliance, and efficient distribution solutions.'
     }
   },
 
@@ -157,15 +157,15 @@ export const TEXT = {
     },
     technology: {
       title: 'Technology Enabled Operations',
-      description: 'Digital tools and coordination support day-to-day logistics operations.'
+      description: 'Real time tracking, automated systems, and data analytics for complete supply chain visibility.'
     },
     compliance: {
       title: 'Compliance & Security',
-      description: 'Support with customs documentation and shipment requirements.'
+      description: 'ISO certified, customs compliant, and secure operations meeting international standards.'
     },
     customerCentric: {
       title: 'Customer Centric Approach',
-      description: 'Service coordination tailored to each customer’s shipment requirements.'
+      description: 'Dedicated managers, 24/7 support, and customized solutions for your unique needs.'
     },
     scalable: {
       title: 'Scalable Solutions',
@@ -204,8 +204,8 @@ export const TEXT = {
     title: 'Technology & Innovation',
     subtitle: 'Powering smarter logistics with cutting edge solutions',
     tracking: {
-      title: 'Shipment Coordination',
-      description: 'Contact our team for updates and coordination during your shipment.'
+      title: 'Real Time Tracking',
+      description: 'Monitor your shipments 24/7 with tracking and instant notifications.'
     },
     dataDriven: {
       title: 'Data Driven Insights',
@@ -237,12 +237,12 @@ export const TEXT = {
     },
     info: {
       title: 'Contact Information',
-      address: '10 Anson Road, #33-03, International Plaza, Singapore 079903',
+      address: '10 Anson Rooad, #33-03, International Plaza, Singapore 079903',
       phone: '+65 8535 1308',
       email: 'info@saudexglobal.com',
       hours: 'Mon-Fri: 9:00 AM - 4:00 PM'
     },
-    success: 'Thank you! We will get back to you as soon as possible.',
+    success: 'Thank you! We will get back to you within 24 hours.',
     selectServices: [
       'Warehousing & Distribution',
       'Freight Forwarding',

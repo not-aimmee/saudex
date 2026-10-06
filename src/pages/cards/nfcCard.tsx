@@ -309,8 +309,8 @@ export default function NfcCard() {
           <section style={{ padding: "0 20px 32px", maxWidth: 440, margin: "0 auto" }}>
             <div style={{ borderRadius: 20, overflow: "hidden", position: "relative", height: 160 }}>
               <img
-                src="/images/in32.webp"
-                alt="SAUDEX GLOBAL logistics and warehousing"
+                src="https://images.unsplash.com/photo-1590497008432-598f04441de8?w=700&h=220&fit=crop&auto=format"
+                alt="Busy shipping port with stacked containers at dusk"
                 width={700}
                 height={220}
                 loading="lazy"

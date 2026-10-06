@@ -18,14 +18,14 @@ export const homeMeta: PageMeta = {
   description:
     "SAUDEX GLOBAL helps businesses move goods worldwide with freight, customs, warehousing, and supply chain logistics.",
   keywords:
-    "Singapore Freight Forwarding & Import-Export | Saudex Global, SAUDEX GLOBAL, freight forwarding, supply chain solutions, import export logistics, international logistics",
+    "global logistics solutions, SAUDEX GLOBAL, freight forwarding, supply chain solutions, import export logistics, international logistics",
   canonical: `${BASE_URL}/`,
   ogImage:   OG,
 };
 
 export const defaultSiteMeta: PageMeta = {
   description:
-    "Saudex Global provides freight forwarding, cold chain, warehousing, customs clearance, and distribution support for businesses.",
+    "Saudex Global is a full-service logistics and supply chain partner — offering freight forwarding, cold chain, warehousing, customs clearance, and distribution across 40+ global markets.",
   keywords:
     "Saudex Global, logistics company, supply chain, freight forwarding,cold chain, warehousing, customs clearance, 3PL provider",
   canonical: `${BASE_URL}/`,
@@ -36,37 +36,37 @@ export const defaultSiteMeta: PageMeta = {
 /* services */
 export const servicesMeta: PageMeta = {
   description:
-    "Explore temperature-controlled transport, customs coordination, warehousing, FMCG distribution, and freight forwarding services from Saudex Global.",
+    "From temperature-controlled transport and customs brokerage to warehousing,FMCG distribution, and freight forwarding — explore the full range of logistics services Saudex Global delivers across 40+ markets.",
   keywords:
     "logistics services, supply chain services, cold chain, warehousing,freight forwarding, customs brokerage, FMCG logistics, Saudex Global services",
-  canonical: `${BASE_URL}/services/`,
+  canonical: `${BASE_URL}/services`,
   ogImage:   OG,
 };
 
 export const howWeWorkMeta: PageMeta = {
   description:
-    "Learn how SAUDEX GLOBAL coordinates onboarding, route planning, shipment documentation, and delivery for business supply chains.",
+    "A transparent, step-by-step process built around your supply chain.From onboarding and route planning to real-time tracking and continuous optimisation — here's how Saudex Global delivers, every time.",
   keywords:
     "how Saudex works, logistics process, supply chain onboarding,logistics workflow, freight process, Saudex Global approach",
-  canonical: `${BASE_URL}/`,
+  canonical: `${BASE_URL}/how-we-work`,
   ogImage:   OG,
 };
 
 export const statsMeta: PageMeta = {
-  description:"Explore the logistics services SAUDEX GLOBAL coordinates for business shipments, including freight, trade documentation, warehousing, and distribution.",
+  description:"99.1% on-time delivery, 40+ markets served, and 91% SKU-level forecast accuracy. See the numbers behind Saudex Global's logistics performance and why our clients trust us with their most critical supply chains.",
   keywords:
     "Saudex Global stats, logistics performance, on-time delivery rate,supply chain metrics, 3PL track record, logistics KPIs",
-  canonical: `${BASE_URL}/`,
+  canonical: `${BASE_URL}/stats`,
   ogImage:   OG,
 };
 
 export const whyChooseUsMeta: PageMeta = {
   
   description:
-    "Learn how SAUDEX GLOBAL coordinates freight, customs, warehousing, and distribution services for business supply chains.",
+    "HACCP-certified facilities, IoT-monitored cold chain, licensed customs brokers,and AI-assisted demand planning. Discover what sets Saudex Global apart as a trusted 3PL partner across retail, FMCG, pharma, and more.",
   keywords:
-    "why choose Saudex Global, logistics services, freight, customs, warehousing, distribution",
-  canonical: `${BASE_URL}/about-us/`,
+    "why choose Saudex Global, 3PL advantages, logistics partner,HACCP certified logistics, IoT supply chain, trusted freight partner",
+  canonical: `${BASE_URL}/why-choose-us`,
   ogImage:   OG,
 };
 
@@ -76,7 +76,7 @@ export const ctaMeta: PageMeta = {
     "Ready to streamline your supply chain? Get in touch with Saudex Global for a tailored logistics quote — covering freight, warehousing, customs,cold chain, and end-to-end supply chain management.",
   keywords:
     "logistics quote, get a freight quote, supply chain consultation,Saudex Global contact, 3PL quote, logistics enquiry",
-  canonical: `${BASE_URL}/get-a-quote/`,
+  canonical: `${BASE_URL}/get-a-quote`,
   ogImage:   OG,
 };
 
@@ -87,15 +87,6 @@ export const contactMeta: PageMeta = {
     "contact Saudex Global, logistics enquiry, freight contact, supply chain consultation, Saudex Global office, logistics partnership",
   canonical: `${BASE_URL}/contact/`,
   ogImage:   OG,
-};
-
-export const partnerContactMeta: PageMeta = {
-  title: "Partner Enquiry | SAUDEX GLOBAL",
-  description:
-    "Contact SAUDEX GLOBAL about partnership opportunities, freight forwarding, and logistics collaboration.",
-  keywords: "Saudex Global partner enquiry, logistics partnership, freight forwarding collaboration",
-  canonical: `${BASE_URL}/partner-contact/`,
-  ogImage: OG,
 };
 
 /* industry */
@@ -139,7 +130,7 @@ export const teamMeta: PageMeta = {
 export const caseStudiesMeta: PageMeta = {
   title: "Case Studies | SAUDEX GLOBAL",
   description:
-    "Verified customer case studies are not currently published. Contact SAUDEX GLOBAL to discuss logistics services for your business.",
+    "See how Saudex Global has helped clients across FMCG, cold chain, and customs clearance move faster and cut costs across the Singapore–GCC–Asia-Pacific corridor.",
   keywords: "Saudex Global case studies, logistics results, customs clearance case study",
   canonical: `${BASE_URL}/case-studies/`,
   ogImage: OG,
@@ -161,7 +152,7 @@ export const beOurPartnerMeta: PageMeta = {
 export const coldChainMeta: PageMeta = {
   
   description:
-    "Temperature-controlled logistics coordination for businesses moving perishable and temperature-sensitive goods.",
+    "End-to-end cold chain logistics with 99.6% temperature compliance. HACCP-certified facilities, real-time IoT monitoring, and last-mile cold delivery across the region.",
   keywords:
     "cold chain logistics, temperature-controlled storage, refrigerated transport, HACCP cold storage, frozen goods distribution, pharmaceutical cold chain",
   canonical: `${BASE_URL}/industries/cold-chain/`,
@@ -171,7 +162,7 @@ export const coldChainMeta: PageMeta = {
 export const agriCommoditiesMeta: PageMeta = {
   title: "Agri-Commodities & Palm Oil Logistics",
   description:
-    "Logistics coordination for palm oil and agricultural commodities, including shipment planning and transport support.",
+    "Bulk supply and transport of palm oil and agri-commodities with 99.2% quality specification compliance. Heated tankers, batch-level traceability, and RSPO and ISCC certified sourcing.",
   keywords:
     "palm oil supply, agri-commodities logistics, bulk edible oil transport, heated tanker delivery, RSPO certified palm oil, ISO tank and flexitank transport, sustainable palm oil sourcing",
   canonical: `${BASE_URL}/industries/agriculture/`,
@@ -180,7 +171,7 @@ export const agriCommoditiesMeta: PageMeta = {
 export const horecaMeta: PageMeta = {
   
   description:
-    "Supply chain and delivery coordination for hotels, restaurants, and catering operations.",
+    "Reliable supply chain solutions for hotels, restaurants, and catering operations. Pre-dawn delivery, 4,000+ SKUs, and unified sourcing from a single supplier.",
   keywords:
     "horeca supplier, hotel food supply, restaurant logistics, catering distribution, hospitality supply chain, food service delivery",
   canonical: `${BASE_URL}/industries/horeca/`,
@@ -190,7 +181,7 @@ export const horecaMeta: PageMeta = {
 export const ecommerceMeta: PageMeta = {
   
   description:
-    "Logistics and fulfilment coordination for e-commerce businesses, from shipment planning through delivery.",
+    "Same-day pick-and-pack fulfilment, 96.7% first-attempt delivery, and frictionless returns. Built for Shopify, WooCommerce, Magento, and custom platforms.",
   keywords:
     "ecommerce fulfilment, 3PL fulfilment, last-mile delivery, returns logistics, same-day dispatch, Shopify logistics partner",
   canonical: `${BASE_URL}/industries/e-commerce/`,
@@ -200,7 +191,7 @@ export const ecommerceMeta: PageMeta = {
 export const fmcgMeta: PageMeta = {
   title: "FMCG Distribution & Retail Logistics | SAUDEX GLOBAL",
   description:
-    "Distribution and logistics coordination for fast-moving consumer goods and retail businesses.",
+    "National FMCG distribution with 99.1% order fill rate. Demand planning, promotional logistics, and route-optimised delivery to modern and general trade.",
   keywords:
     "FMCG distribution, fast-moving consumer goods logistics, demand planning, trade activation logistics, retail distribution, general trade supply",
   canonical: `${BASE_URL}/industries/fmcg-industry/`,
@@ -209,16 +200,16 @@ export const fmcgMeta: PageMeta = {
 
 export const foodBeveragesMeta: PageMeta = {
   description:
-    "Logistics coordination for food and beverage businesses, including shipment and temperature-sensitive cargo planning.",
+    "FSSC 22000-certified food and beverage logistics. Multi-temperature storage, full batch traceability, 2-hour recall capability, and zero major compliance failures in 5 years.",
   keywords:
-    "food and beverage logistics, temperature-sensitive cargo, food distribution, shipment planning",
+    "food and beverage logistics, food safety supply chain, FSSC 22000 logistics, cold and ambient storage, HACCP food distribution, batch traceability",
   canonical: `${BASE_URL}/industries/food-beverages/`,
   ogImage:   OG,
 };
 
 export const retailWholesaleMeta: PageMeta = {
   description:
-    "Logistics and delivery coordination for retail and wholesale businesses.",
+    "Shelf-ready retail delivery and same-day wholesale break-bulk. 98.5% in-full delivery rate, omnichannel inventory management, and import duty optimisation.",
   keywords:
     "retail distribution, wholesale logistics, shelf-ready packaging, omnichannel fulfilment, store replenishment, wholesale supply chain",
   canonical: `${BASE_URL}/industries/retail/`,
@@ -242,7 +233,7 @@ export const distributionLogisticsMeta: PageMeta = {
 
 export const temperatureControlledLogisticsMeta: PageMeta = {
   description:
-    "Temperature-controlled logistics coordination for businesses shipping goods that require specific handling.",
+    "Cold chain logistics across frozen (−25 °C), chilled (2–8 °C), and ambient lanes. IoT-monitored throughout transit with automated breach alerts and full HACCP compliance from pick-up to proof of delivery.",
   keywords:
     "temperature controlled logistics, cold chain transport, frozen logistics, chilled distribution, pharmaceutical cold chain, IoT temperature monitoring",
   canonical: `${BASE_URL}/services/temperature-controlled`,
@@ -251,7 +242,7 @@ export const temperatureControlledLogisticsMeta: PageMeta = {
 
 export const customsLogisticsMeta: PageMeta = {
   description:
-    "Customs clearance coordination, HS code classification support, and trade documentation for cross-border shipments.",
+    "Expert customs clearance, HS code classification, and duty optimisation across 40+ markets. Reduce border delays, ensure compliance, and navigate import controls with precision from a team of licensed brokers.",
   keywords:
     "customs clearance, customs brokerage, HS code classification, duty optimisation, import compliance, border clearance services, trade compliance",
   canonical: `${BASE_URL}/services/customs/`,
@@ -260,7 +251,7 @@ export const customsLogisticsMeta: PageMeta = {
 
 export const fmcgLogisticsMeta: PageMeta = {
   description:
-    "Logistics and distribution coordination for grocery, health, and fast-moving consumer goods businesses.",
+    "High-velocity logistics built for FMCG: fast-turn replenishment,promotional surge handling, and short shelf-life management. Integrated 3PL and distribution tailored to grocery, health, and FMCG brands.",
   keywords:
     "FMCG logistics, fast-moving consumer goods supply chain, FMCG distribution, grocery logistics, short shelf-life logistics, FMCG 3PL",
   canonical: `${BASE_URL}/services/fmcg/`,
@@ -270,7 +261,7 @@ export const fmcgLogisticsMeta: PageMeta = {
 export const freightForwardingMeta: PageMeta = {
   title: "Freight Forwarding & Global Shipping Services | SAUDEX GLOBAL",
   description:
-    "Freight forwarding coordination from SAUDEX GLOBAL for air, sea, and land cargo.",
+    "Freight forwarding solutions from SAUDEX GLOBAL covering air, sea and land cargo with reliable coordination, tracking and compliance.",
   keywords:
     "freight forwarding, freight forwarding services, international freight forwarding, freight forwarder, air freight, sea freight, land freight, cargo forwarding",
   canonical: "https://saudexglobal.com/services/freight/",
@@ -283,7 +274,7 @@ export const importExportLogisticsMeta: PageMeta = {
     "Import and export services by SAUDEX GLOBAL, covering documentation, customs compliance, cargo preparation and shipment coordination.",
   keywords:
     "import and export, import and export services, international import export services, import export logistics, customs clearance, trade documentation",
-  canonical: `${BASE_URL}/services/import-export/`,
+  canonical: "https://saudexglobal.com/services/impo-expo/",
   ogImage:   OG,
 };
 
@@ -300,7 +291,7 @@ export const supplyChainLogisticsMeta: PageMeta = {
 export const warehousingLogisticsMeta: PageMeta = {
   title: "Warehousing Services & Inventory Solutions | SAUDEX GLOBAL",
   description:
-    "Warehousing and inventory coordination services for businesses managing goods and supply chains.",
+    "Warehousing services by SAUDEX GLOBAL with flexible storage, inventory management, real-time stock reporting and secure facilities.",
   keywords:
     "warehousing services, contract warehousing, inventory management services, warehouse storage services, secure warehousing, dedicated warehousing, flexible storage",
   canonical: "https://saudexglobal.com/services/warehousing/",

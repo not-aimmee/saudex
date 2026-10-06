@@ -1,14 +1,16 @@
 import MainLayout from "./assets/main_layout";
 import SimpleLayout from "./assets/simple_layout";
+import Hero from "./components/Home";
+import DeferredSection from "./components/DeferredSection";
 import Cookies from "./components/cookies";
-import AsyncErrorBoundary from "./components/AsyncSectionBoundary";
-import Services from "./components/Services";
-import Industries from "./components/Industries";
-import { Navigate, Route, Routes } from "react-router-dom";
-import { lazy, Suspense, type ReactNode } from "react";
+import { Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import { loadWebMcpRuntime } from "./webmcpRuntime";
-import LandingPage from "./landing_page";
-import { legacyRedirects, publicRoutes, type PublicPage, type RouteLayout } from "./routes";
+const Services = lazy(() => import("./components/Services"));
+const HowItWorks = lazy(() => import("./components/How_it_works"));
+const Industries = lazy(() => import("./components/Industries"));
+const Stats = lazy(() => import("./components/Stats"));
+const ServicePage = lazy(() => import("./pages/service"));
 const Customs = lazy(() => import("./pages/services/customs"));
 const Distribution = lazy(() => import("./pages/services/distribution"));
 const FMCG = lazy(() => import("./pages/services/fmcg"));
@@ -35,71 +37,93 @@ const Partnercontact = lazy(async () => {
   await loadWebMcpRuntime();
   return import("./components/partner_contact");
 });
-const NotFound = lazy(() => import("./pages/not-found"));
 const Contact = lazy(async () => {
   await loadWebMcpRuntime();
   return import("./components/Contact");
 });
 
-const routeElements: Record<PublicPage, ReactNode> = {
-  home: <LandingPage />,
-  aboutUs: <AboutUs />,
-  team: <Team />,
-  caseStudies: <CaseStudies />,
-  services: <Services />,
-  customs: <Customs />,
-  distribution: <Distribution />,
-  fmcg: <FMCG />,
-  freight: <Freight />,
-  importExport: <ImpoExpo />,
-  supplyChain: <SCC />,
-  warehousing: <Warehousing />,
-  industries: <Industries />,
-  agriculture: <AgriPage />,
-  coldChain: <ColdChainPage />,
-  eCommerce: <ECommercePage />,
-  fmcgIndustry: <FMCGPage />,
-  foodBeverages: <FoodBevPage />,
-  horeca: <HorecaPage />,
-  retail: <RetailPage />,
-  contact: <Contact />,
-  partnerContact: <Partnercontact />,
-  beOurPartner: <BeOurPartner />,
-  careers: <Careers />,
-  privacyPolicy: <PrivacyPolicy />,
-  termsOfService: <TermsOfService />,
-  nfcCard: <NfcCard />,
-};
-
-function routesForLayout(layout: RouteLayout) {
-  return publicRoutes
-    .filter((route) => route.layout === layout)
-    .map((route) => (
-      <Route key={route.path} path={route.path} element={routeElements[route.page]} />
-    ));
-}
-
 function App() {
   return (
     <>
     <Cookies />
-    <AsyncErrorBoundary fallbackMessage="This page could not load. Reload the page to try again.">
     <Suspense fallback={<div role="status" className="min-h-screen bg-[#f1f0ea] p-8 text-[#031926]">Loading page...</div>}>
     <Routes>
-      {legacyRedirects.map(({ path, to }) => (
-        <Route key={path} path={path} caseSensitive element={<Navigate to={to} replace />} />
-      ))}
       <Route element={<MainLayout />}>
-        {routesForLayout("main")}
-        <Route path="*" element={<NotFound />} />
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero />
+              <DeferredSection minHeight="80vh">
+                <Services includeSEO={false} />
+              </DeferredSection>
+              <DeferredSection minHeight="100vh">
+                <HowItWorks />
+              </DeferredSection>
+              <DeferredSection minHeight="540px">
+                <Industries includeSEO={false} />
+              </DeferredSection>
+              <DeferredSection minHeight="480px">
+                <Stats />
+              </DeferredSection>
+            </>
+          }
+        />
       </Route>
-      <Route element={<SimpleLayout />}>
-        {routesForLayout("simple")}
+
+      <Route element={<MainLayout/>}>
+       <Route path="services">
+        <Route index element={<Services />} />
+        <Route path="service" element={<ServicePage/>}/>
+        <Route path="customs" element={<Customs />} />
+        <Route path="distribution" element={<Distribution/>} />
+        <Route path="fmcg" element={<FMCG/>} />
+        <Route path="freight" element={<Freight/>} />
+        <Route path="impo-expo" element={<ImpoExpo/>} />
+        <Route path="import-export" element={<ImpoExpo/>} />
+        <Route path="supply-chain" element={<SCC/>} />
+        <Route path="supply_chain" element={<SCC/>} />
+        <Route path="warehousing" element={<Warehousing/>} />
+        <Route path="import_export" element={<ImpoExpo/>} />
+       </Route>
+       <Route path="industries">
+        <Route index element={<Industries />} />
+        <Route path="e-commerce" element={<ECommercePage/>} />
+        <Route path="e_commerce" element={<ECommercePage/>} />
+        <Route path="horeca" element={<HorecaPage/>} />
+        <Route path="fmcg-industry" element={<FMCGPage/>} />
+        <Route path="fmcg_industry" element={<FMCGPage/>} />
+        <Route path="retail" element={<RetailPage/>} />
+        <Route path="food-beverages" element={<FoodBevPage/>} />
+        <Route path="food_beverages" element={<FoodBevPage/>} />
+        <Route path="cold-chain" element={<ColdChainPage/>} />
+        <Route path="cold_chain" element={<ColdChainPage/>} />
+        <Route path="agriculture" element={<AgriPage/>} />
+       </Route>
+       <Route path="aboutUs" element={<AboutUs/>} />
+       <Route path="about-us" element={<AboutUs/>} />
+       <Route path="team" element={<Team/>} />
+       <Route path="case-studies" element={<CaseStudies/>} />
+       <Route path="careers" element={<Careers/>} />
+       
       </Route>
-      {routesForLayout("bare")}
+      <Route element={<SimpleLayout/>}>
+       <Route path="privacy_policy" element ={<PrivacyPolicy/>} />
+       <Route path="privacy-policy" element={<PrivacyPolicy/>} />
+       <Route path="terms_of_service" element ={<TermsOfService/>} />
+       <Route path="terms-of-service" element={<TermsOfService/>} />
+       <Route path="BeOurPartner" element={<BeOurPartner/>}/>
+       <Route path="be-our-partner" element={<BeOurPartner/>}/>
+      <Route path="Contact" element={ <Suspense fallback={null}> <Contact /></Suspense>  }/>
+      <Route path="contact" element={ <Suspense fallback={null}> <Contact /></Suspense>  }/>
+      <Route path="CTA" element={ <Suspense fallback={null}> <Contact /></Suspense>  }/>
+      <Route path="cta" element={ <Suspense fallback={null}> <Contact /></Suspense>  }/>
+       <Route path="partner_contact" element={<Partnercontact/>}/>
+       <Route path="partner-contact" element={<Partnercontact/>}/>
+      </Route>
+       <Route path="/nfcCard" element={<NfcCard/>} />
     </Routes>
     </Suspense>
-    </AsyncErrorBoundary>
   
 </>
   );
