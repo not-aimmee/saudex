@@ -1,8 +1,9 @@
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { copyFileSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 
 const outputDirectory = join(process.cwd(), "dist");
 const template = readFileSync(join(outputDirectory, "index.html"), "utf8");
+const routes = JSON.parse(readFileSync(join(process.cwd(), "routes.json"), "utf8"));
 const baseUrl = "https://saudexglobal.com";
 
 const pages = [
@@ -11,8 +12,9 @@ const pages = [
     title: "Singapore Freight Forwarding & Import-Export | Saudex Global",
     description:
       "SAUDEX GLOBAL helps businesses move goods worldwide with freight, customs, warehousing, and supply chain logistics.",
-    heading: "Singapore Freight Forwarding & Import-Export | Saudex Global",
-    subheading: "Freight and supply chain help for your business",
+    heading: "Logistics Made Simple.",
+    subheading:
+      "Reliable, scalable, and technology driven logistics solutions for businesses across Asia and Middle East.",
     paragraphs: [
       "SAUDEX GLOBAL helps firms move goods around the world. We plan each trip with care. Our team can arrange air, sea, and land freight. We also help with import, export, customs, storage, and delivery. We work with you to choose a route that fits your goods, timing, and budget. You can ask us about one shipment or regular trips.",
       "Good shipping starts with a clear plan. We can help set pick-up times and share key details with each team. We can also help with forms for trade and customs. Our team can track key steps and share updates as goods move. This helps you know what is next and plan for each delivery.",
@@ -199,8 +201,23 @@ function renderPage(page) {
   return html;
 }
 
-for (const page of pages) {
-  const outputPath = join(outputDirectory, page.route.slice(1), "index.html");
+const contentByRoute = new Map(
+  pages.map((page) => [page.route.replace(/\/+$/, "") || "/", page]),
+);
+
+for (const route of routes) {
+  const routePath = route.path === "/" ? "/" : `${route.path}/`;
+  const content = contentByRoute.get(route.path);
+  const page = {
+    ...route,
+    route: routePath,
+    heading: content?.heading ?? route.title,
+    subheading: content?.subheading ?? route.description,
+    paragraphs: content?.paragraphs ?? [route.description],
+  };
+  const outputPath = join(outputDirectory, route.path.slice(1), "index.html");
   mkdirSync(dirname(outputPath), { recursive: true });
   writeFileSync(outputPath, renderPage(page));
 }
+
+copyFileSync(join(outputDirectory, "index.html"), join(outputDirectory, "404.html"));

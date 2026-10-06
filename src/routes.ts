@@ -1,38 +1,73 @@
-export const publicRoutes = [
-  { path: "/", layout: "main", page: "home" },
-  { path: "/about-us", layout: "main", page: "aboutUs" },
-  { path: "/team", layout: "main", page: "team" },
-  { path: "/case-studies", layout: "main", page: "caseStudies" },
-  { path: "/services", layout: "main", page: "services" },
-  { path: "/services/service", layout: "main", page: "service" },
-  { path: "/services/customs", layout: "main", page: "customs" },
-  { path: "/services/distribution", layout: "main", page: "distribution" },
-  { path: "/services/fmcg", layout: "main", page: "fmcg" },
-  { path: "/services/freight", layout: "main", page: "freight" },
-  { path: "/services/import-export", layout: "main", page: "importExport" },
-  { path: "/services/supply-chain", layout: "main", page: "supplyChain" },
-  { path: "/services/warehousing", layout: "main", page: "warehousing" },
-  { path: "/industries", layout: "main", page: "industries" },
-  { path: "/industries/agriculture", layout: "main", page: "agriculture" },
-  { path: "/industries/cold-chain", layout: "main", page: "coldChain" },
-  { path: "/industries/e-commerce", layout: "main", page: "eCommerce" },
-  { path: "/industries/fmcg-industry", layout: "main", page: "fmcgIndustry" },
-  { path: "/industries/food-beverages", layout: "main", page: "foodBeverages" },
-  { path: "/industries/horeca", layout: "main", page: "horeca" },
-  { path: "/industries/retail", layout: "main", page: "retail" },
-  { path: "/contact", layout: "simple", page: "contact" },
-  { path: "/get-a-quote", layout: "simple", page: "contact" },
-  { path: "/partner-contact", layout: "simple", page: "partnerContact" },
-  { path: "/be-our-partner", layout: "simple", page: "beOurPartner" },
-  { path: "/careers", layout: "main", page: "careers" },
-  { path: "/privacy-policy", layout: "simple", page: "privacyPolicy" },
-  { path: "/terms-of-service", layout: "simple", page: "termsOfService" },
-  { path: "/nfc-card", layout: "bare", page: "nfcCard" },
+import routeManifest from "../routes.json";
+
+const routeLayouts = ["main", "simple", "bare"] as const;
+const publicPages = [
+  "home",
+  "aboutUs",
+  "team",
+  "caseStudies",
+  "services",
+  "service",
+  "customs",
+  "distribution",
+  "fmcg",
+  "freight",
+  "importExport",
+  "supplyChain",
+  "warehousing",
+  "industries",
+  "agriculture",
+  "coldChain",
+  "eCommerce",
+  "fmcgIndustry",
+  "foodBeverages",
+  "horeca",
+  "retail",
+  "contact",
+  "partnerContact",
+  "beOurPartner",
+  "careers",
+  "privacyPolicy",
+  "termsOfService",
+  "nfcCard",
 ] as const;
 
-export type PublicRoute = (typeof publicRoutes)[number];
-export type PublicPage = PublicRoute["page"];
-export type RouteLayout = PublicRoute["layout"];
+export type RouteLayout = (typeof routeLayouts)[number];
+export type PublicPage = (typeof publicPages)[number];
+
+export interface PublicRoute {
+  path: string;
+  layout: RouteLayout;
+  page: PublicPage;
+  title: string;
+  description: string;
+}
+
+function isRouteLayout(value: string): value is RouteLayout {
+  return (routeLayouts as readonly string[]).includes(value);
+}
+
+function isPublicPage(value: string): value is PublicPage {
+  return (publicPages as readonly string[]).includes(value);
+}
+
+const seenPaths = new Set<string>();
+export const publicRoutes: PublicRoute[] = routeManifest.map((route): PublicRoute => {
+  const layout = route.layout;
+  const page = route.page;
+  if (
+    !route.path.startsWith("/") ||
+    route.path.endsWith("/") && route.path !== "/" ||
+    seenPaths.has(route.path) ||
+    !isRouteLayout(layout) ||
+    !isPublicPage(page)
+  ) {
+    throw new Error(`Invalid or duplicate public route in routes.json: ${route.path}`);
+  }
+
+  seenPaths.add(route.path);
+  return { ...route, layout, page };
+});
 
 export const legacyRedirects = [
   { path: "/aboutUs", to: "/about-us" },

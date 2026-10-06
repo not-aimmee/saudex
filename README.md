@@ -34,7 +34,8 @@ npm run build
 npm run preview
 ```
 
-The build writes the static site to `dist/`, including the canonical sitemap and
-SEO landing pages. `wrangler.jsonc` configures Cloudflare's SPA fallback so
-client-side routes return the application shell. Configure the Cloudflare
+The build writes the static site to `dist/`, including a pre-rendered HTML page
+for every route in `routes.json`, the sitemap, and `llms.txt`. The route
+manifest is shared by the client router and sitemap generator. `wrangler.jsonc`
+configures Cloudflare's SPA fallback for unknown URLs. Configure the Cloudflare
 deployment to run `npm run build` and publish `dist/`.

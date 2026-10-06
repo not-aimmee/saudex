@@ -61,6 +61,8 @@ export default function CookieConsentBanner() {
       analyticsWindow.gtag?.("consent", "update", {
         analytics_storage: "denied",
         ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
       });
       return;
     }
@@ -71,11 +73,15 @@ export default function CookieConsentBanner() {
       analyticsWindow.gtag("consent", "default", {
         analytics_storage: "denied",
         ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
       });
       analyticsWindow.gtag("js", new Date());
       analyticsWindow.gtag("consent", "update", {
         analytics_storage: "granted",
         ad_storage: prefs.marketing ? "granted" : "denied",
+        ad_user_data: prefs.marketing ? "granted" : "denied",
+        ad_personalization: prefs.marketing ? "granted" : "denied",
       });
       analyticsWindow.gtag("config", "G-FCT4YN3LD4", { anonymize_ip: true });
 
@@ -91,6 +97,8 @@ export default function CookieConsentBanner() {
     analyticsWindow.gtag("consent", "update", {
       analytics_storage: "granted",
       ad_storage: prefs.marketing ? "granted" : "denied",
+      ad_user_data: prefs.marketing ? "granted" : "denied",
+      ad_personalization: prefs.marketing ? "granted" : "denied",
     });
   }, [prefs.analytics, prefs.marketing]);
 
