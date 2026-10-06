@@ -82,7 +82,6 @@ function FaqBlock({ items }: { items: ServiceFaq[] }) {
         >
           <div>
             <p style={{ ...TAG, marginBottom: "1.4rem" }}>Questions</p>
-            {/* SAMPLE DATA — replace FAQ heading */}
             <h2
               className="font-sentient font-light"
               style={{
@@ -96,7 +95,6 @@ function FaqBlock({ items }: { items: ServiceFaq[] }) {
             >
               Not Sure Which Solution Suits Your Needs?
             </h2>
-            {/* END SAMPLE DATA */}
           </div>
           <p className="md:text-xl text-lg" style={{ lineHeight: 1.8, color: MUTED, maxWidth: "24rem", marginTop: "2rem" }}>
             Everything you need to know about working with us

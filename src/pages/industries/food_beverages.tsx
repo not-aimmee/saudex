@@ -34,7 +34,7 @@ const foodBeveragesSchema = {
         { "@type": "Country", "name": "Saudi Arabia" },
         { "@type": "Place", "name": "Middle East" }
       ],
-      "knowsAbout": ["Food safety supply chain", "FSSC 22000 logistics", "Cold and ambient storage", "HACCP food distribution", "Batch traceability"]
+      "knowsAbout": ["Food and beverage logistics", "Temperature-sensitive cargo coordination", "Shipment documentation"]
     },
     {
       "@type": "BreadcrumbList",

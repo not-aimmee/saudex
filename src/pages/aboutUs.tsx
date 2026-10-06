@@ -78,49 +78,6 @@ function StaggeredWords({ text, className, style }: { text: string; className?: 
   );
 }
 
-/** Animated count-up number */
-function AnimatedStat({ value, label, suffix = "" }: { value: number; label: string; suffix?: string }) {
-  const [count, setCount] = useState(0);
-  const ref = useRef<HTMLDivElement>(null);
-  const started = useRef(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !started.current) {
-          started.current = true;
-          let start = 0;
-          const duration = 1800;
-          const step = 16;
-          const increment = value / (duration / step);
-          const timer = setInterval(() => {
-            start += increment;
-            if (start >= value) { setCount(value); clearInterval(timer); }
-            else setCount(Math.floor(start));
-          }, step);
-        }
-      },
-      { threshold: 0.3 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [value]);
-
-  return (
-    <div ref={ref} className="py-10 border-b" style={{ borderColor: C.teal + "55" }}>
-      <div
-        className="text-7xl md:text-8xl font-black font-generalsans leading-none mb-3 tabular-nums"
-        style={{  color: C.darkTeal }}
-      >
-        {count.toLocaleString()}{suffix}
-      </div>
-      <div className="text-sm font-sentient tracking-widest uppercase" style={{ color: "#336159" }}>
-        {label}
-      </div>
-    </div>
-  );
-}
-
 /** Value item with hover slide */
 function ValueItem({ index, title, description }: { index: string; title: string; description: string }) {
   const [hovered, setHovered] = useState(false);
@@ -249,7 +206,6 @@ function HeroSection() {
         <Rule color={C.teal} opacity={0.25} />
 
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mt-8">
-          {/* Tagline — Change this text */}
           <p
             className="text-lg md:text-xl font-light font-generalsans leading-relaxed max-w-md"
             style={{  color: C.lightMutedTeal, animation: "fadeIn 1s ease 0.8s both" }}
@@ -293,7 +249,6 @@ function MissionSection() {
           <div className="grid md:grid-cols-12 gap-16 items-start">
             <div className="md:col-span-7">
               <Eyebrow>Our Mission</Eyebrow>
-              {/* Mission heading — Change this text */}
               <h2
                 className="text-5xl md:text-7xl font-black font-sentient uppercase leading-[0.92] tracking-tight"
                 style={{ color: C.inkBlack }}
@@ -309,11 +264,9 @@ function MissionSection() {
             <div className="md:col-span-5 md:pt-24">
               <Rule color={C.teal} opacity={0.4} />
               <div className="mt-8 space-y-6">
-                {/* Mission paragraph 1 — Change this text */}
                 <p className="text-lg leading-relaxed font-generalsans" style={{  color: C.darkTeal }}>
-                  For over 10 years, we have been moving businesses forward through world class logistics solutions. Driven by reliability, speed, and innovation, we help companies connect with markets, customers, and opportunities across the globe.
+                  We coordinate logistics services to help businesses move goods between markets. Our work includes freight, customs, warehousing, and distribution support.
                 </p>
-                {/* Mission paragraph 2 — Change this text */}
                 <p className="text-lg leading-relaxed font-generalsans" style={{  color: C.darkTeal + "cc" }}>
                   Every shipment is a commitment. Every delivery is a reflection of our promise. We've built our business around providing seamless, dependable logistics services that keep supply chains moving and businesses growing: on time, every time.
                 </p>
@@ -347,24 +300,32 @@ function StatsSection() {
         <div className="max-w-7xl w-full mx-auto">
           <div className="grid md:grid-cols-12 gap-16 items-start">
             <div className="md:col-span-4">
-              <Eyebrow>By the numbers</Eyebrow>
-              {/* Stats heading — Change this text */}
+              <Eyebrow>Services</Eyebrow>
               <h2
                 className="text-4xl md:text-5xl font-black font-sentient uppercase leading-tight"
                 style={{ color: C.inkBlack }}
               >
-                Scale built
+                Logistics
                 <br />
-                on trust
+                coordination
               </h2>
             </div>
 
-            {/* Stats — Change values, suffixes, and labels */}
             <div className="md:col-span-8 border-t" style={{ borderColor: C.teal + "55" }}>
-              <AnimatedStat value={15}   suffix="+"    label="Countries served" />
-              <AnimatedStat value={8450} suffix="+"    label="Deliveries completed" />
-              <AnimatedStat value={98}   suffix=".8%"  label="On-time delivery rate" />
-              <AnimatedStat value={10}   suffix=""     label="Years in operation" />
+              {[
+                "Freight forwarding",
+                "Import and export coordination",
+                "Customs and trade documentation",
+                "Warehousing and distribution",
+              ].map((service) => (
+                <p
+                  key={service}
+                  className="py-6 border-b text-xl md:text-2xl font-generalsans"
+                  style={{ borderColor: C.teal + "55", color: C.darkTeal }}
+                >
+                  {service}
+                </p>
+              ))}
             </div>
           </div>
         </div>
@@ -381,7 +342,6 @@ function ValuesSection() {
           <div className="grid md:grid-cols-12 gap-x-16 mb-20">
             <div className="md:col-span-5">
               <Eyebrow>What drives us</Eyebrow>
-              {/* Values heading — Change this text */}
               <h2
                 className="text-5xl md:text-6xl font-black font-sentient uppercase leading-tight"
                 style={{ color: C.inkBlack }}
@@ -413,12 +373,11 @@ function StorySection() {
         <div className="grid md:grid-cols-12 gap-16 mb-24">
           <div className="md:col-span-6">
             <Eyebrow>Our story</Eyebrow>
-            {/* Story heading — Change this text */}
             <h2
               className="text-5xl md:text-7xl font-black font-sentient uppercase leading-[0.92] tracking-tight"
               style={{  color: C.inkBlack }}
             >
-              <StaggeredWords text="From one truck" style={{ display: "block" }} />
+              <StaggeredWords text="Freight and trade" style={{ display: "block" }} />
               <StaggeredWords text="to a global"    style={{ display: "block" }} />
               <StaggeredWords
                 text="network."
@@ -428,13 +387,10 @@ function StorySection() {
           </div>
           <div className="md:col-span-5 md:pt-20 md:col-start-8">
             <Rule color={C.teal} opacity={0.4} />
-            {/* Story description — Change this text */}
             <p className="mt-8 text-lg leading-relaxed font-generalsans" style={{  color: C.darkTeal }}>
-              What began as a modest family operation has grown into one of the
-              world's most trusted logistics networks, present on six continents,
-              employing thousands of dedicated professionals who share our
-              founding values, treat every package like it's your own and never
-              compromise on quality.
+              SAUDEX GLOBAL coordinates freight, customs, warehousing, and
+              distribution services for businesses moving goods across
+              international markets.
             </p>
           </div>
         </div>
@@ -447,18 +403,15 @@ function TrustSection() {
   const cards = [
     {
       title: "Regional Trade Expertise",
-      // TODO: replace with your real founding year / years of operation
       body: "SAUDEX GLOBAL specializes in the Singapore–GCC–Asia-Pacific trade corridor, coordinating customs, freight, supply chain, and warehousing across multiple markets.",
     },
     {
       title: "Experienced Leadership",
-      // TODO: confirm bio details before publishing
       body: "Led by a team with backgrounds spanning finance, international business, and logistics operations across Saudi Arabia, Singapore, and Asia-Pacific.",
     },
     {
       title: "Compliance & Standards",
-      // TODO: only list certifications you actually hold — this is placeholder text
-      body: "Operations are structured around Singapore's trade facilitation framework, IATA/ICC guidance for air and sea freight, and relevant regional trade agreements.",
+      body: "Our team coordinates shipment documentation and customs requirements with the relevant carriers, service providers, and authorities.",
     },
     {
       title: "Regional Coverage",

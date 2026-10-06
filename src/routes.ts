@@ -7,7 +7,6 @@ const publicPages = [
   "team",
   "caseStudies",
   "services",
-  "service",
   "customs",
   "distribution",
   "fmcg",
@@ -41,6 +40,8 @@ export interface PublicRoute {
   page: PublicPage;
   title: string;
   description: string;
+  sitemap?: boolean;
+  noIndex?: boolean;
 }
 
 function isRouteLayout(value: string): value is RouteLayout {
@@ -60,7 +61,9 @@ export const publicRoutes: PublicRoute[] = routeManifest.map((route): PublicRout
     route.path.endsWith("/") && route.path !== "/" ||
     seenPaths.has(route.path) ||
     !isRouteLayout(layout) ||
-    !isPublicPage(page)
+    !isPublicPage(page) ||
+    route.sitemap !== undefined && typeof route.sitemap !== "boolean" ||
+    route.noIndex !== undefined && typeof route.noIndex !== "boolean"
   ) {
     throw new Error(`Invalid or duplicate public route in routes.json: ${route.path}`);
   }

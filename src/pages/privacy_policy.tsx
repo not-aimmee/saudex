@@ -181,7 +181,7 @@ While we take reasonable steps to protect personal data, we do not warrant or gu
               </thead>
               <tbody>
                 {[
-                  ["Essential", "Required for authentication and shipment tracking sessions. Cannot be disabled."],
+                  ["Essential", "Required for core website functions. Cannot be disabled."],
                   ["Functional", "Remember preferences such as default origin port and display settings."],
                   ["Analytics", "Aggregate usage data to improve platform performance and UX."],
                   ["Marketing", "Interest-based outreach. Opt-out available at any time."],

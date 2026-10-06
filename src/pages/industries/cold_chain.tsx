@@ -33,7 +33,7 @@ const coldChainSchema = {
         { "@type": "Country", "name": "Saudi Arabia" },
         { "@type": "Place", "name": "Middle East" }
       ],
-      "knowsAbout": ["Temperature control", "Pharmaceutical logistics", "Food safety compliance", "Cold storage management", "HACCP standards"]
+      "knowsAbout": ["Temperature-sensitive cargo coordination", "Cold storage planning", "Shipment documentation"]
     },
     {
       "@type": "BreadcrumbList",
@@ -61,7 +61,7 @@ const coldChainSchema = {
           "name": "How do you ensure temperature compliance throughout transit?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Every cold chain shipment is monitored in real time via IoT sensors that feed into our TMS. If a temperature deviation is detected, our operations team is alerted immediately and corrective action is taken."
+            "text": "Temperature monitoring options depend on the shipment and service provider. Contact our team to confirm what monitoring and reporting are available for your route."
           }
         },
         {
@@ -69,7 +69,7 @@ const coldChainSchema = {
           "name": "Can you provide temperature logs and compliance documentation for audits?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. After every delivery, you receive a full temperature log report with timestamps, deviation alerts, and proof of delivery, formatted to meet FSSAI, HACCP, and pharma cold chain audit standards."
+            "text": "Documentation depends on the shipment and service provider. Contact our team to confirm which records can be provided for your route."
           }
         }
       ]

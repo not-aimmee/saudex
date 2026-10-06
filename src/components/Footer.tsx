@@ -1,5 +1,5 @@
-import { ArrowUp, Linkedin, Mail , Facebook } from 'lucide-react';
-import { FaWhatsapp,FaInstagram } from 'react-icons/fa';
+import { ArrowUp, Mail } from 'lucide-react';
+import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import { useRef, useState, useEffect } from 'react';
 import { TEXT } from '../constants';
 import logo from '/logo.svg';
@@ -23,9 +23,9 @@ export default function Footer() {
   };
 
   const socialItems = [
-    { icon: Linkedin, color: 'blue', label: 'LinkedIn', link: 'https://www.linkedin.com/company/saudexglobal/',hoverColor: '#0a66c2' },
+    { icon: FaLinkedin, color: 'blue', label: 'LinkedIn', link: 'https://www.linkedin.com/company/saudexglobal/',hoverColor: '#0a66c2' },
     { icon: FaWhatsapp, color: 'green', label: 'WhatsApp', link: 'https://wa.me/6585351308',hoverColor: '#25d366' },
-    { icon: Facebook, color: 'blue', label: 'Facebook', link: 'https://www.facebook.com/share/19d9u8W9PA/',hoverColor: '#1877f2' },
+    { icon: FaFacebook, color: 'blue', label: 'Facebook', link: 'https://www.facebook.com/share/19d9u8W9PA/',hoverColor: '#1877f2' },
     { icon: FaInstagram, color:'purple', label:'Instagram', link:'https://www.instagram.com/saudexglobal?stkn=MWNtb3c5N3E3c3ViNA==', hoverColor:'#E1306C'},
   ];
 
@@ -213,8 +213,8 @@ export default function Footer() {
 <li>
               <a
               href="https://wa.me/6585351308"
-      target="_blank"
-      rel="noopener noreferrer"
+              target="_blank"
+              rel="noopener noreferrer"
       className="flex items-center font-generalsans font-medium gap-2 text-sm text-[#f5fbef]/70 hover:text-[#f4e9cd] transition-colors duration-200"
    >
  <FaWhatsapp className="w-4 h-4 shrink-0" />
@@ -227,8 +227,8 @@ export default function Footer() {
   <li>
               <a
               href="https://wa.me/601151168040"
-      target="_blank"
-      rel="noopener noreferrer"
+              target="_blank"
+              rel="noopener noreferrer"
       className="flex items-center font-generalsans font-medium gap-2 text-sm text-[#f5fbef]/70 hover:text-[#f4e9cd] transition-colors duration-200"
    >
  <FaWhatsapp className="w-4 h-4 shrink-0" />

@@ -11,7 +11,7 @@ const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 const trailingSlashSitemap = {
   name: "trailing-slash-sitemap",
   closeBundle() {
-    const urls = publicRoutes.map(({ path: route }) => {
+    const urls = publicRoutes.filter((route) => route.sitemap !== false).map(({ path: route }) => {
       const canonicalPath = route === "/" ? "/" : `${route}/`;
       return `    <url><loc>https://saudexglobal.com${canonicalPath}</loc></url>`;
     });

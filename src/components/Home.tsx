@@ -119,6 +119,7 @@ export default function Hero() {
     muted
     loop
     playsInline
+    controls
     preload="auto"
     aria-label="Background video illustrating logistics movement"
     title="Background video illustrating logistics movement"
@@ -144,7 +145,7 @@ data-src="https://res.cloudinary.com/dvdcdj8ye/video/upload/so_0,du_20,q_auto:go
             </h1>
           </div>
 </div>
-          <div className="flex justify-end sm:items-centerlg:mr-18">
+          <div className="flex justify-end sm:items-center lg:mr-18">
   <p
     className="
       lg:mt-10

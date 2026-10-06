@@ -24,8 +24,10 @@
     "path": "/case-studies",
     "layout": "main",
     "page": "caseStudies",
+    "sitemap": false,
+    "noIndex": true,
     "title": "Case Studies | SAUDEX GLOBAL",
-    "description": "Explore SAUDEX GLOBAL case studies covering logistics, freight forwarding, and supply chain services."
+    "description": "Verified customer case studies are not currently published. Contact SAUDEX GLOBAL to discuss logistics services for your business."
   },
   {
     "path": "/services",
@@ -37,9 +39,11 @@
   {
     "path": "/services/service",
     "layout": "main",
-    "page": "service",
-    "title": "Logistics Service Details | SAUDEX GLOBAL",
-    "description": "Learn more about SAUDEX GLOBAL logistics services and how they support business cargo movements."
+    "page": "services",
+    "sitemap": false,
+    "noIndex": true,
+    "title": "Logistics Services | SAUDEX GLOBAL",
+    "description": "Explore freight forwarding, import-export, customs, distribution, warehousing, and supply chain services from SAUDEX GLOBAL."
   },
   {
     "path": "/services/customs",
@@ -150,6 +154,7 @@
     "path": "/contact",
     "layout": "simple",
     "page": "contact",
+    "sitemap": false,
     "title": "Contact SAUDEX GLOBAL | Logistics Support",
     "description": "Contact SAUDEX GLOBAL for freight, warehousing, customs, and supply chain enquiries."
   },
@@ -157,6 +162,7 @@
     "path": "/get-a-quote",
     "layout": "simple",
     "page": "contact",
+    "sitemap": false,
     "title": "Get a Logistics Quote | SAUDEX GLOBAL",
     "description": "Request a logistics quote from SAUDEX GLOBAL for freight, warehousing, customs, and supply chain services."
   },
@@ -164,6 +170,7 @@
     "path": "/partner-contact",
     "layout": "simple",
     "page": "partnerContact",
+    "sitemap": false,
     "title": "Partner Enquiry | SAUDEX GLOBAL",
     "description": "Contact SAUDEX GLOBAL about partnership opportunities and logistics collaboration."
   },
@@ -199,6 +206,8 @@
     "path": "/nfc-card",
     "layout": "bare",
     "page": "nfcCard",
+    "sitemap": false,
+    "noIndex": true,
     "title": "SAUDEX GLOBAL Digital Business Card",
     "description": "Digital business card and contact information for a member of the SAUDEX GLOBAL team."
   }

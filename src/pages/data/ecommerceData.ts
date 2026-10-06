@@ -5,7 +5,7 @@ export const ecommerceData: IndustryPageData = {
   heroEyebrow: "Industry Solutions",
   heroHeading: "Fulfilment\nAt the\nSpeed of Click.",
   heroBody:
-    "Today's online shopper expects same day dispatch, live tracking, and frictionless returns. We run the warehousing, pick and pack, and last mile infrastructure that lets your brand promise what customers actually want.",
+    "E-commerce businesses need coordinated warehousing, pick and pack, and delivery support. We help connect these logistics steps to the needs of your operation.",
   heroImage: "/images/s33.webp",
   heroImageAlt: "Fulfilment centre with conveyor belts and workers picking orders",
   heroStats: [
@@ -19,7 +19,7 @@ export const ecommerceData: IndustryPageData = {
       tag: "Warehousing & Fulfilment",
       heading: "Pick, Pack,Dispatch —\nSame Day",
       body:
-        "Orders placed before 3 PM leave the same day. Our fulfilment centres integrate with Shopify, WooCommerce, Magento, and custom APIs. Inventory syncs in real time so your storefront never oversells.",
+        "Fulfilment arrangements may include order handling, storage, and dispatch coordination. Contact our team to discuss your platform and operating requirements.",
       image: "/images/i6.webp",
       imageAlt: "Picker scanning shelves in an e-commerce fulfilment warehouse",
       stats: [
@@ -34,7 +34,7 @@ export const ecommerceData: IndustryPageData = {
       tag: "Last Mile",
       heading: "Delivery Experience\nIs Your Brand",
       body:
-        "Branded packaging, live tracking links, and real time ETA updates keep customers informed at every step. Our carrier network spans national couriers and hyperlocal same day riders, with automatic routing to the fastest available option.",
+        "Branded packaging and delivery coordination help support the customer experience. Service options depend on the shipment and destination.",
       image: "/images/in10.webp",
       imageAlt: "Delivery rider on a motorbike in an urban area with a branded parcel bag",
       stats: [
@@ -81,13 +81,13 @@ export const ecommerceData: IndustryPageData = {
     },
     {
       title: "International Customs Complexity",
-      body: "Cross border orders stall at customs. Our customs brokerage desk handles HS codes, duties calculation, and documentation for 40+ destination markets.",
+      body: "Cross-border orders may require customs documentation and duty calculations. Contact our team to discuss the requirements for your origin and destination.",
     },
   ],
   faqs: [
     {
       q: "How quickly can you ship orders after they're placed on our platform?",
-      a: "We support same day dispatch for orders confirmed before our daily cut off time. Once integrated with your store via API or plugin, orders flow automatically into our fulfillment system, reducing manual steps and getting packages out the door faster.",
+      a: "Dispatch timing depends on the agreed service, cargo readiness, and destination. Contact our team to discuss your order flow and fulfilment requirements.",
     },
     {
       q: "Do you offer a returns management solution for our customers?",
@@ -95,7 +95,7 @@ export const ecommerceData: IndustryPageData = {
     },
     {
       q: "Can your system integrate with platforms like Shopify, WooCommerce, or our custom OMS?",
-      a: "We offer pre built integrations with major eCommerce platforms and a REST API for custom OMS setups. Setup typically takes 1 to 3 business days, and our technical team supports the onboarding process end-to-end.",
+      a: "Platform integrations depend on the systems involved. Contact our team to discuss your platform and confirm whether a suitable integration is available.",
     },
   ],
 };

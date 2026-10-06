@@ -49,6 +49,14 @@
   font-family: "GeneralSans", sans-serif;
 }
 
+.font-archivo {
+  font-family: "GeneralSans", sans-serif;
+}
+
+.font-clash {
+  font-family: "Sentient", serif;
+}
+
 .hero-title-reveal {
   animation: hero-title-enter 0.8s ease-out both;
 }

@@ -116,34 +116,6 @@ function MarqueeStrip({ text }: { text: string }) {
   );
 }
 
-/* ─── StatCell ───────────────────────────────────────────── */
-function StatCell({ stat, bordered }: { stat: IndustryStat; bordered?: boolean }) {
-  return (
-    <div
-      style={{
-        padding: "1.8rem 2rem",
-        borderLeft: bordered ? RULE : "none",
-        flex: 1,
-      }}
-    >
-      <span
-        style={{
-          display: "block",
-          fontSize: "clamp(2rem, 4vw, 3.4rem)",
-          fontWeight: 300,
-          letterSpacing: "-0.05em",
-          lineHeight: 1,
-          color: C.bone,
-          marginBottom: "0.4rem",
-        }}
-      >
-        {stat.value}
-      </span>
-      <span style={{ ...TAG }}>{stat.label}</span>
-    </div>
-  );
-}
-
 /* ─── LabelRow ───────────────────────────────────────────── */
 function LabelRow({ left, right }: { left: string; right: string }) {
   return (
@@ -296,11 +268,6 @@ function HeroSection({ data }: { data: IndustryPageData }) {
             </p>
           </div>
 
-          <div style={{ color: C.lightMutedTeal ,display: "flex", borderTop: RULE, marginTop: "3rem", flexWrap: "wrap" }}>
-            {data.heroStats.map((s, i) => (
-              <StatCell key={i} stat={s} bordered={i > 0} />
-            ))}
-          </div>
         </div>
 
         <div style={{ position: "relative", overflow: "hidden", backgroundColor: C.lightMutedTeal }}>
@@ -392,45 +359,6 @@ function IndustrySectionBlock({ s, isLast }: { s: IndustrySection; isLast: boole
             }}
           />
 
-          {s.stats && s.stats.length > 0 && (
-            <div
-              style={{
-                position: "absolute",
-                bottom: 0,
-                left: 0,
-                right: 0,
-                display: "flex",
-                borderTop: "1px solid rgba(255,255,255,0.18)",
-                background: `linear-gradient(to top, rgba(37,77,88,0.88), transparent)`,
-              }}
-            >
-              {s.stats.map((stat, i) => (
-                <div
-                  key={i}
-                  style={{
-                    padding: "1.5rem 2rem",
-                    borderLeft: i > 0 ? "1px solid rgba(255,255,255,0.15)" : "none",
-                    flex: 1,
-                  }}
-                >
-                  <span
-                    style={{
-                      display: "block",
-                      fontSize: "clamp(1.6rem, 3vw, 2.6rem)",
-                      fontWeight: 300,
-                      letterSpacing: "-0.04em",
-                      color: C.ivory,
-                      lineHeight: 1,
-                      marginBottom: "0.3rem",
-                    }}
-                  >
-                    {stat.value}
-                  </span>
-                  <span style={{ ...TAG, color: C.lightMutedTeal }}>{stat.label}</span>
-                </div>
-              ))}
-            </div>
-          )}
         </div>
 
         <div

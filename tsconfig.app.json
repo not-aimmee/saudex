@@ -26,5 +26,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src", "components/blurtext.tsx", "components/click_spark.tsx", "components/glassicons.tsx", "components/globalcursor.tsx", "components/splittext.tsx", "components/scroll_float.tsx"]
+  "include": ["src", "components/**/*.tsx"]
 }

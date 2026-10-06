@@ -76,8 +76,15 @@ useEffect(() => {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center gap-2">
             
-  <img src={logo} onClick={goHome} alt="Saudex Global" width={40} height={40} className="w-10 h-10 lg:w-10 lg:h-10" draggable={false} />
-  <span  onClick={goHome} className="font-sentient font-regular text-[22px] lg:text-[40px]  text-[#f5fbef] tracking-normal">SAUDEX GLOBAL</span>
+  <button
+    type="button"
+    onClick={goHome}
+    aria-label="SAUDEX GLOBAL home"
+    className="flex items-center gap-2"
+  >
+    <img src={logo} alt="" width={40} height={40} className="w-10 h-10 lg:w-10 lg:h-10" draggable={false} />
+    <span className="font-sentient font-regular text-[22px] lg:text-[40px] text-[#f5fbef] tracking-normal">SAUDEX GLOBAL</span>
+  </button>
 </div>
 
           {/* Desktop Navigation */}

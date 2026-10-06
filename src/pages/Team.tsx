@@ -16,18 +16,14 @@ interface TeamMember {
   title: string;
   bio: string;
   expertise: string[];
-  linkedIn?: string;
 }
 
-// TODO: add the rest of the team here as bios/LinkedIn links become available
 const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Nauman",
     title: "Founder & Chief Operations Officer",
     bio: "Nauman brings a background in finance and international operations, including experience as a Financial Accountant at IHG in Makkah, Saudi Arabia, to lead SAUDEX GLOBAL's strategy and business development across the Singapore–GCC–Asia-Pacific corridor.",
     expertise: ["Logistics Strategy", "Supply Chain", "International Trade", "Regional Operations"],
-    // TODO: replace with the real LinkedIn URL
-    linkedIn: "https://www.linkedin.com/company/saudexglobal/",
   },
 ];
 
@@ -60,7 +56,6 @@ const teamSchema = {
         "jobTitle": member.title,
         "worksFor": { "@id": "https://saudexglobal.com/#organization" },
         "knowsAbout": member.expertise,
-        ...(member.linkedIn ? { "sameAs": member.linkedIn } : {}),
       })),
     },
   ],
@@ -120,17 +115,6 @@ export default function Team() {
                     </li>
                   ))}
                 </ul>
-                {member.linkedIn && (
-                  <a
-                    href={member.linkedIn}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-6 inline-block text-sm font-medium underline"
-                    style={{ color: C.teal }}
-                  >
-                    View LinkedIn Profile
-                  </a>
-                )}
               </article>
             ))}
           </div>

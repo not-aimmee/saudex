@@ -9,7 +9,6 @@ import { lazy, Suspense, type ReactNode } from "react";
 import { loadWebMcpRuntime } from "./webmcpRuntime";
 import LandingPage from "./landing_page";
 import { legacyRedirects, publicRoutes, type PublicPage, type RouteLayout } from "./routes";
-const ServicePage = lazy(() => import("./pages/service"));
 const Customs = lazy(() => import("./pages/services/customs"));
 const Distribution = lazy(() => import("./pages/services/distribution"));
 const FMCG = lazy(() => import("./pages/services/fmcg"));
@@ -48,7 +47,6 @@ const routeElements: Record<PublicPage, ReactNode> = {
   team: <Team />,
   caseStudies: <CaseStudies />,
   services: <Services />,
-  service: <ServicePage />,
   customs: <Customs />,
   distribution: <Distribution />,
   fmcg: <FMCG />,

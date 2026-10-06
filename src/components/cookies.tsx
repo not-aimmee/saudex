@@ -112,14 +112,35 @@ export default function CookieConsentBanner() {
   const rejectAll = () => commit({ functional: false, analytics: false, marketing: false });
   const saveChoices = () => commit(prefs);
 
-  // Once a choice has been made (this load or a previous one), render nothing.
-  if (decided) {
-    return null;
+  if (decided && !showPrefs) {
+    return (
+      <button
+        type="button"
+        onClick={() => setShowPrefs(true)}
+        className="font-archivo"
+        style={{
+          position: "fixed",
+          bottom: 16,
+          left: 16,
+          zIndex: 9999,
+          padding: "8px 12px",
+          border: "1px solid #A3BDB8",
+          borderRadius: 6,
+          background: "#050f0f",
+          color: "#f7faf8",
+          cursor: "pointer",
+        }}
+      >
+        Cookie preferences
+      </button>
+    );
   }
 
   return (
     <div className="font-archivo" style={{ position: "fixed", bottom: 20, left: 20, zIndex: 9999, maxWidth: 380 }}>
       <div
+        role="dialog"
+        aria-labelledby="cookie-consent-title"
         style={{
           width: "100%",
           maxWidth: 380,
@@ -132,7 +153,7 @@ export default function CookieConsentBanner() {
         <div style={{ height: 2, background: "linear-gradient(to right, #A3BDB8, transparent)" }} />
 
         <div style={{ padding: "20px 20px 18px" }}>
-          <p className="font-clash" style={{ fontSize: 15, fontWeight: 600, color: "#f7faf8", margin: "0 0 8px", letterSpacing: "-0.01em" }}>
+          <p id="cookie-consent-title" className="font-clash" style={{ fontSize: 15, fontWeight: 600, color: "#f7faf8", margin: "0 0 8px", letterSpacing: "-0.01em" }}>
             Your privacy on this site
           </p>
           <p style={{ fontSize: 13, lineHeight: 1.6, color: "rgba(163,189,184,0.75)", margin: 0 }}>
@@ -150,7 +171,7 @@ export default function CookieConsentBanner() {
                 <div>
                   <p style={{ fontSize: 13, fontWeight: 600, color: "#f7faf8", margin: 0 }}>Essential</p>
                   <p style={{ fontSize: 11.5, color: "rgba(163,189,184,0.55)", margin: "2px 0 0" }}>
-                    Required for authentication and shipment tracking. Always on.
+                    Required for the website to function. Always on.
                   </p>
                 </div>
                 <div

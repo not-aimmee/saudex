@@ -35,7 +35,12 @@ npm run preview
 ```
 
 The build writes the static site to `dist/`, including a pre-rendered HTML page
-for every route in `routes.json`, the sitemap, and `llms.txt`. The route
-manifest is shared by the client router and sitemap generator. `wrangler.jsonc`
-configures Cloudflare's SPA fallback for unknown URLs. Configure the Cloudflare
-deployment to run `npm run build` and publish `dist/`.
+for every route in `routes.json`, the eligible routes in the sitemap, `llms.txt`,
+and a dedicated `404.html`. The route manifest is shared by the client router
+and sitemap generator; set `sitemap` to `false` for routes that should not be
+listed and `noIndex` to `true` for routes that should not be indexed.
+
+`wrangler.jsonc` configures Cloudflare to return `404.html` with a not-found
+status for unknown URLs. Configure the Cloudflare build to run `npm ci` followed
+by `npm run build`, publish `dist/`, and provide the three `VITE_EMAILJS_*`
+variables as build-time environment variables to enable contact forms.

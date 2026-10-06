@@ -1,4 +1,4 @@
-import { copyFileSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 
 const outputDirectory = join(process.cwd(), "dist");
@@ -161,6 +161,14 @@ function renderPage(page) {
     `<link rel="canonical" href="${canonical}" />`,
     "canonical link",
   );
+  if (page.noIndex) {
+    html = replaceRequired(
+      html,
+      /<meta name="robots" content="[^"]*"\s*\/>/,
+      '<meta name="robots" content="noindex, nofollow" />',
+      "robots meta",
+    );
+  }
   html = replaceRequired(
     html,
     /<meta property="og:title" content="[^"]*">/,
@@ -220,4 +228,24 @@ for (const route of routes) {
   writeFileSync(outputPath, renderPage(page));
 }
 
-copyFileSync(join(outputDirectory, "index.html"), join(outputDirectory, "404.html"));
+writeFileSync(
+  join(outputDirectory, "404.html"),
+  `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Page not found | SAUDEX GLOBAL</title>
+</head>
+<body style="margin:0;background:#f1f0ea;color:#031926;font:16px/1.6 Arial,sans-serif">
+  <main style="max-width:42rem;margin:15vh auto;padding:2rem">
+    <p style="letter-spacing:.2em;text-transform:uppercase">SAUDEX GLOBAL</p>
+    <h1>Page not found</h1>
+    <p>The page may have moved or the address may be incorrect.</p>
+    <a href="/">Return to the homepage</a>
+  </main>
+</body>
+</html>
+`,
+);
