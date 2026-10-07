@@ -8,7 +8,7 @@ const baseUrl = "https://saudexglobal.com";
 const pages = [
   {
     route: "/",
-    title: "Global Logistics for Businesses | SAUDEX GLOBAL",
+    title: "Singapore Freight Forwarding & Import-Export | Saudex Global",
     description:
       "SAUDEX GLOBAL helps businesses move goods worldwide with freight, customs, warehousing, and supply chain logistics.",
     heading: "Global logistics solutions for businesses",

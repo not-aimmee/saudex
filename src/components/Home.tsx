@@ -68,7 +68,7 @@ export default function Hero() {
             "@type": "WebPage",
             "@id": "https://saudexglobal.com/#webpage",
             "url": "https://saudexglobal.com/",
-            "name": "Global Logistics Solutions for Businesses | SAUDEX GLOBAL",
+            "name": "Singapore Freight Forwarding & Import-Export | Saudex Global",
             "description": "Discover global logistics solutions from SAUDEX GLOBAL, combining reliable freight, supply chain expertise and international operations.",
             "isPartOf": { "@id": "https://saudexglobal.com/#website" },
             "about": { "@id": "https://saudexglobal.com/#organization" }
