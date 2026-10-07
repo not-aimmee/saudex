@@ -21,7 +21,7 @@ const routes = [
   "/services/distribution/",
   "/services/fmcg/",
   "/services/freight/",
-  "/services/import-export/",
+  "/services/impo-expo/",
   "/services/supply-chain/",
   "/services/warehousing/",
   "/about-us/",

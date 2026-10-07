@@ -11,7 +11,9 @@ export default function MainLayout() {
   return (
     <div className="overflow-x-hidden">
       <Header />
-      <Outlet />
+       <Suspense fallback={<div className="min-h-screen" />}>
+    <Outlet />
+  </Suspense>
       <DeferredSection minHeight="600px">
         <Suspense fallback={null}>
           <CTA />

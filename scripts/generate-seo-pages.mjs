@@ -188,6 +188,25 @@ function renderPage(page) {
   return html;
 }
 
+const canonicalOnlyRoutes = [
+  "/partner-contact/","/careers/","/be-our-partner/","/privacy-policy/","/terms-of-service/",
+  "/team/","/case-studies/",
+  "/industries/cold-chain/","/industries/e-commerce/","/industries/fmcg-industry/",
+  "/industries/food-beverages/","/industries/horeca/","/industries/retail/","/industries/agriculture/",
+  "/services/customs/","/services/distribution/","/services/fmcg/","/services/freight/",
+  "/services/impo-expo/","/services/supply-chain/","/services/warehousing/",
+];
+
+for (const route of canonicalOnlyRoutes) {
+  const canonical = `${baseUrl}${route}`;
+  let html = template.replace(/<link rel="preload" as="image" href="\/images\/indus-hero\.webp"[^>]*>\s*/, "");
+  html = replaceRequired(html, /<link rel="canonical" href="[^"]*"\s*\/>/, `<link rel="canonical" href="${canonical}" />`, "canonical link");
+  html = replaceRequired(html, /<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${canonical}">`, "Open Graph URL");
+  const outputPath = join(outputDirectory, route.slice(1), "index.html");
+  mkdirSync(dirname(outputPath), { recursive: true });
+  writeFileSync(outputPath, html);
+}
+
 for (const page of pages) {
   const outputPath = join(outputDirectory, page.route.slice(1), "index.html");
   mkdirSync(dirname(outputPath), { recursive: true });

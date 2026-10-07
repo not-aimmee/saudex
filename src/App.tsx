@@ -46,8 +46,8 @@ function App() {
   return (
     <>
     <Cookies />
-    <Suspense fallback={<div role="status" className="min-h-screen bg-[#f1f0ea] p-8 text-[#031926]">Loading page...</div>}>
-    <Routes>
+<Suspense fallback={null}>
+      <Routes>
       <Route element={<MainLayout />}>
         <Route
           path="/"

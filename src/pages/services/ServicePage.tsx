@@ -297,10 +297,6 @@ function ServiceSectionBlock({ s }: { s: ServiceSection }) {
 
 /* ─── main export ────────────────────────────────────────── */
 export function ServicePage({ data }: { data: ServicePageData }) {
-  const canonical = typeof window !== "undefined"
-    ? `https://saudexglobal.com${window.location.pathname}`
-    : "https://saudexglobal.com/services/";
-
   const faqSchema = data.faqs?.length ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -316,7 +312,6 @@ export function ServicePage({ data }: { data: ServicePageData }) {
       <SEO
         title={`${data.heading.replace(/\n/g, " ")} | SAUDEX GLOBAL`}
         description={data.subheading}
-        canonical={canonical}
         ogImage="https://saudexglobal.com/images/indus.webp"
         schemaMarkup={faqSchema}
       />

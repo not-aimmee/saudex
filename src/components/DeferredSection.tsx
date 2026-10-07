@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { Suspense, useEffect, useRef, useState, type ReactNode } from "react";
 
 interface DeferredSectionProps {
   children: ReactNode;
@@ -25,7 +25,7 @@ export default function DeferredSection({ children, minHeight }: DeferredSection
           observer.disconnect();
         }
       },
-      { rootMargin: "0px 0px -160px 0px" },
+      { rootMargin: "0px 0px 600px 0px" },
     );
     observer.observe(section);
     return () => observer.disconnect();
@@ -33,7 +33,7 @@ export default function DeferredSection({ children, minHeight }: DeferredSection
 
   return (
     <div ref={sectionRef} style={isNearViewport ? undefined : { minHeight }}>
-      {isNearViewport ? children : null}
+      {isNearViewport ? <Suspense fallback={null}>{children}</Suspense> : null}
     </div>
   );
 }
