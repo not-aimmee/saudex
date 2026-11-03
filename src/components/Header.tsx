@@ -79,12 +79,12 @@ useEffect(() => {
   src="/saudex-logo.svg?v=3"
   onClick={goHome}
   alt="Saudex Global"
-  className="h-12 w-[163px] shrink-0 cursor-pointer lg:h-14 lg:w-[189px]"
+  className="h-12 mt-4 ml-4 w-[185px] shrink-0 cursor-pointer lg:h-14 lg:w-[215px]"
   draggable={false}
 /> </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8 ml-34 ">
+          <nav className="hidden lg:flex items-center space-x-8 ml-86 ">
             <Link
               to="/"
               className="px-6 py-4 text-[#f5fbef] font-generalsans font-regular text-lg hover:text-[#bbd6d1] tracking-wider transition-colors flex items-center gap-1"
