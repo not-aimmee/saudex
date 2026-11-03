@@ -2,7 +2,6 @@ import { ArrowUp, Linkedin, Mail , Facebook } from 'lucide-react';
 import { FaWhatsapp,FaInstagram } from 'react-icons/fa';
 import { useRef, useState, useEffect } from 'react';
 import { TEXT } from '../constants';
-import logo from '/logo.svg';
 import { Link } from "react-router-dom";
 import GlassIcons from '../../components/glassicons';
 import { useNavigate, useLocation } from "react-router-dom";
@@ -30,9 +29,13 @@ export default function Footer() {
   ];
 
   const services = [
+    { label: 'Cold Chain', to: '/industries/cold_chain/' },
+    { label: 'Warehousing', to: '/services/warehousing/' },
     { label: 'Import - Export', to: '/services/impo-expo/' },
     { label: 'FMCG Distribution', to: '/services/fmcg/' },
     { label: 'Freight Forwarding', to: '/services/freight/' },
+    { label: 'Supply Chain Logistics', to: '/services/Supply_chain/' },
+    { label: 'Distribution & Transportation', to: '/services/distribution/' },
     { label: 'Customs Clearance & Compliance', to: '/services/customs/' },
   ];
 
@@ -84,14 +87,7 @@ export default function Footer() {
         {/* Logo / Follow Us */}
         <div>
           <div className="flex items-center gap-3 mb-4 md:ml-8 md:mt-16">
-            <img onClick={goHome} src={logo} alt="Saudex Global" width={48} height={48} className="w-12 h-12 cursor-pointer" draggable={false} />
-            <button
-              onClick={goHome}
-              className="flex flex-col leading-tight hover:opacity-80 transition-opacity text-left"
-            >
-              <span className="text-3xl  font-light font-sentient text-[#f5fbef] tracking-tight">SAUDEX</span>
-              <span className="text-3xl font-light font-sentient text-[#f5fbef] tracking-wider">GLOBAL</span>
-            </button>
+            <img onClick={goHome} src="/saudex-logo.svg?v=3" alt="Saudex Global" className="h-12 w-[185px] shrink-0 cursor-pointer lg:h-14 lg:w-[215px]" draggable={false} />
           </div>
         </div>
 
