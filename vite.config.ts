@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
-import { writeFileSync } from "fs";
+import { writeFileSync, existsSync } from "fs";
 import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
@@ -33,7 +33,11 @@ const routes = [
 
 const trailingSlashSitemap = {
   name: "trailing-slash-sitemap",
+  apply: "build" as const,
   closeBundle() {
+    const distDir = path.resolve(__dirname, "dist");
+    if (!existsSync(distDir)) return; // build failed earlier, don't hide the real error
+
     const urls = [...new Set(routes)].map(
       (route) => `    <url><loc>https://saudexglobal.com${route}</loc></url>`,
     );
@@ -45,7 +49,7 @@ const trailingSlashSitemap = {
       '',
     ].join('\n');
 
-    writeFileSync(path.resolve(__dirname, "dist/sitemap.xml"), sitemapXml);
+    writeFileSync(path.join(distDir, "sitemap.xml"), sitemapXml);
   },
 };
 
