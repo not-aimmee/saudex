@@ -84,11 +84,12 @@ export default defineConfig({
       },
     },
     rollupOptions: {
-      output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom'],
-          'router-vendor': ['react-router-dom'],
-        },
+    maxParallelFileOps: 20,
+    output: {
+      manualChunks: {
+        'react-vendor': ['react', 'react-dom'],
+        'router-vendor': ['react-router-dom'],
+      },
         entryFileNames: 'assets/[name]-[hash].js',
         chunkFileNames: 'assets/[name]-[hash].js',
         assetFileNames: 'assets/[name]-[hash][extname]',
