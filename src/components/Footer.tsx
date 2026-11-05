@@ -1,4 +1,4 @@
-import { ArrowUp, Linkedin, Mail , Facebook } from 'lucide-react';
+import { ArrowUp, Linkedin, Mail , Facebook, Clock, MapPin } from 'lucide-react';
 import { FaWhatsapp,FaInstagram } from 'react-icons/fa';
 import { useRef, useState, useEffect } from 'react';
 import { TEXT } from '../constants';
@@ -87,7 +87,7 @@ export default function Footer() {
         {/* Logo / Follow Us */}
         <div>
           <div className="flex items-center gap-3 mb-4 md:ml-8 md:mt-16">
-            <img onClick={goHome} src="/saudex-logo.svg?v=3" alt="Saudex Global" className="h-12 w-[185px] shrink-0 cursor-pointer lg:h-14 lg:w-[215px]" draggable={false} />
+            <img onClick={goHome} src="/saudex-logo.svg?v=7" alt="Saudex Global" className="h-12 w-[185px] shrink-0 cursor-pointer lg:h-14 lg:w-[215px]" draggable={false} />
           </div>
         </div>
 
@@ -231,6 +231,30 @@ export default function Footer() {
       +60 11511 68040
               </a>
             </li>
+             <li className="text-sm font-generalsans font-light text-[#f5fbef]/50">
+  Business Hours
+</li>
+<li className="flex items-start gap-2 text-sm font-generalsans font-medium text-[#f5fbef]/70">
+  <Clock className="w-4 h-4 shrink-0" />
+  <span>
+    {/* ADDRESS_LINE_1 */}
+    Monday - Friday
+  </span>
+  <br/>
+  <span>
+    9:00 AM - 5:00 PM
+  </span>
+</li>
+            <li className="text-sm font-generalsans font-light text-[#f5fbef]/50">
+  Address
+</li>
+<li className="flex items-start gap-2 text-sm font-generalsans font-medium text-[#f5fbef]/70">
+  <MapPin className="w-4 h-4 shrink-0 mt-0.5" />
+  <span>
+    {/* ADDRESS_LINE_1 */}
+    10 Anson Rd, #33-03 International Plaza, Singapore 079903
+  </span>
+</li>
           </ul>
         </div>
 
