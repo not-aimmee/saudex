@@ -76,7 +76,7 @@ useEffect(() => {
           <div className="flex-shrink-0 flex items-center gap-2">
             
 <img
-  src="/saudex-logo.svg?v=7"
+  src="/saudex-logo.svg"
   onClick={goHome}
   alt="Saudex Global"
   className="h-12 mt-6 ml-4 mb-6 w-[185px] shrink-0 cursor-pointer lg:h-14 lg:w-[215px]"
